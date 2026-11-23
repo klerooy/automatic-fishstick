@@ -25,6 +25,10 @@ extern "C" {
     X(show_weapon, 1, 0, 1) \
     X(show_head, 1, 0, 1) \
     X(show_self, 0, 0, 1) \
+    X(aa_los_strict, 0, 0, 1) \
+    X(aa_skip_downed, 1, 0, 1) \
+    X(trigger_interval, 16, 8, 200) \
+    X(build_version, 4, 0, 9999) \
     X(show_clan, 1, 0, 1) \
     X(show_party, 1, 0, 1) \
     X(show_police, 1, 0, 1) \

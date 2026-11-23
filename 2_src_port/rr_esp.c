@@ -3223,6 +3223,15 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
     g_snap_event = CreateEventW(NULL, FALSE, FALSE, NULL);   /* auto-reset publication event */
     br_get();                       /* allocates the shared config + defaults */
     br_config_load();
+    {
+        BR_Config* b = br_get();
+        char tag[64];
+        snprintf(tag, sizeof(tag), "build v%d", b->build_version);
+        /* Append to existing status without overwriting discovery progress. */
+        size_t len = strlen(g_status);
+        if (len + strlen(tag) + 4 < sizeof(g_status))
+            snprintf(g_status + len, sizeof(g_status) - len, " | %s", tag);
+    }
     if (mode_demo) {
         /* The demo renders every marker class so the drawing path is exercised.
          * These switches stay in memory: the demo never writes them back. */

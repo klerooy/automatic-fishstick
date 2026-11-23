@@ -320,6 +320,47 @@ static int rr_cstr(uint64_t addr, char* out, int cap) {
     return i;
 }
 
+
+/* Resolve an instance field offset by name from Il2CppClass.fields.
+ * FieldInfo stride 0x20, name pointer at +0x00, int32 offset at +0x18.
+ * Accepts both "Name" and the compiler backing-field form "<Name>k__BackingField".
+ * Returns -1 when the class or field is unavailable; never guesses. */
+static int class_field_offset(uint64_t klass, const char* want) {
+    if (!PL(klass) || !want || !*want) return -1;
+    uint64_t fields = rr_u64(klass + 0x80);
+    if (!PL(fields)) return -1;
+    int n = (int)(rr_u32(klass + 0x120) & 0xFFFFu);
+    if (n <= 0 || n > 1024) return -1;
+    char wrapped[160];
+    snprintf(wrapped, sizeof(wrapped), "<%s>k__BackingField", want);
+    for (int i = 0; i < n; ++i) {
+        uint64_t fi = fields + (uint64_t)i * 0x20;
+        uint64_t np = rr_u64(fi);
+        if (!PL(np)) break;
+        char fn[160] = {0};
+        if (rr_cstr(np, fn, sizeof(fn)) <= 0) break;
+        unsigned char c0 = (unsigned char)fn[0];
+        if (c0 < 0x20 || c0 > 0x7E) break;
+        if (!strcmp(fn, want) || !strcmp(fn, wrapped))
+            return (int)rr_i32(fi + 0x18);
+    }
+    return -1;
+}
+
+/* Cached per-class resolutions. Reset when the character class changes. */
+static uint64_t g_kd_class = 0;
+static int g_off_knockdown = -1;
+static int g_off_stance    = -1;
+
+static void kd_cache_reset(uint64_t klass) {
+    if (g_kd_class == klass) return;
+    g_kd_class = klass;
+    g_off_knockdown = class_field_offset(klass, "KnockdownModel");
+    if (g_off_knockdown < 0) g_off_knockdown = class_field_offset(klass, "Knockdown");
+    if (g_off_knockdown < 0) g_off_knockdown = class_field_offset(klass, "IsKnockdown");
+    g_off_stance = class_field_offset(klass, "BattleStanceModel");
+    if (g_off_stance < 0) g_off_stance = (int)RR_OFF_CHAR_STANCE;
+}
 /* Dump Il2CppClass.fields for one class: name and instance offset per field.
  * The fields pointer sits at +0x80 and FieldInfo has a 0x20 stride with the
  * name at +0x00 and the offset at +0x18 for this runtime. The walk stops at the
@@ -5504,6 +5545,49 @@ static void snapshot_read_spread(uint64_t character, RR_PLAYER* out) {
     out->has_fake_spread_data = 1;
 }
 
+/* Knocked state. Independent of the skeleton: a downed player often loses its
+ * rig, which is why a height-only heuristic classified it as standing.
+ * Chain: char -> KnockdownModel -> +0x10 -> BoolData -> +0x18.
+ * Returns -1 when the chain cannot be validated; never guesses "downed". */
+static int read_knockdown(uint64_t character) {
+    if (!PL(character) || rr_u64(character) != g_k_char) return -1;
+    kd_cache_reset(g_k_char);
+    int off = g_off_knockdown;
+    if (off < 0) return -1;
+    uint64_t model = rr_u64(character + (uint64_t)off);
+    if (!PL(model)) return -1;
+    uint64_t data = rr_u64(model + RR_OFF_KNOCKDOWN_ISDOWN);
+    if (!PL(data)) return -1;
+    uint8_t v = 0;
+    if (!rr_read(data + RR_OFF_BOOL_VALUE, &v, 1) || v > 1) return -1;
+    return v ? 1 : 0;
+}
+
+/* Stance name as a secondary signal. Some builds fold prone into the stance
+ * enum; unknown names return -1 so an unrecognised token never marks a target. */
+static int read_stance_prone(uint64_t character) {
+    if (!PL(character) || rr_u64(character) != g_k_char) return -1;
+    kd_cache_reset(g_k_char);
+    if (g_off_stance < 0) return -1;
+    uint64_t stance = rr_u64(character + (uint64_t)g_off_stance);
+    if (!u_is(stance, "BattleStanceModel")) return -1;
+    uint64_t ref = rr_u64(stance + RR_OFF_STANCE_REF);
+    if (!PL(ref)) return -1;
+    uint64_t item = rr_u64(ref + RR_OFF_REF_VALUE);
+    if (!PL(item)) return -1;
+    uint64_t np = rr_u64(item + RR_OFF_DESC_NAME);
+    char name[48];
+    if (!PL(np) || rr_cstr(np, name, sizeof(name)) <= 0) return -1;
+    for (char* q = name; *q; ++q)
+        if (*q >= 'A' && *q <= 'Z') *q = (char)(*q - 'A' + 'a');
+    if (strstr(name,"knock") || strstr(name,"down") || strstr(name,"prone") ||
+        strstr(name,"lying") || strstr(name,"crawl") || strstr(name,"wound")) return 1;
+    if (strstr(name,"stand") || strstr(name,"idle") || strstr(name,"walk") ||
+        strstr(name,"run")   || strstr(name,"sprint")|| strstr(name,"crouch")||
+        strstr(name,"jump")  || strstr(name,"fall")  || strstr(name,"aim")) return 0;
+    return -1;
+}
+
 static int snapshot_read(RR_PLAYER* out, int max, RR_CAMERA* cam) {
     if (!out || max <= 0) return 0;
     BR_Config* cfg = br_get();
@@ -5597,6 +5681,7 @@ static int snapshot_read(RR_PLAYER* out, int max, RR_CAMERA* cam) {
         p->id = snap[i].id;
         if (snap[i].cham_ready) p->cham_rig = snap[i].cham_native[0];
         p->health = -1;
+        p->knockdown = -1; p->stance_prone = -1;
         /* Health feeds the aim and trigger filters as well as the bar: a corpse
          * reads zero and must never win a target pick, even when the health
          * column is hidden. */
@@ -5618,6 +5703,9 @@ static int snapshot_read(RR_PLAYER* out, int max, RR_CAMERA* cam) {
             if (PL(dead_data) && rr_read(dead_data + RR_OFF_PRIM_VALUE, &is_dead, 1) && is_dead)
                 p->dead = 1;
         }
+        p->knockdown    = read_knockdown(snap[i].obj);
+        p->stance_prone = read_stance_prone(snap[i].obj);
+        p->snap_pub_at  = pose_now;
         p->armor = snap[i].armor;
         p->crouch = snap[i].crouch;
         p->local = snap[i].local;

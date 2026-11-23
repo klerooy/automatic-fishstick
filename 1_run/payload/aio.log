@@ -1,4 +1,4 @@
-﻿payload folder: C:\Users\LagBag\Desktop\RRTool_Public_NoKey\1_run\payload
+﻿payload folder: C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\payload
 Felonious Funnery  —  Rob Run
 hypervisor present : no
 VBS registry       : disabled
@@ -6,7 +6,18 @@ memory integrity   : disabled
 credential guard   : not set
 virtualization check passed
 settings: menu_delay=5 menu_wait_window=1 attach_timeout=120 reattach_attempts=3 hide_launcher=0 masquerade=1
-extracted RobRunPort.exe (2289664 bytes)
 kernel-mode.sys SHA256 5bbe7abb3e60e176195db2989704d863791df300219c3f13938117335319b2d1
 driver is already mapped in this session; skipping kd2.exe
-driver ready (Key 0x9B9BFD11)
+driver ready (Key 0x61D574D9)
+ROB RUN.exe is running (pid 12440)
+game window "ROB RUN" 1920x1080 (pid 12440) after 3 s
+waiting 5 s for the main menu
+menu wait finished
+overlay runs as dllhost.exe in C:\Users\adm\AppData\Local\Temp
+overlay started (pid 17140)
+no game data after 120 s; reattaching (1/3)
+moved robrun_runtime.txt aside for a clean rescan
+overlay runs as SearchProtocolHost21048.exe in C:\Users\adm\AppData\Local\Temp
+overlay started (pid 22448)
+overlay attached (game pid 12440)
+done

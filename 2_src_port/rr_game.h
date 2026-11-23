@@ -111,6 +111,9 @@ typedef struct RR_PLAYER {
     int      is_npc;
     int      armor;                /* -1 unknown, 0 none, 1 has armour       */
     int      crouch;               /* -1 unknown, 0 standing, 1 crouched     */
+    int      knockdown;            /* -1 unknown, 0 upright, 1 knocked (replicated) */
+    int      stance_prone;         /* -1 unknown, 0 upright, 1 prone by stance name */
+    uint32_t snap_pub_at;          /* timeGetTime when this entry was published     */
     char     role[20];             /* PlayerRoleDescription.Name            */
     char     weapon[20];           /* WeaponDescription.Name (dp9_m1, ...)   */
     char     name[RR_NAME_MAX];

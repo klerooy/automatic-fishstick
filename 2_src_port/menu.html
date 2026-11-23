@@ -346,7 +346,7 @@ body[data-preview="1"] #preview{display:inline-block}
         <path d="M14 34V14h13l-2 5h-6v4h6l-2 5h-4v6h-5Z" fill="#a5ff36"/>
         <path d="M26 34V20l3-6h7l-2 5h-3v4h4l-2 5h-2v6h-5Z" fill="#9b5cff"/>
       </svg>
-      <div><b>Felonious <i>Funnery</i></b><span>Rob Run Â· Private build</span></div>
+      <div><b>Felonious <i>Funnery</i></b><span>Rob Run · <em id="ver" style="font-style:normal;color:var(--accent)">v?</em></span></div>
     </div>
     <div class="spacer"></div>
     <span class="pill" id="pill" data-live="0" role="status"><i aria-hidden="true"></i><em>No game</em></span>
@@ -713,6 +713,7 @@ body[data-preview="1"] #preview{display:inline-block}
     <span class="dot" id="fdot" aria-hidden="true"></span>
     <span id="game">Waiting for game</span>
     <span id="preview">Preview</span>
+    <span id="fver" style="color:var(--accent);font-weight:500"></span>
     <span class="keys">
       <span><b>F1</b> menu</span>
       <span><b>Insert</b> overlay</span>
@@ -950,6 +951,24 @@ window.addEventListener("hashchange", () => {
   const target = tabs.find(tab => "#" + tab.dataset.tab === location.hash);
   if (target) activate(target);
 });
+</script>
+<script>
+/* Build version display — independent listener, does not modify existing handlers. */
+(function(){
+  function setVer(v){
+    var t='v'+v;
+    var h=document.getElementById('ver'); if(h) h.textContent=t;
+    var f=document.getElementById('fver'); if(f) f.textContent=t;
+  }
+  if(window.chrome&&window.chrome.webview){
+    window.chrome.webview.addEventListener('message',function(e){
+      var s=typeof e.data==='string'?e.data:'';
+      if(s.indexOf('state:')===0){
+        try{var c=JSON.parse(s.slice(6));if(c.build_version!==undefined)setVer(c.build_version);}catch(x){}
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>

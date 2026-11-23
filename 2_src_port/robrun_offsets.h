@@ -141,5 +141,13 @@
 #define RR_OFF_ITEM_DATA                 0x10u /* InventorySlotItemModel._data */
 #define RR_OFF_CHARINV_BACKPACK          0x20u /* CharacterInventoryModel._backpackSlotModel */
 #define RR_OFF_CHARINV_STARTLINES        0x28u /* CharacterInventoryModel._startLinesCount */
-
+/* Knockdown/knockout state. Names verified in offsets/type_index.txt (AssetRipper
+ * catalog, Unity 6000.3.18f1): BattleCharacterKnockdownExtensions,
+ * CharacterKnockoutOrDeathExtensions, Models.Systems.KnockdownSystem.
+ * The catalog carries declarations only, no instance offsets, so every offset
+ * below is resolved BY FIELD NAME at runtime through Il2CppClass.fields.
+ * These constants are fallbacks used only when name resolution fails. */
+#define RR_OFF_CHAR_KNOCKDOWN_FALLBACK   0x2A8u  /* UNVERIFIED - resolver preferred */
+#define RR_OFF_KNOCKDOWN_ISDOWN          0x10u   /* PrimitiveModel`1 -> BoolData    */
+#define RR_OFF_BOOL_VALUE                0x18u   /* BoolData.value                  */
 #endif /* ROBRUN_OFFSETS_H */
