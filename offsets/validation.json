@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "validated_at_utc": "2026-11-22T16:46:42.804637+00:00",
+  "status": "passed",
+  "scope": {
+    "catalog_dir": "C:\\Users\\LagBag\\Documents\\Codex\\2026-11-22\\x20\\work\\json_catalog",
+    "inventory_root": "C:\\Users\\LagBag\\Desktop\\AssetRipper_win_x64\\Test\\AssetRipper_export_20261122_153035",
+    "expected_assemblies": 217,
+    "source_members": "C:\\Users\\LagBag\\Documents\\Codex\\2026-11-22\\x20\\work\\source_members.json"
+  },
+  "coverage": {
+    "inventory_assemblies": 217,
+    "progress_assemblies": 217,
+    "json_assemblies": 217,
+    "inventory_groups_represented": 217,
+    "all_inventory_groups_exported": true
+  },
+  "statistics": {
+    "assembly_json_bytes": 658721440,
+    "assemblies": 217,
+    "types": 37990,
+    "methods": 265414,
+    "fields": 162902,
+    "properties": 64099,
+    "events": 476,
+    "accessor_references": 87329,
+    "parameters": 282798,
+    "call_references": 24437,
+    "enum_types": 3039,
+    "enum_literals": 22681,
+    "parameters_without_metadata_name": 421,
+    "source_files": 11
+  },
+  "observed_body_kinds": {
+    "returns_null": 38190,
+    "runtime_or_internal_call": 3004,
+    "no_operation": 67196,
+    "constant_return": 44425,
+    "constructor_initialization": 27290,
+    "default_initialization": 25954,
+    "field_getter": 30052,
+    "field_setter": 15647,
+    "abstract_or_interface": 7324,
+    "native_import": 3379,
+    "other_il": 2472,
+    "throws_null": 467,
+    "forwarding_call": 3,
+    "constructor_il": 11
+  },
+  "description_basis_counts": {
+    "inferred_from_name": 231731,
+    "compiler_convention": 82820,
+    "unknown": 86435,
+    "declared_metadata": 129895
+  },
+  "checked_examples": {
+    "field_getter": {
+      "id": "Ak.Wwise.Api.WAAPI:0x06000059",
+      "declaring_type": "Wamp+ErrorException",
+      "name": "get_Json",
+      "return_type": "string",
+      "opcodes": [
+        "ldarg.0",
+        "ldfld",
+        "ret"
+      ]
+    },
+    "enum_StartGameErrorCode": {
+      "None": 0,
+      "ConfigLoadingFailed": 101,
+      "ConfigDecodeFailed": 102
+    },
+    "UnityEntry.Awake": {
+      "id": "Game:0x0600006B",
+      "return_type": "void",
+      "parameter_count": 0,
+      "body_kind": "no_operation",
+      "opcodes": [
+        "ret"
+      ],
+      "call_count": 0
+    },
+    "UnityEntry.Update": {
+      "id": "Game:0x0600006D",
+      "return_type": "void",
+      "parameter_count": 0,
+      "body_kind": "no_operation",
+      "opcodes": [
+        "ret"
+      ],
+      "call_count": 0
+    },
+    "UnityEntry.get_Game": {
+      "id": "Game:0x06000071",
+      "return_type": "Game.Game",
+      "parameter_count": 0,
+      "body_kind": "returns_null",
+      "opcodes": [
+        "ldnull",
+        "ret"
+      ],
+      "call_count": 0
+    },
+    "UnityEntry.get_Options": {
+      "id": "Game:0x06000072",
+      "return_type": "Game.Start.Options",
+      "parameter_count": 0,
+      "body_kind": "returns_null",
+      "opcodes": [
+        "ldnull",
+        "ret"
+      ],
+      "call_count": 0
+    }
+  },
+  "error_count": 0,
+  "error_counts_by_code": {},
+  "errors": [],
+  "warning_count": 0,
+  "warning_counts_by_code": {},
+  "warnings": [],
+  "limitations": [
+    "Checks completeness and internal consistency of the static export, not runtime correctness or original game behavior.",
+    "TypeDef count excludes the synthetic <Module> row; member counts include every exported member.",
+    "Unnamed metadata parameters remain null; argN is only a display label.",
+    "Known body examples are assertions about the supplied export, not its original pre-export implementation."
+  ]
+}

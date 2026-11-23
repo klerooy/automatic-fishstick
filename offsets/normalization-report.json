@@ -1,0 +1,5840 @@
+{
+  "version": "1.0.0",
+  "assemblies": [
+    {
+      "assembly": "__Generated",
+      "path": "__Generated.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3,
+        "types": 5,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 1,
+        "body_returns_null": 1,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Ak.Wwise.Api.WAAPI",
+      "path": "Ak.Wwise.Api.WAAPI.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 57,
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 420,
+        "events": 2,
+        "methods": 160,
+        "types": 85,
+        "properties": 9,
+        "managed_bodies_read": 152,
+        "body_no_operation": 45,
+        "body_returns_null": 24,
+        "body_constant_return": 5,
+        "body_constructor_initialization": 57,
+        "body_default_initialization": 3,
+        "body_field_getter": 9,
+        "body_field_setter": 9,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.Addressables",
+      "path": "AK.Wwise.Unity.Addressables.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 22,
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 130,
+        "types": 34,
+        "fields": 93,
+        "properties": 20,
+        "events": 1,
+        "managed_bodies_read": 125,
+        "body_no_operation": 58,
+        "body_constructor_initialization": 22,
+        "body_returns_null": 28,
+        "body_constant_return": 14,
+        "body_abstract_or_interface": 1,
+        "body_default_initialization": 3,
+        "body_runtime_or_internal_call": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.API",
+      "path": "AK.Wwise.Unity.API.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 75,
+        "reclassified_trivial_constructor_to_constructor_initialization": 216
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 1533,
+        "properties": 454,
+        "methods": 3670,
+        "types": 199,
+        "events": 0,
+        "managed_bodies_read": 2217,
+        "body_no_operation": 805,
+        "body_constant_return": 957,
+        "body_returns_null": 148,
+        "body_default_initialization": 75,
+        "body_constructor_initialization": 216,
+        "body_native_import": 1403,
+        "body_field_getter": 8,
+        "body_field_setter": 8,
+        "body_abstract_or_interface": 6,
+        "body_runtime_or_internal_call": 44,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.API.WwiseTypes",
+      "path": "AK.Wwise.Unity.API.WwiseTypes.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 28,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "properties": 62,
+        "methods": 165,
+        "types": 36,
+        "fields": 81,
+        "events": 0,
+        "managed_bodies_read": 157,
+        "body_constant_return": 45,
+        "body_constructor_initialization": 28,
+        "body_returns_null": 32,
+        "body_no_operation": 50,
+        "body_default_initialization": 2,
+        "body_abstract_or_interface": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.Logging",
+      "path": "AK.Wwise.Unity.Logging.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 35,
+        "types": 8,
+        "fields": 20,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 35,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 2,
+        "body_no_operation": 29,
+        "body_returns_null": 2,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.MonoBehaviour",
+      "path": "AK.Wwise.Unity.MonoBehaviour.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 64,
+        "reclassified_default_values_to_default_initialization": 16
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 294,
+        "types": 75,
+        "methods": 436,
+        "properties": 56,
+        "events": 0,
+        "managed_bodies_read": 428,
+        "body_no_operation": 235,
+        "body_constructor_initialization": 64,
+        "body_returns_null": 40,
+        "body_default_initialization": 16,
+        "body_constant_return": 69,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "body_abstract_or_interface": 4,
+        "body_runtime_or_internal_call": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.OpenXR",
+      "path": "AK.Wwise.Unity.OpenXR.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 2,
+        "types": 2,
+        "fields": 5,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 2,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.Timeline",
+      "path": "AK.Wwise.Unity.Timeline.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 9,
+        "reclassified_trivial_constructor_to_constructor_initialization": 13
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 108,
+        "properties": 15,
+        "methods": 89,
+        "types": 19,
+        "events": 0,
+        "managed_bodies_read": 89,
+        "body_constant_return": 15,
+        "body_default_initialization": 9,
+        "body_constructor_initialization": 13,
+        "body_no_operation": 31,
+        "body_field_getter": 10,
+        "body_field_setter": 10,
+        "body_returns_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AK.Wwise.Unity.Utilities",
+      "path": "AK.Wwise.Unity.Utilities.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 4,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 17,
+        "types": 9,
+        "fields": 13,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 17,
+        "body_no_operation": 7,
+        "body_returns_null": 1,
+        "body_constant_return": 4,
+        "body_constructor_initialization": 4,
+        "body_default_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Analytics",
+      "path": "Analytics.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 61,
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1242,
+        "types": 78,
+        "fields": 1134,
+        "properties": 221,
+        "events": 0,
+        "managed_bodies_read": 1233,
+        "body_constructor_initialization": 61,
+        "body_default_initialization": 2,
+        "body_returns_null": 650,
+        "body_no_operation": 137,
+        "body_field_getter": 126,
+        "body_other_il": 1,
+        "body_field_setter": 90,
+        "body_abstract_or_interface": 9,
+        "body_constant_return": 166,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "AnalyticsWindows",
+      "path": "AnalyticsWindows.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 152,
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1166,
+        "types": 226,
+        "fields": 831,
+        "properties": 132,
+        "events": 0,
+        "managed_bodies_read": 1073,
+        "body_returns_null": 157,
+        "body_constructor_initialization": 152,
+        "body_no_operation": 491,
+        "body_abstract_or_interface": 85,
+        "body_constant_return": 184,
+        "body_field_getter": 51,
+        "body_field_setter": 35,
+        "body_default_initialization": 3,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Assembly-CSharp-firstpass",
+      "path": "Assembly-CSharp-firstpass.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 7,
+        "types": 6,
+        "fields": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 7,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_no_operation": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Assembly-CSharp",
+      "path": "Assembly-CSharp.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 11
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 56,
+        "methods": 49,
+        "types": 15,
+        "properties": 9,
+        "events": 0,
+        "managed_bodies_read": 47,
+        "body_no_operation": 20,
+        "body_constant_return": 4,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 11,
+        "body_abstract_or_interface": 2,
+        "body_returns_null": 10,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Auth",
+      "path": "Auth.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 75,
+        "reclassified_default_values_to_default_initialization": 4,
+        "reclassified_default_values_to_other_il": 21
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 527,
+        "types": 47,
+        "fields": 71,
+        "properties": 90,
+        "events": 0,
+        "managed_bodies_read": 524,
+        "body_constructor_initialization": 75,
+        "body_default_initialization": 4,
+        "body_returns_null": 105,
+        "body_abstract_or_interface": 3,
+        "body_constant_return": 279,
+        "body_field_getter": 20,
+        "body_field_setter": 20,
+        "body_other_il": 21,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "BakedLighting",
+      "path": "BakedLighting.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 7,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 36,
+        "methods": 18,
+        "types": 12,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 18,
+        "body_no_operation": 7,
+        "body_constructor_initialization": 7,
+        "body_default_initialization": 2,
+        "body_constant_return": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Battle",
+      "path": "Battle.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 3769,
+        "reclassified_default_values_to_default_initialization": 465,
+        "reclassified_default_values_to_other_il": 147
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 25495,
+        "types": 4192,
+        "fields": 23343,
+        "properties": 6584,
+        "events": 4,
+        "managed_bodies_read": 25215,
+        "body_constructor_initialization": 3769,
+        "body_field_getter": 5446,
+        "body_field_setter": 4268,
+        "body_constant_return": 2190,
+        "body_no_operation": 7517,
+        "body_returns_null": 1407,
+        "body_default_initialization": 465,
+        "body_abstract_or_interface": 280,
+        "body_other_il": 147,
+        "body_throws_null": 5,
+        "body_forwarding_call": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Bootstrap",
+      "path": "Bootstrap.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 37,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 120,
+        "types": 32,
+        "fields": 70,
+        "properties": 7,
+        "events": 0,
+        "managed_bodies_read": 118,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 37,
+        "body_field_getter": 2,
+        "body_returns_null": 4,
+        "body_no_operation": 71,
+        "body_other_il": 1,
+        "body_abstract_or_interface": 2,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Builder.CoverageBrush",
+      "path": "Builder.CoverageBrush.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 7,
+        "types": 6,
+        "fields": 14,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 7,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 2,
+        "body_no_operation": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Cinemachine",
+      "path": "Cinemachine.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 153,
+        "reclassified_default_values_to_default_initialization": 172,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 1237,
+        "methods": 1423,
+        "types": 248,
+        "properties": 252,
+        "events": 0,
+        "managed_bodies_read": 1338,
+        "body_no_operation": 492,
+        "body_constructor_initialization": 153,
+        "body_constant_return": 303,
+        "body_default_initialization": 172,
+        "body_field_getter": 44,
+        "body_field_setter": 43,
+        "body_returns_null": 129,
+        "body_abstract_or_interface": 49,
+        "body_runtime_or_internal_call": 36,
+        "body_other_il": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Cinemachine.TPSO",
+      "path": "Cinemachine.TPSO.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 10,
+        "reclassified_trivial_constructor_to_constructor_initialization": 9
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 59,
+        "types": 18,
+        "fields": 64,
+        "properties": 11,
+        "events": 0,
+        "managed_bodies_read": 59,
+        "body_default_initialization": 10,
+        "body_constructor_initialization": 9,
+        "body_returns_null": 3,
+        "body_no_operation": 24,
+        "body_field_getter": 4,
+        "body_field_setter": 4,
+        "body_constant_return": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Client",
+      "path": "Client.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 35,
+        "reclassified_trivial_constructor_to_constructor_initialization": 163,
+        "reclassified_default_values_to_other_il": 19
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 771,
+        "properties": 226,
+        "methods": 1313,
+        "types": 213,
+        "events": 0,
+        "managed_bodies_read": 1096,
+        "body_default_initialization": 35,
+        "body_constructor_initialization": 163,
+        "body_constant_return": 242,
+        "body_returns_null": 236,
+        "body_abstract_or_interface": 217,
+        "body_field_getter": 99,
+        "body_no_operation": 247,
+        "body_field_setter": 51,
+        "body_throws_null": 4,
+        "body_other_il": 19,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "com.rlabrecque.steamworks.net",
+      "path": "com.rlabrecque.steamworks.net.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 446,
+        "reclassified_trivial_constructor_to_constructor_initialization": 71,
+        "reclassified_default_values_to_other_il": 43
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3049,
+        "types": 496,
+        "fields": 3129,
+        "properties": 38,
+        "events": 2,
+        "managed_bodies_read": 1993,
+        "body_default_initialization": 446,
+        "body_constructor_initialization": 71,
+        "body_no_operation": 335,
+        "body_constant_return": 968,
+        "body_abstract_or_interface": 7,
+        "body_returns_null": 128,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "body_other_il": 43,
+        "body_native_import": 933,
+        "body_runtime_or_internal_call": 116,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "CommunityToolkit.HighPerformance",
+      "path": "CommunityToolkit.HighPerformance.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 107,
+        "reclassified_default_values_to_other_il": 3,
+        "reclassified_default_values_to_default_initialization": 143
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 720,
+        "types": 93,
+        "fields": 169,
+        "properties": 101,
+        "events": 0,
+        "managed_bodies_read": 706,
+        "body_constructor_initialization": 107,
+        "body_no_operation": 200,
+        "body_returns_null": 55,
+        "body_other_il": 3,
+        "body_default_initialization": 143,
+        "body_constant_return": 153,
+        "body_throws_null": 41,
+        "body_abstract_or_interface": 14,
+        "body_field_getter": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Constraints",
+      "path": "Constraints.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 7
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 50,
+        "types": 24,
+        "fields": 96,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 49,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 7,
+        "body_returns_null": 1,
+        "body_no_operation": 30,
+        "body_constant_return": 10,
+        "body_abstract_or_interface": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Content",
+      "path": "Content.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 4,
+        "reclassified_trivial_constructor_to_constructor_initialization": 23
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 166,
+        "types": 50,
+        "fields": 104,
+        "properties": 36,
+        "events": 0,
+        "managed_bodies_read": 145,
+        "body_default_initialization": 4,
+        "body_constructor_initialization": 23,
+        "body_field_getter": 6,
+        "body_returns_null": 47,
+        "body_no_operation": 52,
+        "body_abstract_or_interface": 21,
+        "body_constant_return": 11,
+        "body_field_setter": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Core",
+      "path": "Core.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 49,
+        "reclassified_default_values_to_default_initialization": 31,
+        "reclassified_default_values_to_other_il": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 311,
+        "types": 83,
+        "fields": 206,
+        "properties": 45,
+        "events": 0,
+        "managed_bodies_read": 291,
+        "body_constructor_initialization": 49,
+        "body_default_initialization": 31,
+        "body_returns_null": 63,
+        "body_no_operation": 96,
+        "body_constant_return": 30,
+        "body_field_getter": 12,
+        "body_field_setter": 7,
+        "body_abstract_or_interface": 20,
+        "body_other_il": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "CustomLogger",
+      "path": "CustomLogger.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 15,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 75,
+        "types": 20,
+        "fields": 49,
+        "properties": 13,
+        "events": 0,
+        "managed_bodies_read": 68,
+        "body_constructor_initialization": 15,
+        "body_default_initialization": 2,
+        "body_field_getter": 12,
+        "body_returns_null": 6,
+        "body_no_operation": 25,
+        "body_field_setter": 4,
+        "body_abstract_or_interface": 7,
+        "body_constant_return": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "DevToDev.Analytics",
+      "path": "DevToDev.Analytics.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 26,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 192,
+        "methods": 329,
+        "types": 61,
+        "properties": 39,
+        "events": 4,
+        "managed_bodies_read": 315,
+        "body_returns_null": 84,
+        "body_no_operation": 142,
+        "body_constructor_initialization": 26,
+        "body_field_getter": 22,
+        "body_field_setter": 12,
+        "body_constant_return": 27,
+        "body_abstract_or_interface": 3,
+        "body_native_import": 3,
+        "body_runtime_or_internal_call": 8,
+        "body_default_initialization": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "DevToDev.Core",
+      "path": "DevToDev.Core.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 412,
+        "reclassified_default_values_to_default_initialization": 33,
+        "reclassified_default_values_to_other_il": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3603,
+        "types": 756,
+        "properties": 473,
+        "fields": 2527,
+        "events": 58,
+        "managed_bodies_read": 2994,
+        "body_constructor_initialization": 412,
+        "body_no_operation": 987,
+        "body_abstract_or_interface": 601,
+        "body_field_getter": 246,
+        "body_field_setter": 175,
+        "body_constant_return": 313,
+        "body_returns_null": 822,
+        "body_default_initialization": 33,
+        "body_other_il": 6,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "EpicOnlineServices.Authorization",
+      "path": "EpicOnlineServices.Authorization.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 12,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 39,
+        "types": 19,
+        "fields": 46,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 39,
+        "body_constructor_initialization": 12,
+        "body_default_initialization": 1,
+        "body_returns_null": 10,
+        "body_no_operation": 15,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "EpicOnlineServices.SDK",
+      "path": "EpicOnlineServices.SDK.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 608,
+        "reclassified_trivial_constructor_to_constructor_initialization": 118,
+        "reclassified_default_values_to_other_il": 57
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 9121,
+        "types": 2195,
+        "fields": 6159,
+        "properties": 2300,
+        "events": 0,
+        "managed_bodies_read": 6919,
+        "body_default_initialization": 608,
+        "body_constructor_initialization": 118,
+        "body_no_operation": 1452,
+        "body_constant_return": 468,
+        "body_returns_null": 464,
+        "body_other_il": 57,
+        "body_field_getter": 1876,
+        "body_field_setter": 1876,
+        "body_abstract_or_interface": 6,
+        "body_native_import": 640,
+        "body_runtime_or_internal_call": 1556,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "EpicOnlineServices.Utils.Runtime",
+      "path": "EpicOnlineServices.Utils.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 12,
+        "types": 9,
+        "fields": 8,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 9,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 2,
+        "body_returns_null": 1,
+        "body_no_operation": 3,
+        "body_abstract_or_interface": 3,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Game",
+      "path": "Game.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 155,
+        "reclassified_default_values_to_default_initialization": 10,
+        "reclassified_default_values_to_other_il": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1119,
+        "types": 206,
+        "fields": 1090,
+        "properties": 217,
+        "events": 0,
+        "managed_bodies_read": 1102,
+        "body_constructor_initialization": 155,
+        "body_field_getter": 152,
+        "body_field_setter": 129,
+        "body_no_operation": 388,
+        "body_default_initialization": 10,
+        "body_returns_null": 197,
+        "body_constant_return": 66,
+        "body_abstract_or_interface": 17,
+        "body_other_il": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Geometry",
+      "path": "Geometry.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 17,
+        "reclassified_trivial_constructor_to_constructor_initialization": 16
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 75,
+        "types": 11,
+        "fields": 24,
+        "properties": 8,
+        "events": 0,
+        "managed_bodies_read": 75,
+        "body_default_initialization": 17,
+        "body_constructor_initialization": 16,
+        "body_field_getter": 6,
+        "body_no_operation": 10,
+        "body_constant_return": 26,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "GizmosExtensions",
+      "path": "GizmosExtensions.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 39,
+        "types": 6,
+        "fields": 8,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 39,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_no_operation": 36,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Global",
+      "path": "Global.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 2010,
+        "reclassified_default_values_to_default_initialization": 278,
+        "reclassified_default_values_to_other_il": 149
+      },
+      "nested_type_ref_tokens_fixed": 1,
+      "module_members": [],
+      "statistics": {
+        "methods": 18115,
+        "types": 2332,
+        "fields": 12837,
+        "properties": 5897,
+        "events": 10,
+        "managed_bodies_read": 17823,
+        "body_constructor_initialization": 2010,
+        "body_no_operation": 3512,
+        "body_field_getter": 4493,
+        "body_field_setter": 3666,
+        "body_default_initialization": 278,
+        "body_returns_null": 1615,
+        "body_constant_return": 2100,
+        "body_other_il": 149,
+        "body_abstract_or_interface": 272,
+        "body_native_import": 16,
+        "body_runtime_or_internal_call": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "GlobalWind",
+      "path": "GlobalWind.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 6,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 20,
+        "types": 10,
+        "fields": 37,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 20,
+        "body_default_initialization": 6,
+        "body_constructor_initialization": 5,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "body_constant_return": 2,
+        "body_no_operation": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Grass",
+      "path": "Grass.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 9
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 55,
+        "types": 14,
+        "fields": 64,
+        "properties": 12,
+        "events": 0,
+        "managed_bodies_read": 55,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 9,
+        "body_no_operation": 14,
+        "body_constant_return": 5,
+        "body_field_getter": 11,
+        "body_field_setter": 11,
+        "body_returns_null": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "HBAO.Runtime",
+      "path": "HBAO.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 18,
+        "reclassified_trivial_constructor_to_constructor_initialization": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 181,
+        "types": 31,
+        "fields": 196,
+        "properties": 44,
+        "events": 0,
+        "managed_bodies_read": 181,
+        "body_default_initialization": 18,
+        "body_constructor_initialization": 4,
+        "body_no_operation": 67,
+        "body_constant_return": 36,
+        "body_field_getter": 21,
+        "body_field_setter": 21,
+        "body_returns_null": 14,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "HBAO.Universal.Runtime",
+      "path": "HBAO.Universal.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 6,
+        "reclassified_trivial_constructor_to_constructor_initialization": 28
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 245,
+        "types": 51,
+        "fields": 219,
+        "properties": 47,
+        "events": 0,
+        "managed_bodies_read": 245,
+        "body_default_initialization": 6,
+        "body_constructor_initialization": 28,
+        "body_no_operation": 77,
+        "body_constant_return": 31,
+        "body_field_getter": 43,
+        "body_field_setter": 43,
+        "body_returns_null": 17,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "IK",
+      "path": "IK.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 20,
+        "reclassified_trivial_constructor_to_constructor_initialization": 55,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 344,
+        "types": 84,
+        "fields": 269,
+        "properties": 52,
+        "events": 1,
+        "managed_bodies_read": 326,
+        "body_default_initialization": 20,
+        "body_constructor_initialization": 55,
+        "body_field_getter": 37,
+        "body_field_setter": 37,
+        "body_returns_null": 8,
+        "body_no_operation": 142,
+        "body_abstract_or_interface": 18,
+        "body_other_il": 1,
+        "body_constant_return": 26,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Inputs",
+      "path": "Inputs.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 14,
+        "reclassified_default_values_to_default_initialization": 12,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 205,
+        "properties": 156,
+        "methods": 368,
+        "types": 28,
+        "events": 0,
+        "managed_bodies_read": 234,
+        "body_field_getter": 4,
+        "body_constructor_initialization": 14,
+        "body_no_operation": 42,
+        "body_default_initialization": 12,
+        "body_constant_return": 14,
+        "body_returns_null": 144,
+        "body_other_il": 1,
+        "body_field_setter": 3,
+        "body_abstract_or_interface": 134,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "InstancedRenderer",
+      "path": "InstancedRenderer.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 18,
+        "reclassified_trivial_constructor_to_constructor_initialization": 16,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 113,
+        "types": 29,
+        "fields": 185,
+        "properties": 9,
+        "events": 0,
+        "managed_bodies_read": 106,
+        "body_default_initialization": 18,
+        "body_constructor_initialization": 16,
+        "body_field_getter": 5,
+        "body_field_setter": 2,
+        "body_abstract_or_interface": 7,
+        "body_returns_null": 7,
+        "body_no_operation": 44,
+        "body_constant_return": 13,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "io.sentry.unity.runtime",
+      "path": "io.sentry.unity.runtime.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 8,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 31,
+        "types": 12,
+        "fields": 20,
+        "properties": 4,
+        "events": 0,
+        "managed_bodies_read": 28,
+        "body_constructor_initialization": 8,
+        "body_default_initialization": 2,
+        "body_no_operation": 10,
+        "body_constant_return": 3,
+        "body_returns_null": 5,
+        "body_native_import": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "JobsUtility",
+      "path": "JobsUtility.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 14,
+        "reclassified_default_values_to_default_initialization": 14
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 59,
+        "types": 19,
+        "fields": 35,
+        "properties": 6,
+        "events": 0,
+        "managed_bodies_read": 58,
+        "body_constructor_initialization": 14,
+        "body_default_initialization": 14,
+        "body_constant_return": 9,
+        "body_no_operation": 21,
+        "body_abstract_or_interface": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "KdTreeLib",
+      "path": "KdTreeLib.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 13,
+        "reclassified_trivial_constructor_to_constructor_initialization": 16,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 37,
+        "types": 24,
+        "methods": 150,
+        "properties": 36,
+        "events": 0,
+        "managed_bodies_read": 107,
+        "body_default_initialization": 13,
+        "body_constructor_initialization": 16,
+        "body_returns_null": 16,
+        "body_no_operation": 22,
+        "body_abstract_or_interface": 43,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "body_constant_return": 35,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.ColorTheme",
+      "path": "Kefir.ColorTheme.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 6,
+        "reclassified_default_values_to_default_initialization": 4,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 26,
+        "properties": 6,
+        "methods": 37,
+        "types": 11,
+        "events": 1,
+        "managed_bodies_read": 37,
+        "body_returns_null": 5,
+        "body_constant_return": 4,
+        "body_constructor_initialization": 6,
+        "body_default_initialization": 4,
+        "body_no_operation": 13,
+        "body_other_il": 1,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Common.ReactCore",
+      "path": "Kefir.Common.ReactCore.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 5,
+        "reclassified_trivial_constructor_to_constructor_initialization": 9
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 100,
+        "types": 27,
+        "properties": 24,
+        "events": 10,
+        "fields": 20,
+        "managed_bodies_read": 74,
+        "body_default_initialization": 5,
+        "body_constructor_initialization": 9,
+        "body_no_operation": 32,
+        "body_abstract_or_interface": 22,
+        "body_runtime_or_internal_call": 4,
+        "body_returns_null": 16,
+        "body_constant_return": 12,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Analytics",
+      "path": "Kefir.Framework.Analytics.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 6,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 14,
+        "types": 12,
+        "fields": 18,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 11,
+        "body_constructor_initialization": 6,
+        "body_default_initialization": 1,
+        "body_abstract_or_interface": 3,
+        "body_no_operation": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Async",
+      "path": "Kefir.Framework.Async.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 8,
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 52,
+        "types": 17,
+        "fields": 19,
+        "properties": 6,
+        "events": 0,
+        "managed_bodies_read": 39,
+        "body_constructor_initialization": 8,
+        "body_default_initialization": 3,
+        "body_no_operation": 22,
+        "body_abstract_or_interface": 13,
+        "body_field_getter": 1,
+        "body_returns_null": 4,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Compiler",
+      "path": "Kefir.Framework.Compiler.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 9,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 13,
+        "types": 11,
+        "fields": 12,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 13,
+        "body_constructor_initialization": 9,
+        "body_default_initialization": 1,
+        "body_field_getter": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Core",
+      "path": "Kefir.Framework.Core.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 44,
+        "reclassified_default_values_to_default_initialization": 35,
+        "reclassified_default_values_to_other_il": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 286,
+        "types": 76,
+        "fields": 124,
+        "properties": 42,
+        "events": 0,
+        "managed_bodies_read": 229,
+        "body_constructor_initialization": 44,
+        "body_default_initialization": 35,
+        "body_constant_return": 35,
+        "body_returns_null": 31,
+        "body_abstract_or_interface": 57,
+        "body_no_operation": 71,
+        "body_field_getter": 9,
+        "body_field_setter": 1,
+        "body_other_il": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Ecs",
+      "path": "Kefir.Framework.Ecs.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 12,
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 42,
+        "types": 21,
+        "fields": 29,
+        "properties": 10,
+        "events": 0,
+        "managed_bodies_read": 30,
+        "body_constructor_initialization": 12,
+        "body_default_initialization": 2,
+        "body_abstract_or_interface": 12,
+        "body_constant_return": 3,
+        "body_field_getter": 1,
+        "body_no_operation": 10,
+        "body_returns_null": 1,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.ENetCS",
+      "path": "Kefir.Framework.ENetCS.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 10,
+        "reclassified_default_values_to_default_initialization": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 139,
+        "types": 40,
+        "fields": 144,
+        "properties": 28,
+        "events": 0,
+        "managed_bodies_read": 79,
+        "body_constructor_initialization": 10,
+        "body_default_initialization": 6,
+        "body_constant_return": 32,
+        "body_no_operation": 30,
+        "body_returns_null": 1,
+        "body_native_import": 36,
+        "body_runtime_or_internal_call": 24,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Http",
+      "path": "Kefir.Framework.Http.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 197,
+        "reclassified_default_values_to_default_initialization": 34,
+        "reclassified_default_values_to_other_il": 20
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1575,
+        "types": 170,
+        "fields": 644,
+        "properties": 215,
+        "events": 0,
+        "managed_bodies_read": 1543,
+        "body_constructor_initialization": 197,
+        "body_default_initialization": 34,
+        "body_abstract_or_interface": 32,
+        "body_returns_null": 634,
+        "body_constant_return": 374,
+        "body_no_operation": 134,
+        "body_field_getter": 84,
+        "body_field_setter": 66,
+        "body_other_il": 20,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.MessagePack",
+      "path": "Kefir.Framework.MessagePack.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 7,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 82,
+        "types": 10,
+        "fields": 59,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 82,
+        "body_constructor_initialization": 7,
+        "body_default_initialization": 2,
+        "body_no_operation": 41,
+        "body_returns_null": 28,
+        "body_constant_return": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Network.Client",
+      "path": "Kefir.Framework.Network.Client.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 58,
+        "reclassified_default_values_to_default_initialization": 13,
+        "reclassified_default_values_to_other_il": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 474,
+        "types": 43,
+        "fields": 105,
+        "properties": 65,
+        "events": 0,
+        "managed_bodies_read": 434,
+        "body_constructor_initialization": 58,
+        "body_default_initialization": 13,
+        "body_no_operation": 51,
+        "body_other_il": 8,
+        "body_abstract_or_interface": 40,
+        "body_constant_return": 162,
+        "body_returns_null": 76,
+        "body_field_getter": 33,
+        "body_field_setter": 33,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Network",
+      "path": "Kefir.Framework.Network.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 12,
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 42,
+        "types": 18,
+        "fields": 22,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 35,
+        "body_constructor_initialization": 12,
+        "body_default_initialization": 3,
+        "body_no_operation": 14,
+        "body_constant_return": 2,
+        "body_abstract_or_interface": 7,
+        "body_field_getter": 3,
+        "body_returns_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Replication",
+      "path": "Kefir.Framework.Replication.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 73,
+        "reclassified_default_values_to_default_initialization": 75,
+        "reclassified_default_values_to_other_il": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 641,
+        "types": 123,
+        "fields": 126,
+        "properties": 89,
+        "events": 30,
+        "managed_bodies_read": 449,
+        "body_constructor_initialization": 73,
+        "body_default_initialization": 75,
+        "body_abstract_or_interface": 152,
+        "body_constant_return": 66,
+        "body_no_operation": 169,
+        "body_returns_null": 45,
+        "body_field_getter": 8,
+        "body_field_setter": 7,
+        "body_runtime_or_internal_call": 40,
+        "body_other_il": 4,
+        "body_throws_null": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Rpc",
+      "path": "Kefir.Framework.Rpc.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 31,
+        "reclassified_default_values_to_default_initialization": 15,
+        "reclassified_default_values_to_other_il": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 110,
+        "types": 38,
+        "fields": 37,
+        "properties": 10,
+        "events": 0,
+        "managed_bodies_read": 104,
+        "body_constructor_initialization": 31,
+        "body_default_initialization": 15,
+        "body_no_operation": 19,
+        "body_other_il": 4,
+        "body_abstract_or_interface": 6,
+        "body_returns_null": 11,
+        "body_field_getter": 5,
+        "body_field_setter": 5,
+        "body_constant_return": 14,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.UnityHttp",
+      "path": "Kefir.Framework.UnityHttp.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 10,
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 31,
+        "types": 17,
+        "fields": 35,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 31,
+        "body_constructor_initialization": 10,
+        "body_default_initialization": 1,
+        "body_returns_null": 8,
+        "body_no_operation": 11,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Utility",
+      "path": "Kefir.Framework.Utility.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 24,
+        "reclassified_default_values_to_default_initialization": 7
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 108,
+        "types": 34,
+        "fields": 54,
+        "properties": 14,
+        "events": 0,
+        "managed_bodies_read": 98,
+        "body_constructor_initialization": 24,
+        "body_default_initialization": 7,
+        "body_returns_null": 16,
+        "body_abstract_or_interface": 10,
+        "body_no_operation": 24,
+        "body_field_getter": 8,
+        "body_constant_return": 13,
+        "body_field_setter": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Framework.Value",
+      "path": "Kefir.Framework.Value.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 30,
+        "reclassified_default_values_to_default_initialization": 38,
+        "reclassified_default_values_to_other_il": 26
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 398,
+        "types": 38,
+        "fields": 35,
+        "properties": 38,
+        "events": 0,
+        "managed_bodies_read": 305,
+        "body_constructor_initialization": 30,
+        "body_default_initialization": 38,
+        "body_constant_return": 106,
+        "body_returns_null": 79,
+        "body_no_operation": 26,
+        "body_other_il": 26,
+        "body_abstract_or_interface": 93,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.LayoutWrap",
+      "path": "Kefir.LayoutWrap.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 11
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 60,
+        "types": 18,
+        "fields": 34,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 59,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 11,
+        "body_no_operation": 31,
+        "body_constant_return": 15,
+        "body_returns_null": 1,
+        "body_abstract_or_interface": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Kefir.Tools.InspectorAttributes",
+      "path": "Kefir.Tools.InspectorAttributes.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 4,
+        "types": 8,
+        "fields": 17,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 4,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "LensFlare",
+      "path": "LensFlare.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 28,
+        "types": 13,
+        "fields": 38,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 28,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 5,
+        "body_returns_null": 1,
+        "body_no_operation": 16,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "LightProbesManager",
+      "path": "LightProbesManager.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 15,
+        "reclassified_trivial_constructor_to_constructor_initialization": 21
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 163,
+        "types": 33,
+        "fields": 133,
+        "events": 3,
+        "properties": 18,
+        "managed_bodies_read": 155,
+        "body_default_initialization": 15,
+        "body_constructor_initialization": 21,
+        "body_no_operation": 74,
+        "body_returns_null": 10,
+        "body_abstract_or_interface": 8,
+        "body_field_getter": 11,
+        "body_field_setter": 11,
+        "body_constant_return": 13,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "LODGroupQuality",
+      "path": "LODGroupQuality.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 14,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 88,
+        "types": 23,
+        "fields": 63,
+        "properties": 24,
+        "events": 1,
+        "managed_bodies_read": 78,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 14,
+        "body_returns_null": 13,
+        "body_no_operation": 24,
+        "body_constant_return": 8,
+        "body_field_getter": 13,
+        "body_abstract_or_interface": 10,
+        "body_other_il": 2,
+        "body_field_setter": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "MainMenu",
+      "path": "MainMenu.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 12,
+        "reclassified_trivial_constructor_to_constructor_initialization": 65,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 323,
+        "types": 75,
+        "fields": 322,
+        "properties": 83,
+        "events": 0,
+        "managed_bodies_read": 323,
+        "body_default_initialization": 12,
+        "body_constructor_initialization": 65,
+        "body_no_operation": 86,
+        "body_constant_return": 23,
+        "body_field_getter": 71,
+        "body_field_setter": 58,
+        "body_other_il": 2,
+        "body_returns_null": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "MemoryDetailsTool",
+      "path": "MemoryDetailsTool.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 21,
+        "types": 10,
+        "fields": 29,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 21,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 5,
+        "body_returns_null": 2,
+        "body_no_operation": 10,
+        "body_constant_return": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "MeshCutoutTool",
+      "path": "MeshCutoutTool.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 19,
+        "reclassified_default_values_to_default_initialization": 30
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 139,
+        "types": 35,
+        "fields": 167,
+        "properties": 8,
+        "events": 0,
+        "managed_bodies_read": 139,
+        "body_constructor_initialization": 19,
+        "body_default_initialization": 30,
+        "body_returns_null": 13,
+        "body_no_operation": 42,
+        "body_constant_return": 35,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "MessagePackDLL",
+      "path": "MessagePackDLL.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 330,
+        "reclassified_trivial_constructor_to_constructor_initialization": 388
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 836,
+        "properties": 56,
+        "methods": 1864,
+        "types": 483,
+        "events": 0,
+        "managed_bodies_read": 1819,
+        "body_default_initialization": 330,
+        "body_constructor_initialization": 388,
+        "body_constant_return": 406,
+        "body_returns_null": 163,
+        "body_no_operation": 462,
+        "body_field_getter": 35,
+        "body_field_setter": 35,
+        "body_abstract_or_interface": 33,
+        "body_runtime_or_internal_call": 12,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "MinimapRenderer",
+      "path": "MinimapRenderer.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 27,
+        "types": 10,
+        "fields": 32,
+        "properties": 2,
+        "events": 0,
+        "managed_bodies_read": 27,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 6,
+        "body_no_operation": 16,
+        "body_constant_return": 2,
+        "body_field_getter": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Models",
+      "path": "Models.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 4108,
+        "reclassified_default_values_to_default_initialization": 1155,
+        "reclassified_default_values_to_other_il": 1360
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 36125,
+        "types": 5427,
+        "fields": 21903,
+        "properties": 15756,
+        "events": 0,
+        "managed_bodies_read": 35233,
+        "body_constructor_initialization": 4108,
+        "body_constant_return": 4615,
+        "body_default_initialization": 1155,
+        "body_no_operation": 5173,
+        "body_abstract_or_interface": 844,
+        "body_field_getter": 11816,
+        "body_field_setter": 926,
+        "body_returns_null": 6038,
+        "body_other_il": 1360,
+        "body_throws_null": 41,
+        "body_runtime_or_internal_call": 48,
+        "body_forwarding_call": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Mono.Data.Sqlite",
+      "path": "Mono.Data.Sqlite.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 37,
+        "reclassified_default_values_to_other_il": 1,
+        "reclassified_default_values_to_default_initialization": 9
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 189,
+        "properties": 58,
+        "methods": 503,
+        "types": 50,
+        "events": 1,
+        "managed_bodies_read": 366,
+        "body_constructor_initialization": 37,
+        "body_no_operation": 116,
+        "body_returns_null": 125,
+        "body_constant_return": 78,
+        "body_other_il": 1,
+        "body_default_initialization": 9,
+        "body_abstract_or_interface": 57,
+        "body_native_import": 64,
+        "body_runtime_or_internal_call": 16,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Mono.Security",
+      "path": "Mono.Security.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 86,
+        "reclassified_default_values_to_default_initialization": 9,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 557,
+        "types": 103,
+        "fields": 628,
+        "properties": 137,
+        "events": 0,
+        "managed_bodies_read": 540,
+        "body_returns_null": 209,
+        "body_constructor_initialization": 86,
+        "body_constant_return": 96,
+        "body_no_operation": 111,
+        "body_default_initialization": 9,
+        "body_other_il": 2,
+        "body_abstract_or_interface": 9,
+        "body_field_getter": 13,
+        "body_field_setter": 14,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "mscorlib",
+      "path": "mscorlib.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 1667,
+        "reclassified_default_values_to_default_initialization": 990,
+        "reclassified_default_values_to_other_il": 44,
+        "reclassified_trivial_constructor_to_constructor_il": 11
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 13902,
+        "types": 1885,
+        "fields": 7695,
+        "properties": 2168,
+        "events": 7,
+        "managed_bodies_read": 13239,
+        "body_no_operation": 2994,
+        "body_returns_null": 3374,
+        "body_abstract_or_interface": 483,
+        "body_constructor_initialization": 1667,
+        "body_constant_return": 4052,
+        "body_default_initialization": 990,
+        "body_runtime_or_internal_call": 134,
+        "body_throws_null": 22,
+        "body_other_il": 44,
+        "body_native_import": 46,
+        "body_field_getter": 61,
+        "body_field_setter": 24,
+        "body_constructor_il": 11,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Network",
+      "path": "Network.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 24,
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 204,
+        "types": 40,
+        "fields": 195,
+        "properties": 77,
+        "events": 0,
+        "managed_bodies_read": 184,
+        "body_constructor_initialization": 24,
+        "body_default_initialization": 2,
+        "body_field_getter": 54,
+        "body_field_setter": 21,
+        "body_constant_return": 20,
+        "body_no_operation": 45,
+        "body_returns_null": 17,
+        "body_abstract_or_interface": 20,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Newtonsoft.Json",
+      "path": "Newtonsoft.Json.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 390,
+        "reclassified_default_values_to_default_initialization": 158,
+        "reclassified_default_values_to_other_il": 42
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 4181,
+        "types": 495,
+        "fields": 2195,
+        "properties": 705,
+        "events": 8,
+        "managed_bodies_read": 4060,
+        "body_constructor_initialization": 390,
+        "body_field_getter": 242,
+        "body_no_operation": 1131,
+        "body_returns_null": 1287,
+        "body_constant_return": 615,
+        "body_abstract_or_interface": 85,
+        "body_field_setter": 195,
+        "body_default_initialization": 158,
+        "body_other_il": 42,
+        "body_runtime_or_internal_call": 36,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "OccaSoftware.AutoExposure.Runtime",
+      "path": "OccaSoftware.AutoExposure.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 16
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 79,
+        "types": 32,
+        "fields": 164,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 79,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 16,
+        "body_no_operation": 48,
+        "body_constant_return": 10,
+        "body_returns_null": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "OccaSoftware.MotionBlur.Runtime",
+      "path": "OccaSoftware.MotionBlur.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 13
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 52,
+        "types": 20,
+        "fields": 75,
+        "properties": 2,
+        "events": 0,
+        "managed_bodies_read": 52,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 13,
+        "body_no_operation": 24,
+        "body_constant_return": 9,
+        "body_returns_null": 1,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "PhysicsHitBoxDebugRenderer",
+      "path": "PhysicsHitBoxDebugRenderer.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 23,
+        "types": 8,
+        "fields": 19,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 17,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "body_abstract_or_interface": 6,
+        "body_no_operation": 11,
+        "body_returns_null": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "PhysicsSceneDebugRenderer",
+      "path": "PhysicsSceneDebugRenderer.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 34,
+        "types": 11,
+        "fields": 57,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 27,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 4,
+        "body_abstract_or_interface": 7,
+        "body_no_operation": 17,
+        "body_constant_return": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "PlayerSkeletonDebugRenderer",
+      "path": "PlayerSkeletonDebugRenderer.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 9,
+        "types": 8,
+        "fields": 10,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 8,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "body_abstract_or_interface": 1,
+        "body_no_operation": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Realm",
+      "path": "Realm.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 216,
+        "reclassified_default_values_to_default_initialization": 50,
+        "reclassified_default_values_to_other_il": 17
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1377,
+        "types": 236,
+        "fields": 1219,
+        "properties": 356,
+        "events": 0,
+        "managed_bodies_read": 1375,
+        "body_constructor_initialization": 216,
+        "body_default_initialization": 50,
+        "body_constant_return": 115,
+        "body_no_operation": 302,
+        "body_field_getter": 328,
+        "body_field_setter": 303,
+        "body_returns_null": 44,
+        "body_other_il": 17,
+        "body_abstract_or_interface": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "RealtimeLights",
+      "path": "RealtimeLights.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 36,
+        "types": 15,
+        "fields": 50,
+        "properties": 4,
+        "events": 0,
+        "managed_bodies_read": 33,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 5,
+        "body_abstract_or_interface": 3,
+        "body_field_getter": 3,
+        "body_field_setter": 3,
+        "body_constant_return": 2,
+        "body_no_operation": 17,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "References.Attributes",
+      "path": "References.Attributes.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3,
+        "types": 6,
+        "fields": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 3,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "ReflectionProbes",
+      "path": "ReflectionProbes.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 5,
+        "reclassified_trivial_constructor_to_constructor_initialization": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 33,
+        "types": 11,
+        "fields": 49,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 33,
+        "body_default_initialization": 5,
+        "body_constructor_initialization": 4,
+        "body_returns_null": 4,
+        "body_no_operation": 14,
+        "body_constant_return": 2,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "ReflectionProbesCullingSystem",
+      "path": "ReflectionProbesCullingSystem.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 24,
+        "types": 12,
+        "fields": 30,
+        "properties": 2,
+        "events": 0,
+        "managed_bodies_read": 24,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 5,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "body_constant_return": 1,
+        "body_no_operation": 14,
+        "body_returns_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "RenderersCullingSystem",
+      "path": "RenderersCullingSystem.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 14
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 83,
+        "types": 23,
+        "fields": 85,
+        "properties": 22,
+        "events": 0,
+        "managed_bodies_read": 83,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 14,
+        "body_no_operation": 21,
+        "body_returns_null": 3,
+        "body_field_getter": 20,
+        "body_field_setter": 19,
+        "body_constant_return": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Rendering",
+      "path": "Rendering.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 22,
+        "reclassified_trivial_constructor_to_constructor_initialization": 75
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 402,
+        "types": 94,
+        "fields": 458,
+        "properties": 56,
+        "events": 0,
+        "managed_bodies_read": 402,
+        "body_default_initialization": 22,
+        "body_constructor_initialization": 75,
+        "body_constant_return": 32,
+        "body_no_operation": 180,
+        "body_returns_null": 9,
+        "body_field_getter": 42,
+        "body_field_setter": 42,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "ScreenSpaceReflections",
+      "path": "ScreenSpaceReflections.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 35
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 143,
+        "types": 62,
+        "fields": 424,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 143,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 35,
+        "body_no_operation": 97,
+        "body_returns_null": 3,
+        "body_constant_return": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.Configuration",
+      "path": "Sentry.Configuration.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 8,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 16,
+        "types": 11,
+        "fields": 13,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 16,
+        "body_constructor_initialization": 8,
+        "body_no_operation": 3,
+        "body_returns_null": 4,
+        "body_default_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry",
+      "path": "Sentry.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 252,
+        "reclassified_trivial_constructor_to_constructor_initialization": 468,
+        "reclassified_default_values_to_other_il": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 2374,
+        "properties": 1104,
+        "methods": 4654,
+        "types": 652,
+        "events": 8,
+        "managed_bodies_read": 4381,
+        "body_default_initialization": 252,
+        "body_constructor_initialization": 468,
+        "body_constant_return": 442,
+        "body_returns_null": 937,
+        "body_no_operation": 1144,
+        "body_field_getter": 658,
+        "body_field_setter": 472,
+        "body_abstract_or_interface": 271,
+        "body_other_il": 8,
+        "body_native_import": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.Microsoft.Bcl.AsyncInterfaces",
+      "path": "Sentry.Microsoft.Bcl.AsyncInterfaces.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 27,
+        "reclassified_default_values_to_default_initialization": 12
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 81,
+        "types": 32,
+        "fields": 43,
+        "properties": 17,
+        "events": 0,
+        "managed_bodies_read": 77,
+        "body_constructor_initialization": 27,
+        "body_abstract_or_interface": 4,
+        "body_field_getter": 13,
+        "body_field_setter": 5,
+        "body_default_initialization": 12,
+        "body_no_operation": 17,
+        "body_returns_null": 1,
+        "body_constant_return": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.System.Collections.Immutable",
+      "path": "Sentry.System.Collections.Immutable.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 111,
+        "reclassified_default_values_to_default_initialization": 240,
+        "reclassified_default_values_to_other_il": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1656,
+        "types": 131,
+        "fields": 296,
+        "properties": 340,
+        "events": 0,
+        "managed_bodies_read": 1569,
+        "body_constructor_initialization": 111,
+        "body_constant_return": 357,
+        "body_returns_null": 540,
+        "body_no_operation": 296,
+        "body_field_getter": 7,
+        "body_default_initialization": 240,
+        "body_abstract_or_interface": 87,
+        "body_throws_null": 13,
+        "body_other_il": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.System.Reflection.Metadata",
+      "path": "Sentry.System.Reflection.Metadata.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 376,
+        "reclassified_default_values_to_default_initialization": 950,
+        "reclassified_default_values_to_other_il": 10
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3432,
+        "types": 534,
+        "fields": 3056,
+        "properties": 864,
+        "events": 0,
+        "managed_bodies_read": 3393,
+        "body_constructor_initialization": 376,
+        "body_constant_return": 924,
+        "body_returns_null": 393,
+        "body_no_operation": 509,
+        "body_field_getter": 216,
+        "body_default_initialization": 950,
+        "body_other_il": 10,
+        "body_abstract_or_interface": 30,
+        "body_field_setter": 15,
+        "body_native_import": 1,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.System.Runtime.CompilerServices.Unsafe",
+      "path": "Sentry.System.Runtime.CompilerServices.Unsafe.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 5,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 47,
+        "types": 5,
+        "fields": 1,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 47,
+        "body_default_initialization": 5,
+        "body_no_operation": 13,
+        "body_constant_return": 9,
+        "body_throws_null": 15,
+        "body_constructor_initialization": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.System.Text.Encodings.Web",
+      "path": "Sentry.System.Text.Encodings.Web.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 47,
+        "reclassified_default_values_to_default_initialization": 45
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 461,
+        "types": 63,
+        "fields": 246,
+        "properties": 200,
+        "events": 0,
+        "managed_bodies_read": 455,
+        "body_constructor_initialization": 47,
+        "body_no_operation": 58,
+        "body_returns_null": 197,
+        "body_constant_return": 84,
+        "body_default_initialization": 45,
+        "body_field_getter": 14,
+        "body_field_setter": 6,
+        "body_throws_null": 4,
+        "body_abstract_or_interface": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.System.Text.Json",
+      "path": "Sentry.System.Text.Json.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 310,
+        "reclassified_default_values_to_default_initialization": 351,
+        "reclassified_default_values_to_other_il": 32
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3666,
+        "types": 364,
+        "fields": 1377,
+        "properties": 777,
+        "events": 0,
+        "managed_bodies_read": 3577,
+        "body_constructor_initialization": 310,
+        "body_no_operation": 1121,
+        "body_returns_null": 847,
+        "body_constant_return": 555,
+        "body_default_initialization": 351,
+        "body_field_getter": 223,
+        "body_field_setter": 136,
+        "body_abstract_or_interface": 81,
+        "body_other_il": 32,
+        "body_throws_null": 2,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.TPSO",
+      "path": "Sentry.TPSO.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 8,
+        "types": 8,
+        "fields": 10,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 5,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 2,
+        "body_abstract_or_interface": 3,
+        "body_returns_null": 1,
+        "body_field_getter": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.Unity",
+      "path": "Sentry.Unity.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 103,
+        "reclassified_default_values_to_default_initialization": 38
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 454,
+        "properties": 328,
+        "methods": 1037,
+        "types": 124,
+        "events": 16,
+        "managed_bodies_read": 944,
+        "body_constructor_initialization": 103,
+        "body_returns_null": 128,
+        "body_constant_return": 63,
+        "body_no_operation": 211,
+        "body_default_initialization": 38,
+        "body_field_getter": 207,
+        "body_abstract_or_interface": 81,
+        "body_field_setter": 194,
+        "body_runtime_or_internal_call": 12,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Sentry.Unity.Native",
+      "path": "Sentry.Unity.Native.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 27,
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 145,
+        "types": 33,
+        "fields": 42,
+        "properties": 7,
+        "events": 0,
+        "managed_bodies_read": 88,
+        "body_constructor_initialization": 27,
+        "body_field_getter": 7,
+        "body_no_operation": 41,
+        "body_default_initialization": 3,
+        "body_returns_null": 5,
+        "body_native_import": 53,
+        "body_constant_return": 5,
+        "body_runtime_or_internal_call": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "ShaderWarmup",
+      "path": "ShaderWarmup.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 42,
+        "types": 9,
+        "fields": 24,
+        "events": 2,
+        "properties": 12,
+        "managed_bodies_read": 42,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 5,
+        "body_no_operation": 11,
+        "body_returns_null": 6,
+        "body_field_getter": 9,
+        "body_field_setter": 9,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "ShadowsCullingSystem",
+      "path": "ShadowsCullingSystem.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 20,
+        "types": 10,
+        "fields": 27,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 20,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 4,
+        "body_no_operation": 12,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "SharedType",
+      "path": "SharedType.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 2,
+        "types": 6,
+        "fields": 117,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 2,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "SkySystem",
+      "path": "SkySystem.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 21,
+        "types": 8,
+        "fields": 149,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 21,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 3,
+        "body_constant_return": 2,
+        "body_no_operation": 14,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "SoftwareOcclusionCulling",
+      "path": "SoftwareOcclusionCulling.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 33,
+        "reclassified_trivial_constructor_to_constructor_initialization": 28
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 213,
+        "types": 43,
+        "fields": 416,
+        "properties": 13,
+        "events": 0,
+        "managed_bodies_read": 210,
+        "body_default_initialization": 33,
+        "body_constructor_initialization": 28,
+        "body_no_operation": 103,
+        "body_constant_return": 26,
+        "body_field_getter": 9,
+        "body_field_setter": 9,
+        "body_returns_null": 2,
+        "body_abstract_or_interface": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Steam",
+      "path": "Steam.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 16,
+        "types": 9,
+        "fields": 28,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 16,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "body_returns_null": 2,
+        "body_no_operation": 9,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "SymbolicLinks",
+      "path": "SymbolicLinks.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 10,
+        "types": 7,
+        "fields": 8,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 10,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 2,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "body_returns_null": 3,
+        "body_no_operation": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Configuration",
+      "path": "System.Configuration.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "properties": 2,
+        "methods": 17,
+        "types": 9,
+        "fields": 4,
+        "events": 0,
+        "managed_bodies_read": 17,
+        "body_returns_null": 4,
+        "body_constant_return": 3,
+        "body_no_operation": 9,
+        "body_constructor_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Core",
+      "path": "System.Core.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 560,
+        "reclassified_default_values_to_default_initialization": 92,
+        "reclassified_default_values_to_other_il": 9
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3549,
+        "types": 676,
+        "fields": 1333,
+        "properties": 695,
+        "events": 1,
+        "managed_bodies_read": 3474,
+        "body_returns_null": 1352,
+        "body_constructor_initialization": 560,
+        "body_constant_return": 800,
+        "body_no_operation": 568,
+        "body_runtime_or_internal_call": 32,
+        "body_default_initialization": 92,
+        "body_abstract_or_interface": 43,
+        "body_field_getter": 92,
+        "body_other_il": 9,
+        "body_field_setter": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Data",
+      "path": "System.Data.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 312,
+        "reclassified_default_values_to_default_initialization": 223,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3835,
+        "types": 294,
+        "fields": 1479,
+        "properties": 518,
+        "events": 5,
+        "managed_bodies_read": 3664,
+        "body_constructor_initialization": 312,
+        "body_returns_null": 1280,
+        "body_constant_return": 786,
+        "body_no_operation": 1052,
+        "body_field_getter": 7,
+        "body_field_setter": 3,
+        "body_abstract_or_interface": 151,
+        "body_default_initialization": 223,
+        "body_other_il": 1,
+        "body_runtime_or_internal_call": 20,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Drawing",
+      "path": "System.Drawing.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 198,
+        "methods": 71,
+        "types": 10,
+        "properties": 27,
+        "events": 0,
+        "managed_bodies_read": 71,
+        "body_constant_return": 56,
+        "body_no_operation": 6,
+        "body_returns_null": 9,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.IO.Pipelines",
+      "path": "System.IO.Pipelines.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 17,
+        "types": 9,
+        "fields": 6,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 14,
+        "body_constructor_initialization": 6,
+        "body_constant_return": 3,
+        "body_returns_null": 4,
+        "body_no_operation": 1,
+        "body_abstract_or_interface": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System",
+      "path": "System.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 743,
+        "reclassified_default_values_to_other_il": 26,
+        "reclassified_default_values_to_default_initialization": 184
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 4241,
+        "properties": 1287,
+        "methods": 6055,
+        "types": 951,
+        "events": 6,
+        "managed_bodies_read": 5622,
+        "body_returns_null": 1651,
+        "body_no_operation": 1557,
+        "body_constructor_initialization": 743,
+        "body_field_getter": 133,
+        "body_abstract_or_interface": 165,
+        "body_constant_return": 1277,
+        "body_other_il": 26,
+        "body_default_initialization": 184,
+        "body_field_setter": 50,
+        "body_native_import": 116,
+        "body_runtime_or_internal_call": 152,
+        "body_throws_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Net.Http",
+      "path": "System.Net.Http.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 76,
+        "reclassified_default_values_to_default_initialization": 36,
+        "reclassified_default_values_to_other_il": 32
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 573,
+        "types": 85,
+        "fields": 248,
+        "properties": 117,
+        "events": 0,
+        "managed_bodies_read": 553,
+        "body_constant_return": 85,
+        "body_returns_null": 140,
+        "body_constructor_initialization": 76,
+        "body_no_operation": 90,
+        "body_abstract_or_interface": 14,
+        "body_default_initialization": 36,
+        "body_field_getter": 47,
+        "body_field_setter": 47,
+        "body_other_il": 32,
+        "body_runtime_or_internal_call": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Numerics",
+      "path": "System.Numerics.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 21,
+        "reclassified_default_values_to_default_initialization": 87,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 257,
+        "types": 19,
+        "fields": 65,
+        "properties": 15,
+        "events": 0,
+        "managed_bodies_read": 257,
+        "body_returns_null": 28,
+        "body_constructor_initialization": 21,
+        "body_default_initialization": 87,
+        "body_constant_return": 86,
+        "body_no_operation": 34,
+        "body_other_il": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Runtime.CompilerServices.Unsafe",
+      "path": "System.Runtime.CompilerServices.Unsafe.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 22,
+        "types": 5,
+        "fields": 1,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 22,
+        "body_default_initialization": 2,
+        "body_no_operation": 2,
+        "body_constant_return": 5,
+        "body_throws_null": 9,
+        "body_constructor_initialization": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Runtime.InteropServices",
+      "path": "System.Runtime.InteropServices.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "types": 0,
+        "methods": 0,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Runtime.Serialization",
+      "path": "System.Runtime.Serialization.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 7,
+        "properties": 6,
+        "methods": 8,
+        "types": 4,
+        "events": 0,
+        "managed_bodies_read": 8,
+        "body_constant_return": 4,
+        "body_returns_null": 2,
+        "body_constructor_initialization": 1,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Text.Encodings.Web",
+      "path": "System.Text.Encodings.Web.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 23,
+        "reclassified_default_values_to_default_initialization": 29
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 132,
+        "types": 39,
+        "fields": 58,
+        "properties": 15,
+        "events": 0,
+        "managed_bodies_read": 127,
+        "body_constructor_initialization": 23,
+        "body_no_operation": 19,
+        "body_returns_null": 15,
+        "body_constant_return": 38,
+        "body_default_initialization": 29,
+        "body_field_getter": 2,
+        "body_abstract_or_interface": 5,
+        "body_throws_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Text.Json",
+      "path": "System.Text.Json.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 271,
+        "reclassified_default_values_to_default_initialization": 301,
+        "reclassified_default_values_to_other_il": 29
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3081,
+        "types": 368,
+        "fields": 1027,
+        "properties": 755,
+        "events": 0,
+        "managed_bodies_read": 3005,
+        "body_constructor_initialization": 271,
+        "body_constant_return": 594,
+        "body_default_initialization": 301,
+        "body_no_operation": 900,
+        "body_returns_null": 635,
+        "body_field_getter": 172,
+        "body_field_setter": 101,
+        "body_throws_null": 2,
+        "body_abstract_or_interface": 70,
+        "body_other_il": 29,
+        "body_runtime_or_internal_call": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Transactions",
+      "path": "System.Transactions.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 11,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 37,
+        "methods": 48,
+        "types": 18,
+        "properties": 10,
+        "events": 0,
+        "managed_bodies_read": 44,
+        "body_constructor_initialization": 11,
+        "body_runtime_or_internal_call": 2,
+        "body_no_operation": 14,
+        "body_abstract_or_interface": 2,
+        "body_returns_null": 8,
+        "body_constant_return": 10,
+        "body_default_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Xml",
+      "path": "System.Xml.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 602,
+        "reclassified_default_values_to_default_initialization": 145,
+        "reclassified_default_values_to_other_il": 62
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 6664,
+        "types": 668,
+        "fields": 3736,
+        "properties": 1757,
+        "events": 2,
+        "managed_bodies_read": 6350,
+        "body_returns_null": 1864,
+        "body_constructor_initialization": 602,
+        "body_no_operation": 2234,
+        "body_abstract_or_interface": 268,
+        "body_constant_return": 1439,
+        "body_default_initialization": 145,
+        "body_runtime_or_internal_call": 46,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "body_other_il": 62,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "System.Xml.Linq",
+      "path": "System.Xml.Linq.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 40,
+        "reclassified_default_values_to_default_initialization": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 252,
+        "types": 38,
+        "fields": 101,
+        "properties": 48,
+        "events": 0,
+        "managed_bodies_read": 247,
+        "body_returns_null": 88,
+        "body_constructor_initialization": 40,
+        "body_constant_return": 35,
+        "body_no_operation": 78,
+        "body_default_initialization": 6,
+        "body_abstract_or_interface": 3,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TalkSystem",
+      "path": "TalkSystem.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 15
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 55,
+        "types": 25,
+        "fields": 82,
+        "properties": 18,
+        "events": 0,
+        "managed_bodies_read": 55,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 15,
+        "body_field_getter": 18,
+        "body_field_setter": 18,
+        "body_constant_return": 1,
+        "body_returns_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TargetSystem",
+      "path": "TargetSystem.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 12,
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 95,
+        "types": 23,
+        "fields": 31,
+        "properties": 31,
+        "events": 0,
+        "managed_bodies_read": 68,
+        "body_constructor_initialization": 12,
+        "body_default_initialization": 3,
+        "body_field_getter": 12,
+        "body_constant_return": 13,
+        "body_no_operation": 15,
+        "body_abstract_or_interface": 27,
+        "body_returns_null": 3,
+        "body_field_setter": 8,
+        "body_other_il": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Tayx.Graphy",
+      "path": "Tayx.Graphy.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 10,
+        "reclassified_trivial_constructor_to_constructor_initialization": 25
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 271,
+        "types": 45,
+        "fields": 307,
+        "properties": 56,
+        "events": 0,
+        "managed_bodies_read": 267,
+        "body_default_initialization": 10,
+        "body_constructor_initialization": 25,
+        "body_no_operation": 150,
+        "body_returns_null": 11,
+        "body_constant_return": 51,
+        "body_abstract_or_interface": 4,
+        "body_field_getter": 10,
+        "body_field_setter": 10,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TerrainTopDownTextures",
+      "path": "TerrainTopDownTextures.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 8,
+        "types": 7,
+        "fields": 14,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 8,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "body_field_getter": 1,
+        "body_field_setter": 1,
+        "body_no_operation": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TextMeshProInitializer",
+      "path": "TextMeshProInitializer.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 19,
+        "methods": 13,
+        "types": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 13,
+        "body_no_operation": 7,
+        "body_returns_null": 2,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TriggerZones",
+      "path": "TriggerZones.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 31,
+        "types": 9,
+        "fields": 46,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 31,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 2,
+        "body_returns_null": 2,
+        "body_constant_return": 7,
+        "body_no_operation": 19,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Tripolygon.UModelerX.Runtime",
+      "path": "Tripolygon.UModelerX.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 650,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1309,
+        "reclassified_default_values_to_other_il": 64
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 5974,
+        "properties": 1927,
+        "methods": 11099,
+        "types": 1427,
+        "events": 88,
+        "managed_bodies_read": 10741,
+        "body_default_initialization": 650,
+        "body_constructor_initialization": 1309,
+        "body_constant_return": 1866,
+        "body_returns_null": 1572,
+        "body_no_operation": 4093,
+        "body_native_import": 9,
+        "body_field_getter": 626,
+        "body_field_setter": 534,
+        "body_abstract_or_interface": 277,
+        "body_other_il": 64,
+        "body_throws_null": 27,
+        "body_runtime_or_internal_call": 72,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Tripolygon.UModelerX.Runtime.PureCode",
+      "path": "Tripolygon.UModelerX.Runtime.PureCode.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 5,
+        "types": 6,
+        "fields": 8,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 5,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_no_operation": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TweenAnimation",
+      "path": "TweenAnimation.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 25
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 112,
+        "types": 30,
+        "fields": 55,
+        "properties": 23,
+        "events": 0,
+        "managed_bodies_read": 98,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 25,
+        "body_returns_null": 12,
+        "body_no_operation": 45,
+        "body_abstract_or_interface": 14,
+        "body_constant_return": 11,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "TypeCastExtensions",
+      "path": "TypeCastExtensions.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 15,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 16,
+        "types": 6,
+        "fields": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 16,
+        "body_default_initialization": 15,
+        "body_constructor_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UI",
+      "path": "UI.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 144,
+        "reclassified_default_values_to_default_initialization": 44,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1144,
+        "types": 185,
+        "fields": 736,
+        "properties": 218,
+        "events": 1,
+        "managed_bodies_read": 1114,
+        "body_constructor_initialization": 144,
+        "body_default_initialization": 44,
+        "body_no_operation": 478,
+        "body_constant_return": 140,
+        "body_field_getter": 117,
+        "body_returns_null": 84,
+        "body_abstract_or_interface": 22,
+        "body_field_setter": 105,
+        "body_other_il": 1,
+        "body_throws_null": 1,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UiState",
+      "path": "UiState.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 8,
+        "reclassified_trivial_constructor_to_constructor_initialization": 69
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 268,
+        "types": 76,
+        "fields": 107,
+        "properties": 55,
+        "events": 0,
+        "managed_bodies_read": 258,
+        "body_default_initialization": 8,
+        "body_constructor_initialization": 69,
+        "body_constant_return": 35,
+        "body_no_operation": 127,
+        "body_returns_null": 18,
+        "body_field_getter": 1,
+        "body_abstract_or_interface": 10,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Addressables",
+      "path": "Unity.Addressables.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 97,
+        "reclassified_default_values_to_default_initialization": 163,
+        "reclassified_default_values_to_other_il": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 372,
+        "properties": 119,
+        "methods": 650,
+        "types": 105,
+        "events": 1,
+        "managed_bodies_read": 644,
+        "body_returns_null": 114,
+        "body_no_operation": 148,
+        "body_constructor_initialization": 97,
+        "body_default_initialization": 163,
+        "body_constant_return": 78,
+        "body_field_getter": 20,
+        "body_field_setter": 19,
+        "body_other_il": 5,
+        "body_abstract_or_interface": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Burst",
+      "path": "Unity.Burst.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 89,
+        "reclassified_default_values_to_default_initialization": 2703,
+        "reclassified_default_values_to_other_il": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3667,
+        "types": 99,
+        "fields": 732,
+        "properties": 77,
+        "events": 0,
+        "managed_bodies_read": 3650,
+        "body_constructor_initialization": 89,
+        "body_default_initialization": 2703,
+        "body_field_getter": 7,
+        "body_field_setter": 5,
+        "body_constant_return": 632,
+        "body_no_operation": 161,
+        "body_returns_null": 48,
+        "body_other_il": 4,
+        "body_abstract_or_interface": 1,
+        "body_throws_null": 1,
+        "body_runtime_or_internal_call": 16,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Burst.Unsafe",
+      "path": "Unity.Burst.Unsafe.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 4,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 37,
+        "types": 3,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 37,
+        "body_default_initialization": 4,
+        "body_no_operation": 13,
+        "body_constant_return": 8,
+        "body_throws_null": 10,
+        "body_constructor_initialization": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Collections",
+      "path": "Unity.Collections.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 217,
+        "reclassified_default_values_to_default_initialization": 812,
+        "reclassified_default_values_to_other_il": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3552,
+        "types": 341,
+        "fields": 1376,
+        "properties": 419,
+        "events": 0,
+        "managed_bodies_read": 3486,
+        "body_constructor_initialization": 217,
+        "body_default_initialization": 812,
+        "body_no_operation": 1019,
+        "body_abstract_or_interface": 22,
+        "body_constant_return": 1238,
+        "body_throws_null": 42,
+        "body_returns_null": 151,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "body_other_il": 3,
+        "body_runtime_or_internal_call": 44,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Collections.LowLevel.ILSupport",
+      "path": "Unity.Collections.LowLevel.ILSupport.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 4,
+        "types": 6,
+        "fields": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 4,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_constant_return": 1,
+        "body_throws_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.InputSystem.ForUI",
+      "path": "Unity.InputSystem.ForUI.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 6,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 48,
+        "types": 8,
+        "fields": 41,
+        "properties": 3,
+        "events": 0,
+        "managed_bodies_read": 48,
+        "body_default_initialization": 6,
+        "body_constructor_initialization": 3,
+        "body_no_operation": 27,
+        "body_constant_return": 9,
+        "body_returns_null": 2,
+        "body_throws_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.InputSystem",
+      "path": "Unity.InputSystem.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 711,
+        "reclassified_trivial_constructor_to_constructor_initialization": 325,
+        "reclassified_default_values_to_other_il": 7
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 5860,
+        "types": 652,
+        "fields": 3406,
+        "properties": 1564,
+        "events": 39,
+        "managed_bodies_read": 5744,
+        "body_no_operation": 1528,
+        "body_default_initialization": 711,
+        "body_constructor_initialization": 325,
+        "body_field_getter": 426,
+        "body_field_setter": 411,
+        "body_abstract_or_interface": 96,
+        "body_returns_null": 1244,
+        "body_constant_return": 1082,
+        "body_other_il": 7,
+        "body_throws_null": 10,
+        "body_runtime_or_internal_call": 20,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.InternalAPIEngineBridge.004",
+      "path": "Unity.InternalAPIEngineBridge.004.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3,
+        "types": 6,
+        "fields": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 3,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Localization",
+      "path": "Unity.Localization.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 140,
+        "reclassified_trivial_constructor_to_constructor_initialization": 316,
+        "reclassified_default_values_to_other_il": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 2174,
+        "types": 387,
+        "fields": 830,
+        "properties": 413,
+        "events": 12,
+        "managed_bodies_read": 2077,
+        "body_default_initialization": 140,
+        "body_constructor_initialization": 316,
+        "body_returns_null": 476,
+        "body_no_operation": 728,
+        "body_field_getter": 89,
+        "body_field_setter": 68,
+        "body_constant_return": 252,
+        "body_abstract_or_interface": 77,
+        "body_other_il": 8,
+        "body_runtime_or_internal_call": 20,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Mathematics",
+      "path": "Unity.Mathematics.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 7396,
+        "reclassified_trivial_constructor_to_constructor_initialization": 695
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 9427,
+        "types": 103,
+        "fields": 383,
+        "properties": 2961,
+        "events": 0,
+        "managed_bodies_read": 9427,
+        "body_default_initialization": 7396,
+        "body_constructor_initialization": 695,
+        "body_constant_return": 674,
+        "body_returns_null": 123,
+        "body_no_operation": 494,
+        "body_throws_null": 45,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.MemoryProfiler",
+      "path": "Unity.MemoryProfiler.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 10,
+        "types": 8,
+        "fields": 11,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 9,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "body_no_operation": 4,
+        "body_abstract_or_interface": 1,
+        "body_returns_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Postprocessing.Runtime",
+      "path": "Unity.Postprocessing.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 43,
+        "reclassified_trivial_constructor_to_constructor_initialization": 102
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 610,
+        "types": 144,
+        "fields": 775,
+        "properties": 78,
+        "events": 0,
+        "managed_bodies_read": 598,
+        "body_default_initialization": 43,
+        "body_constructor_initialization": 102,
+        "body_constant_return": 107,
+        "body_abstract_or_interface": 12,
+        "body_no_operation": 211,
+        "body_returns_null": 57,
+        "body_field_getter": 39,
+        "body_field_setter": 39,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.RenderPipeline.Universal.ShaderLibrary",
+      "path": "Unity.RenderPipeline.Universal.ShaderLibrary.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 2,
+        "types": 23,
+        "fields": 118,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 2,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.RenderPipelines.Core.Runtime",
+      "path": "Unity.RenderPipelines.Core.Runtime.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 511,
+        "reclassified_default_values_to_default_initialization": 359,
+        "reclassified_default_values_to_other_il": 17
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 5409,
+        "types": 770,
+        "fields": 3523,
+        "properties": 628,
+        "events": 14,
+        "managed_bodies_read": 4951,
+        "body_constructor_initialization": 511,
+        "body_constant_return": 922,
+        "body_default_initialization": 359,
+        "body_other_il": 17,
+        "body_no_operation": 2287,
+        "body_returns_null": 493,
+        "body_field_getter": 181,
+        "body_field_setter": 165,
+        "body_abstract_or_interface": 414,
+        "body_throws_null": 15,
+        "body_runtime_or_internal_call": 44,
+        "body_forwarding_call": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.RenderPipelines.Core.Runtime.Shared",
+      "path": "Unity.RenderPipelines.Core.Runtime.Shared.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 3,
+        "types": 6,
+        "fields": 7,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 3,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_returns_null": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.RenderPipelines.GPUDriven.Runtime",
+      "path": "Unity.RenderPipelines.GPUDriven.Runtime.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 50,
+        "reclassified_default_values_to_default_initialization": 142
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 985,
+        "types": 243,
+        "fields": 1121,
+        "properties": 118,
+        "events": 0,
+        "managed_bodies_read": 929,
+        "body_constructor_initialization": 50,
+        "body_default_initialization": 142,
+        "body_returns_null": 69,
+        "body_constant_return": 215,
+        "body_no_operation": 435,
+        "body_field_getter": 6,
+        "body_field_setter": 6,
+        "body_abstract_or_interface": 8,
+        "body_runtime_or_internal_call": 48,
+        "body_throws_null": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.RenderPipelines.Universal.2D.Runtime",
+      "path": "Unity.RenderPipelines.Universal.2D.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 77,
+        "reclassified_trivial_constructor_to_constructor_initialization": 79,
+        "reclassified_default_values_to_other_il": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 989,
+        "types": 184,
+        "fields": 786,
+        "properties": 152,
+        "events": 0,
+        "managed_bodies_read": 921,
+        "body_constant_return": 274,
+        "body_default_initialization": 77,
+        "body_no_operation": 362,
+        "body_constructor_initialization": 79,
+        "body_returns_null": 90,
+        "body_field_getter": 18,
+        "body_field_setter": 16,
+        "body_other_il": 5,
+        "body_abstract_or_interface": 28,
+        "body_runtime_or_internal_call": 40,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.RenderPipelines.Universal.Runtime",
+      "path": "Unity.RenderPipelines.Universal.Runtime.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 384,
+        "reclassified_default_values_to_default_initialization": 249,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 2,
+      "module_members": [],
+      "statistics": {
+        "methods": 3144,
+        "types": 588,
+        "fields": 3556,
+        "properties": 730,
+        "events": 6,
+        "managed_bodies_read": 3127,
+        "body_constructor_initialization": 384,
+        "body_no_operation": 1209,
+        "body_constant_return": 675,
+        "body_default_initialization": 249,
+        "body_field_getter": 128,
+        "body_field_setter": 125,
+        "body_returns_null": 259,
+        "body_throws_null": 97,
+        "body_abstract_or_interface": 9,
+        "body_other_il": 1,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.ResourceManager",
+      "path": "Unity.ResourceManager.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 109,
+        "reclassified_default_values_to_default_initialization": 101,
+        "reclassified_default_values_to_other_il": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 938,
+        "types": 145,
+        "fields": 415,
+        "properties": 209,
+        "events": 17,
+        "managed_bodies_read": 861,
+        "body_constructor_initialization": 109,
+        "body_constant_return": 197,
+        "body_no_operation": 288,
+        "body_returns_null": 131,
+        "body_default_initialization": 101,
+        "body_field_getter": 18,
+        "body_field_setter": 12,
+        "body_abstract_or_interface": 77,
+        "body_other_il": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Splines",
+      "path": "Unity.Splines.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 147,
+        "reclassified_trivial_constructor_to_constructor_initialization": 75,
+        "reclassified_default_values_to_other_il": 13
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 910,
+        "types": 116,
+        "fields": 392,
+        "properties": 204,
+        "events": 10,
+        "managed_bodies_read": 887,
+        "body_default_initialization": 147,
+        "body_constructor_initialization": 75,
+        "body_no_operation": 310,
+        "body_constant_return": 212,
+        "body_returns_null": 124,
+        "body_abstract_or_interface": 23,
+        "body_other_il": 13,
+        "body_field_getter": 3,
+        "body_field_setter": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.TextMeshPro",
+      "path": "Unity.TextMeshPro.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 97,
+        "reclassified_trivial_constructor_to_constructor_initialization": 141,
+        "reclassified_default_values_to_other_il": 21
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1823,
+        "types": 196,
+        "fields": 1719,
+        "properties": 426,
+        "events": 6,
+        "managed_bodies_read": 1806,
+        "body_default_initialization": 97,
+        "body_constructor_initialization": 141,
+        "body_no_operation": 876,
+        "body_constant_return": 409,
+        "body_returns_null": 258,
+        "body_abstract_or_interface": 9,
+        "body_other_il": 21,
+        "body_field_getter": 2,
+        "body_field_setter": 2,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.Timeline",
+      "path": "Unity.Timeline.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 89,
+        "reclassified_trivial_constructor_to_constructor_initialization": 80,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 918,
+        "types": 132,
+        "fields": 412,
+        "properties": 210,
+        "events": 3,
+        "managed_bodies_read": 876,
+        "body_default_initialization": 89,
+        "body_constructor_initialization": 80,
+        "body_constant_return": 243,
+        "body_no_operation": 326,
+        "body_field_getter": 8,
+        "body_field_setter": 7,
+        "body_returns_null": 121,
+        "body_abstract_or_interface": 42,
+        "body_other_il": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Unity.UnifiedRayTracing.Runtime",
+      "path": "Unity.UnifiedRayTracing.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 52,
+        "reclassified_trivial_constructor_to_constructor_initialization": 42,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 443,
+        "types": 97,
+        "fields": 511,
+        "properties": 56,
+        "events": 0,
+        "managed_bodies_read": 418,
+        "body_default_initialization": 52,
+        "body_constructor_initialization": 42,
+        "body_no_operation": 156,
+        "body_constant_return": 90,
+        "body_returns_null": 52,
+        "body_other_il": 1,
+        "body_field_getter": 13,
+        "body_abstract_or_interface": 25,
+        "body_field_setter": 12,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AccessibilityModule",
+      "path": "UnityEngine.AccessibilityModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 4,
+        "reclassified_default_values_to_default_initialization": 4,
+        "reclassified_default_values_to_other_il": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 99,
+        "properties": 40,
+        "events": 2,
+        "methods": 132,
+        "types": 21,
+        "managed_bodies_read": 130,
+        "body_constructor_initialization": 4,
+        "body_returns_null": 13,
+        "body_no_operation": 51,
+        "body_constant_return": 24,
+        "body_default_initialization": 4,
+        "body_field_setter": 20,
+        "body_field_getter": 10,
+        "body_other_il": 4,
+        "body_abstract_or_interface": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AdaptivePerformanceModule",
+      "path": "UnityEngine.AdaptivePerformanceModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 49,
+        "reclassified_default_values_to_default_initialization": 7
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 677,
+        "types": 91,
+        "fields": 344,
+        "properties": 218,
+        "events": 7,
+        "managed_bodies_read": 620,
+        "body_constructor_initialization": 49,
+        "body_constant_return": 97,
+        "body_no_operation": 262,
+        "body_default_initialization": 7,
+        "body_field_getter": 76,
+        "body_field_setter": 69,
+        "body_returns_null": 60,
+        "body_abstract_or_interface": 45,
+        "body_runtime_or_internal_call": 12,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AIModule",
+      "path": "UnityEngine.AIModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 1,
+        "methods": 4,
+        "types": 2,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 2,
+        "body_no_operation": 2,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AndroidJNIModule",
+      "path": "UnityEngine.AndroidJNIModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 11,
+        "reclassified_default_values_to_default_initialization": 23
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 340,
+        "types": 33,
+        "fields": 130,
+        "properties": 33,
+        "events": 0,
+        "body_runtime_or_internal_call": 2,
+        "managed_bodies_read": 338,
+        "body_constructor_initialization": 11,
+        "body_returns_null": 50,
+        "body_no_operation": 38,
+        "body_constant_return": 194,
+        "body_default_initialization": 23,
+        "body_field_getter": 22,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AnimationModule",
+      "path": "UnityEngine.AnimationModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 27,
+        "reclassified_default_values_to_default_initialization": 130
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "types": 67,
+        "methods": 937,
+        "fields": 250,
+        "properties": 141,
+        "events": 0,
+        "managed_bodies_read": 934,
+        "body_no_operation": 417,
+        "body_constructor_initialization": 27,
+        "body_returns_null": 72,
+        "body_constant_return": 288,
+        "body_default_initialization": 130,
+        "body_abstract_or_interface": 1,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AssetBundleModule",
+      "path": "UnityEngine.AssetBundleModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 4,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 42,
+        "types": 8,
+        "properties": 3,
+        "fields": 0,
+        "events": 0,
+        "managed_bodies_read": 42,
+        "body_constructor_initialization": 4,
+        "body_returns_null": 23,
+        "body_default_initialization": 1,
+        "body_no_operation": 4,
+        "body_constant_return": 10,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.AudioModule",
+      "path": "UnityEngine.AudioModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 8,
+        "reclassified_default_values_to_default_initialization": 26
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 84,
+        "types": 41,
+        "methods": 103,
+        "properties": 15,
+        "events": 0,
+        "managed_bodies_read": 91,
+        "body_no_operation": 27,
+        "body_constructor_initialization": 8,
+        "body_constant_return": 29,
+        "body_default_initialization": 26,
+        "body_returns_null": 1,
+        "body_abstract_or_interface": 4,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.CoreModule",
+      "path": "UnityEngine.CoreModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 478,
+        "reclassified_default_values_to_default_initialization": 1145,
+        "reclassified_default_values_to_other_il": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 9011,
+        "types": 1126,
+        "fields": 4010,
+        "properties": 1404,
+        "events": 25,
+        "managed_bodies_read": 8871,
+        "body_constructor_initialization": 478,
+        "body_constant_return": 2586,
+        "body_no_operation": 3737,
+        "body_returns_null": 756,
+        "body_abstract_or_interface": 54,
+        "body_default_initialization": 1145,
+        "body_field_setter": 90,
+        "body_field_getter": 66,
+        "body_throws_null": 5,
+        "body_other_il": 8,
+        "body_runtime_or_internal_call": 86,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.DirectorModule",
+      "path": "UnityEngine.DirectorModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 4,
+        "reclassified_default_values_to_default_initialization": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 19,
+        "methods": 109,
+        "types": 8,
+        "properties": 13,
+        "events": 3,
+        "managed_bodies_read": 105,
+        "body_constructor_initialization": 4,
+        "body_default_initialization": 8,
+        "body_no_operation": 62,
+        "body_abstract_or_interface": 2,
+        "body_constant_return": 25,
+        "body_returns_null": 6,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.GridModule",
+      "path": "UnityEngine.GridModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1,
+        "types": 1,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 1,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.HierarchyCoreModule",
+      "path": "UnityEngine.HierarchyCoreModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 27,
+        "reclassified_default_values_to_default_initialization": 32
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 294,
+        "types": 46,
+        "fields": 135,
+        "properties": 52,
+        "events": 0,
+        "managed_bodies_read": 286,
+        "body_constructor_initialization": 27,
+        "body_default_initialization": 32,
+        "body_no_operation": 79,
+        "body_returns_null": 26,
+        "body_constant_return": 94,
+        "body_abstract_or_interface": 2,
+        "body_throws_null": 15,
+        "body_field_getter": 7,
+        "body_field_setter": 6,
+        "body_runtime_or_internal_call": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.ImageConversionModule",
+      "path": "UnityEngine.ImageConversionModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 7,
+        "types": 1,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 7,
+        "body_returns_null": 2,
+        "body_constant_return": 3,
+        "body_default_initialization": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.IMGUIModule",
+      "path": "UnityEngine.IMGUIModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 40,
+        "reclassified_trivial_constructor_to_constructor_initialization": 27
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 360,
+        "properties": 148,
+        "methods": 625,
+        "types": 49,
+        "events": 1,
+        "managed_bodies_read": 621,
+        "body_constant_return": 177,
+        "body_default_initialization": 40,
+        "body_no_operation": 287,
+        "body_returns_null": 76,
+        "body_constructor_initialization": 27,
+        "body_field_getter": 8,
+        "body_field_setter": 6,
+        "body_runtime_or_internal_call": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.InputForUIModule",
+      "path": "UnityEngine.InputForUIModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 37,
+        "reclassified_trivial_constructor_to_constructor_initialization": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 226,
+        "properties": 73,
+        "methods": 242,
+        "types": 47,
+        "events": 0,
+        "managed_bodies_read": 214,
+        "body_field_setter": 30,
+        "body_field_getter": 19,
+        "body_returns_null": 18,
+        "body_constant_return": 48,
+        "body_default_initialization": 37,
+        "body_no_operation": 54,
+        "body_abstract_or_interface": 26,
+        "body_runtime_or_internal_call": 2,
+        "body_constructor_initialization": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.InputLegacyModule",
+      "path": "UnityEngine.InputLegacyModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 14
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 65,
+        "types": 13,
+        "properties": 26,
+        "methods": 78,
+        "events": 0,
+        "managed_bodies_read": 78,
+        "body_constant_return": 46,
+        "body_default_initialization": 14,
+        "body_no_operation": 13,
+        "body_returns_null": 4,
+        "body_field_getter": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.InputModule",
+      "path": "UnityEngine.InputModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 21,
+        "types": 6,
+        "fields": 27,
+        "properties": 5,
+        "events": 0,
+        "body_runtime_or_internal_call": 2,
+        "managed_bodies_read": 19,
+        "body_returns_null": 1,
+        "body_no_operation": 10,
+        "body_default_initialization": 1,
+        "body_constant_return": 7,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine",
+      "path": "UnityEngine.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "types": 0,
+        "methods": 0,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.JSONSerializeModule",
+      "path": "UnityEngine.JSONSerializeModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 9,
+        "types": 1,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 9,
+        "body_returns_null": 6,
+        "body_default_initialization": 2,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.MultiplayerModule",
+      "path": "UnityEngine.MultiplayerModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "types": 2,
+        "fields": 1,
+        "methods": 1,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 1,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.ParticleSystemModule",
+      "path": "UnityEngine.ParticleSystemModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 76,
+        "reclassified_trivial_constructor_to_constructor_initialization": 27
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "properties": 168,
+        "methods": 505,
+        "types": 63,
+        "fields": 283,
+        "events": 0,
+        "managed_bodies_read": 505,
+        "body_no_operation": 234,
+        "body_constant_return": 165,
+        "body_default_initialization": 76,
+        "body_constructor_initialization": 27,
+        "body_returns_null": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.Physics2DModule",
+      "path": "UnityEngine.Physics2DModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 142,
+        "reclassified_trivial_constructor_to_constructor_initialization": 35,
+        "reclassified_default_values_to_other_il": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 544,
+        "methods": 461,
+        "types": 105,
+        "properties": 131,
+        "events": 0,
+        "managed_bodies_read": 450,
+        "body_returns_null": 63,
+        "body_constant_return": 131,
+        "body_default_initialization": 142,
+        "body_no_operation": 78,
+        "body_constructor_initialization": 35,
+        "body_other_il": 1,
+        "body_abstract_or_interface": 9,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.PhysicsModule",
+      "path": "UnityEngine.PhysicsModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 41,
+        "reclassified_trivial_constructor_to_constructor_initialization": 8
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 102,
+        "types": 24,
+        "properties": 48,
+        "methods": 200,
+        "events": 0,
+        "managed_bodies_read": 198,
+        "body_default_initialization": 41,
+        "body_returns_null": 25,
+        "body_no_operation": 47,
+        "body_constructor_initialization": 8,
+        "body_constant_return": 75,
+        "body_throws_null": 2,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.PropertiesModule",
+      "path": "UnityEngine.PropertiesModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 77,
+        "reclassified_default_values_to_other_il": 10,
+        "reclassified_trivial_constructor_to_constructor_initialization": 112
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 182,
+        "types": 166,
+        "properties": 138,
+        "methods": 659,
+        "events": 0,
+        "managed_bodies_read": 588,
+        "body_field_getter": 16,
+        "body_no_operation": 132,
+        "body_constant_return": 120,
+        "body_default_initialization": 77,
+        "body_other_il": 10,
+        "body_field_setter": 7,
+        "body_constructor_initialization": 112,
+        "body_returns_null": 114,
+        "body_runtime_or_internal_call": 14,
+        "body_abstract_or_interface": 57,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.RenderAs2DModule",
+      "path": "UnityEngine.RenderAs2DModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 2,
+        "types": 1,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 2,
+        "body_no_operation": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.ScreenCaptureModule",
+      "path": "UnityEngine.ScreenCaptureModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 5,
+        "types": 2,
+        "fields": 5,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 5,
+        "body_no_operation": 5,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.SharedInternalsModule",
+      "path": "UnityEngine.SharedInternalsModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 42
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 42,
+        "methods": 66,
+        "types": 28,
+        "properties": 24,
+        "events": 0,
+        "managed_bodies_read": 66,
+        "body_constructor_initialization": 42,
+        "body_field_setter": 24,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.SpriteMaskModule",
+      "path": "UnityEngine.SpriteMaskModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 2,
+        "types": 1,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 2,
+        "body_constant_return": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.SpriteShapeModule",
+      "path": "UnityEngine.SpriteShapeModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "types": 1,
+        "methods": 0,
+        "fields": 0,
+        "properties": 0,
+        "events": 0,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.SubsystemsModule",
+      "path": "UnityEngine.SubsystemsModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 12,
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 22,
+        "properties": 11,
+        "methods": 66,
+        "types": 19,
+        "events": 0,
+        "managed_bodies_read": 60,
+        "body_no_operation": 27,
+        "body_constant_return": 6,
+        "body_constructor_initialization": 12,
+        "body_returns_null": 3,
+        "body_default_initialization": 1,
+        "body_abstract_or_interface": 6,
+        "body_field_getter": 7,
+        "body_field_setter": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.TerrainModule",
+      "path": "UnityEngine.TerrainModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 7,
+        "reclassified_default_values_to_default_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "properties": 17,
+        "methods": 71,
+        "types": 18,
+        "fields": 51,
+        "events": 0,
+        "managed_bodies_read": 67,
+        "body_returns_null": 21,
+        "body_constant_return": 23,
+        "body_no_operation": 11,
+        "body_constructor_initialization": 7,
+        "body_default_initialization": 5,
+        "body_runtime_or_internal_call": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.TextCoreFontEngineModule",
+      "path": "UnityEngine.TextCoreFontEngineModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 31,
+        "reclassified_trivial_constructor_to_constructor_initialization": 8,
+        "reclassified_default_values_to_other_il": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 157,
+        "properties": 58,
+        "methods": 191,
+        "types": 24,
+        "events": 0,
+        "managed_bodies_read": 191,
+        "body_constant_return": 93,
+        "body_returns_null": 19,
+        "body_no_operation": 36,
+        "body_default_initialization": 31,
+        "body_constructor_initialization": 8,
+        "body_other_il": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.TextCoreTextEngineModule",
+      "path": "UnityEngine.TextCoreTextEngineModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 66,
+        "reclassified_default_values_to_default_initialization": 72,
+        "reclassified_default_values_to_other_il": 22
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 857,
+        "types": 116,
+        "fields": 1257,
+        "properties": 144,
+        "events": 0,
+        "managed_bodies_read": 855,
+        "body_constructor_initialization": 66,
+        "body_constant_return": 252,
+        "body_default_initialization": 72,
+        "body_returns_null": 127,
+        "body_other_il": 22,
+        "body_no_operation": 302,
+        "body_field_getter": 7,
+        "body_field_setter": 7,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.TextRenderingModule",
+      "path": "UnityEngine.TextRenderingModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 3,
+        "reclassified_default_values_to_default_initialization": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 77,
+        "types": 14,
+        "methods": 64,
+        "properties": 10,
+        "events": 1,
+        "managed_bodies_read": 62,
+        "body_constant_return": 25,
+        "body_constructor_initialization": 3,
+        "body_no_operation": 21,
+        "body_default_initialization": 6,
+        "body_returns_null": 7,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.TilemapModule",
+      "path": "UnityEngine.TilemapModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 3,
+        "reclassified_default_values_to_default_initialization": 5
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 60,
+        "methods": 59,
+        "types": 14,
+        "properties": 13,
+        "events": 0,
+        "managed_bodies_read": 59,
+        "body_constructor_initialization": 3,
+        "body_no_operation": 40,
+        "body_returns_null": 3,
+        "body_default_initialization": 5,
+        "body_constant_return": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UI",
+      "path": "UnityEngine.UI.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 65,
+        "reclassified_trivial_constructor_to_constructor_initialization": 104,
+        "reclassified_default_values_to_other_il": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 1965,
+        "types": 208,
+        "fields": 902,
+        "properties": 528,
+        "events": 0,
+        "managed_bodies_read": 1870,
+        "body_default_initialization": 65,
+        "body_constructor_initialization": 104,
+        "body_returns_null": 252,
+        "body_no_operation": 923,
+        "body_abstract_or_interface": 63,
+        "body_constant_return": 396,
+        "body_field_getter": 64,
+        "body_field_setter": 64,
+        "body_other_il": 2,
+        "body_runtime_or_internal_call": 32,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UIElementsModule",
+      "path": "UnityEngine.UIElementsModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 1077,
+        "reclassified_default_values_to_default_initialization": 1215,
+        "reclassified_default_values_to_other_il": 42
+      },
+      "nested_type_ref_tokens_fixed": 1,
+      "module_members": [],
+      "statistics": {
+        "methods": 12114,
+        "types": 1661,
+        "fields": 6342,
+        "properties": 3014,
+        "events": 55,
+        "managed_bodies_read": 11376,
+        "body_constructor_initialization": 1077,
+        "body_constant_return": 2173,
+        "body_default_initialization": 1215,
+        "body_no_operation": 4372,
+        "body_runtime_or_internal_call": 40,
+        "body_abstract_or_interface": 698,
+        "body_field_getter": 491,
+        "body_returns_null": 1621,
+        "body_field_setter": 358,
+        "body_throws_null": 27,
+        "body_other_il": 42,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UIModule",
+      "path": "UnityEngine.UIModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 3,
+        "reclassified_default_values_to_default_initialization": 19
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 236,
+        "types": 11,
+        "properties": 41,
+        "fields": 24,
+        "events": 2,
+        "body_abstract_or_interface": 1,
+        "managed_bodies_read": 233,
+        "body_constant_return": 82,
+        "body_no_operation": 109,
+        "body_constructor_initialization": 3,
+        "body_field_getter": 4,
+        "body_field_setter": 4,
+        "body_default_initialization": 19,
+        "body_returns_null": 12,
+        "body_runtime_or_internal_call": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UnityAnalyticsCommonModule",
+      "path": "UnityEngine.UnityAnalyticsCommonModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 34
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 95,
+        "methods": 65,
+        "types": 34,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 65,
+        "body_constructor_initialization": 34,
+        "body_returns_null": 31,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UnityAnalyticsModule",
+      "path": "UnityEngine.UnityAnalyticsModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 24,
+        "methods": 12,
+        "types": 10,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 6,
+        "body_no_operation": 6,
+        "body_runtime_or_internal_call": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UnityConsentModule",
+      "path": "UnityEngine.UnityConsentModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 1,
+        "reclassified_default_values_to_default_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 7,
+        "methods": 5,
+        "types": 3,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 5,
+        "body_constructor_initialization": 1,
+        "body_returns_null": 1,
+        "body_default_initialization": 2,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UnityWebRequestAssetBundleModule",
+      "path": "UnityEngine.UnityWebRequestAssetBundleModule.json",
+      "changes": {},
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 24,
+        "types": 3,
+        "properties": 3,
+        "fields": 0,
+        "events": 0,
+        "managed_bodies_read": 24,
+        "body_returns_null": 8,
+        "body_constant_return": 10,
+        "body_no_operation": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.UnityWebRequestModule",
+      "path": "UnityEngine.UnityWebRequestModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 13,
+        "reclassified_default_values_to_default_initialization": 13
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 92,
+        "methods": 163,
+        "types": 19,
+        "properties": 22,
+        "events": 0,
+        "managed_bodies_read": 163,
+        "body_returns_null": 36,
+        "body_no_operation": 47,
+        "body_constant_return": 46,
+        "body_constructor_initialization": 13,
+        "body_default_initialization": 13,
+        "body_field_getter": 4,
+        "body_field_setter": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.VFXModule",
+      "path": "UnityEngine.VFXModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 6
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 33,
+        "types": 15,
+        "methods": 42,
+        "properties": 1,
+        "events": 0,
+        "managed_bodies_read": 39,
+        "body_constructor_initialization": 6,
+        "body_returns_null": 7,
+        "body_no_operation": 21,
+        "body_constant_return": 5,
+        "body_abstract_or_interface": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.VideoModule",
+      "path": "UnityEngine.VideoModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 45,
+        "methods": 18,
+        "types": 15,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 10,
+        "body_default_initialization": 1,
+        "body_constant_return": 1,
+        "body_no_operation": 8,
+        "body_runtime_or_internal_call": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.VRModule",
+      "path": "UnityEngine.VRModule.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "properties": 10,
+        "methods": 13,
+        "types": 3,
+        "fields": 6,
+        "events": 0,
+        "managed_bodies_read": 13,
+        "body_constant_return": 7,
+        "body_default_initialization": 3,
+        "body_returns_null": 2,
+        "body_no_operation": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "UnityEngine.XRModule",
+      "path": "UnityEngine.XRModule.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 7,
+        "reclassified_default_values_to_default_initialization": 11
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 154,
+        "methods": 115,
+        "types": 33,
+        "properties": 29,
+        "events": 0,
+        "managed_bodies_read": 115,
+        "body_no_operation": 30,
+        "body_returns_null": 3,
+        "body_constant_return": 56,
+        "body_constructor_initialization": 7,
+        "body_default_initialization": 11,
+        "body_field_getter": 8,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Utils.Profile",
+      "path": "Utils.Profile.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 4,
+        "types": 7,
+        "fields": 17,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 4,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_no_operation": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Utils.TattooUnlock",
+      "path": "Utils.TattooUnlock.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 6,
+        "reclassified_trivial_constructor_to_constructor_initialization": 12
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 26,
+        "types": 16,
+        "fields": 18,
+        "properties": 2,
+        "events": 0,
+        "managed_bodies_read": 26,
+        "body_default_initialization": 6,
+        "body_constructor_initialization": 12,
+        "body_constant_return": 2,
+        "body_no_operation": 6,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "WaterSystem",
+      "path": "WaterSystem.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 26,
+        "reclassified_default_values_to_default_initialization": 12
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 310,
+        "properties": 21,
+        "methods": 146,
+        "types": 47,
+        "events": 0,
+        "managed_bodies_read": 146,
+        "body_field_getter": 17,
+        "body_field_setter": 17,
+        "body_constructor_initialization": 26,
+        "body_default_initialization": 12,
+        "body_returns_null": 5,
+        "body_no_operation": 53,
+        "body_constant_return": 16,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Whinarn.UnityMeshSimplifier.Runtime",
+      "path": "Whinarn.UnityMeshSimplifier.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 28,
+        "reclassified_trivial_constructor_to_constructor_initialization": 30,
+        "reclassified_default_values_to_other_il": 4
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 156,
+        "properties": 62,
+        "methods": 316,
+        "types": 32,
+        "events": 0,
+        "managed_bodies_read": 316,
+        "body_default_initialization": 28,
+        "body_constructor_initialization": 30,
+        "body_constant_return": 71,
+        "body_returns_null": 63,
+        "body_no_operation": 120,
+        "body_other_il": 4,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "Wires",
+      "path": "Wires.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 3
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 12,
+        "types": 8,
+        "fields": 14,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 12,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 3,
+        "body_no_operation": 7,
+        "body_constant_return": 1,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "WorldAO",
+      "path": "WorldAO.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 3,
+        "reclassified_trivial_constructor_to_constructor_initialization": 18
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 69,
+        "types": 23,
+        "fields": 109,
+        "properties": 8,
+        "events": 0,
+        "managed_bodies_read": 69,
+        "body_default_initialization": 3,
+        "body_constructor_initialization": 18,
+        "body_no_operation": 33,
+        "body_returns_null": 2,
+        "body_field_getter": 5,
+        "body_field_setter": 5,
+        "body_constant_return": 3,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "WwiseTPSO.AudioInput",
+      "path": "WwiseTPSO.AudioInput.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 2,
+        "reclassified_trivial_constructor_to_constructor_initialization": 2
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 60,
+        "types": 24,
+        "fields": 46,
+        "properties": 5,
+        "events": 0,
+        "managed_bodies_read": 43,
+        "body_default_initialization": 2,
+        "body_constructor_initialization": 2,
+        "body_no_operation": 21,
+        "body_constant_return": 17,
+        "body_native_import": 1,
+        "body_field_getter": 1,
+        "body_runtime_or_internal_call": 16,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "WwiseTPSO.Runtime",
+      "path": "WwiseTPSO.Runtime.json",
+      "changes": {
+        "reclassified_default_values_to_default_initialization": 1,
+        "reclassified_trivial_constructor_to_constructor_initialization": 1
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "methods": 10,
+        "types": 7,
+        "fields": 8,
+        "properties": 0,
+        "events": 0,
+        "managed_bodies_read": 10,
+        "body_default_initialization": 1,
+        "body_constructor_initialization": 1,
+        "body_returns_null": 1,
+        "body_no_operation": 5,
+        "body_constant_return": 2,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    },
+    {
+      "assembly": "ZstdNet",
+      "path": "ZstdNet.json",
+      "changes": {
+        "reclassified_trivial_constructor_to_constructor_initialization": 20
+      },
+      "nested_type_ref_tokens_fixed": 0,
+      "module_members": [],
+      "statistics": {
+        "fields": 115,
+        "properties": 15,
+        "methods": 174,
+        "types": 22,
+        "events": 0,
+        "managed_bodies_read": 121,
+        "body_constructor_initialization": 20,
+        "body_no_operation": 42,
+        "body_constant_return": 43,
+        "body_field_getter": 2,
+        "body_returns_null": 14,
+        "body_native_import": 53,
+        "signature_unresolved_total": 0
+      },
+      "validation_errors": []
+    }
+  ],
+  "failures": [],
+  "elapsed_seconds": 55,
+  "module_members": [],
+  "validation_errors": []
+}

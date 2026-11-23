@@ -1,0 +1,171 @@
+{
+  "description_ru": "Реальные записи методов из каталога, а не придуманные примеры.",
+  "methods": [
+    {
+      "id": "Game:0x0600006B",
+      "token": "0x0600006B",
+      "name": "Awake",
+      "declaring_type": "Start.UnityEntry",
+      "visibility": "private",
+      "flags": [
+        "mdPrivate",
+        "mdReuseSlot",
+        "mdHideBySig"
+      ],
+      "implementation_flags": [
+        "miIL",
+        "miManaged"
+      ],
+      "return_type": "void",
+      "parameters": [],
+      "generic_parameters": [],
+      "semantics": null,
+      "attributes": [],
+      "description_ru": {
+        "text": "Обратный вызов с именем Awake: обычно ранняя инициализация Unity-компонента. Факт и порядок вызова зависят от типа и среды.",
+        "basis": "compiler_convention",
+        "confidence": "medium"
+      },
+      "signature_unresolved": [],
+      "signature_blob_hex": "200001",
+      "display_signature": "private void Awake()",
+      "observed_body": {
+        "kind": "no_operation",
+        "description_ru": "Тело состоит только из ret: действий не выполняет.",
+        "rva": 23018,
+        "file_offset": 15338,
+        "code_size": 1,
+        "instruction_count": 1,
+        "exception_handler_count": 0,
+        "calls": [],
+        "field_references": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "opcode": "ret",
+            "byte_offset_in_method_body": 1
+          }
+        ],
+        "header_size": 1,
+        "instruction_offset_basis": "code_start",
+        "method_body_byte_offset_basis": "method_header_start",
+        "method_references": []
+      },
+      "return_type_signature": "void"
+    },
+    {
+      "id": "Game:0x0600006D",
+      "token": "0x0600006D",
+      "name": "Update",
+      "declaring_type": "Start.UnityEntry",
+      "visibility": "private",
+      "flags": [
+        "mdPrivate",
+        "mdReuseSlot",
+        "mdHideBySig"
+      ],
+      "implementation_flags": [
+        "miIL",
+        "miManaged"
+      ],
+      "return_type": "void",
+      "parameters": [],
+      "generic_parameters": [],
+      "semantics": null,
+      "attributes": [],
+      "description_ru": {
+        "text": "По имени: шаг обновления для тип «UnityEntry». Периодичность, порядок вызовов и изменяемое состояние устанавливаются отдельно.",
+        "basis": "inferred_from_name",
+        "confidence": "medium"
+      },
+      "signature_unresolved": [],
+      "signature_blob_hex": "200001",
+      "display_signature": "private void Update()",
+      "observed_body": {
+        "kind": "no_operation",
+        "description_ru": "Тело состоит только из ret: действий не выполняет.",
+        "rva": 23022,
+        "file_offset": 15342,
+        "code_size": 1,
+        "instruction_count": 1,
+        "exception_handler_count": 0,
+        "calls": [],
+        "field_references": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "opcode": "ret",
+            "byte_offset_in_method_body": 1
+          }
+        ],
+        "header_size": 1,
+        "instruction_offset_basis": "code_start",
+        "method_body_byte_offset_basis": "method_header_start",
+        "method_references": []
+      },
+      "return_type_signature": "void"
+    },
+    {
+      "id": "Game:0x06000072",
+      "token": "0x06000072",
+      "name": "get_Options",
+      "declaring_type": "Start.UnityEntry",
+      "visibility": "public",
+      "flags": [
+        "mdPublic",
+        "mdReuseSlot",
+        "mdHideBySig",
+        "mdSpecialName"
+      ],
+      "implementation_flags": [
+        "miIL",
+        "miManaged"
+      ],
+      "return_type": "Game.Start.Options",
+      "parameters": [],
+      "generic_parameters": [],
+      "semantics": {
+        "kind": "property_get",
+        "member_name": "Options",
+        "member_token": "0x17000032"
+      },
+      "attributes": [],
+      "description_ru": {
+        "text": "Метод чтения свойства «Options», связанный с ним в метаданных .NET.",
+        "basis": "declared_metadata",
+        "confidence": "high"
+      },
+      "signature_unresolved": [],
+      "signature_blob_hex": "20001280ec",
+      "display_signature": "public Game.Start.Options get_Options()",
+      "observed_body": {
+        "kind": "returns_null",
+        "description_ru": "Возвращает null.",
+        "rva": 23033,
+        "file_offset": 15353,
+        "code_size": 2,
+        "instruction_count": 2,
+        "exception_handler_count": 0,
+        "calls": [],
+        "field_references": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "opcode": "ldnull",
+            "byte_offset_in_method_body": 1
+          },
+          {
+            "offset": 1,
+            "opcode": "ret",
+            "byte_offset_in_method_body": 2
+          }
+        ],
+        "header_size": 1,
+        "instruction_offset_basis": "code_start",
+        "method_body_byte_offset_basis": "method_header_start",
+        "method_references": []
+      },
+      "return_type_signature": "Game.Start.Options"
+    }
+  ]
+}

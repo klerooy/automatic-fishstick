@@ -1,0 +1,2112 @@
+[
+  {
+    "path": "Assets/Plugins/Assembly-CSharp-firstpass/FlyingWormConsole3/ConsoleProDebug.cs",
+    "assembly": "Assembly-CSharp-firstpass",
+    "sha256": "86b586a10d2098fe45b91008c5fe4f67a88620944aa78858ede4acb2691c18da",
+    "description_ru": "Статический вспомогательный API Console Pro для очистки, вывода, фильтрации и отслеживания логов; все тела методов пусты.",
+    "types": [
+      {
+        "full_name": "FlyingWormConsole3.ConsoleProDebug",
+        "name": "ConsoleProDebug",
+        "namespace": "FlyingWormConsole3",
+        "declaring_type": null,
+        "line": 5,
+        "kind": "class",
+        "modifiers": [
+          "public",
+          "static"
+        ],
+        "base_types": [],
+        "attributes": [],
+        "description_ru": "Статический вспомогательный API Console Pro для очистки, вывода, фильтрации и отслеживания логов; все тела методов пусты.",
+        "description_basis": "declarations_and_names",
+        "fields": [],
+        "methods": [
+          {
+            "name": "Clear",
+            "source_name": "Clear",
+            "qualified_name": "Clear",
+            "explicit_interface": null,
+            "line": 7,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "static"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "По имени Console Pro — очистка консоли; в данном экспорте тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "LogToFilter",
+            "source_name": "LogToFilter",
+            "qualified_name": "LogToFilter",
+            "explicit_interface": null,
+            "line": 11,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "static"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "inLog",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 11
+              },
+              {
+                "name": "inFilterName",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 11
+              },
+              {
+                "name": "inContext",
+                "type": "Object",
+                "modifiers": [],
+                "default": "null",
+                "line": 11
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметрам — вывод сообщения в именованный фильтр Console Pro; тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "LogAsType",
+            "source_name": "LogAsType",
+            "qualified_name": "LogAsType",
+            "explicit_interface": null,
+            "line": 15,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "static"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "inLog",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 15
+              },
+              {
+                "name": "inTypeName",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 15
+              },
+              {
+                "name": "inContext",
+                "type": "Object",
+                "modifiers": [],
+                "default": "null",
+                "line": 15
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметрам — вывод сообщения как заданный тип Console Pro; тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "Watch",
+            "source_name": "Watch",
+            "qualified_name": "Watch",
+            "explicit_interface": null,
+            "line": 19,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "static"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "inName",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 19
+              },
+              {
+                "name": "inValue",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 19
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметрам — передача именованного наблюдаемого значения в Console Pro; тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "Search",
+            "source_name": "Search",
+            "qualified_name": "Search",
+            "explicit_interface": null,
+            "line": 23,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "static"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "inText",
+                "type": "string",
+                "modifiers": [],
+                "default": null,
+                "line": 23
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметру — поиск текста в Console Pro; тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          }
+        ],
+        "properties": [],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Plugins/Assembly-CSharp-firstpass/Properties/AssemblyInfo.cs",
+    "assembly": "Assembly-CSharp-firstpass",
+    "sha256": "3f2d9aef361f6bd45cf542030116d1b94381b4b5be99101d240db38543a523e9",
+    "description_ru": "Метаданные AssemblyVersion(\"0.0.0.0\"); игровых типов нет.",
+    "types": [],
+    "assembly_attributes": [
+      "[assembly: AssemblyVersion(\"0.0.0.0\")]"
+    ],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/CinematicBarsView.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "0b98d2b08efe7490bc30f7420b0a5d728b3f129c8704b9ef7d6dab9f9e71953f",
+    "description_ru": "Компонент кинематографических полос: сохранены ссылки на верхнюю и нижнюю полосы, настройки формата кадра, Timeline и выходную камеру. Назначение подтверждается Tooltip; рабочая реализация отсутствует.",
+    "types": [
+      {
+        "full_name": "CinematicBarsView",
+        "name": "CinematicBarsView",
+        "namespace": "",
+        "declaring_type": null,
+        "line": 7,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [
+          "[ExecuteAlways]",
+          "[RequireComponent(typeof(RectTransform))]"
+        ],
+        "description_ru": "Компонент кинематографических полос: сохранены ссылки на верхнюю и нижнюю полосы, настройки формата кадра, Timeline и выходную камеру. Назначение подтверждается Tooltip; рабочая реализация отсутствует.",
+        "description_basis": "explicit_tooltip_and_declarations",
+        "fields": [
+          {
+            "name": "_top",
+            "type": "RectTransform",
+            "line": 10,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_top",
+            "description_ru": "Ссылка на RectTransform верхней кинематографической полосы.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_bottom",
+            "type": "RectTransform",
+            "line": 13,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_bottom",
+            "description_ru": "Ссылка на RectTransform нижней кинематографической полосы.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_targetAspect",
+            "type": "float",
+            "line": 17,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Tooltip(\"Соотношение сторон кадра без полос. 2.28 даёт ~11% сверху и снизу на 16:9, 2.39 — классический скоуп.\")]",
+              "[SerializeField]"
+            ],
+            "declaration": "_targetAspect",
+            "description_ru": "Целевое соотношение сторон кадра без полос; назначение явно описано Tooltip.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_maxBar",
+            "type": "float",
+            "line": 22,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Tooltip(\"Максимальная высота одной полосы в долях экрана — чтобы на 4:3 и уже не съедало кадр.\")]",
+              "[Range(0f, 0.5f)]",
+              "[SerializeField]"
+            ],
+            "declaration": "_maxBar",
+            "description_ru": "Максимальная высота одной полосы в долях экрана; назначение явно описано Tooltip.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_amount",
+            "type": "float",
+            "line": 27,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Tooltip(\"Множитель высоты, можно анимировать в таймлайне (выезд/уезд полос).\")]",
+              "[Range(0f, 1f)]",
+              "[SerializeField]"
+            ],
+            "declaration": "_amount",
+            "description_ru": "Множитель высоты полос, предназначенный для анимации через Timeline по Tooltip.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_director",
+            "type": "PlayableDirector",
+            "line": 31,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Header(\"Авто-выезд по таймлайну (необязательно)\")]",
+              "[SerializeField]"
+            ],
+            "declaration": "_director",
+            "description_ru": "Ссылка на PlayableDirector для привязки полос к Timeline.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_exitCamera",
+            "type": "CinemachineVirtualCamera",
+            "line": 35,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Tooltip(\"Та же камера, что ExitCamera у LocationIntroCinematicView. HUD появляется на середине её клипа — к этому моменту полосы уже уходят. Без камеры — к концу таймлайна.\")]",
+              "[SerializeField]"
+            ],
+            "declaration": "_exitCamera",
+            "description_ru": "Ссылка на выходную Cinemachine-камеру; Tooltip связывает её клип с моментом появления HUD.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_fadeIn",
+            "type": "float",
+            "line": 38,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_fadeIn",
+            "description_ru": "По имени — длительность появления полос; алгоритм не сохранился.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_fadeOut",
+            "type": "float",
+            "line": 42,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Tooltip(\"Длительность ухода полос, сек. Уход заканчивается в момент появления HUD.\")]",
+              "[SerializeField]"
+            ],
+            "declaration": "_fadeOut",
+            "description_ru": "Длительность ухода полос в секундах по Tooltip.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_smoothTime",
+            "type": "float",
+            "line": 46,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Tooltip(\"Сглаживание высоты в игре, сек. Гасит скачки в один кадр (сброс таймлайна, рывок времени после загрузки) и даёт мягкий выезд.\")]",
+              "[SerializeField]"
+            ],
+            "declaration": "_smoothTime",
+            "description_ru": "Время сглаживания высоты полос в секундах по Tooltip.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "DrivenProperties",
+            "type": "DrivenTransformProperties",
+            "line": 48,
+            "modifiers": [
+              "private",
+              "const"
+            ],
+            "attributes": [],
+            "declaration": "DrivenProperties = DrivenTransformProperties.Anchors | DrivenTransformProperties.AnchoredPosition | DrivenTransformProperties.SizeDelta",
+            "description_ru": "Маска Anchors, AnchoredPosition и SizeDelta для DrivenRectTransformTracker.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_rect",
+            "type": "RectTransform",
+            "line": 50,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_rect",
+            "description_ru": "Внутренняя ссылка RectTransform; точное использование отсутствует.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_tracker",
+            "type": "DrivenRectTransformTracker",
+            "line": 52,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_tracker",
+            "description_ru": "Трекер управляемых RectTransform-параметров; использование в телах отсутствует.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_appliedHeight",
+            "type": "float",
+            "line": 54,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_appliedHeight",
+            "description_ru": "По имени — применённая высота полос.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_height",
+            "type": "float",
+            "line": 56,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_height",
+            "description_ru": "По имени — текущее значение высоты полос.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_heightVelocity",
+            "type": "float",
+            "line": 58,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_heightVelocity",
+            "description_ru": "По имени — скорость изменения высоты при сглаживании.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_isFadingOut",
+            "type": "bool",
+            "line": 60,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_isFadingOut",
+            "description_ru": "По имени — признак ухода полос.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_hideTime",
+            "type": "double?",
+            "line": 62,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_hideTime",
+            "description_ru": "По имени — необязательное время скрытия полос.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": "OnEnable",
+            "source_name": "OnEnable",
+            "qualified_name": "OnEnable",
+            "explicit_interface": null,
+            "line": 64,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение включения компонента. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          },
+          {
+            "name": "OnDisable",
+            "source_name": "OnDisable",
+            "qualified_name": "OnDisable",
+            "explicit_interface": null,
+            "line": 68,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение отключения компонента. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          },
+          {
+            "name": "LateUpdate",
+            "source_name": "LateUpdate",
+            "qualified_name": "LateUpdate",
+            "explicit_interface": null,
+            "line": 72,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение обновления после Update. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          },
+          {
+            "name": "OnRectTransformDimensionsChange",
+            "source_name": "OnRectTransformDimensionsChange",
+            "qualified_name": "OnRectTransformDimensionsChange",
+            "explicit_interface": null,
+            "line": 76,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение изменения размеров RectTransform. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          },
+          {
+            "name": "Refresh",
+            "source_name": "Refresh",
+            "qualified_name": "Refresh",
+            "explicit_interface": null,
+            "line": 80,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "advance",
+                "type": "bool",
+                "modifiers": [],
+                "default": null,
+                "line": 80
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметру advance — обновление высоты/состояния кинематографических полос. Точная логика отсутствует.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          },
+          {
+            "name": "DirectorEnvelope",
+            "source_name": "DirectorEnvelope",
+            "qualified_name": "DirectorEnvelope",
+            "explicit_interface": null,
+            "line": 84,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "float",
+            "description_ru": "По имени и контексту — огибающая интенсивности полос относительно Timeline. В экспорте всегда возвращает 0f.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "returns_zero",
+              "source": "{\r\n\t\treturn 0f;\r\n\t}"
+            }
+          },
+          {
+            "name": "GetHideTime",
+            "source_name": "GetHideTime",
+            "qualified_name": "GetHideTime",
+            "explicit_interface": null,
+            "line": 89,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "double",
+            "description_ru": "По имени — определение времени скрытия полос. В экспорте всегда возвращает 0.0.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "returns_zero",
+              "source": "{\r\n\t\treturn 0.0;\r\n\t}"
+            }
+          },
+          {
+            "name": "FindExitCameraHudTime",
+            "source_name": "FindExitCameraHudTime",
+            "qualified_name": "FindExitCameraHudTime",
+            "explicit_interface": null,
+            "line": 94,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "double?",
+            "description_ru": "По имени и Tooltip камеры — поиск момента появления HUD в клипе выходной камеры. В экспорте возвращает null.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "returns_null",
+              "source": "{\r\n\t\treturn null;\r\n\t}"
+            }
+          },
+          {
+            "name": "SetBar",
+            "source_name": "SetBar",
+            "qualified_name": "SetBar",
+            "explicit_interface": null,
+            "line": 99,
+            "kind": "method",
+            "modifiers": [
+              "private",
+              "static"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "bar",
+                "type": "RectTransform",
+                "modifiers": [],
+                "default": null,
+                "line": 99
+              },
+              {
+                "name": "minY",
+                "type": "float",
+                "modifiers": [],
+                "default": null,
+                "line": 99
+              },
+              {
+                "name": "maxY",
+                "type": "float",
+                "modifiers": [],
+                "default": null,
+                "line": 99
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметрам RectTransform/minY/maxY — настройка границ одной полосы; тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          }
+        ],
+        "properties": [],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/ContentEditor/Character/CharacterAnimatorSimulation/CharacterAnimatorSimulationBehavior.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "4a678dde442a5333fc50c109a8651d3cb573660fb7d3fb3c143e991b9b6cb465",
+    "description_ru": "Абстрактная база сценария проверки анимации персонажа: имя поведения и IEnumerator Execute(controller).",
+    "types": [
+      {
+        "full_name": "ContentEditor.Character.CharacterAnimatorSimulation.CharacterAnimatorSimulationBehavior",
+        "name": "CharacterAnimatorSimulationBehavior",
+        "namespace": "ContentEditor.Character.CharacterAnimatorSimulation",
+        "declaring_type": null,
+        "line": 6,
+        "kind": "class",
+        "modifiers": [
+          "public",
+          "abstract"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [],
+        "description_ru": "Абстрактная база сценария проверки анимации персонажа: имя поведения и IEnumerator Execute(controller).",
+        "description_basis": "declarations_and_names",
+        "fields": [],
+        "methods": [
+          {
+            "name": "Execute",
+            "source_name": "Execute",
+            "qualified_name": "Execute",
+            "explicit_interface": null,
+            "line": 10,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "abstract"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "controller",
+                "type": "CharacterAnimatorSimulationController",
+                "modifiers": [],
+                "default": null,
+                "line": 10
+              }
+            ],
+            "return_type": "IEnumerator",
+            "description_ru": "Контракт выполнения сценария анимации через IEnumerator. У абстрактной базы нет тела по дизайну, конкретная экспортная реализация возвращает null.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "no_body",
+              "text": "Тело отсутствует в объявлении."
+            }
+          }
+        ],
+        "properties": [
+          {
+            "name": "BehaviorName",
+            "qualified_name": "BehaviorName",
+            "explicit_interface": null,
+            "type": "string",
+            "line": 8,
+            "modifiers": [
+              "public",
+              "abstract"
+            ],
+            "attributes": [],
+            "description_ru": "Имя сценария симуляции анимации. В абстрактной базе это контракт, у WalkForward экспортный getter возвращает null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [
+              {
+                "kind": "get",
+                "line": 8,
+                "attributes": [],
+                "observed_body": {
+                  "classification": "no_body",
+                  "text": "Тело отсутствует в объявлении."
+                }
+              }
+            ],
+            "expression_body": null
+          }
+        ],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/ContentEditor/Character/CharacterAnimatorSimulation/CharacterAnimatorSimulationController.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "7bf714001cc45610fc5f155397b67e973d380838927b52b8d56abb3b9456eb49",
+    "description_ru": "Контроллер инструмента проверки анимации: хранит Animator, Transform персонажа, массив поведений и Coroutine. Реализация запуска и остановки не сохранилась.",
+    "types": [
+      {
+        "full_name": "ContentEditor.Character.CharacterAnimatorSimulation.CharacterAnimatorSimulationController",
+        "name": "CharacterAnimatorSimulationController",
+        "namespace": "ContentEditor.Character.CharacterAnimatorSimulation",
+        "declaring_type": null,
+        "line": 10,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [],
+        "description_ru": "Контроллер инструмента проверки анимации: хранит Animator, Transform персонажа, массив поведений и Coroutine. Реализация запуска и остановки не сохранилась.",
+        "description_basis": "declarations_and_names",
+        "fields": [
+          {
+            "name": "_animator",
+            "type": "Animator",
+            "line": 69,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_animator",
+            "description_ru": "Ссылка на Animator проверяемого персонажа.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_characterTransform",
+            "type": "Transform",
+            "line": 72,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_characterTransform",
+            "description_ru": "Transform проверяемого персонажа.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_behaviors",
+            "type": "CharacterAnimatorSimulationBehavior[]",
+            "line": 74,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_behaviors",
+            "description_ru": "Массив доступных CharacterAnimatorSimulationBehavior.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_activeSimulation",
+            "type": "Coroutine",
+            "line": 76,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_activeSimulation",
+            "description_ru": "Ссылка на активную корутину симуляции.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": "Awake",
+            "source_name": "Awake",
+            "qualified_name": "Awake",
+            "explicit_interface": null,
+            "line": 84,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение первичной инициализации компонента. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "CollectBehaviors",
+            "source_name": "CollectBehaviors",
+            "qualified_name": "CollectBehaviors",
+            "explicit_interface": null,
+            "line": 88,
+            "kind": "method",
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "По имени — сбор доступных сценариев симуляции анимации. Тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "RunBehavior",
+            "source_name": "RunBehavior",
+            "qualified_name": "RunBehavior",
+            "explicit_interface": null,
+            "line": 92,
+            "kind": "method",
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "parameters": [
+              {
+                "name": "behavior",
+                "type": "CharacterAnimatorSimulationBehavior",
+                "modifiers": [],
+                "default": null,
+                "line": 92
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "По имени и параметру behavior — запрос запуска выбранного сценария симуляции. Тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "StopActiveSimulation",
+            "source_name": "StopActiveSimulation",
+            "qualified_name": "StopActiveSimulation",
+            "explicit_interface": null,
+            "line": 96,
+            "kind": "method",
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "По имени — остановка активной симуляции анимации. Тело пустое.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "RunBehaviorRoutine",
+            "source_name": "RunBehaviorRoutine",
+            "qualified_name": "RunBehaviorRoutine",
+            "explicit_interface": null,
+            "line": 101,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[IteratorStateMachine(typeof(_003CRunBehaviorRoutine_003Ed__14))]"
+            ],
+            "parameters": [
+              {
+                "name": "behavior",
+                "type": "CharacterAnimatorSimulationBehavior",
+                "modifiers": [],
+                "default": null,
+                "line": 101
+              }
+            ],
+            "return_type": "IEnumerator",
+            "description_ru": "По имени и IteratorStateMachine — корутина выполнения сценария. В экспорте возвращает null.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "returns_null",
+              "source": "{\r\n\t\t\treturn null;\r\n\t\t}"
+            }
+          }
+        ],
+        "properties": [
+          {
+            "name": "Animator",
+            "qualified_name": "Animator",
+            "explicit_interface": null,
+            "type": "Animator",
+            "line": 78,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "description_ru": "Публичный доступ к Animator контроллера; экспортное свойство возвращает null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [],
+            "expression_body": {
+              "classification": "returns_null",
+              "source": "=> null"
+            }
+          },
+          {
+            "name": "CharacterTransform",
+            "qualified_name": "CharacterTransform",
+            "explicit_interface": null,
+            "type": "Transform",
+            "line": 80,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "description_ru": "Публичный доступ к Transform персонажа; экспортное свойство возвращает null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [],
+            "expression_body": {
+              "classification": "returns_null",
+              "source": "=> null"
+            }
+          },
+          {
+            "name": "Behaviors",
+            "qualified_name": "Behaviors",
+            "explicit_interface": null,
+            "type": "CharacterAnimatorSimulationBehavior[]",
+            "line": 82,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "description_ru": "Публичный доступ к массиву сценариев; экспортное свойство возвращает null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [],
+            "expression_body": {
+              "classification": "returns_null",
+              "source": "=> null"
+            }
+          }
+        ],
+        "events": []
+      },
+      {
+        "full_name": "ContentEditor.Character.CharacterAnimatorSimulation.CharacterAnimatorSimulationController+_003CRunBehaviorRoutine_003Ed__14",
+        "name": "_003CRunBehaviorRoutine_003Ed__14",
+        "namespace": "ContentEditor.Character.CharacterAnimatorSimulation",
+        "declaring_type": "ContentEditor.Character.CharacterAnimatorSimulation.CharacterAnimatorSimulationController",
+        "line": 13,
+        "kind": "class",
+        "modifiers": [
+          "private",
+          "sealed"
+        ],
+        "base_types": [
+          "IEnumerator<object>",
+          "IEnumerator",
+          "IDisposable"
+        ],
+        "attributes": [
+          "[CompilerGenerated]"
+        ],
+        "description_ru": "Сгенерированная компилятором машина состояний корутины. Поля хранят состояние итерации, Current и захваченные параметры; экспортные методы заглушечные.",
+        "description_basis": "compiler_generated_structure",
+        "fields": [
+          {
+            "name": "_003C_003E1__state",
+            "type": "int",
+            "line": 15,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_003C_003E1__state",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003C_003E1__state.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_003C_003E2__current",
+            "type": "object",
+            "line": 17,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_003C_003E2__current",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003C_003E2__current.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "behavior",
+            "type": "CharacterAnimatorSimulationBehavior",
+            "line": 19,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "declaration": "behavior",
+            "description_ru": "Сценарий, переданный в корутину RunBehaviorRoutine.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_003C_003E4__this",
+            "type": "CharacterAnimatorSimulationController",
+            "line": 21,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "declaration": "_003C_003E4__this",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003C_003E4__this.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": ".ctor",
+            "source_name": "_003CRunBehaviorRoutine_003Ed__14",
+            "qualified_name": "_003CRunBehaviorRoutine_003Ed__14",
+            "explicit_interface": null,
+            "line": 42,
+            "kind": "constructor",
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [
+              "[DebuggerHidden]"
+            ],
+            "parameters": [
+              {
+                "name": "_003C_003E1__state",
+                "type": "int",
+                "modifiers": [],
+                "default": null,
+                "line": 42
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "Конструктор сгенерированной машины состояний корутины; экспортное тело пустое.",
+            "description_basis": "language_convention",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "Dispose",
+            "source_name": "Dispose",
+            "qualified_name": "IDisposable.Dispose",
+            "explicit_interface": "IDisposable",
+            "line": 47,
+            "kind": "method",
+            "modifiers": [],
+            "attributes": [
+              "[DebuggerHidden]"
+            ],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Реализация IDisposable.Dispose машины состояний; экспортное тело пустое.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "MoveNext",
+            "source_name": "MoveNext",
+            "qualified_name": "MoveNext",
+            "explicit_interface": null,
+            "line": 51,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "bool",
+            "description_ru": "Продвижение итератора; в экспортном коде всегда возвращает false, поэтому корутина сразу завершена.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "returns_false",
+              "source": "{\r\n\t\t\t\treturn false;\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "MoveNext",
+            "source_name": "MoveNext",
+            "qualified_name": "IEnumerator.MoveNext",
+            "explicit_interface": "IEnumerator",
+            "line": 56,
+            "kind": "method",
+            "modifiers": [],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "bool",
+            "description_ru": "Явная реализация IEnumerator.MoveNext перенаправляет вызов в приватный MoveNext, который возвращает false.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "forwards_to_stub_movenext",
+              "source": "{\r\n\t\t\t\t//ILSpy generated this explicit interface implementation from .override directive in MoveNext\r\n\t\t\t\treturn this.MoveNext();\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "Reset",
+            "source_name": "Reset",
+            "qualified_name": "IEnumerator.Reset",
+            "explicit_interface": "IEnumerator",
+            "line": 63,
+            "kind": "method",
+            "modifiers": [],
+            "attributes": [
+              "[DebuggerHidden]"
+            ],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Реализация IEnumerator.Reset; экспортное тело пустое.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t\t}"
+            }
+          }
+        ],
+        "properties": [
+          {
+            "name": "Current",
+            "qualified_name": "IEnumerator<object>.Current",
+            "explicit_interface": "IEnumerator<object>",
+            "type": "object",
+            "line": 23,
+            "modifiers": [],
+            "attributes": [],
+            "description_ru": "Текущий элемент IEnumerator; оба экспортных getter-а возвращают null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [
+              {
+                "kind": "get",
+                "line": 25,
+                "attributes": [
+                  "[DebuggerHidden]"
+                ],
+                "observed_body": {
+                  "classification": "returns_null",
+                  "source": "{\r\n\t\t\t\t\treturn null;\r\n\t\t\t\t}"
+                }
+              }
+            ],
+            "expression_body": null
+          },
+          {
+            "name": "Current",
+            "qualified_name": "IEnumerator.Current",
+            "explicit_interface": "IEnumerator",
+            "type": "object",
+            "line": 32,
+            "modifiers": [],
+            "attributes": [],
+            "description_ru": "Текущий элемент IEnumerator; оба экспортных getter-а возвращают null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [
+              {
+                "kind": "get",
+                "line": 34,
+                "attributes": [
+                  "[DebuggerHidden]"
+                ],
+                "observed_body": {
+                  "classification": "returns_null",
+                  "source": "{\r\n\t\t\t\t\treturn null;\r\n\t\t\t\t}"
+                }
+              }
+            ],
+            "expression_body": null
+          }
+        ],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/ContentEditor/Character/CharacterAnimatorSimulation/WalkForwardCharacterAnimatorSimulationBehavior.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "c28755c9348afd844142d0cff9f5aad67286232d00ce4e89ead23230f283eaa7",
+    "description_ru": "Сценарий проверки ходьбы вперёд по имени, полям и идентификаторам Animator; Execute возвращает null.",
+    "types": [
+      {
+        "full_name": "ContentEditor.Character.CharacterAnimatorSimulation.WalkForwardCharacterAnimatorSimulationBehavior",
+        "name": "WalkForwardCharacterAnimatorSimulationBehavior",
+        "namespace": "ContentEditor.Character.CharacterAnimatorSimulation",
+        "declaring_type": null,
+        "line": 10,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "CharacterAnimatorSimulationBehavior"
+        ],
+        "attributes": [],
+        "description_ru": "Сценарий проверки ходьбы вперёд по имени, полям и идентификаторам Animator; Execute возвращает null.",
+        "description_basis": "declarations_and_names",
+        "fields": [
+          {
+            "name": "MoveSpeed",
+            "type": "int",
+            "line": 72,
+            "modifiers": [
+              "private",
+              "static",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "MoveSpeed",
+            "description_ru": "Идентификатор параметра Animator MoveSpeed; инициализация и использование в экспортном коде отсутствуют.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "VelocityX",
+            "type": "int",
+            "line": 74,
+            "modifiers": [
+              "private",
+              "static",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "VelocityX",
+            "description_ru": "Идентификатор параметра Animator VelocityX; инициализация и использование в экспортном коде отсутствуют.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "VelocityY",
+            "type": "int",
+            "line": 76,
+            "modifiers": [
+              "private",
+              "static",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "VelocityY",
+            "description_ru": "Идентификатор параметра Animator VelocityY; инициализация и использование в экспортном коде отсутствуют.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "MovementInputActive",
+            "type": "int",
+            "line": 78,
+            "modifiers": [
+              "private",
+              "static",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "MovementInputActive",
+            "description_ru": "Идентификатор параметра Animator MovementInputActive; инициализация и использование в экспортном коде отсутствуют.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "StartStopMode",
+            "type": "int",
+            "line": 80,
+            "modifiers": [
+              "private",
+              "static",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "StartStopMode",
+            "description_ru": "Идентификатор параметра Animator StartStopMode; инициализация и использование в экспортном коде отсутствуют.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "Grounded",
+            "type": "int",
+            "line": 82,
+            "modifiers": [
+              "private",
+              "static",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "Grounded",
+            "description_ru": "Идентификатор параметра Animator Grounded; инициализация и использование в экспортном коде отсутствуют.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_behaviorName",
+            "type": "string",
+            "line": 85,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_behaviorName",
+            "description_ru": "Отображаемое имя сценария по имени поля.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_duration",
+            "type": "float",
+            "line": 88,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_duration",
+            "description_ru": "Длительность сценария по имени поля.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_animationSpeed",
+            "type": "float",
+            "line": 91,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_animationSpeed",
+            "description_ru": "Скорость анимации сценария по имени поля.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": "Execute",
+            "source_name": "Execute",
+            "qualified_name": "Execute",
+            "explicit_interface": null,
+            "line": 96,
+            "kind": "method",
+            "modifiers": [
+              "public",
+              "override"
+            ],
+            "attributes": [
+              "[IteratorStateMachine(typeof(_003CExecute_003Ed__11))]"
+            ],
+            "parameters": [
+              {
+                "name": "controller",
+                "type": "CharacterAnimatorSimulationController",
+                "modifiers": [],
+                "default": null,
+                "line": 96
+              }
+            ],
+            "return_type": "IEnumerator",
+            "description_ru": "Контракт выполнения сценария анимации через IEnumerator. У абстрактной базы нет тела по дизайну, конкретная экспортная реализация возвращает null.",
+            "description_basis": "inferred_from_name_and_declarations",
+            "observed_body": {
+              "classification": "returns_null",
+              "source": "{\r\n\t\t\treturn null;\r\n\t\t}"
+            }
+          }
+        ],
+        "properties": [
+          {
+            "name": "BehaviorName",
+            "qualified_name": "BehaviorName",
+            "explicit_interface": null,
+            "type": "string",
+            "line": 93,
+            "modifiers": [
+              "public",
+              "override"
+            ],
+            "attributes": [],
+            "description_ru": "Имя сценария симуляции анимации. В абстрактной базе это контракт, у WalkForward экспортный getter возвращает null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [],
+            "expression_body": {
+              "classification": "returns_null",
+              "source": "=> null"
+            }
+          }
+        ],
+        "events": []
+      },
+      {
+        "full_name": "ContentEditor.Character.CharacterAnimatorSimulation.WalkForwardCharacterAnimatorSimulationBehavior+_003CExecute_003Ed__11",
+        "name": "_003CExecute_003Ed__11",
+        "namespace": "ContentEditor.Character.CharacterAnimatorSimulation",
+        "declaring_type": "ContentEditor.Character.CharacterAnimatorSimulation.WalkForwardCharacterAnimatorSimulationBehavior",
+        "line": 13,
+        "kind": "class",
+        "modifiers": [
+          "private",
+          "sealed"
+        ],
+        "base_types": [
+          "IEnumerator<object>",
+          "IEnumerator",
+          "IDisposable"
+        ],
+        "attributes": [
+          "[CompilerGenerated]"
+        ],
+        "description_ru": "Сгенерированная компилятором машина состояний корутины. Поля хранят состояние итерации, Current и захваченные параметры; экспортные методы заглушечные.",
+        "description_basis": "compiler_generated_structure",
+        "fields": [
+          {
+            "name": "_003C_003E1__state",
+            "type": "int",
+            "line": 15,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_003C_003E1__state",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003C_003E1__state.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_003C_003E2__current",
+            "type": "object",
+            "line": 17,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_003C_003E2__current",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003C_003E2__current.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "controller",
+            "type": "CharacterAnimatorSimulationController",
+            "line": 19,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "declaration": "controller",
+            "description_ru": "Контроллер, переданный в корутину Execute.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_003C_003E4__this",
+            "type": "WalkForwardCharacterAnimatorSimulationBehavior",
+            "line": 21,
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [],
+            "declaration": "_003C_003E4__this",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003C_003E4__this.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_003Canimator_003E5__2",
+            "type": "Animator",
+            "line": 23,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_003Canimator_003E5__2",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003Canimator_003E5__2.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_003Celapsed_003E5__3",
+            "type": "float",
+            "line": 25,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_003Celapsed_003E5__3",
+            "description_ru": "Внутреннее поле машины состояний корутины: _003Celapsed_003E5__3.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": ".ctor",
+            "source_name": "_003CExecute_003Ed__11",
+            "qualified_name": "_003CExecute_003Ed__11",
+            "explicit_interface": null,
+            "line": 46,
+            "kind": "constructor",
+            "modifiers": [
+              "public"
+            ],
+            "attributes": [
+              "[DebuggerHidden]"
+            ],
+            "parameters": [
+              {
+                "name": "_003C_003E1__state",
+                "type": "int",
+                "modifiers": [],
+                "default": null,
+                "line": 46
+              }
+            ],
+            "return_type": "void",
+            "description_ru": "Конструктор сгенерированной машины состояний корутины; экспортное тело пустое.",
+            "description_basis": "language_convention",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "Dispose",
+            "source_name": "Dispose",
+            "qualified_name": "IDisposable.Dispose",
+            "explicit_interface": "IDisposable",
+            "line": 51,
+            "kind": "method",
+            "modifiers": [],
+            "attributes": [
+              "[DebuggerHidden]"
+            ],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Реализация IDisposable.Dispose машины состояний; экспортное тело пустое.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "MoveNext",
+            "source_name": "MoveNext",
+            "qualified_name": "MoveNext",
+            "explicit_interface": null,
+            "line": 55,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "bool",
+            "description_ru": "Продвижение итератора; в экспортном коде всегда возвращает false, поэтому корутина сразу завершена.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "returns_false",
+              "source": "{\r\n\t\t\t\treturn false;\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "MoveNext",
+            "source_name": "MoveNext",
+            "qualified_name": "IEnumerator.MoveNext",
+            "explicit_interface": "IEnumerator",
+            "line": 60,
+            "kind": "method",
+            "modifiers": [],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "bool",
+            "description_ru": "Явная реализация IEnumerator.MoveNext перенаправляет вызов в приватный MoveNext, который возвращает false.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "forwards_to_stub_movenext",
+              "source": "{\r\n\t\t\t\t//ILSpy generated this explicit interface implementation from .override directive in MoveNext\r\n\t\t\t\treturn this.MoveNext();\r\n\t\t\t}"
+            }
+          },
+          {
+            "name": "Reset",
+            "source_name": "Reset",
+            "qualified_name": "IEnumerator.Reset",
+            "explicit_interface": "IEnumerator",
+            "line": 67,
+            "kind": "method",
+            "modifiers": [],
+            "attributes": [
+              "[DebuggerHidden]"
+            ],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Реализация IEnumerator.Reset; экспортное тело пустое.",
+            "description_basis": "iterator_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t\t}"
+            }
+          }
+        ],
+        "properties": [
+          {
+            "name": "Current",
+            "qualified_name": "IEnumerator<object>.Current",
+            "explicit_interface": "IEnumerator<object>",
+            "type": "object",
+            "line": 27,
+            "modifiers": [],
+            "attributes": [],
+            "description_ru": "Текущий элемент IEnumerator; оба экспортных getter-а возвращают null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [
+              {
+                "kind": "get",
+                "line": 29,
+                "attributes": [
+                  "[DebuggerHidden]"
+                ],
+                "observed_body": {
+                  "classification": "returns_null",
+                  "source": "{\r\n\t\t\t\t\treturn null;\r\n\t\t\t\t}"
+                }
+              }
+            ],
+            "expression_body": null
+          },
+          {
+            "name": "Current",
+            "qualified_name": "IEnumerator.Current",
+            "explicit_interface": "IEnumerator",
+            "type": "object",
+            "line": 36,
+            "modifiers": [],
+            "attributes": [],
+            "description_ru": "Текущий элемент IEnumerator; оба экспортных getter-а возвращают null.",
+            "description_basis": "declarations_and_source",
+            "accessors": [
+              {
+                "kind": "get",
+                "line": 38,
+                "attributes": [
+                  "[DebuggerHidden]"
+                ],
+                "observed_body": {
+                  "classification": "returns_null",
+                  "source": "{\r\n\t\t\t\t\treturn null;\r\n\t\t\t\t}"
+                }
+              }
+            ],
+            "expression_body": null
+          }
+        ],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/Properties/AssemblyInfo.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "3f2d9aef361f6bd45cf542030116d1b94381b4b5be99101d240db38543a523e9",
+    "description_ru": "Метаданные AssemblyVersion(\"0.0.0.0\"); игровых типов нет.",
+    "types": [],
+    "assembly_attributes": [
+      "[assembly: AssemblyVersion(\"0.0.0.0\")]"
+    ],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/TexturesStreamingDebugger.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "1e7ab49e938b52040a36d7ed6239294b2de8e7f33c1ff70f48ab4261b62b1b69",
+    "description_ru": "Отладочное представление памяти и потоковой загрузки текстур через TextMeshPro. Конкретные исходные показатели по заглушкам неизвестны.",
+    "types": [
+      {
+        "full_name": "TexturesStreamingDebugger",
+        "name": "TexturesStreamingDebugger",
+        "namespace": "",
+        "declaring_type": null,
+        "line": 5,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [],
+        "description_ru": "Отладочное представление памяти и потоковой загрузки текстур через TextMeshPro. Конкретные исходные показатели по заглушкам неизвестны.",
+        "description_basis": "declarations_and_names",
+        "fields": [
+          {
+            "name": "_byteToMegaByte",
+            "type": "int",
+            "line": 7,
+            "modifiers": [
+              "private",
+              "const"
+            ],
+            "attributes": [],
+            "declaration": "_byteToMegaByte = 1048576",
+            "description_ru": "Константа 1048576 для перевода байтов в МиБ.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_texturesInfo",
+            "type": "TextMeshProUGUI",
+            "line": 10,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_texturesInfo",
+            "description_ru": "Ссылка на TextMeshProUGUI для отладочного текста о текстурах.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_stringBuilder",
+            "type": "StringBuilder",
+            "line": 12,
+            "modifiers": [
+              "private",
+              "readonly"
+            ],
+            "attributes": [],
+            "declaration": "_stringBuilder",
+            "description_ru": "Буфер сборки отладочного текста; точное содержимое неизвестно.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": "Awake",
+            "source_name": "Awake",
+            "qualified_name": "Awake",
+            "explicit_interface": null,
+            "line": 14,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение первичной инициализации компонента. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          },
+          {
+            "name": "Update",
+            "source_name": "Update",
+            "qualified_name": "Update",
+            "explicit_interface": null,
+            "line": 18,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение обновления кадра. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t}"
+            }
+          }
+        ],
+        "properties": [],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/Utils/Animations/PlayAnimationWithRandomStart.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "f415bb9468737ae4b84ea1b9fd79636a61cea2a2c0a8873d3948a9ad26c629cb",
+    "description_ru": "Компонент с настройками старта legacy Animation со случайной или заданной нормализованной позиции; OnEnable пуст.",
+    "types": [
+      {
+        "full_name": "Utils.Animations.PlayAnimationWithRandomStart",
+        "name": "PlayAnimationWithRandomStart",
+        "namespace": "Utils.Animations",
+        "declaring_type": null,
+        "line": 5,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [],
+        "description_ru": "Компонент с настройками старта legacy Animation со случайной или заданной нормализованной позиции; OnEnable пуст.",
+        "description_basis": "declarations_and_names",
+        "fields": [
+          {
+            "name": "_animation",
+            "type": "Animation",
+            "line": 8,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_animation",
+            "description_ru": "Ссылка на компонент legacy Animation.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_useRandomStartTime",
+            "type": "bool",
+            "line": 11,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[SerializeField]"
+            ],
+            "declaration": "_useRandomStartTime",
+            "description_ru": "Флаг использования случайной стартовой позиции анимации по имени и Header.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_startTime",
+            "type": "float",
+            "line": 16,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [
+              "[Header(\"0 - Start animation, 1 - End animation (If UseRandomStartTime Off)\")]",
+              "[SerializeField]",
+              "[Range(0f, 1f)]"
+            ],
+            "declaration": "_startTime",
+            "description_ru": "Нормализованная стартовая позиция 0..1 при выключенном случайном старте, согласно Header и Range.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": "OnEnable",
+            "source_name": "OnEnable",
+            "qualified_name": "OnEnable",
+            "explicit_interface": null,
+            "line": 18,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение включения компонента. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          }
+        ],
+        "properties": [],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/Utils/Graphy/Extension/DesiredTextureMemoryView.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "3ae77fa1a94b9b79f67328d14dced4fa59b26d0fc3b4e58097addcaaa1dd2c9e",
+    "description_ru": "Индикатор желаемого объёма памяти текстур, дополнение к Graphy; методы экспорта пусты.",
+    "types": [
+      {
+        "full_name": "Utils.Graphy.Extension.DesiredTextureMemoryView",
+        "name": "DesiredTextureMemoryView",
+        "namespace": "Utils.Graphy.Extension",
+        "declaring_type": null,
+        "line": 6,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [],
+        "description_ru": "Индикатор желаемого объёма памяти текстур, дополнение к Graphy; методы экспорта пусты.",
+        "description_basis": "declarations_and_names",
+        "fields": [
+          {
+            "name": "ByteToMegaByte",
+            "type": "int",
+            "line": 8,
+            "modifiers": [
+              "private",
+              "const"
+            ],
+            "attributes": [],
+            "declaration": "ByteToMegaByte = 1048576",
+            "description_ru": "Поле ByteToMegaByte типа int; точное назначение не установлено.",
+            "description_basis": "declarations_and_names"
+          },
+          {
+            "name": "_text",
+            "type": "TextMeshProUGUI",
+            "line": 10,
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "declaration": "_text",
+            "description_ru": "Ссылка на TextMeshProUGUI индикатора.",
+            "description_basis": "declarations_and_names"
+          }
+        ],
+        "methods": [
+          {
+            "name": "Awake",
+            "source_name": "Awake",
+            "qualified_name": "Awake",
+            "explicit_interface": null,
+            "line": 12,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение первичной инициализации компонента. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          },
+          {
+            "name": "Update",
+            "source_name": "Update",
+            "qualified_name": "Update",
+            "explicit_interface": null,
+            "line": 16,
+            "kind": "method",
+            "modifiers": [
+              "private"
+            ],
+            "attributes": [],
+            "parameters": [],
+            "return_type": "void",
+            "description_ru": "Unity-сообщение обновления кадра. В экспортном теле действий нет.",
+            "description_basis": "unity_message_convention_and_source",
+            "observed_body": {
+              "classification": "empty_body",
+              "source": "{\r\n\t\t}"
+            }
+          }
+        ],
+        "properties": [],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  },
+  {
+    "path": "Assets/Scripts/Assembly-CSharp/Utils/SelectionBase.cs",
+    "assembly": "Assembly-CSharp",
+    "sha256": "98291674a2efa758f21aae60720f3c5abda59ae318a87a35b279895fe9583fa7",
+    "description_ru": "Маркер выбора корневого объекта в редакторе Unity через атрибут SelectionBase; пустой класс здесь нормален.",
+    "types": [
+      {
+        "full_name": "Utils.SelectionBase",
+        "name": "SelectionBase",
+        "namespace": "Utils",
+        "declaring_type": null,
+        "line": 6,
+        "kind": "class",
+        "modifiers": [
+          "public"
+        ],
+        "base_types": [
+          "MonoBehaviour"
+        ],
+        "attributes": [
+          "[SelectionBase]"
+        ],
+        "description_ru": "Маркер выбора корневого объекта в редакторе Unity через атрибут SelectionBase; пустой класс здесь нормален.",
+        "description_basis": "declarations_and_names",
+        "fields": [],
+        "methods": [],
+        "properties": [],
+        "events": []
+      }
+    ],
+    "assembly_attributes": [],
+    "parse_has_error": false
+  }
+]

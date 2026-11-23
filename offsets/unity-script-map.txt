@@ -1,0 +1,1217 @@
+﻿Карта скриптов Unity — экспорт AssetRipper, 22 ноября 2026
+
+ПРОЕКТ
+C:\Users\LagBag\Desktop\AssetRipper_win_x64\Test\AssetRipper_export_20261122_153035\ExportedProject
+Версия из ProjectVersion.txt: 6000.3.18f1.
+
+ГЛАВНЫЙ ВЫВОД
+В Assets найдено 11 C# файлов и 158 DLL в корне Plugins. Основная структура игры находится в DLL. Выполнена проверка метаданных и IL 24 выбранных сборок: 13 506 типов (включая вложенные, сгенерированные и перечисления), 88 005 объявлений методов, 86 020 читаемых тел методов.
+Это экспорт с заглушками: сохранены классы, поля, сигнатуры и простые аксессоры/конструкторы, но исследованные игровые методы не содержат исходных алгоритмов. Например, Start.UnityEntry.Awake и Update состоят из ret; Game.Game.Start/Init/Update и ключевые Updater.Update также пусты. Имена классов/методов показывают проектное назначение систем, а не доказывают выполняемые вызовы.
+Без исходной реализации нельзя достоверно восстановить расчёты урона, скорости, сетевой обмен, последовательность загрузки или полное поведение персонажа.
+
+ГДЕ ЧТО ЛЕЖИТ
+Assets/Scripts/Assembly-CSharp — восстановленные C# вспомогательных компонентов.
+Assets/Plugins — игровые DLL и сторонние библиотеки. Не каждая DLL является отдельной игровой системой.
+Assets/Scenes — 8 основных сцен экранов.
+Assets/Content/Generated/Locations — сцены локаций и статические части.
+Assets/Content/Intro/IntroLocations — префабы вступительных сцен.
+Assets/MonoBehaviour, ScriptableObjects, Resources, Content — сериализованные данные и контент, а не обязательно исходники C#.
+AuxiliaryFiles/GameAssemblies — исходный для экспорта набор сборок; SHA-256 Game, Battle, Global, Models, Bootstrap совпадает с копиями в Plugins.
+Library, Temp, Logs — служебные каталоги Unity, не источник игровой логики.
+
+СТАРТ И СЦЕНЫ
+EditorBuildSettings включает только Assets/Scenes/Start.unity.
+На объекте UnityEntry лежат Start.UnityEntry и Start.ViewContainer из Game.dll (ссылки m_Script на строках 14335 и 14348). ViewContainer хранит Addressables-ссылки на контент экранов, а Game.ScreenManager объявляет фабрики экранов меню, боя и Realm. Это конфигурационная структура; фактический порядок переходов не установлен из-за заглушек.
+Сопоставлено 1291 из 1292 MonoBehaviour в 8 основных сценах по GUID DLL и Unity fileID класса. Один компонент FakeLightProbeRoom в CharacterCustomization остался неразрешённым.
+В ScreenContent/MainMenuScreenContent.asset поле _scene использует GUID, отличный от GUID экспортированной MainMenu.unity.meta. Значит, сохранившиеся ссылки Addressables нельзя автоматически считать исправными ссылками на экспортные SceneAsset. Запуск и восстановление Addressables отдельно не проверялись.
+Options.asset содержит UseRemoteServer=1, Environment=prod. Исходные серверные зависимости не заменены этим экспортом. Игра не запускалась и сетевые запросы не выполнялись.
+
+МОДУЛИ И ИХ НАЗНАЧЕНИЕ
+
+
+{
+  "name": "Bootstrap",
+  "purpose": "Расширения UI Toolkit: поля выбора, поиск и выпадающие меню.",
+  "evidence": [
+    "UnityEngine.UIElements.FilteredDropdown",
+    "UnityEngine.UIElements.SearchFieldBase`2",
+    "UnityEngine.UIElements.DropMenu.DropMenuView"
+  ],
+  "note": "Несмотря на имя сборки, точка запуска игры находится в Game.dll. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Core",
+  "purpose": "Базовые службы: обновление объектов, отложенные действия, пулы, файловый ввод-вывод и сериализация.",
+  "evidence": [
+    "Core.Updater.CompositeUpdater",
+    "Core.Scheduler",
+    "Core.DeviceIdDataStorage",
+    "Core.IO.File",
+    "Core.EventBus.SoundEventBus"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Game",
+  "purpose": "Каркас приложения: вход Unity, запуск и остановка игры, загрузка конфигурации, переключение основных экранов.",
+  "evidence": [
+    "Start.UnityEntry",
+    "Start.ViewContainer",
+    "Game.Game",
+    "Game.GameModel",
+    "Game.ScreenManager",
+    "Game.Start.BuiltInStartGameProcessor",
+    "Game.Start.StartGameProcessor",
+    "Game.Start.Options"
+  ],
+  "note": "Awake/Update у UnityEntry и Start/Init/Update у Game присутствуют как сигнатуры; порядок вызовов по этим заглушкам не восстановить. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Client",
+  "purpose": "Клиентская обработка серверных данных, время и тики, репликация и предсказание движения; подготовка сетевого ввода.",
+  "evidence": [
+    "ClientCore.ApplyDataUpdater.ApplyDataUpdater",
+    "ClientCore.Prediction.SendBattleInputUpdater.SendBattleInputUpdater",
+    "ClientCore.Prediction.SimulateNewTickUpdater.SimulateNewTickUpdater",
+    "ClientCore.Prediction.SimulatePreviousTicksUpdater.SimulatePreviousTicksUpdater",
+    "ClientCore.GhApiClient.GhApiClient"
+  ],
+  "note": "Имена ReadWholeData/ReadDiffData, SendInput и поля снимков подтверждают назначение, но алгоритмы отсутствуют. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Auth",
+  "purpose": "Контракт получения токена и типы ошибок запуска: сеть, аккаунт, контент, версия, безопасность.",
+  "evidence": [
+    "Game.Start.GameTokenProvider.ITokenProvider",
+    "Game.Start.StartGameError",
+    "Game.Start.StartGameErrorCode",
+    "Game.Start.StartGameErrorCodeUtils"
+  ],
+  "note": "Здесь в основном описание ошибок. SteamTokenProvider находится в Steam.dll, авторизация старта — в Game.dll, HTTP login — в Client.dll. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Network",
+  "purpose": "Соединения User/RegionUser/Battle, отправка сообщений, переподключение и сетевые параметры.",
+  "evidence": [
+    "Network.Connection.RoomConnection",
+    "Network.Connection.RoomConnections",
+    "Network.ConnectUpdater",
+    "Network.ClientHost",
+    "Network.Config.NetworkConfig",
+    "Network.Config.GameConfig"
+  ],
+  "note": "Есть SendMessage/UnreliableSendMessage, Connect/Authorize, RTT и packet-loss свойства; реальный обмен трафиком не проверялся. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Inputs",
+  "purpose": "Устройства ввода, приоритеты обработчиков и блокировка отдельных групп действий.",
+  "evidence": [
+    "Inputs.DeviceModel",
+    "Inputs.InputHandlersManager",
+    "Inputs.InputHandlersUpdater",
+    "Inputs.InputMask",
+    "Inputs.InputHandlerPriority",
+    "Game.Battle.Inputs.InputModel"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "MainMenu",
+  "purpose": "Главное меню: кнопка игры, настройки, репутация, внешний вид персонажа, ник, боевой пропуск и магазин.",
+  "evidence": [
+    "Game.MainMenu.MainMenuScreenUpdater",
+    "Game.MainMenu.MainMenuScreenFactory",
+    "Game.MainMenu.MainMenuDialogInputUpdater",
+    "Game.MainMenu.MainMenuSceneView",
+    "Game.MainMenu.MainMenuCustomizationUpdater"
+  ],
+  "note": "В MainMenuDialogInputUpdater перечислены OnPlayButtonClicked, OnSettingsClicked, OnReputationClicked, OnSkinCenterClicked. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Realm",
+  "purpose": "Глобальная карта мира: секторы, поселения, выделение, камера и масштаб, покупка поселений, захват и обучение.",
+  "evidence": [
+    "Game.Realm.RealmModel",
+    "Game.Realm.RealmScreenUpdater",
+    "Game.Realm.Sectors.RealmGridView",
+    "Game.Realm.Sectors.RealmSectorsUpdater",
+    "Game.Realm.Sectors.RealmSelectionCellUpdater",
+    "Game.Realm.Tutorial.RealmTutorialUpdater"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Battle",
+  "purpose": "Основная игровая сцена: персонажи, транспорт, ввод, оружие, инвентарь, взаимодействия, строительство, HUD и диалоги.",
+  "evidence": [
+    "Game.Battle.BattleModel",
+    "Game.Battle.BattleEntitiesModel",
+    "Game.Battle.BattleScreenUpdater",
+    "Game.Battle.BattleScreenFactory",
+    "Game.Battle.Inventory.InventoryDialogModel",
+    "Game.Battle.EntityModel.Player.Movement.PlayerMovementInterpolationUpdater",
+    "Game.Battle.Inputs.Keyboard.MoveShooterKeyboardInputUpdater"
+  ],
+  "note": "Крупнейшая презентационная сборка: около 4,2 тыс. типов, включая вложенные и сгенерированные. Содержит также части игрового состояния. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Global",
+  "purpose": "Общие для экранов модели и системы: настройки, чат, кланы, репутация, кастомизация, магазин, обучение и PlayerPrefs.",
+  "evidence": [
+    "Game.Global.GlobalModel",
+    "Game.Common.GlobalScreenContent",
+    "Game.Global.Settings.SettingsModel",
+    "Game.Global.PlayerPrefsFile.PlayerPrefsModel",
+    "Game.Global.PlayerPrefsFile.SavePlayerPrefsUpdater",
+    "Game.Global.Tutorial.TutorialModel"
+  ],
+  "note": "PlayerPrefs/настройки не доказывают наличие полного локального сохранения мира. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Models",
+  "purpose": "Данные игрового мира, справочники, сообщения протокола и системы симуляции: персонажи, транспорт, оружие, инвентарь и владения.",
+  "evidence": [
+    "Models.Systems.CharacterControllerInputSystem",
+    "Models.Systems.CharacterControllerInputVelocitySystem",
+    "Models.Systems.CharacterControllerForwardMovementSystem",
+    "Models.Systems.WeaponRoundsSystem",
+    "Models.Systems.WeaponSpreadSystem",
+    "Models.Models.InventoryModel.InventoryModel",
+    "Models.Inventory.InventoryRules"
+  ],
+  "note": "Присутствуют Models.Data, Models.Messages, Models.References, Models.Systems. Наличие общей модели не устанавливает состав серверного приложения. Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "UI",
+  "purpose": "Переиспользуемые элементы интерфейса: кнопки, поля ввода, полоски здоровья, локализованный текст, графики и прокрутка.",
+  "evidence": [
+    "UI.ClickButtonView",
+    "UI.InputFieldView",
+    "UI.HealthBarView",
+    "UI.DraggableItemView",
+    "UI.UiGraphView",
+    "UI.CurrencyDescription"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "UiState",
+  "purpose": "Именованные состояния интерфейса и применение состояния к GameObject, Transform, цвету, тексту и анимации.",
+  "evidence": [
+    "Utils.UiState.StateGroup",
+    "Utils.UiState.StateElementBase",
+    "Utils.UiState.StateGameObject",
+    "Utils.UiState.StateRectTransform",
+    "Utils.UiState.StateTextMeshPro"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Content",
+  "purpose": "Загрузка и выгрузка ресурсов/сцен, создание экземпляров, кэширование, пулы и освобождение контента.",
+  "evidence": [
+    "Content.ContentWrappers.LoadedContent`1",
+    "Content.ContentWrappers.SceneContent`1",
+    "Content.ContentWrappers.PooledLoadedComponentContent`1",
+    "Content.PoolRegistry",
+    "Content.SpriteAtlasContent"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "TalkSystem",
+  "purpose": "Структура графов диалогов: реплики NPC, игрок, стартовые узлы, значения и условия.",
+  "evidence": [
+    "TalkSystem.TalkGraph",
+    "TalkSystem.TalkSystem.Runtime.Nodes.StartTalkNode",
+    "TalkSystem.TalkSystem.Runtime.Contexts.NpcPhrase",
+    "TalkSystem.TalkSystem.Runtime.Conditions.ComparerNode",
+    "TalkSystem.TalkSystem.Runtime.Conditions.RangeNode"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "TargetSystem",
+  "purpose": "Выбор объекта взаимодействия и доступного действия, подсказки и приоритеты целей.",
+  "evidence": [
+    "Game.Targets.TargetModel",
+    "Game.Targets.TargetSubsystem`1",
+    "Game.Targets.CompositeTargetProvider",
+    "Game.Targets.TargetHintObject",
+    "Game.Targets.TargetSubsystemFilter"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "TriggerZones",
+  "purpose": "Пространственные зоны-триггеры и сущности: регистрация, контакты, raycast и пересечение со сферой.",
+  "evidence": [
+    "Utils.TriggerZones.TriggerZonesSpatialStruct",
+    "Utils.TriggerZones.TriggerZonesSpatialStructData",
+    "Utils.TriggerZones.TriggerZonesEntityData",
+    "Utils.TriggerZones.TriggerZonesTriggerZoneData"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Utils.TattooUnlock",
+  "purpose": "Timeline-компоненты сцены открытия татуировки: движение камеры, затемнение и отображение результата.",
+  "evidence": [
+    "Tattoo.UnlockAnimation.CinemachineDollyTrack",
+    "Tattoo.UnlockAnimation.ScreenFaderTrack",
+    "Tattoo.UnlockAnimation.TattooUnlockViewTrack"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Rendering",
+  "purpose": "Собственные функции URP: вода, размытие интерфейса, дым, motion vectors и SDF-эффекты.",
+  "evidence": [
+    "Game.Rendering.WaterRendererFeature.WaterRendererFeature",
+    "Game.Rendering.UIBlur.UIBlurRenderFeature",
+    "Game.Rendering.SmokeScreenEffect.SmokeScreenFeature",
+    "Game.Rendering.TransparentMotionVectors.TransparentMotionVectorsFeature",
+    "Game.Rendering.SDFEffects.SDFEffectsFeature"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "IK",
+  "purpose": "Настройка и анимация IK: конечности, постановка ног на поверхность, трансформации и влияние камеры.",
+  "evidence": [
+    "IK.AnimationIKView",
+    "IK.FootGroundingView",
+    "IK.ForearmStraightenerView",
+    "IK.LimbIKView",
+    "IK.IKUpdateLoop"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Cinemachine.TPSO",
+  "purpose": "Расширения камеры: смешивание, масштабирование, прицеливание и столкновения с окружением/водой.",
+  "evidence": [
+    "CinemachineTPSO.MixingCamera",
+    "CinemachineTPSO.ZoomCamera",
+    "CinemachineTPSO.CinemachineAimingCameraFollow",
+    "CinemachineTPSO.CameraCollisionsExtension",
+    "CinemachineTPSO.WaterSurfaceCollisionExtension"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "SharedType",
+  "purpose": "Общие перечисления типов валют, таймеров кнопок и звуков интерфейса.",
+  "evidence": [
+    "SharedType.ButtonWithTimerType",
+    "SharedType.MoneyType",
+    "SharedType.GlobalUISoundType",
+    "SharedType.BattleUISoundType"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+{
+  "name": "Steam",
+  "purpose": "Получение Steam Web API ticket и токена для запуска игры.",
+  "evidence": [
+    "Game.Steam.SteamWebApiTicketProvider",
+    "Game.Start.GameTokenProvider.SteamTokenProvider"
+  ],
+  "note": "Назначение определено по метаданным; игровой алгоритм в экспортированных телах методов отсутствует."
+}
+
+
+ПРИВЯЗКИ К СЦЕНАМ
+
+
+Battle.unity:8458 | ScreenView | Game.Battle.BattleScreenView | Battle.dll
+
+Battle.unity:8504 | ScreenView | Game.Battle.Utils.GizmosContainer | Battle.dll
+
+Battle.unity:8574 | ScreenView | Game.Battle.EntityModel.Player.Debug.DebugShotsView | Battle.dll
+
+Battle.unity:8594 | ScreenView | Game.Battle.PhysicsDebug.View.PhysicsDebugView | Battle.dll
+
+Battle.unity:8618 | ScreenView | Game.Battle.Cheats.CarSettings.CarSettingsCheatView | Battle.dll
+
+Battle.unity:8728 | ScreenView | Game.Battle.Cheats.HelicopterSettings.HelicopterSettingsCheatView | Battle.dll
+
+Battle.unity:8782 | ScreenView | Game.Battle.Entities.Player.Debug.DebugEntityIdView | Battle.dll
+
+Battle.unity:8797 | ScreenView | Game.Battle.Entities.Player.Debug.ReplicationBytes.DebugReplicationDataBytesView | Battle.dll
+
+Battle.unity:8813 | ScreenView | Game.Battle.Entities.Player.Debug.ReplicationBytes.DebugReplicationPacketsBytesView | Battle.dll
+
+Battle.unity:8829 | ScreenView | Game.Battle.Entities.Player.BattleAssistance.Debug.BattleAssistanceDebugView | Battle.dll
+
+Battle.unity:8848 | ScreenView/ExhaustSmokeVfxSpawner | Game.Battle.ExhaustSmokeVfxSpawner | Battle.dll
+
+Battle.unity:8860 | CameraHolder/Root/Battle Mixing Camera | CinemachineTPSO.MixedCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:8878 | CameraHolder/Root/Battle Mixing Camera | CinemachineTPSO.MixingCamera | Cinemachine.TPSO.dll
+
+Battle.unity:8916 | CameraHolder/Root/Battle Mixing Camera/WaterVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:8991 | ScreenView/SkidTrailSpawner | Game.Battle.SkidTrailSpawner | Battle.dll
+
+Battle.unity:9042 | CameraHolder/Root/Battle Mixing Camera/KnockoutVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:9286 | CameraHolder/Root/Battle Mixing Camera/SprintVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:9298 | CameraHolder/Root/Battle Mixing Camera/HelicopterVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:9310 | CameraHolder/Root/Battle Mixing Camera/CarVCam | Game.Battle.CameraSettingsView | Battle.dll
+
+Battle.unity:9363 | CameraHolder/Root/Battle Mixing Camera/CarVCam | Game.Battle.Cars.CarCameraView | Battle.dll
+
+Battle.unity:9380 | CameraHolder/Root/Battle Mixing Camera/ArmedVCam/cm | CinemachineTPSO.CinemachineAimingCameraFollow | Cinemachine.TPSO.dll
+
+Battle.unity:9486 | CameraHolder/Root/Battle Mixing Camera/CarVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:9716 | CameraHolder/Root/Battle Mixing Camera/CloseToGroundVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:9871 | CameraHolder/Root/Battle Mixing Camera/CarVCam | Game.Battle.CameraSettingsView | Battle.dll
+
+Battle.unity:9971 | CameraHolder/Root/MainCamera | IK.AnimationIKView | IK.dll
+
+Battle.unity:9988 | CameraHolder/Root/Battle Mixing Camera/EmotionVCam | CinemachineTPSO.WaterSurfaceCollisionExtension | Cinemachine.TPSO.dll
+
+Battle.unity:10034 | ScreenView | Game.Battle.ParticleUtility.ParticleSpawner | Battle.dll
+
+Battle.unity:10046 | ScreenView | Game.Battle.ParticleUtility.ParticleSpawnerLate | Battle.dll
+
+Battle.unity:10058 | BulletTrailVfxSpawner | Game.Battle.BulletTrailVfxSpawner | Battle.dll
+
+CharacterCustomization.unity:30153 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Scene.SkinCenterCharacterView | Global.dll
+
+CharacterCustomization.unity:30427 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+CharacterCustomization.unity:30440 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+CharacterCustomization.unity:30617 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Scene.SkinCenterHeadRotationView | Global.dll
+
+CharacterCustomization.unity:30734 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Scene.SkinCenterCharacterView | Global.dll
+
+CharacterCustomization.unity:30960 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+CharacterCustomization.unity:31005 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+CharacterCustomization.unity:31175 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+CharacterCustomization.unity:31254 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+CharacterCustomization.unity:31267 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateGroup | UiState.dll
+
+CharacterCustomization.unity:31343 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateGroup | UiState.dll
+
+CharacterCustomization.unity:31460 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+CharacterCustomization.unity:31478 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+CharacterCustomization.unity:31614 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+CharacterCustomization.unity:31750 | CharacterCustomizationScreenView | Utils.UiState.StateGroup | UiState.dll
+
+CharacterCustomization.unity:31808 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+CharacterCustomization.unity:31860 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+CharacterCustomization.unity:31945 | CharacterCustomizationScreenView/Scene_Root/ZoomCamera | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+CharacterCustomization.unity:31974 | CharacterCustomizationScreenView/Scene_Root/ZoomCamera | Game.Global.SkinCenter.Scene.SkinCenterCharacterZoomView | Global.dll
+
+CharacterCustomization.unity:32049 | CharacterCustomizationScreenView | Game.Global.SkinCenter.Scene.SkinCenterSceneView | Global.dll
+
+CharacterCustomization.unity:32249 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+CharacterCustomization.unity:32268 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+CharacterCustomization.unity:32404 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+CharacterCustomization.unity:32613 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+CharacterCustomization.unity:32822 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+CharacterCustomization.unity:32987 | CharacterCustomizationScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Scene.SkinCenterHeadRotationView | Global.dll
+
+CharacterCustomization.unity:33042 | CharacterCustomizationScreenView | Utils.UiState.StateGroup | UiState.dll
+
+CharacterCustomization.unity:33073 | CharacterCustomizationScreenView | Game.Global.CharacterCustomization.CharacterCustomizationSceneView | Global.dll
+
+Customize.unity:51425 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:51561 | CustomizeLocation/Weapon/Cam_PackPreview_Weapon | Game.Global.SkinCenter.Scene.SkinCenterCharacterZoomView | Global.dll
+
+Customize.unity:51618 | CustomizeLocation/Weapon/Cam_BattlePassPreview_Weapon | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:51732 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+Customize.unity:51784 | CustomizeLocation/Character/Placeholder_Characters/Male/SelectMale/MaleLight/shadowFemale (1) | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:51950 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+Customize.unity:52052 | CustomizeLocation/Weapon/Cam_PackPreview_Weapon | Game.Global.SkinCenter.Scene.SkinCenterWeaponZoomCamerasView | Global.dll
+
+Customize.unity:52068 | CustomizeLocation/Coins/Placeholder_Coins/Coins | Game.Global.SkinCenter.Scene.SkinCenterDelayedRotationResetView | Global.dll
+
+Customize.unity:52358 | CustomizeLocation/Crate/Placeholder_Crate | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:52553 | CustomizeLocation/Character/Placeholder_Characters/CharactersAdditional | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:52684 | CustomizeLocation/Weapon/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:52877 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Scene.SkinCenterCharacterView | Global.dll
+
+Customize.unity:52924 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+Customize.unity:53081 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+Customize.unity:53094 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateGroup | UiState.dll
+
+Customize.unity:53170 | CustomizeLocation/Character/Placeholder_Characters/Female/SelectFemale/FemaleLight/SelectMale/shadowFemale | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:53204 | CustomizeLocation/Weapon/Cam_Weapon/ZoomCamera | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+Customize.unity:53336 | CustomizeLocation/Coins/Placeholder_Coins/Coins | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:53598 | CustomizeLocation/Vehicle/Placeholder_Vehicle/Vehicle/shadowHeli_02 | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:53672 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+Customize.unity:53690 | CustomizeLocation/Character/Placeholder_Characters/Female/SelectFemale/FemaleLight/shadowMale (1) | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:53858 | CustomizeLocation/Vehicle/Cam_PackPreview_Vehicle/Cam_PackPreview_Car | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:53971 | CustomizeLocation/Vehicle/Cam_BattlePassPreview_Vehicle | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:54112 | CustomizeLocation/Vehicle/Cam_PackPreview_Vehicle/Cam_PackPreview_Helicopter | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:54132 | CustomizeLocation/Weapon/Cam_Weapon | Game.Global.SkinCenter.Scene.SkinCenterWeaponZoomCamerasView | Global.dll
+
+Customize.unity:54187 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+Customize.unity:54205 | CustomizeLocation/Vehicle/Cam_BattlePassPreview_Vehicle/Cam_BattlePassPreview_Car | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:54225 | CustomizeLocation/Weapon/Placeholder_Weapon | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:54327 | CustomizeLocation/Vehicle/Cam_PackPreview_Vehicle | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:54542 | CustomizeLocation/Character/Placeholder_Characters/Male/SelectMale | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:54656 | CustomizeLocation/Crate/Placeholder_Crate/Crate | Game.Global.SkinCenter.Scene.SkinCenterDelayedRotationResetView | Global.dll
+
+Customize.unity:54840 | CustomizeLocation/Character/Cam_Character | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+Customize.unity:54983 | CustomizeLocation/Weapon/Cam_Weapon | Game.Global.SkinCenter.Scene.SkinCenterCharacterZoomView | Global.dll
+
+Customize.unity:55062 | CustomizeLocation/Weapon/Cam_BattlePassPreview_Weapon/ZoomCamera | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+Customize.unity:55286 | CustomizeLocation | Utils.UiState.StateGroup | UiState.dll
+
+Customize.unity:55443 | CustomizeLocation/Vehicle/Cam_Vehicle/Cam_Car | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:55544 | CustomizeLocation/Ground | Game.Global.SkinCenter.Scene.SkinCenterSceneGroundView | Global.dll
+
+Customize.unity:55608 | CustomizeLocation/Coins/Cam_PackPreview_Coins | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:55710 | CustomizeLocation/Weapon/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:55778 | CustomizeLocation/Crate/Placeholder_Crate/Crate | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:55912 | CustomizeLocation/Weapon/Cam_PackPreview_Weapon/ZoomCamera | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+Customize.unity:56005 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:56141 | CustomizeLocation/CustomizeBackgroundCanvas | Game.CanvasScalerView | Game.dll
+
+Customize.unity:56154 | CustomizeLocation/Character/Cam_Character/Male_PackPreview_Point | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:56404 | CustomizeLocation/Weapon/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterDelayedRotationResetView | Global.dll
+
+Customize.unity:56480 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+Customize.unity:56583 | CustomizeLocation/Weapon/Cam_BattlePassPreview_Weapon | Game.Global.SkinCenter.Scene.SkinCenterWeaponZoomCamerasView | Global.dll
+
+Customize.unity:56626 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:56890 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+Customize.unity:56996 | CustomizeLocation/Vehicle/Cam_BattlePassPreview_Vehicle/Cam_BattlePassPreview_Helicopter | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:57087 | CustomizeLocation/Coins/Placeholder_Coins/Coins | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:57245 | CustomizeLocation/Character/Placeholder_Characters/Female/SelectFemale | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:57575 | CustomizeLocation/Weapon/Cam_PackPreview_Weapon | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:57767 | CustomizeLocation/Vehicle/Placeholder_Vehicle/Vehicle | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:57808 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateGroup | UiState.dll
+
+Customize.unity:57896 | CustomizeLocation | Utils.UiState.StateGroup | UiState.dll
+
+Customize.unity:57919 | CustomizeLocation/Character/Placeholder_Characters/Male/SelectMale/MaleLight/shadowFemale | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:58048 | CustomizeLocation/Character/Cam_Character/Female_Point | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:58072 | CustomizeLocation/Vehicle/Placeholder_Vehicle/Vehicle/shadowHeli_01 | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:58116 | CustomizeLocation/Coins/Placeholder_Coins/Coins | Game.Global.SkinCenter.Scene.SkinCenterRotationConstrainView | Global.dll
+
+Customize.unity:58196 | CustomizeLocation/Vehicle/Cam_Vehicle | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:58427 | CustomizeLocation/Crate/Placeholder_Crate/Crate | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:58468 | CustomizeLocation/Character/Cam_Character | Game.Global.SkinCenter.Scene.SkinCenterCharacterZoomView | Global.dll
+
+Customize.unity:58641 | CustomizeLocation/Character/Cam_Character/Female_PackPreview_Point | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:58809 | CustomizeLocation | Game.Global.SkinCenter.Scene.SkinCenterSceneView | Global.dll
+
+Customize.unity:59046 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:59113 | CustomizeLocation/Character/Cam_Character/Characters_Point | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:59239 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Scene.SkinCenterHeadRotationView | Global.dll
+
+Customize.unity:59294 | CustomizeLocation | Utils.UiState.StateGroup | UiState.dll
+
+Customize.unity:59320 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Customize.unity:59387 | CustomizeLocation/Vehicle/Cam_Vehicle/Cam_Helicopter | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:59473 | CustomizeLocation/Character/Cam_Character/Male_Point | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:59625 | CustomizeLocation/Vehicle/Placeholder_Vehicle | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:59754 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+Customize.unity:59872 | CustomizeLocation/Crate/Placeholder_Crate/Crate | Game.Global.SkinCenter.Scene.SkinCenterRotationConstrainView | Global.dll
+
+Customize.unity:59940 | CustomizeLocation/Character/Placeholder_Characters/Female/SelectFemale/FemaleLight/shadowMale | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:60042 | CustomizeLocation/Weapon/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterRotationConstrainView | Global.dll
+
+Customize.unity:60056 | CustomizeLocation/Character/Cam_Character | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:60403 | CustomizeLocation/Weapon/Cam_Weapon | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:60649 | CustomizeLocation/Crate/Cam_PackPreview_Crate | Utils.UiState.StateGameObject | UiState.dll
+
+Customize.unity:60852 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Scene.SkinCenterHeadRotationView | Global.dll
+
+Customize.unity:60907 | CustomizeLocation/Weapon/Cam_BattlePassPreview_Weapon | Game.Global.SkinCenter.Scene.SkinCenterCharacterZoomView | Global.dll
+
+Customize.unity:60976 | CustomizeLocation/Character/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Scene.SkinCenterCharacterView | Global.dll
+
+Customize.unity:60996 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+Customize.unity:61015 | CustomizeLocation/Character/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+Customize.unity:61151 | CustomizeLocation/Coins/Placeholder_Coins | Utils.UiState.StateGameObject | UiState.dll
+
+MainMenu.unity:91637 | MainMenuScreenView/Scene_Root/MainMenuCell_01_Lighting/Spot Light (48) | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:91696 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Scene.SkinCenterHeadRotationView | Global.dll
+
+MainMenu.unity:91817 | MainMenuScreenView/Scene_Root/Placeholder_Characters | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:91839 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Scene.SkinCenterCharacterView | Global.dll
+
+MainMenu.unity:92148 | MainMenuScreenView/Scene_Root/MainMenu_Camera/Camera_Intro | Utils.UiState.StateGameObject | UiState.dll
+
+MainMenu.unity:92172 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+MainMenu.unity:92621 | MainMenuScreenView/Scene_Root/MainMenuCell_01_Lighting | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:92742 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+MainMenu.unity:92760 | MainMenuScreenView/Scene_Root/MainMenu_Camera | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:92903 | MainMenuScreenView/Scene_Root/MainMenuCell_01_Lighting/Spot Light (47) | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:93052 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Scene.SkinCenterCharacterView | Global.dll
+
+MainMenu.unity:93099 | MainMenuScreenView/Scene_Root/MainMenu_Camera/Camera_Idle | Utils.UiState.StateGameObject | UiState.dll
+
+MainMenu.unity:93540 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+MainMenu.unity:93553 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+MainMenu.unity:93632 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+MainMenu.unity:93651 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:93825 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:94000 | MainMenuScreenView/Scene_Root/Prison/MainMenuPrison_01/Props/PrisonSignLamp_04 (4) | Game.Global.MaterialTweenAnimations.MaterialEmissionTweenAnimation | Global.dll
+
+MainMenu.unity:94411 | MainMenuScreenView | Game.Global.SkinCenter.Scene.SkinCenterSceneView | Global.dll
+
+MainMenu.unity:94506 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female | Utils.UiState.StateGameObject | UiState.dll
+
+MainMenu.unity:94832 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+MainMenu.unity:95026 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Scene.SkinCenterHeadRotationView | Global.dll
+
+MainMenu.unity:95081 | MainMenuScreenView | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:95274 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+MainMenu.unity:95392 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:95701 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+MainMenu.unity:95746 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:95805 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+MainMenu.unity:95928 | MainMenuScreenView/Scene_Root/Placeholder_Characters | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:95948 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+MainMenu.unity:95961 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:96037 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:96194 | MainMenuScreenView | Game.MainMenu.MainMenuSceneView | MainMenu.dll
+
+MainMenu.unity:96215 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+MainMenu.unity:96261 | MainMenuScreenView/Scene_Root/MainMenuCell_01_Lighting/Godrays | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:96371 | MainMenuScreenView/Scene_Root/MainMenu_Camera/ZoomCamera | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+MainMenu.unity:96400 | MainMenuScreenView/Scene_Root/MainMenu_Camera/ZoomCamera | Game.Global.SkinCenter.Scene.SkinCenterCharacterZoomView | Global.dll
+
+MainMenu.unity:96422 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male | Utils.UiState.StateGameObject | UiState.dll
+
+MainMenu.unity:96442 | MainMenuScreenView/Scene_Root/MainMenu_Camera/ZoomCamera | Utils.UiState.StateGameObject | UiState.dll
+
+MainMenu.unity:96547 | MainMenuScreenView | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:96592 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:96728 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+MainMenu.unity:96891 | MainMenuScreenView/Scene_Root | Utils.UiState.StateGroup | UiState.dll
+
+MainMenu.unity:96953 | MainMenuScreenView/Scene_Root/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+Realm.unity:141700 | ScreenView | Game.Realm.RealmScreenView | Realm.dll
+
+Realm.unity:141760 | ScreenView/Camera | Game.Realm.Map.Camera.MapCameraView | Realm.dll
+
+Reputation.unity:36866 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+Reputation.unity:37065 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+Reputation.unity:37078 | ReputationSceneView/Placeholder_Characters/Male/SelectMale/MaleLight/shadowFemale (1) | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:37259 | ReputationSceneView/Camera_Character | CinemachineTPSO.ZoomCamera | Cinemachine.TPSO.dll
+
+Reputation.unity:37338 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+Reputation.unity:37484 | ReputationSceneView/Placeholder_Characters/CharactersAdditional | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:37567 | ReputationSceneView/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Reputation.unity:37608 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman | Game.Global.Reputation.ReputationCharacterView | Global.dll
+
+Reputation.unity:37778 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+Reputation.unity:37896 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+Reputation.unity:37909 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateGroup | UiState.dll
+
+Reputation.unity:37985 | ReputationSceneView/Placeholder_Characters/Female/SelectFemale/FemaleLight/SelectMale/shadowFemale | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:38163 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/Woman | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+Reputation.unity:38181 | ReputationSceneView/Placeholder_Characters/Female/SelectFemale/FemaleLight/shadowMale (1) | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:38340 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+Reputation.unity:38358 | ReputationSceneView/Placeholder_Weapon | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:38451 | ReputationSceneView/Placeholder_Characters/Male/SelectMale | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:38799 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man | Game.Global.Reputation.ReputationCharacterView | Global.dll
+
+Reputation.unity:38817 | ReputationSceneView | Utils.UiState.StateGroup | UiState.dll
+
+Reputation.unity:38908 | ReputationSceneView/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterRotationView | Global.dll
+
+Reputation.unity:39042 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+Reputation.unity:39178 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man | Game.Global.Reputation.ReputationRotationView | Global.dll
+
+Reputation.unity:39231 | ReputationSceneView/CustomizeBackgroundCanvas | Game.CanvasScalerView | Game.dll
+
+Reputation.unity:39244 | ReputationSceneView/Camera_Character | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:39310 | ReputationSceneView/Reputation_Placeholder_Сars | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:39415 | ReputationSceneView/Reputation_Placeholder_Helicopters/shadowHeli_02 | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:39475 | ReputationSceneView/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterDelayedRotationResetView | Global.dll
+
+Reputation.unity:39527 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/Man | Game.Global.SkinCenter.Customization.Views.CustomizeCharacterAnimationView | Global.dll
+
+Reputation.unity:39540 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman | Game.Global.Reputation.ReputationRotationView | Global.dll
+
+Reputation.unity:39605 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+Reputation.unity:39795 | ReputationSceneView/Placeholder_Characters/Female/Customize_Woman/BagStrapRigControlView_Woman | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+Reputation.unity:39976 | ReputationSceneView/Reputation_Placeholder_Helicopters | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:40081 | ReputationSceneView/Placeholder_Characters/Female/SelectFemale | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:40355 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateGroup | UiState.dll
+
+Reputation.unity:40431 | ReputationSceneView/Placeholder_Characters/Female/SelectFemale/FemaleLight/shadowMale | Utils.UiState.StateGameObjectMultiple | UiState.dll
+
+Reputation.unity:40447 | ReputationSceneView | Utils.UiState.StateGroup | UiState.dll
+
+Reputation.unity:40465 | ReputationSceneView/Placeholder_Characters/Male/SelectMale/MaleLight/shadowFemale | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:40729 | ReputationSceneView | Game.Global.Reputation.ReputationSceneView | Global.dll
+
+Reputation.unity:40998 | ReputationSceneView/Camera_Character | Game.Global.Reputation.ReputationCharacterZoomView | Global.dll
+
+Reputation.unity:41108 | ReputationSceneView/Placeholder_Characters/Female/SelectFemale/FemaleLight/shadowMale | Utils.UiState.GameObjectMultiple | UiState.dll
+
+Reputation.unity:41147 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+Reputation.unity:41304 | ReputationSceneView/Placeholder_Characters/Female/SelectFemale/FemaleLight/shadowMale | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:41370 | ReputationSceneView/Placeholder_Weapon/Weapon | Game.Global.SkinCenter.Scene.SkinCenterRotationConstrainView | Global.dll
+
+Reputation.unity:41465 | ReputationSceneView/Reputation_Placeholder_Helicopters/shadowHeli_01 | Utils.UiState.StateGameObject | UiState.dll
+
+Reputation.unity:41586 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+Reputation.unity:41605 | ReputationSceneView/Placeholder_Characters/Male/Customize_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+Start.unity:14335 | UnityEntry | Start.UnityEntry | Game.dll
+
+Start.unity:14348 | UnityEntry | Start.ViewContainer | Game.dll
+
+Start.unity:14396 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen | Game.ExitScreen.BanScreenView | Game.dll
+
+Start.unity:14411 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/LabelProgress | Utils.UiState.StateTextMeshPro | UiState.dll
+
+Start.unity:14442 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/LabelProgress | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:14678 | MainUiContainer/OverlayCanvas/SystemDialogContainer/MobileConnectionDialog/ModalDialogUI/ModalDialog/ButtonsContainer/ConfirmContainer/ButtonPrimary | UI.ClickButtonView | UI.dll
+
+Start.unity:15059 | MainUiContainer/OverlayCanvas/SystemDialogContainer/MaintenanceScreen | Game.ExitScreen.MaintenanceScreenView | Game.dll
+
+Start.unity:15135 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/TipPanel/TipDescriptionText | Utils.UiState.StateTextMeshPro | UiState.dll
+
+Start.unity:15166 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/TipPanel/TipDescriptionText | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:15332 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/Image | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:15492 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/ProgressBar | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:15538 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen/ModalError/Buttons/SupportButton/Root/Icon_site | Utils.UiState.StateGameObject | UiState.dll
+
+Start.unity:15588 | MainUiContainer/OverlayCanvas/SystemDialogContainer/MobileConnectionDialog/ModalDialogUI/ModalDialog/ButtonsContainer/ButtonSecondary | UI.ClickButtonView | UI.dll
+
+Start.unity:15676 | MainUiContainer/OverlayCanvas/SystemDialogContainer/MobileConnectionDialog | Game.MobileConnectionDialog.MobileConnectionDialogView | Game.dll
+
+Start.unity:15691 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/TipPanel | LoadingTipPanelView | Global.dll
+
+Start.unity:15734 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/TipPanel | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:15803 | MainUiContainer/NoScaleCanvas | Game.Global.UI.CanvasGraphicsRaycasterView | Global.dll
+
+Start.unity:15850 | MainUiContainer/OverlayCanvas | Game.CanvasScalerView | Game.dll
+
+Start.unity:15886 | MainUiContainer/OverlayCanvas | Game.Global.UI.CanvasGraphicsRaycasterView | Global.dll
+
+Start.unity:15903 | MainUiContainer/OverlayCanvas | Game.Rendering.UIBlur.UIBlurReceiverCounterContainer | Rendering.dll
+
+Start.unity:16059 | MainUiContainer/UiCanvas | Game.Global.UI.CanvasGraphicsRaycasterView | Global.dll
+
+Start.unity:16076 | MainUiContainer/UiCanvas | Game.CanvasScalerView | Game.dll
+
+Start.unity:16152 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/Label | Utils.UiState.StateTextMeshPro | UiState.dll
+
+Start.unity:16183 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen/Root/GameObject/Label | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:16229 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReloadAddresableDialog | Game.ReloadAddressablesDialog.ReloadAddressablesDialogView | Game.dll
+
+Start.unity:16243 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReconnectScreen | Game.ReconnectScreen.ReconnectScreenView | Game.dll
+
+Start.unity:16441 | MainUiContainer | Game.Global.UI.UiContainersView | Global.dll
+
+Start.unity:16467 | MainUiContainer | Game.Global.UI.UiCameraCanvasView | Global.dll
+
+Start.unity:16803 | MainUiContainer/OverlayCanvas/SystemDialogContainer/SaveSlotSelector/ModalDialogUI/ModalDialog/ButtonPrimary (1) | UI.ClickButtonView | UI.dll
+
+Start.unity:16817 | MainUiContainer/OverlayCanvas/SystemDialogContainer/HardwareWarningDialog/ModalDialogUI/ModalDialog/ButtonsContainer/ConfirmContainer/ButtonPrimary | UI.ClickButtonView | UI.dll
+
+Start.unity:16831 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ErrorScreen | Game.ExitScreen.ErrorScreenView | Game.dll
+
+Start.unity:16957 | MainUiContainer/OverlayCanvas/TextEarlyBuild | Utils.UiState.StateTextMeshPro | UiState.dll
+
+Start.unity:17052 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen/ModalError/Scroll View | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:17078 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReconnectScreen/ModalError/Scroll View | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:17372 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ClientBuildInspector/ModalError/Buttons | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:17488 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen/ModalError/Buttons/ButtonStartInBuild | UI.ClickButtonView | UI.dll
+
+Start.unity:17502 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReconnectScreen/ModalError/Buttons/ButtonStartInBuild | UI.ClickButtonView | UI.dll
+
+Start.unity:17630 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReloadAddresableDialog/ModalDialogUI/ModalDialog/ButtonsContainer/ButtonSecondary | UI.ClickButtonView | UI.dll
+
+Start.unity:17644 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ErrorScreen/ModalError/Scroll View/Viewport | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:18543 | MainUiContainer/OverlayCanvas/TextEarlyBuild | Utils.UiState.StateRectTransform | UiState.dll
+
+Start.unity:18589 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ErrorScreen/ModalError/Buttons | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:18728 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReloadAddresableDialog/ModalDialogUI/ModalDialog/ButtonsContainer/ConfirmContainer/ButtonPrimary | UI.ClickButtonView | UI.dll
+
+Start.unity:18772 | MainUiContainer/OverlayCanvas/TextEarlyBuild | Utils.UiState.StateGroup | UiState.dll
+
+Start.unity:18893 | MainUiContainer/OverlayCanvas/SystemDialogContainer/HardwareWarningDialog | Game.HardwareWarningDialog.HardwareWarningDialogView | Game.dll
+
+Start.unity:19056 | MainUiContainer/OverlayCanvas/SystemDialogContainer/SaveSlotSelector | Game.Start.SaveSlotSelector | Game.dll
+
+Start.unity:19367 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ErrorScreen/ModalError/Buttons/ButtonStartInBuild | UI.ClickButtonView | UI.dll
+
+Start.unity:19641 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ErrorScreen/ModalError/Scroll View | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:19902 | MainUiContainer/LogoScreen | Game.Screens.MainLogoScreen.LogoScreenView | Game.dll
+
+Start.unity:19920 | MainUiContainer/OverlayCanvas/SystemDialogContainer/SaveSlotSelector/ModalDialogUI/ModalDialog/Scroll View | UI.HorizontalWheelScrollRect | UI.dll
+
+Start.unity:20277 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen/ModalError/Scroll View/Viewport | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:20303 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReconnectScreen/ModalError/Scroll View/Viewport | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:20783 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ClientBuildInspector | Game.ClientBuildInspector.ClientBuildInspectorView | Game.dll
+
+Start.unity:20796 | MainUiContainer/OverlayCanvas/SystemDialogContainer/HardwareWarningDialog/ModalDialogUI/ModalDialog/ButtonsContainer/ButtonSecondary | UI.ClickButtonView | UI.dll
+
+Start.unity:20930 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen | Game.GameStartScreen.LoadingScreenView | Game.dll
+
+Start.unity:20950 | MainUiContainer/OverlayCanvas/SystemDialogContainer/GameStartScreen | Utils.UiState.StateGroup | UiState.dll
+
+Start.unity:21302 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ReconnectScreen/ModalError/Buttons | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:21328 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen/ModalError/Buttons | UI.Layout.LayoutGroupElement | UI.dll
+
+Start.unity:21495 | UI_EventSystem | Game.Start.VirtualActionsGlobalScreenControl | Game.dll
+
+Start.unity:21633 | MainUiContainer/OverlayCanvas/SystemDialogContainer/HardwareWarningDialog/ModalDialogUI/ModalDialog/Description | Game.Global.ModalDialog.Description.ModalDescriptionView | Global.dll
+
+Start.unity:21767 | MainUiContainer/OverlayCanvas/SystemDialogContainer/MaintenanceScreen/Panel/BottomPanel/ButtonStartInBuild | UI.ClickButtonView | UI.dll
+
+Start.unity:21781 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ErrorScreen/ModalError/Buttons/CopyTextToBufferButton | UI.ClickButtonView | UI.dll
+
+Start.unity:21795 | MainUiContainer/OverlayCanvas/SystemDialogContainer/BanScreen/ModalError/Buttons/SupportButton | UI.ClickButtonView | UI.dll
+
+Start.unity:21809 | MainUiContainer/OverlayCanvas/SystemDialogContainer/ClientBuildInspector/ModalError/Buttons/ButtonStartInBuild | UI.ClickButtonView | UI.dll
+
+Start.unity:21989 | MainUiContainer/LogoScreen/DELETELogo | Game.Global.AnimatorEventView | Global.dll
+
+TattooUnlock.unity:27295 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man | Game.Global.Tattoo.Dialog.CharacterTattooUnlockCustomizationView | Global.dll
+
+TattooUnlock.unity:27377 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man/BagStrapRigControlView | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+TattooUnlock.unity:27413 | TattooUnlockSceneView | Game.Global.Tattoo.Dialog.TattooUnlockSceneView | Global.dll
+
+TattooUnlock.unity:27432 | TattooUnlockSceneView/SoundEmitter | Game.Global.SoundEmit.SoundEmitterView | Global.dll
+
+TattooUnlock.unity:27561 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man/Man | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+TattooUnlock.unity:27656 | TattooUnlockSceneView/PlayableDirector | Game.Playable.PlayableDirectorBinder | Game.dll
+
+TattooUnlock.unity:27690 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman/BagStrapRigControlView_Woman | Game.Global.SkinCenter.Customization.Views.BagStrapRigControlView | Global.dll
+
+TattooUnlock.unity:27703 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+TattooUnlock.unity:27887 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man/BagStrapRigControlView | Utils.UiState.StateGroup | UiState.dll
+
+TattooUnlock.unity:27974 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+TattooUnlock.unity:28033 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+TattooUnlock.unity:28052 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman/Woman | Game.Global.SkinCenter.Customization.Views.FaceRigControlView | Global.dll
+
+TattooUnlock.unity:28070 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man/BagStrapRigControlView | Utils.UiState.StateTransform | UiState.dll
+
+TattooUnlock.unity:28102 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+TattooUnlock.unity:28172 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateGroup | UiState.dll
+
+TattooUnlock.unity:28284 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman/BagCharmController | Game.Battle.BagCharmController | Battle.dll
+
+TattooUnlock.unity:28303 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Man | Game.Global.SkinCenter.Customization.Views.CharacterCustomizationView | Global.dll
+
+TattooUnlock.unity:28397 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman | Game.Global.Tattoo.Dialog.CharacterTattooUnlockCustomizationView | Global.dll
+
+TattooUnlock.unity:28412 | TattooUnlockSceneView/Environment/Characters/TattooUnlock_Woman/BagStrapRigControlView_Woman | Utils.UiState.StateTransform | UiState.dll
+
+TattooUnlock.unity:28548 | TattooUnlockSceneView | Game.Global.Tattoo.Effects.TattooSurfaceSweat | Global.dll
+
+TattooUnlock.unity:28618 | TattooUnlockSceneView | Game.Global.Tattoo.Effects.TattooAshView | Global.dll
+
+TattooUnlock.unity:28648 | TattooUnlockSceneView | Game.Global.Tattoo.Effects.TattooRednessView | Global.dll
+
+
+ПОДРОБНЫЙ РАЗБОР C#
+Анализ C#-исходников экспорта AssetRipper
+Корень: C:\Users\LagBag\Desktop\AssetRipper_win_x64\Test\AssetRipper_export_20261122_153035\ExportedProject
+Проверено 11 файлов .cs: 9 в Assets/Scripts/Assembly-CSharp и 2 в Assets/Plugins/Assembly-CSharp-firstpass.
+AGENTS.md в проверенных родительских каталогах и в этих двух деревьях не найден.
+
+Главный вывод
+Восстановленные C# содержат объявления классов, полей, атрибутов и методов, но почти все тела методов заменены заглушками. Поэтому назначение ниже установлено по структуре, именам и сохранённым Tooltip; это не подтверждение действующей реализации. Реальные вычисления/корутины в этих .cs отсутствуют. SelectionBase — отдельный случай: маркеру выбора не требуется тело методов.
+
+1. Assets/Scripts/Assembly-CSharp/CinematicBarsView.cs
+Класс: строка 7. MonoBehaviour с ExecuteAlways (5) и обязательным RectTransform (6).
+Предполагаемое назначение по явным Tooltip: верхняя/нижняя кинематографические полосы UI с расчётом под целевое соотношение сторон, ограничением высоты, анимируемой интенсивностью, плавным появлением/уходом по Timeline.
+Поля: _top/_bottom (10,13), _targetAspect (17), _maxBar (22), _amount (27), PlayableDirector _director (31), CinemachineVirtualCamera _exitCamera (35), _fadeIn/_fadeOut/_smoothTime (38,42,46).
+Tooltip (33) связывает _exitCamera с ExitCamera у LocationIntroCinematicView: HUD должен появляться в середине её клипа, а полосы уходить к этому моменту. Это сохранённое описание, фактического вызова в теле нет.
+Методы OnEnable (64), OnDisable (68), LateUpdate (72), OnRectTransformDimensionsChange (76), Refresh (80), SetBar (99) пусты. DirectorEnvelope (84) возвращает 0f; GetHideTime (89) — 0.0; FindExitCameraHudTime (94) — null. В этом экспорте полосами не управляет.
+
+2. Assets/Scripts/Assembly-CSharp/TexturesStreamingDebugger.cs
+Класс: строка 5. Предполагаемый отладочный UI потоковой загрузки/памяти текстур: есть TextMeshProUGUI _texturesInfo (10), StringBuilder (12) и константа перевода байтов в МиБ 1048576 (7).
+Awake (14) и Update (18) пусты. Статистику не рассчитывает и текст не обновляет. Точные показатели, которые показывались в оригинале, из этого файла установить нельзя.
+
+3. Assets/Scripts/Assembly-CSharp/Utils/Graphy/Extension/DesiredTextureMemoryView.cs
+Класс: строка 6. По имени и полям — TextMeshPro-представление желаемого объёма памяти текстур, расширение Graphy.
+TextMeshProUGUI _text (10), перевод байтов в МиБ (8). Awake (12), Update (16) пусты. Не измеряет память и не обновляет UI.
+
+4. Assets/Scripts/Assembly-CSharp/Utils/Animations/PlayAnimationWithRandomStart.cs
+Класс: строка 5. По настройкам — запуск legacy Animation при включении объекта со случайной или заданной нормализованной позиции.
+Animation _animation (8), bool _useRandomStartTime (11), _startTime с Range 0..1 и пояснением 0 = начало, 1 = конец (13–16).
+OnEnable (18) пуст; фактически анимацию не запускает.
+
+5. Assets/Scripts/Assembly-CSharp/Utils/SelectionBase.cs
+Класс: строка 6, атрибут SelectionBase (5), MonoBehaviour без членов.
+Это маркер корневого объекта для выбора в Unity Scene View: при выборе дочерней геометрии позволяет выбирать помеченный корень. Пустое тело здесь нормально, поскольку смысл в атрибуте; игровую логику не содержит.
+
+6. Assets/Scripts/Assembly-CSharp/ContentEditor/Character/CharacterAnimatorSimulation/CharacterAnimatorSimulationBehavior.cs
+Абстрактный MonoBehaviour (6), интерфейс поведения симулятора анимации.
+Обязательные члены наследника: BehaviorName (8), IEnumerator Execute(CharacterAnimatorSimulationController controller) (10).
+Собственной реализации нет по дизайну. Связь с контроллером явная через параметр Execute.
+
+7. Assets/Scripts/Assembly-CSharp/ContentEditor/Character/CharacterAnimatorSimulation/CharacterAnimatorSimulationController.cs
+Класс: строка 10. По именам — контроллер инструмента предварительного проигрывания анимационных поведений персонажа.
+Animator _animator (69), Transform _characterTransform (72), массив CharacterAnimatorSimulationBehavior[] (74), активная Coroutine (76).
+Публичные свойства Animator (78), CharacterTransform (80), Behaviors (82) возвращают null.
+Awake (84), CollectBehaviors (88), RunBehavior (92), StopActiveSimulation (96) пусты; RunBehaviorRoutine (101) возвращает null.
+Вложенный _003CRunBehaviorRoutine_003Ed__14 (13) — сгенерированная компилятором машина состояний корутины, не самостоятельная игровая система. Её MoveNext (51) всегда false, Current null, остальные методы пусты. Единственное непустое перенаправление IEnumerator.MoveNext (56–59) вызывает этот же заглушечный MoveNext.
+Связи: хранит Behavior[], получает конкретное Behavior в RunBehavior/RunBehaviorRoutine; реальных вызовов Execute в теле не осталось.
+
+8. Assets/Scripts/Assembly-CSharp/ContentEditor/Character/CharacterAnimatorSimulation/WalkForwardCharacterAnimatorSimulationBehavior.cs
+Класс: строка 10, наследник CharacterAnimatorSimulationBehavior.
+По имени — тест ходьбы вперёд; по полям — поведение с именем (_behaviorName 85), длительностью (_duration 88), скоростью анимации (_animationSpeed 91).
+Сохранились идентификаторы параметров Animator: MoveSpeed (72), VelocityX (74), VelocityY (76), MovementInputActive (78), StartStopMode (80), Grounded (82). Их присвоения/использование отсутствуют.
+BehaviorName (93) возвращает null, Execute (96) возвращает null.
+Вложенный _003CExecute_003Ed__11 (13) — машина состояний корутины, содержит controller (19), animator (23), elapsed (25); MoveNext (55) всегда false, Current null, конструктор/Dispose/Reset пусты. Восстановленного поведения ходьбы нет.
+
+9. Assets/Plugins/Assembly-CSharp-firstpass/FlyingWormConsole3/ConsoleProDebug.cs
+Статический класс (5), вспомогательный API Console Pro.
+Clear (7), LogToFilter (11), LogAsType (15), Watch (19), Search (23) пусты. Не очищает консоль, не выводит/не фильтрует логи. Это не логика игры.
+
+10–11. Assets/Scripts/Assembly-CSharp/Properties/AssemblyInfo.cs и Assets/Plugins/Assembly-CSharp-firstpass/Properties/AssemblyInfo.cs
+Оба содержат только AssemblyVersion("0.0.0.0") на строке 5 и using. Метаданные сборок; игрового поведения нет.
+
+Явная схема связей
+CharacterAnimatorSimulationController -> хранит CharacterAnimatorSimulationBehavior[] и принимает behavior в методы запуска.
+WalkForwardCharacterAnimatorSimulationBehavior -> наследует CharacterAnimatorSimulationBehavior -> Execute принимает CharacterAnimatorSimulationController.
+CinematicBarsView -> RectTransform, PlayableDirector, CinemachineVirtualCamera; Tooltip упоминает LocationIntroCinematicView, но ссылки вызова в коде нет.
+TexturesStreamingDebugger и DesiredTextureMemoryView -> TextMeshProUGUI.
+PlayAnimationWithRandomStart -> UnityEngine.Animation.
+SelectionBase -> атрибут UnityEngine.SelectionBase.
+
+Ограничение: эта проверка описывает именно .cs на диске; для основной логики игры необходим отдельный разбор DLL. По отсутствующим телам нельзя заключить, что исходная игра не содержала данной функциональности.
+
+Привязки к ресурсам (проверены GUID из .cs.meta поиском по всем *.unity, *.prefab, *.asset внутри Assets)
+CinematicBarsView, GUID 4f6ffe1e3c7a284b2d208d5d3ffe8e34: найден в пяти префабах Assets/Content/Intro/IntroLocations/Intro_Settlement.prefab, Intro_SectorCenter.prefab, Intro_Prison.prefab, Intro_Hub.prefab, Intro_City.prefab.
+Пример сохранённых настроек: Intro_Settlement.prefab:1381 — ссылка на скрипт; далее _targetAspect=2.28, _maxBar=0.2, _amount=1, _fadeIn=0, _fadeOut=2, _smoothTime=0.15; _top/_bottom/_director/_exitCamera имеют ненулевые локальные fileID. Параметры ресурсов сохранены, хотя C#-тело отсутствует.
+PlayAnimationWithRandomStart, GUID c05b95c40e5183a322807ccb9926089d: найден в Assets/Content/Generated/Plots/playerhousebase_01/playerhousebase_01_Runtime.prefab и сценах Assets/Content/Generated/Locations/Prison_Standalone/Prison_Standalone_Static_0.unity, Hub_Standalone/Hub_Standalone_Static_0.unity, SectorCenter_Standalone/SectorCenter_Standalone_Static_0.unity, City_Standalone/City_Standalone.unity.
+Для TexturesStreamingDebugger, DesiredTextureMemoryView, SelectionBase и трёх CharacterAnimatorSimulation-типов совпадений GUID в указанном наборе текстовых ресурсов нет. Это ограниченный результат поиска ссылок, а не доказательство полного отсутствия использования.
+
+
+
+ПОДРОБНОСТИ DLL
+АНАЛИЗ ИГРОВЫХ DLL: КАРТА СТРУКТУРЫ, А НЕ ВОССТАНОВЛЕННОЕ ПОВЕДЕНИЕ
+
+Область проверки: 24 выбранные DLL в ExportedProject/Assets/Plugins. Метаданные, поля, названия методов и IL взяты из work/assembly_index.json. Сборки в исходном проекте не менялись. JSON module_summaries.json содержит описание всех 24 модулей и конкретные полные имена классов; все перечисленные имена автоматически сверены с индексом.
+
+Критическое ограничение: IL тела игровых методов — заглушки. Например, Game.dll, Start.UnityEntry.Awake и Update содержат только ret. Поэтому сведения о роли класса подтверждаются его названием, полями и API; порядок вызовов, формулы движения, расчёт урона и рабочая сеть этим экспортом не установлены. Связь AssemblyRef означает зависимость сборки, а не факт вызова конкретного метода. Многие типы с пустым namespace являются вложенными; их нельзя описывать как самостоятельные классы верхнего уровня без восстановления enclosing type.
+
+КАК ЧИТАТЬ АРХИТЕКТУРУ
+
+Часто встречается разделение Model / View / Updater / Factory / Content:
+- Model хранит состояние. Game.GameModel ссылается на BattleModel, RealmModel, GlobalModel, состояние соединения, данные пользователя.
+- View обычно является MonoBehaviour с сериализованными ссылками на Unity-объекты: кнопки, камеры, персонажей.
+- Updater имеет Update/OnUpdate/Tick и поля моделей/представлений. Большая часть игровой логики по структуре вынесена в обычные C#-классы, поэтому её нельзя искать только как компонент на GameObject.
+- ScreenFactory создаёт семейства экранов и диалогов: MainMenuScreenFactory, BattleScreenFactory, RealmScreenFactory.
+- ScreenContent и классы Content описывают ресурсы, сцены, их загрузку и освобождение.
+Это структурный шаблон по декларациям, не проверенная последовательность исполнения.
+
+ЗАПУСК
+
+Game.dll:
+1. Start.UnityEntry — MonoBehaviour с Awake, Update, OnApplicationPause, OnApplicationQuit, OnDestroy; поля _viewContainer и _game.
+2. Start.ViewContainer — ссылки на загрузочный/ошибочный/бан/maintenance/reconnect экраны, EventSystem, Options, SaveSlotSelector и контент MainMenu/Battle/Realm/Global/StartGame.
+3. Game.Game — Start, Init, Stop, Pause, Unpause, ApplicationQuit, Update; поля _updaters, _builtInStartGameProcessor, _startGameProcessor, _serverAdapter, _userHost, _regionHost, _battleHost.
+4. Game.Start.BuiltInStartGameProcessor — Process, ApplyDefaultLocalizationSettings, GetDefaultQuality; поля провайдеров конфигурации/справочников, EOS и Steam.
+5. Game.Start.StartGameProcessor — Process, ResolveAuthToken, DownloadAndCache, CheckHardware, WaitForScreen; поля сетевых соединений, конфигурации, загрузчика удалённого контента и настроек.
+6. Game.ScreenManager — CreateLoadingScreenUpdater, CreateMainMenuScreenUpdater, CreateStartGameUpdater, CreateBattleUpdater, ConstructBattleUpdater, CreateRealmUpdater, Update.
+7. Game.Start.Options — UseRemoteServer, ConfigUrls, GameSettingsFileName, PlayerPrefsFileName, BuildNumber, Environment и другие параметры.
+
+Важное уточнение: Bootstrap.dll здесь не содержит запуск игры. В ней UI Toolkit FilteredDropdown, SearchFieldBase, ToolbarSearchField, DropMenuView и контроллеры выпадающего меню.
+
+ГДЕ ИСКАТЬ КОНКРЕТНУЮ ФУНКЦИЮ
+
+Управление и движение:
+- Inputs.dll / Inputs.InputHandlersManager: Add, Remove, HasHandlerAbove, IsMaskBlockedAbove. Inputs.InputMask содержит Movement, MainLook, Interact, Back, VoiceChat и другие группы. Приоритеты Common, Dialog, ModalDialog, Chat, LoadingScreen заданы в Inputs.InputHandlerPriority.
+- Battle.dll / Game.Battle.Inputs.Keyboard.MoveShooterKeyboardInputUpdater: Update; поля _moveAction, _battleInputModel, _playerRotationInputModel, _playerMovementInputModel.
+- Battle.dll / Game.Battle.EntityModel.Player.Movement.PlayerMovementIntentionDirectionUpdater: поля ввода движения, поворота, текущей ориентации и намерения движения.
+- Battle.dll / Game.Battle.EntityModel.Player.Movement.PlayerMovementInterpolationUpdater: поля _movementTimeline, _transform, _time.
+- Battle.dll / Game.Battle.EntityModel.Player.Rotation.PlayerLookRotationUpdater и PlayerRotationInterpolationUpdater: ориентация и визуальная интерполяция.
+- Models.dll / Models.Systems.CharacterControllerInputSystem, CharacterControllerInputVelocitySystem, CharacterControllerForwardMovementSystem. У InputVelocitySystem есть отдельные декларации для движения по земле, плавания, воздуха, инерции и bunny hop; фактические формулы отсутствуют.
+- Client.dll / ClientCore.Prediction.*: BattleInputUpdater, PredictedInputsModelUpdater, SimulatePreviousTicksUpdater, SimulateNewTickUpdater, SendBattleInputUpdater. Это ориентиры клиентского предсказания и отправки ввода.
+
+Оружие и боёвка:
+- Models.dll / Models.Systems.WeaponRoundsSystem, WeaponSpreadSystem, WeaponSpreadArgsSystem, WeaponAutoReloadSystem: системный слой патронов, разброса и перезарядки по API.
+- Battle.dll / Game.Battle.Entities.BattleCharacter.Weapon.*: отображение выбранного оружия, IK, анимации перезарядки и видимость.
+- Battle.dll / Game.Battle.Entities.BattleCharacter.Shoot.PlayerTransparentColliderShootUpdater; CharacterWeaponDropShellVfxUpdater; CharacterWeaponSmokeVfxUpdater.
+- Battle.dll / Game.Battle.EntityModel.Player.Weapon.OpticsShootRecoilAnimationUpdater, PlayerWeaponCameraUpdater: отдача/прицел/камера на стороне представления.
+- Models.Systems.FallDamageTrackSystem, BattleCharacterDamageZoneCollisionSystem и StopActionsOnDamageSystem — ещё ориентиры по урону. Суммы урона и серверная проверка не восстановлены.
+
+Инвентарь:
+- Models.dll / Models.Models.InventoryModel.InventoryModel, CharacterInventoryModel, VehicleInventoryModel и Models.Inventory.InventoryRules. InventoryRules декларирует проверки границ, пересечений, стаков, экипировки и переноса.
+- Battle.dll / Game.Battle.Inventory.InventoryDialogModel, InventoryDialogUpdater, InventoryUIUpdater, InventoryDragAndDropUpdater, ChangedSlotsInventoryModelUpdater и группы updater-ов для ячеек/прочности/редкости.
+- Battle.dll / Game.Battle.BattleScreenFactory.CreateInventoryDialog — ориентир создания экрана.
+
+Глобальная карта:
+- Realm.dll / Game.Realm.RealmModel, RealmScreenUpdater, RealmScreenView.
+- Game.Realm.Sectors.RealmGridView, RealmSectorsUpdater, RealmSectorUpdater, RealmSelectionCellUpdater: сетка, секторы, выделение.
+- Подпространства Game.Realm.Map.Camera и Game.Realm.Map.Zoom — управление камерой карты; Game.Realm.Map.InfoPanel — панель выбранной территории; Game.Realm.BuySettlement и ConquestSector — покупка/захват по декларациям.
+
+Обучение и «квесты»:
+- Global.dll / Game.Global.Tutorial.TutorialModel, TutorialSetStepMessageUpdater, TutorialFinishUpdater, PrisonLeaveTutorialUpdater, HubLeaveTutorialUpdater, CityLeaveTutorialUpdater.
+- Battle.dll / Game.Battle.Tutorial.BattleTutorialQuestViewUpdater: UpdateQuestView, HideQuest, IsVisible, IsDebtActive; поля TutorialModel и QuestView.
+- Realm.dll / Game.Realm.Tutorial.RealmTutorialUpdater и RealmTutorialViewUpdater.
+- Models.dll / Models.Utils.Tutorial.TutorialRules: IsStepCompleted, IsStepReached, IsFinished.
+Это подтверждённые ориентиры обучения. Нельзя по названиям заключать, что существует универсальная отдельная система квестов для всех игровых задач.
+
+Настройки и сохранение пользовательских предпочтений:
+- Global.dll / Game.Global.Settings.SettingsModel: звук, чувствительность, HoldSprint/HoldAim/HoldCrouch, графика, язык, чат, обучение и помощь при прицеливании.
+- Global.dll / Game.Global.PlayerPrefsFile.PlayerPrefsModel: Serialize/Deserialize, данные карты, увиденные объекты, подтверждения диалогов, состояние представления предметов.
+- Global.dll / Game.Global.PlayerPrefsFile.SavePlayerPrefsUpdater: Update, WriteIntoStorage; поля _localStorage и cooldown.
+- Game.Steam.InitializeSteamCloudPlayerPrefsUpdater — декларация синхронизации PlayerPrefs со Steam Cloud.
+- Core.dll / Core.DeviceIdDataStorage и Core.IO.File; Game.dll / Options.GameSettingsFileName и PlayerPrefsFileName.
+Эти классы подтверждают хранение настроек и предпочтений. Они не доказывают возможность сохранить весь игровой мир или играть без сервера.
+
+Сеть и авторизация:
+- Network.dll / RoomConnections хранит User, RegionUser, Battle. RoomConnection содержит SendMessage, UnreliableSendMessage, Update, Disconnect и статистику RTT/потерь/MTU.
+- Client.dll / ClientCore.ApplyDataUpdater.ApplyDataUpdater: ApplyBattleDataPacket, ReadWholeData, ReadDiffData, UpdateBackups.
+- Client.dll / ClientCore.GhApiClient.GhApiClient: Game, LoginTest, LoginSteam; методы пустые.
+- Steam.dll / Game.Start.GameTokenProvider.SteamTokenProvider и Game.Steam.SteamWebApiTicketProvider.
+- Auth.dll в основном описывает ошибки и контракт ITokenProvider, а не собственно реализацию входа.
+
+ДИАЛОГИ И ВЗАИМОДЕЙСТВИЯ
+
+TalkSystem.dll задаёт TalkGraph, NpcPhrase, StartTalkNode, PlayerContextNode и узлы условий Comparer/Range/Boolean. Battle.dll содержит окна и updater-ы диалогов в Game.Battle.Entities.Player.Talks.
+TargetSystem.dll содержит TargetModel.SetTarget/TryGetTarget/NextActionItem и TargetSubsystem; это структура выбора объекта и действия взаимодействия. TriggerZones.dll содержит пространственную структуру зон с RaycastTriggerZones/OverlapSphereTriggerZones.
+
+ЧТО НУЖНО ДЛЯ РЕАЛЬНОГО ВОССТАНОВЛЕНИЯ ЛОГИКИ
+
+Этот индекс пригоден для навигации, поиска данных и реконструкции компонентов. Он не содержит утраченные игровые алгоритмы. Если оригинальная игра использовала IL2CPP, тело логики следует искать в исходном игровом бинарном артефакте и соответствующей metadata, а не ожидать его появления после повторной декомпиляции экспортированных dummy DLL. Формат исходной игры данным индексом сам по себе не устанавливается.
+
+
+
+ПОДРОБНОСТИ СЦЕН
+Анализ сцен и конфигурации (только чтение проекта)
+Проект: C:\Users\LagBag\Desktop\AssetRipper_win_x64\Test\AssetRipper_export_20261122_153035\ExportedProject
+
+Метод: Unity YAML сопоставлен с Assets/Plugins/*.dll.meta по GUID. Тип в DLL сопоставлен по знаковому 32-битному Unity fileID = первые 4 байта MD4('s\0\0\0' + namespace + className), little endian. Парсер dnfile читал TypeDef, без загрузки DLL в процесс и без вызова методов. Это доказывает привязки и сериализованные поля, но не поведение методов и не фактический runtime.
+
+В Assets/Scenes 8 сцен. Проверено 1292 компонента MonoBehaviour, 1291 сопоставлен с именем типа. Не проверялись все префабы и дополнительные сцены Content/Generated. Подробный индекс с объектами, полями и строками: work/scenes_findings.json. Полный TypeDef-индекс 28 DLL, используемых этими сценами: work/scene_type_index.json.
+
+Что запускается:
+ProjectSettings/EditorBuildSettings.asset:8 содержит единственную enabled сцену Assets/Scenes/Start.unity.
+Start.unity:14335 — Start.UnityEntry (Game.dll), объект UnityEntry. Поле _viewContainer указывает на следующий компонент.
+Start.unity:14348 — Start.ViewContainer (Game.dll), тот же объект UnityEntry. Хранит Options, UiContainers, EventSystem, SaveSlotSelector, logo/loading/reconnect/error/ban/maintenance/hardware warning dialogs, Addressables AssetReference на MainMenu/Battle/Realm/Global/StartGameScreenContent.
+
+Сцены:
+- Battle.unity: 32 GameObject, 75 MonoBehaviour, 36 различных типов. Battle.unity:8458 — Game.Battle.BattleScreenView (Battle.dll), объект ScreenView. Поля: Camera, CameraBrain, Volume, камеры вооружённого персонажа/машины/вертолёта/спринта/воды/нокдауна/эмоций/укрытия, ParticleSpawner/ParticleSpawnerLate, BulletTrailVfxSpawner, SkidTrailSpawner, ExhaustSmokeVfxSpawner, debug renderers. Дополнительно Game.Battle.Cars.CarCameraView:9363; CinemachineTPSO.CinemachineAimingCameraFollow:9380. В самой сцене в основном камеры, эффекты и отладочные компоненты; отдельные игровые локации находятся в Content/Generated/Locations.
+- MainMenu.unity: 1040 GameObject, 171 MonoBehaviour, 29 типов. MainMenu.unity:96194 — Game.MainMenu.MainMenuSceneView (MainMenu.dll), объект MainMenuScreenView. Поля Camera, Man/Woman, StateCustomization, ManAnimator/WomenAnimator, SkinCenterView. На том же объекте :94411 — Game.Global.SkinCenter.Scene.SkinCenterSceneView (Global.dll).
+- Realm.unity: 107 GameObject, 8 MonoBehaviour, 7 типов. Realm.unity:141700 — Game.Realm.RealmScreenView (Realm.dll), ScreenView. Поля UiEventObject, Camera, MapCameraView, RealmGridViewContainer. Связь с картой подтверждается полями, но точное runtime-поведение не исследовано.
+- CharacterCustomization.unity: 431 GameObject, 104 MonoBehaviour, 38 типов. :33073 — Game.Global.CharacterCustomization.CharacterCustomizationSceneView; :32049 — Game.Global.SkinCenter.Scene.SkinCenterSceneView. Оба Global.dll на CharacterCustomizationScreenView. Внутри мужская и женская модели, CharacterCustomizationView, FaceRigControlView, SkinCenterHeadRotationView/SkinCenterRotationView, CustomizeCharacterAnimationView, вступительный Canvas с титрами/логотипом. Один неразрешённый компонент FakeLightProbeRoom описан ниже.
+- Customize.unity: 608 GameObject, 299 MonoBehaviour, 37 типов. :58809 — Game.Global.SkinCenter.Scene.SkinCenterSceneView (Global.dll), CustomizeLocation. Также CharacterCustomizationView, SkinCenterCharacterView, SkinCenterRotationView, FaceRigControlView и др. Данные представляют сцену примерки и визуальной настройки персонажа; реализация алгоритмов не устанавливалась.
+- Reputation.unity: 441 GameObject, 148 MonoBehaviour, 35 типов. :40729 — Game.Global.Reputation.ReputationSceneView (Global.dll), ReputationSceneView. Camera, Volume, CinemachineBrain, состояния камеры/устройства, SelectMale/SelectFemale, CharacterZoom, Male/Female, CarParent/HelicopterParent. :40998 — ReputationCharacterZoomView. По сериализованным ссылкам это визуальная сцена репутации с демонстрацией персонажа/транспорта.
+- TattooUnlock.unity: 439 GameObject, 68 MonoBehaviour, 29 типов. :27413 — Game.Global.Tattoo.Dialog.TattooUnlockSceneView (Global.dll), TattooUnlockSceneView. Camera, dolly camera/path, PlayableDirector, MaleView/FemaleView, SoundEmitter. :27656 — Game.Playable.PlayableDirectorBinder (Game.dll). На корне Global.dll-компоненты TattooSurfaceSweat :28548 (капли/следы/скорости/время жизни), TattooAshView :28618 (частицы/пепел), TattooRednessView :28648 (покраснение/интенсивность/затухание). Это доказывает наличие параметров эффектов, но не работающий код эффекта.
+
+Важные ассеты:
+- Assets/ScriptableObjects/Options.asset:15+ — UseRemoteServer=1, UseLocalConfigUrl=0, BuildNumber=4052, Environment=prod; содержит настройки конфигурации/авторизации/сетевых сервисов/аналитики. Значения credentials в отчёт не вынесены.
+- Assets/ScriptableObjects/BuiltInScreenContent.asset — встроенные зависимости: WwiseInitialize, разрешения экрана, этапы загрузки, фоны/советы загрузки, локализация, звуковая локализация, цветовая тема, причины бана, настройки качества/устройства, hardware requirements.
+- Assets/ScriptableObjects/ScreenContent/{Battle,MainMenu,Realm,Global,StartGame}ScreenContent.asset и отдельные Touch*/KeyboardMouse*ScreenContent.asset — наборы ссылок на сцены/UI/настройки по подсистеме и способу ввода.
+- Assets/ScriptableObjects/ScreenContent/BattleScreenContent.asset:17 _scene, :21 _tattooUnlockScene.
+- Assets/ScriptableObjects/ScreenContent/GlobalScreenContent.asset:17 _skinCenterScene, :21 _reputationScene.
+- Assets/ScriptableObjects/ScreenContent/StartGameScreenContent.asset:17 _customizationScene.
+- Assets/ScriptableObjects/PlayerCameraViewDescription.asset — параметры камеры: время/дистанции/скорости вращения, первый и третий человек, aim transition, параметры crouch dithering. Это данные; не алгоритмы.
+- Assets/ScriptableObjects содержит папки Inventory, Entities, CharacterAnimation, BattleAssistance, CarUpgrades, Realm, Prison, SkinCenter, Tutorial, Settings и т.д.; рядом WeaponViewDescriptions/GrenadeViewDescriptions/ThrowableItemViewDescriptions/PlayerStateViewDescriptions/EquipSlotViewDescriptions. Это удобное место искать визуальные описания и настройки.
+- Assets/ScriptableObjects/Settings: Chat, Game, Graphics, Social, VoiceChat, MobileSettingsPreset.asset, StandaloneSettingsPreset.asset, SoundLocalizationSettings.asset.
+- Assets/StreamingAssets/aa/{catalog.bin,catalog.hash,settings.json,StandaloneWindows64}; settings.json задаёт m_buildTarget=StandaloneWindows64, m_AddressablesVersion=2.9.1. Наличие каталога подтверждено, загрузка не выполнялась.
+
+Папки ассетов:
+Assets/Content: Audio, Character, Environment, Equipment, Generated, Intro, Locations, Shaders, SkinCenter, UI, Vehicles, VFX.
+Assets/ContentDraft: Character, City, CityDraft, Desert, DraftMaterials, DraftProps, DraftTextures, Environment, Generated, GridboxMat, SettlementDraft, Shaders, StructureGeometry.
+Assets/ContentEditor: City, Shaders.
+Assets/MonoBehaviour: сериализованные .asset, не C#-исходники.
+Assets/Plugins: игровые и сторонние DLL; Assets/Scripts: небольшой набор C#.
+Assets/Resources: debug UI, Wwise/Sentry/DevToDev resources, shaders, MotionBlur/AutoExposure settings.
+
+Ограничения:
+- Единственный неразрешённый m_Script: CharacterCustomization.unity:30519, объект CharacterCustomizationScreenView/CharacterCustomization_Lighting/CharacterLight/FakeLightProbeRoom, guid 6f4efd3950f728474635e912b3571a72, fileID 71890150. GUID не найден в Assets/Plugins или Assets/Scripts. Во всём Assets/Packages поиск не завершался; отсутствие типа в проекте не утверждается.
+- Addressables m_AssetGUID сохранены от исходного приложения. Например MainMenuScreenContent.asset:18 указывает 81fd4689ee5208644bb36f933524a99d, тогда как экспортная MainMenu.unity.meta имеет GUID 184e2613c5ec1fc49a27f0d1378e739f. Поэтому это не прямое подтверждение привязки к экспортному SceneAsset. Наличие оригинального каталога учтено; работоспособность Addressables не проверялась.
+- Порядок переходов Start -> MainMenu -> Realm/Battle нельзя утверждать по одной конфигурации; здесь доказана структура ссылок. Все назначения классов надо формулировать как восстановленную роль по именам/полям, если методы DLL оказались заглушками.
+- Проект не изменялся, Unity Play не запускался.
+
+
+
+ГРАФ C# И ПРЕДЕЛЫ АНАЛИЗА
+Graphify обработал отдельно 9 файлов Assets/Scripts: около 748 слов; 84 узла и 121 связь. Это небольшая часть проекта, не граф вызовов всей игры. Диагностика: 27 рёбер с неразрешёнными концами и 7 связей, объединённых при построении ориентированного графа. Такие связи не использовались как самостоятельное доказательство поведения; выводы выше сверены с кодом и YAML.
+Центральные объявления C#: CharacterAnimatorSimulationController (19 связей), CinematicBarsView (16), CharacterAnimatorSimulationBehavior (9). Связи: Controller хранит Behavior[], WalkForward наследует Behavior. Сгенерированные _003C...d__... — внутренние машины состояний корутин.
+Следующий полезный вопрос: как в оригинале ScreenManager создаёт BattleScreen и связывает ввод с PlayerCharacterModel? В этом экспорте можно найти участников, но нельзя восстановить алгоритм вызовов.
+Автоматическое извлечение graphify: 0 входных/0 выходных LLM-токенов; токены ручного анализа в эту метрику не включены.
+Файлы проекта не редактировались. Охват — все 11 .cs, метаданные/IL 24 выбранных DLL, привязки 8 основных сцен; остальные 134 DLL полностью не исследовались. Это статический разбор, не проверка работоспособности в Unity.
