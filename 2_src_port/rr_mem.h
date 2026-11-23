@@ -113,6 +113,15 @@ void rr_stat_reset(void);
 #ifdef __cplusplus
 }
 #endif
+/* === ADDITIONS for shared-memory transport (replace IOCTL backend) === */
 
+/* Connect to the WmShared driver via the ntoskrnl .data hook.
+ * Must be called BEFORE the game starts (before EAC loads).
+ * Returns 1 on success. The calling thread is NOT trapped; a dedicated
+ * worker thread is created for the kernel communication loop. */
+int  rr_drv_connect(void);
+/* Disconnect: signals the driver to exit the shared memory loop.
+ * After this, rr_drv_open() will fail until the driver is remapped. */
+void rr_drv_disconnect(void);
 #endif /* RR_MEM_H */
 

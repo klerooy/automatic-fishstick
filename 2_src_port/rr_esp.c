@@ -3244,14 +3244,16 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
         demo_cfg->show_spread_visualizer = 1;
     }
     if (!mode_menu && !mode_demo) {
-        if (!rr_attach(g_exe)) {
-            MessageBoxA(NULL, "ROB RUN is not running", "RobRunESP", 0);
-            return 1;
-        }
         if (!rr_drv_open()) {
-            MessageBoxA(NULL, "Kernel backend unavailable - run START.bat to map the driver",
-                        "RobRunESP", 0);
+            MessageBoxA(NULL,
+                "Kernel backend unavailable.\n\n"
+                "Map the driver first (kdmapper.exe wm_shared.sys), then start this overlay,\n"
+                "then launch the game. The driver must be remapped after every reboot.",
+                "RobRunESP", 0);
             return 2;
+        }
+        if (!rr_attach(g_exe)) {
+            hklogf("game not running yet - ReadThread will keep retrying attach");
         }
         /* Run discovery on ReadThread because scanning can take seconds. This
          * keeps the window, menu and hotkeys responsive while the footer shows progress. */

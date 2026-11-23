@@ -1,0 +1,10 @@
+65609 game not running yet - ReadThread will keep retrying attach
+65609 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+66484 target process lost - clearing anchors and re-attaching
+67687 target process lost - clearing anchors and re-attaching
+68921 target process lost - clearing anchors and re-attaching
+70218 target process lost - clearing anchors and re-attaching
+87468 key id=1 src=hook act (age=87468)
+87468 F1 menu=open
+88312 key id=1 src=hook act (age=844)
+88312 F1 menu=closed
