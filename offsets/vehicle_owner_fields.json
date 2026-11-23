@@ -1,0 +1,1294 @@
+{
+  "game_assembly_sha256": "e4b191f5b15f6a005454dabdb50e1310ded98f135afe6f170fc3122f0b4ed062",
+  "types": {
+    "Models.Models.VehicleOwner.VehicleOwnerModel": [
+      {
+        "name": "_ownerPublicId",
+        "offset": 16,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_emptyPublicId",
+        "offset": 24,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "_emptyPrivateId",
+        "offset": 32,
+        "type": {
+          "kind": "string"
+        }
+      },
+      {
+        "name": "_ownerPrivateId",
+        "offset": 40,
+        "type": {
+          "kind": "string"
+        }
+      }
+    ],
+    "Models.Models.Helicopter.HelicopterModel": [
+      {
+        "name": "<Id>k__BackingField",
+        "offset": 16,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<BodyId>k__BackingField",
+        "offset": 20,
+        "type": {
+          "kind": "valuetype",
+          "name": "Models.Physics.PhysicsBodies.PhysicsBodyId"
+        }
+      },
+      {
+        "name": "<Initialize>k__BackingField",
+        "offset": 32,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterInitialize.HelicopterInitializeModel"
+        }
+      },
+      {
+        "name": "<Destroy>k__BackingField",
+        "offset": 40,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterDestroy.HelicopterDestroyModel"
+        }
+      },
+      {
+        "name": "<ThrustInput>k__BackingField",
+        "offset": 48,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterThrustInput.HelicopterThrustInputModel"
+        }
+      },
+      {
+        "name": "<TiltInput>k__BackingField",
+        "offset": 56,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterTiltInput.HelicopterTiltInputModel"
+        }
+      },
+      {
+        "name": "<RotationInput>k__BackingField",
+        "offset": 64,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterRotationInput.HelicopterRotationInputModel"
+        }
+      },
+      {
+        "name": "<Description>k__BackingField",
+        "offset": 72,
+        "type": {
+          "kind": "class",
+          "name": "Models.References.Helicopter.HelicopterDescription"
+        }
+      },
+      {
+        "name": "<HandlingSettings>k__BackingField",
+        "offset": 80,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterHandlingSettings.HelicopterHandlingSettingsModel"
+        }
+      },
+      {
+        "name": "<SuspensionSettings>k__BackingField",
+        "offset": 88,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleSuspensionSettings.VehicleSuspensionSettingsModel"
+        }
+      },
+      {
+        "name": "<ChassisSettings>k__BackingField",
+        "offset": 96,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterChassisSettings.HelicopterChassisSettingsModel"
+        }
+      },
+      {
+        "name": "<EngineSettings>k__BackingField",
+        "offset": 104,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleEngineSettings.VehicleEngineSettingsModel"
+        }
+      },
+      {
+        "name": "<Transform>k__BackingField",
+        "offset": 112,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleTransform.VehicleTransformModel"
+        }
+      },
+      {
+        "name": "<LinearVelocity>k__BackingField",
+        "offset": 120,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Velocity.VelocityModel"
+        }
+      },
+      {
+        "name": "<AngularVelocity>k__BackingField",
+        "offset": 128,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Velocity.VelocityModel"
+        }
+      },
+      {
+        "name": "<Wheels>k__BackingField",
+        "offset": 136,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterWheels.HelicopterWheelsModel"
+        }
+      },
+      {
+        "name": "<Seats>k__BackingField",
+        "offset": 144,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleSeats.VehicleSeatsModel"
+        }
+      },
+      {
+        "name": "<Engine>k__BackingField",
+        "offset": 152,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleEngine.VehicleEngineModel"
+        }
+      },
+      {
+        "name": "<EngineRules>k__BackingField",
+        "offset": 160,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleEngineRules.VehicleEngineRulesModel"
+        }
+      },
+      {
+        "name": "<Sleep>k__BackingField",
+        "offset": 168,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleSleep.VehicleSleepModel"
+        }
+      },
+      {
+        "name": "<PhysicsAwakeObserver>k__BackingField",
+        "offset": 176,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PhysicsAwakeObserver.PhysicsAwakeObserverModel"
+        }
+      },
+      {
+        "name": "<HitBoxAccess>k__BackingField",
+        "offset": 184,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HitBoxAccessModel.IHitBoxAccessModel"
+        }
+      },
+      {
+        "name": "<HitBoxId>k__BackingField",
+        "offset": 192,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HitBoxId.HitBoxIdModel"
+        }
+      },
+      {
+        "name": "<TeleportRequest>k__BackingField",
+        "offset": 200,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.Request.RequestModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "generic",
+              "definition": {
+                "kind": "valuetype",
+                "name": "System.ValueTuple`4"
+              },
+              "arguments": [
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Vector3"
+                },
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Quaternion"
+                },
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Vector3"
+                },
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Vector3"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ControlOwner>k__BackingField",
+        "offset": 208,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HelicopterControlOwner.HelicopterControlOwnerModel"
+        }
+      },
+      {
+        "name": "<CharacterOwner>k__BackingField",
+        "offset": 216,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleOwner.VehicleOwnerModel"
+        }
+      },
+      {
+        "name": "<PartyOwner>k__BackingField",
+        "offset": 224,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PartyVehicleOwner.PartyVehicleOwnerModel"
+        }
+      },
+      {
+        "name": "<OwnerRole>k__BackingField",
+        "offset": 232,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Battle.PlayerRoleDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Exit>k__BackingField",
+        "offset": 240,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleExit.VehicleExitModel"
+        }
+      },
+      {
+        "name": "<TimelineData>k__BackingField",
+        "offset": 248,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.TimelineDataModel.ITimelineDataModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.HelicopterTimelineData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Snapshots>k__BackingField",
+        "offset": 256,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Timeline.Data.Internal.TimelineSnapshotsData`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.HelicopterTimelineData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Extrapolation>k__BackingField",
+        "offset": 264,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Timeline.Data.Internal.TimelineExtrapolationsData`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.HelicopterTimelineData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SubStepSnapshots>k__BackingField",
+        "offset": 272,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PhysicsEntitySubStepSnapshots.PhysicsEntitySubStepSnapshotsModel"
+        }
+      },
+      {
+        "name": "<Events>k__BackingField",
+        "offset": 280,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Events.EventsModel"
+        }
+      },
+      {
+        "name": "<WarpedEvent>k__BackingField",
+        "offset": 288,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.EventModel.IEventModel"
+        }
+      },
+      {
+        "name": "<IsWarped>k__BackingField",
+        "offset": 296,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsUnowned>k__BackingField",
+        "offset": 304,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Water>k__BackingField",
+        "offset": 312,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleWater.VehicleWaterModel"
+        }
+      },
+      {
+        "name": "<HasFreeCargoSlot>k__BackingField",
+        "offset": 320,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HasCargo>k__BackingField",
+        "offset": 328,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TrunkPosition>k__BackingField",
+        "offset": 336,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleTrunkPosition.VehicleTrunkPositionModel"
+        }
+      },
+      {
+        "name": "<TrunkOpenedModel>k__BackingField",
+        "offset": 344,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.InteractableObjectOpened.InteractableObjectOpenedModel"
+        }
+      },
+      {
+        "name": "<TickData>k__BackingField",
+        "offset": 352,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.TickDataModels.Helicopter.HelicopterTickDataModel"
+        }
+      },
+      {
+        "name": "<RadioStation>k__BackingField",
+        "offset": 360,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RadioStation.RadioStationModel"
+        }
+      },
+      {
+        "name": "<ClanBattleVehicleTeamOwnerModel>k__BackingField",
+        "offset": 368,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ClanBattleVehicleTeamOwner.ClanBattleVehicleTeamOwnerModel"
+        }
+      },
+      {
+        "name": "<DirtLevel>k__BackingField",
+        "offset": 376,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleDirtLevel.VehicleDirtLevelModel"
+        }
+      },
+      {
+        "name": "<TrunkBreachModel>k__BackingField",
+        "offset": 384,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BreachStateEntity.BreachStateEntityModel"
+        }
+      },
+      {
+        "name": "<IsRented>k__BackingField",
+        "offset": 392,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      }
+    ],
+    "Models.Models.Car.CarModel": [
+      {
+        "name": "<Id>k__BackingField",
+        "offset": 16,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<BodyId>k__BackingField",
+        "offset": 20,
+        "type": {
+          "kind": "valuetype",
+          "name": "Models.Physics.PhysicsBodies.PhysicsBodyId"
+        }
+      },
+      {
+        "name": "<Initialize>k__BackingField",
+        "offset": 32,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarInitialize.CarInitializeModel"
+        }
+      },
+      {
+        "name": "<Destroy>k__BackingField",
+        "offset": 40,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarDestroy.CarDestroyModel"
+        }
+      },
+      {
+        "name": "<CharacterOwner>k__BackingField",
+        "offset": 48,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleOwner.VehicleOwnerModel"
+        }
+      },
+      {
+        "name": "<PartyOwner>k__BackingField",
+        "offset": 56,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PartyVehicleOwner.PartyVehicleOwnerModel"
+        }
+      },
+      {
+        "name": "<ClanBattleVehicleTeamOwnerModel>k__BackingField",
+        "offset": 64,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ClanBattleVehicleTeamOwner.ClanBattleVehicleTeamOwnerModel"
+        }
+      },
+      {
+        "name": "<OwnerRole>k__BackingField",
+        "offset": 72,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Battle.PlayerRoleDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ControlOwner>k__BackingField",
+        "offset": 80,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarControlOwner.CarControlOwnerModel"
+        }
+      },
+      {
+        "name": "<DriveInput>k__BackingField",
+        "offset": 88,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarDriveInput.CarDriveInputModel"
+        }
+      },
+      {
+        "name": "<SteeringInput>k__BackingField",
+        "offset": 96,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarSteeringInput.CarSteeringInputModel"
+        }
+      },
+      {
+        "name": "<HandBrakeInput>k__BackingField",
+        "offset": 104,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarHandBrakeInput.CarHandBrakeInputModel"
+        }
+      },
+      {
+        "name": "<BurnoutInput>k__BackingField",
+        "offset": 112,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarBurnoutInput.CarBurnoutInputModel"
+        }
+      },
+      {
+        "name": "<Description>k__BackingField",
+        "offset": 120,
+        "type": {
+          "kind": "class",
+          "name": "Models.References.Car.CarDescription"
+        }
+      },
+      {
+        "name": "<SuspensionSettings>k__BackingField",
+        "offset": 128,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleSuspensionSettings.VehicleSuspensionSettingsModel"
+        }
+      },
+      {
+        "name": "<TireFrictionSettings>k__BackingField",
+        "offset": 136,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarTireFrictionSettings.CarTireFrictionSettingsModel"
+        }
+      },
+      {
+        "name": "<SteeringSettings>k__BackingField",
+        "offset": 144,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarSteeringSettings.CarSteeringSettingsModel"
+        }
+      },
+      {
+        "name": "<TransmissionSettings>k__BackingField",
+        "offset": 152,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarTransmissionSettings.CarTransmissionSettingsModel"
+        }
+      },
+      {
+        "name": "<PhysicsDragSettings>k__BackingField",
+        "offset": 160,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarPhysicsDragSettings.CarPhysicsDragSettingsModel"
+        }
+      },
+      {
+        "name": "<BurnoutSettings>k__BackingField",
+        "offset": 168,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarBurnoutSettings.CarBurnoutSettingsModel"
+        }
+      },
+      {
+        "name": "<EngineSettings>k__BackingField",
+        "offset": 176,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleEngineSettings.VehicleEngineSettingsModel"
+        }
+      },
+      {
+        "name": "<UpgradesSettings>k__BackingField",
+        "offset": 184,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarUpgradesSettings.CarUpgradesSettingsModel"
+        }
+      },
+      {
+        "name": "<Transform>k__BackingField",
+        "offset": 192,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleTransform.VehicleTransformModel"
+        }
+      },
+      {
+        "name": "<LinearVelocity>k__BackingField",
+        "offset": 200,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Velocity.VelocityModel"
+        }
+      },
+      {
+        "name": "<AngularVelocity>k__BackingField",
+        "offset": 208,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Velocity.VelocityModel"
+        }
+      },
+      {
+        "name": "<Wheels>k__BackingField",
+        "offset": 216,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarWheelsModel.ICarWheelsModel"
+        }
+      },
+      {
+        "name": "<Seats>k__BackingField",
+        "offset": 224,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleSeats.VehicleSeatsModel"
+        }
+      },
+      {
+        "name": "<Steering>k__BackingField",
+        "offset": 232,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarSteering.CarSteeringModel"
+        }
+      },
+      {
+        "name": "<Transmission>k__BackingField",
+        "offset": 240,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarTransmission.CarTransmissionModel"
+        }
+      },
+      {
+        "name": "<Engine>k__BackingField",
+        "offset": 248,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleEngine.VehicleEngineModel"
+        }
+      },
+      {
+        "name": "<EngineRules>k__BackingField",
+        "offset": 256,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleEngineRules.VehicleEngineRulesModel"
+        }
+      },
+      {
+        "name": "<Sleep>k__BackingField",
+        "offset": 264,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleSleep.VehicleSleepModel"
+        }
+      },
+      {
+        "name": "<PhysicsAwakeObserver>k__BackingField",
+        "offset": 272,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PhysicsAwakeObserver.PhysicsAwakeObserverModel"
+        }
+      },
+      {
+        "name": "<Parking>k__BackingField",
+        "offset": 280,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarParking.CarParkingModel"
+        }
+      },
+      {
+        "name": "<ParkingEvent>k__BackingField",
+        "offset": 288,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.EventModel.IEventModel"
+        }
+      },
+      {
+        "name": "<HandBrake>k__BackingField",
+        "offset": 296,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Burnout>k__BackingField",
+        "offset": 304,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HitBoxAccess>k__BackingField",
+        "offset": 312,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HitBoxAccessModel.IHitBoxAccessModel"
+        }
+      },
+      {
+        "name": "<HitBoxId>k__BackingField",
+        "offset": 320,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.HitBoxId.HitBoxIdModel"
+        }
+      },
+      {
+        "name": "<Events>k__BackingField",
+        "offset": 328,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Events.EventsModel"
+        }
+      },
+      {
+        "name": "<TimelineTickData>k__BackingField",
+        "offset": 336,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.TimelineDataModel.ITimelineDataModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.CarTimelineTickData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TickSnapshots>k__BackingField",
+        "offset": 344,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Timeline.Data.Internal.TimelineSnapshotsData`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.CarTimelineTickData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TickExtrapolations>k__BackingField",
+        "offset": 352,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Timeline.Data.Internal.TimelineExtrapolationsData`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.CarTimelineTickData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TimelineSubTickData>k__BackingField",
+        "offset": 360,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.TimelineDataModel.ITimelineDataModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.CarTimelineSubTickData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SubTickSnapshots>k__BackingField",
+        "offset": 368,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Timeline.Data.Internal.TimelineSnapshotsData`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.CarTimelineSubTickData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SubTickExtrapolations>k__BackingField",
+        "offset": 376,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Timeline.Data.Internal.TimelineExtrapolationsData`1"
+          },
+          "arguments": [
+            {
+              "kind": "valuetype",
+              "name": "Models.Timeline.Data.Entity.CarTimelineSubTickData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SubStepSnapshots>k__BackingField",
+        "offset": 384,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PhysicsEntitySubStepSnapshots.PhysicsEntitySubStepSnapshotsModel"
+        }
+      },
+      {
+        "name": "<WarpedEvent>k__BackingField",
+        "offset": 392,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.EventModel.IEventModel"
+        }
+      },
+      {
+        "name": "<MoveInput>k__BackingField",
+        "offset": 400,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.CarMoveInputDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TeleportRequest>k__BackingField",
+        "offset": 408,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.Request.RequestModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "generic",
+              "definition": {
+                "kind": "valuetype",
+                "name": "System.ValueTuple`4"
+              },
+              "arguments": [
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Vector3"
+                },
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Quaternion"
+                },
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Vector3"
+                },
+                {
+                  "kind": "valuetype",
+                  "name": "System.Numerics.Vector3"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TrunkPosition>k__BackingField",
+        "offset": 416,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleTrunkPosition.VehicleTrunkPositionModel"
+        }
+      },
+      {
+        "name": "<TrunkOpenedModel>k__BackingField",
+        "offset": 424,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.InteractableObjectOpened.InteractableObjectOpenedModel"
+        }
+      },
+      {
+        "name": "<HoodPosition>k__BackingField",
+        "offset": 432,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.InteractPosition.InteractPositionModel"
+        }
+      },
+      {
+        "name": "<UndercarriagePosition>k__BackingField",
+        "offset": 440,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.InteractPosition.InteractPositionModel"
+        }
+      },
+      {
+        "name": "<Exit>k__BackingField",
+        "offset": 448,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleExit.VehicleExitModel"
+        }
+      },
+      {
+        "name": "<IsWarped>k__BackingField",
+        "offset": 456,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SirenModel>k__BackingField",
+        "offset": 464,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarSiren.CarSirenModel"
+        }
+      },
+      {
+        "name": "<IsStuckInSurface>k__BackingField",
+        "offset": 472,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsHornEnabled>k__BackingField",
+        "offset": 480,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsAvailableToFlip>k__BackingField",
+        "offset": 488,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Water>k__BackingField",
+        "offset": 496,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleWater.VehicleWaterModel"
+        }
+      },
+      {
+        "name": "<HasFreeCargoSlot>k__BackingField",
+        "offset": 504,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HasCargo>k__BackingField",
+        "offset": 512,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsUnowned>k__BackingField",
+        "offset": 520,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TickData>k__BackingField",
+        "offset": 528,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.TickDataModels.Car.CarTickDataModel"
+        }
+      },
+      {
+        "name": "<RadioStation>k__BackingField",
+        "offset": 536,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RadioStation.RadioStationModel"
+        }
+      },
+      {
+        "name": "<DirtLevel>k__BackingField",
+        "offset": 544,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.VehicleDirtLevel.VehicleDirtLevelModel"
+        }
+      },
+      {
+        "name": "<TrunkBreachModel>k__BackingField",
+        "offset": 552,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BreachStateEntity.BreachStateEntityModel"
+        }
+      },
+      {
+        "name": "<IsHoodOpened>k__BackingField",
+        "offset": 560,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<UpgradesSlots>k__BackingField",
+        "offset": 568,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CarUpgradesSlots.CarUpgradesSlotsModel"
+        }
+      },
+      {
+        "name": "<IsRented>k__BackingField",
+        "offset": 576,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

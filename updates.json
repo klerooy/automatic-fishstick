@@ -1,0 +1,172 @@
+﻿[
+    {
+        "path":  "1_run/RobRunAIO.exe",
+        "before":  "cd3dfd2588ca0c132fe102194a999da90cc42243d86e93d0de5b75fc7ba7dbb8",
+        "after":  null
+    },
+    {
+        "path":  "1_run/RobRunPort.exe",
+        "before":  "63c96b909ad48bbf3338e48c9b21f3a9fb20c2571a93243149e06c661870af7a",
+        "after":  null
+    },
+    {
+        "path":  "2_src_port/RobRunAIO.exe",
+        "before":  "cd3dfd2588ca0c132fe102194a999da90cc42243d86e93d0de5b75fc7ba7dbb8",
+        "after":  null
+    },
+    {
+        "path":  "2_src_port/RobRunPort.exe",
+        "before":  "63c96b909ad48bbf3338e48c9b21f3a9fb20c2571a93243149e06c661870af7a",
+        "after":  null
+    },
+    {
+        "path":  "2_src_port/app.rc",
+        "before":  "f2f2eae218e4af32b16ac10d554bcb56a932dede1ed590563145d6a89d3dd490",
+        "after":  "C3986A08DC159038F25A7E71A9A4EB17A0F30B216F319A2070F07BA88FC1C7E0"
+    },
+    {
+        "path":  "2_src_port/app_resources.h",
+        "before":  "405da31a339d3b522f6e0eda63d0456292e3b2f4f41ac11afe498c1425e63b7b",
+        "after":  "BD5EA5C69F6247D043A98F40E4DA11EDBBB8014A3AFB9DF6732EA6C4FAF840CB"
+    },
+    {
+        "path":  "2_src_port/assets/weapons_atlas.png",
+        "before":  null,
+        "after":  "3B2C939F414D0BCC14F54D2437F5B7C1119A208E45B5CF6034AC58283A1B0BCF"
+    },
+    {
+        "path":  "2_src_port/assets/weapons_atlas.svg",
+        "before":  null,
+        "after":  "44E03A7BFE6F0DFA5145D51EECF926F74B99E042A416147FFA70AE73FAB1403F"
+    },
+    {
+        "path":  "2_src_port/gpu.cpp",
+        "before":  "93aceb260bb131317c3f0310b2917378b5df9b3f86b34c450545009a5133198a",
+        "after":  "359701C5EB32BE283B722454969725F721EA28DE7B230507BD9A75FDC9175902"
+    },
+    {
+        "path":  "2_src_port/gpu.h",
+        "before":  "f376647399365b63ff64e1938b3b48559dc66f790de3e9a715d8dc1a4c1e058a",
+        "after":  "FDEAA6B00D4AAB53D8FBCE36DBA4D22D1E4F536573349A130093AAD4D83359C2"
+    },
+    {
+        "path":  "2_src_port/menu.html",
+        "before":  "c1a842be1edeb2b08f0595aab9d335a64014f59c4bb5ba14cb836dc401f4cef4",
+        "after":  "FB1FBD5B160374D18F2849048E557D5FCE3FEDBF0F7A81420B7DC92314A231CE"
+    },
+    {
+        "path":  "2_src_port/menu_bridge.h",
+        "before":  "8d111c87969036c03b04aacb6fdd5fd0b329841503648bf358c8607c2929fbfa",
+        "after":  "ECEEE117BCAD8E625879B059585FBACCD3DA5BC078DE0C7F6C32836AD10A8C42"
+    },
+    {
+        "path":  "2_src_port/robrun_offsets.h",
+        "before":  "6ad5d73beff12844a99297c7d01ecf3b98b763a7a9019f33e3f3311e9f0f80b5",
+        "after":  "0E2FC00857C07078BB505B7A3FBC7E1ADB500467644F152849638E1B5E772446"
+    },
+    {
+        "path":  "2_src_port/rr_aim.c",
+        "before":  "2e66e8737f95d8c47905d20278bd5e6a8224753f9e0c3c07c21bce59b553fa88",
+        "after":  "2F43DFF364F8CDA1C942A0224CEB4CBD980C38448D8115A60EEE6123531B5778"
+    },
+    {
+        "path":  "2_src_port/rr_aim.h",
+        "before":  "7960abadcdc171145e0a6ed383516f4c72bc5d27a8640c3dbf0cc9a926ec6287",
+        "after":  "C53C62627B49882FCD8BA83B956BAD1B1A9861ED7806893349202452A6BFAA3C"
+    },
+    {
+        "path":  "2_src_port/rr_draw.c",
+        "before":  "8ebe3096dea6663910439c94e569cfa1b4d9d5c3efef9d56f2833c572a1c3814",
+        "after":  "A23761FFB36C120CD358E7C4CCCBA196B7CAF2B8D0232130E8CD72A4656C9DD2"
+    },
+    {
+        "path":  "2_src_port/rr_esp.c",
+        "before":  "fb94886f80695929c49c1f2bd5da4d1b44700d8dac17cc29173f4feb9c20998d",
+        "after":  "BDAFE91C143DB83C7ECFE14192DF599343FA4EA7E9BB0CE5D97855A1913AE6B3"
+    },
+    {
+        "path":  "2_src_port/rr_esp_style.h",
+        "before":  null,
+        "after":  "0E98375691F5FAD4468B411522B21EBF6B67D0BD5B62BE03AFAB7B773647986C"
+    },
+    {
+        "path":  "2_src_port/rr_game.c",
+        "before":  "39f4404e64471be6bd8326916c743df150a714c53b5fc39919653d08ce98a8df",
+        "after":  "96BC12279EBA245ABB7A403BB1A4EA23DBEDC6E4C47D9D957157A5652F29B492"
+    },
+    {
+        "path":  "2_src_port/rr_game.h",
+        "before":  "15b1704a72ee0aa04a4f753baa602cb8a2b8b34180b47e3c2390b5b429ea8fbe",
+        "after":  "EE2A922E8283626D3BF2C96AF86E2ED329DE8D637F4E5063EC83D841893B2056"
+    },
+    {
+        "path":  "2_src_port/rr_los.c",
+        "before":  "77390892650025253e71b57fc6767a8265f2d4e5f1df5df3b04c1242c65cd457",
+        "after":  "E723EA3AAAA38E531E6ED71872E7551DA3425356460080E179AEA731E141E450"
+    },
+    {
+        "path":  "offsets/item_pricing_fields.json",
+        "before":  null,
+        "after":  "2B300B5A837498A18A71077750059380B6773CDA58210605847E13C0863836E2"
+    },
+    {
+        "path":  "offsets/party_fields.json",
+        "before":  null,
+        "after":  "FD2E304D95BAE2B230F1443E616D9B6A9044B42A8735093466BCE2508AFE103E"
+    },
+    {
+        "path":  "offsets/vehicle_owner_fields.json",
+        "before":  null,
+        "after":  "14B67D67E59CF823BBEF7292B48D93D6294898E6E3A17F70F1FC469F4D6F0F89"
+    },
+    {
+        "path":  "2_src_port/rr_label_layout.h",
+        "before":  null,
+        "after":  "08E49031935AA65EFF015E7A848C7FD6C5E146DC0DCDA1988D5A44AFB5E08F0E"
+    },
+    {
+        "path":  "2_src_port/rr_desync.h",
+        "before":  null,
+        "after":  "63B04C9B8350558E6F170E6B9138350CB7CF5E3ADD386453186144B473D05CE1"
+    },
+    {
+        "path":  "docs/il2cpp_signatures.md",
+        "before":  null,
+        "after":  "309BBE29D07F3FAC8D878C9E3189E84449051A388CAEA7910AC6EF7C43C09789"
+    },
+    {
+        "path":  "tools/harvest_il2cpp.py",
+        "before":  null,
+        "after":  "7400A1C19CF52E04C6CA45DE9BEF398B19CEBA755C2DA2987EEEC2191DEFD895"
+    },
+    {
+        "path":  "offsets/inventory_map.json",
+        "before":  null,
+        "after":  "7E3927448CF229B89511406E3D7403831899FDFD1138CC0C29CCCA52E7399ED1"
+    },
+    {
+        "path":  "offsets/messages_map.json",
+        "before":  null,
+        "after":  "4597A3A4925DEDC2CB73545CE9B1B74307A347C43C704C759D419C5311E9F815"
+    },
+    {
+        "path":  "offsets/type_index.txt",
+        "before":  null,
+        "after":  "AD2411A0760F5951CEAA0D0FFE131989821905CA96A3DF1792EABC65E9802E7B"
+    },
+    {
+        "path":  "2_src_port/rr_dupe.c",
+        "before":  null,
+        "after":  "A5A7B69CEBC1E3ED99C97517BB347341E05513C96939264B2E55203F504F3B91"
+    },
+    {
+        "path":  "2_src_port/rr_dupe.h",
+        "before":  null,
+        "after":  "909CCF6B5823D1BC152E319610EB9277C3AB60E3A9E68754BEEB93AE5BE639E4"
+    },
+    {
+        "path":  "docs/dupe_playbook.md",
+        "before":  null,
+        "after":  "295E67EAB09E60D6F2D96617D5FDE9D31A636C273941F5E142523062A799B0DC"
+    }
+]

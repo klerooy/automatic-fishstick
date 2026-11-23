@@ -1,0 +1,59 @@
+RobRunESP selftest
+  [PASS] config round trip saves radar, aim and colors
+  [PASS] config round trip saves loot and vehicle chams switches
+  [PASS] config round trip saves self ESP switch
+  [PASS] config round trip saves vehicle owner switch
+  [PASS] config round trip saves aim, trigger and spread settings
+  [PASS] ESP icon, category, thickness and unlimited text settings round trip
+  [PASS] config round trip saves recoil and anti-aim settings
+  [PASS] config round trip saves model anti-aim and stance flicker
+  [PASS] Party, MK and configurable loot price settings round trip
+  [PASS] legacy aim profiles migrate flags, key, FOV, response and target masks
+  [PASS] config round trip saves category settings
+  [PASS] role categories recognize aliases and empty roles
+  [PASS] category switches filter only their own category
+  [PASS] NPC, prisoner and criminal category aliases filter independently
+  [PASS] loot tier filters round trip and map each rarity
+  [PASS] config save replaces the previous profile
+  [PASS] config imports legacy aim settings and retains unspecified values
+  [PASS] config prefers current keys over legacy aliases
+  [PASS] IL2CPP object header is 16 bytes
+  [PASS] Il2CppClass.static_fields at 0xB8 (metadata 39 layout)
+  [PASS] Il2CppString length/char layout
+  [PASS] Dictionary _entries/_count layout
+  [PASS] BattleCharacterModel.Transform from dump (0x58)
+  [PASS] WorldEntitiesModel._battleCharacters from dump (0x18)
+  [PASS] WorldModel.WorldEntitiesModel from dump (0x38)
+  [PASS] BattleCameraModel Position/Orientation
+  [PASS] world point on the axis projects to the screen centre
+  [PASS] 45 deg right ray lands where the aspect ratio puts it
+  [PASS] ray on the horizontal edge lands on the right border
+  [PASS] 45 deg up ray lands on the top edge
+  [PASS] point behind the camera is rejected
+  [PASS] chain file parsed two symbols
+  [PASS] chain symbols are registered
+  [PASS] recoil classes route weapon names
+  [PASS] rifle pattern starts with a downward correction
+  [PASS] pattern clamps beyond the table end
+  [PASS] recoil emits nothing while not firing
+  [PASS] pattern recoil pulls down within bounds
+  [PASS] static anti-aim applies the offset once
+  [PASS] static anti-aim holds after the first move
+  [PASS] spin anti-aim stays inside the range
+  [PASS] random anti-aim stays inside twice the range
+  [PASS] MK parser: _mk2
+  [PASS] MK parser: _m1
+  [PASS] MK parser: multi-digit
+  [PASS] MK parser: absent marker stays unknown
+  [PASS] MK parser: trailing junk rejected
+  [PASS] MK parser: bare marker rejected
+  [PASS] MK parser: level bound 999
+  [PASS] weapon label uppercases and appends MK
+  [PASS] weapon label hides MK when disabled
+  [PASS] signature detects a 1-ulp float change
+  [PASS] signature does not collapse when value equals hash
+  [PASS] signature covers the unaligned tail byte
+  [PASS] config signature covers the FOV-circle switch
+  [PASS] config signature covers menu color edits
+
+SELFTEST OK (0 failures)

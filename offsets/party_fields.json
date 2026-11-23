@@ -1,0 +1,2572 @@
+{
+  "game_assembly_sha256": "e4b191f5b15f6a005454dabdb50e1310ded98f135afe6f170fc3122f0b4ed062",
+  "types": {
+    "Models.Data.Party.BattlePartyMemberData": [
+      {
+        "name": "<X>k__BackingField",
+        "offset": 32,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Y>k__BackingField",
+        "offset": 40,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Z>k__BackingField",
+        "offset": 48,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<RySector>k__BackingField",
+        "offset": 56,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<EntityId>k__BackingField",
+        "offset": 64,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Health>k__BackingField",
+        "offset": 72,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Armor>k__BackingField",
+        "offset": 80,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<EquipArmorItem>k__BackingField",
+        "offset": 88,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.InventoryItemDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PublicRoleDescription>k__BackingField",
+        "offset": 96,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Battle.PlayerRoleDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HideObjectEntityId>k__BackingField",
+        "offset": 104,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ArrestTs>k__BackingField",
+        "offset": 112,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ArrestState>k__BackingField",
+        "offset": 120,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Arrest.ArrestStateDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<InterruptArrestingTs>k__BackingField",
+        "offset": 128,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ReadyCheckStatus>k__BackingField",
+        "offset": 136,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyReadyCheckStatusDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<KnockoutEndTs>k__BackingField",
+        "offset": 144,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<KnockoutPhase>k__BackingField",
+        "offset": 152,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Knockout.KnockoutPhaseDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ReviveEndTs>k__BackingField",
+        "offset": 160,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<InVehicleSeatSlot>k__BackingField",
+        "offset": 168,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Vehicle.Seat.VehicleSeatSlotDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<InVehicleType>k__BackingField",
+        "offset": 176,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Vehicle.VehicleTypeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<InVehicleEntityId>k__BackingField",
+        "offset": 184,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HasMark>k__BackingField",
+        "offset": 192,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<MarkX>k__BackingField",
+        "offset": 200,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "float"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<MarkY>k__BackingField",
+        "offset": 208,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "float"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<MarkZ>k__BackingField",
+        "offset": 216,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "float"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PingMarkType>k__BackingField",
+        "offset": 224,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.PingMarkTypeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PingMarkX>k__BackingField",
+        "offset": 232,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "float"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PingMarkY>k__BackingField",
+        "offset": 240,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "float"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PingMarkZ>k__BackingField",
+        "offset": 248,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "float"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PingMarkTs>k__BackingField",
+        "offset": 256,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CharacterControllerState>k__BackingField",
+        "offset": 264,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Character.CharacterControllerStateDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SurrenderTs>k__BackingField",
+        "offset": 272,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ImmuneEndTs>k__BackingField",
+        "offset": 280,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HoldingCellReleaseTs>k__BackingField",
+        "offset": 288,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsCopRewardBoxEmpty>k__BackingField",
+        "offset": 296,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      }
+    ],
+    "Game.Battle.BattleModel": [
+      {
+        "name": "_battleRoomModel",
+        "offset": 16,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RegionUserBattleRoom.RegionUserBattleRoomModel"
+        }
+      },
+      {
+        "name": "_battleConnectionModel",
+        "offset": 24,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BattleConnection.BattleConnectionModel"
+        }
+      },
+      {
+        "name": "RobberLocationEventModels",
+        "offset": 32,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.LocationEventDataModel.IRobberLocationEventModels"
+        }
+      },
+      {
+        "name": "LocationSafeDoorModel",
+        "offset": 40,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.LocationSafeDoor.LocationSafeDoorModel"
+        }
+      },
+      {
+        "name": "<RealmVersion>k__BackingField",
+        "offset": 48,
+        "type": {
+          "kind": "valuetype",
+          "name": "Models.Models.Realm.RealmVersion"
+        }
+      },
+      {
+        "name": "<Time>k__BackingField",
+        "offset": 56,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Time.TimeModel"
+        }
+      },
+      {
+        "name": "<PlayerRotationInput>k__BackingField",
+        "offset": 64,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Player.PlayerRotationInputModel"
+        }
+      },
+      {
+        "name": "<PlayerMovementInput>k__BackingField",
+        "offset": 72,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Player.PlayerMovementInputModel"
+        }
+      },
+      {
+        "name": "<BattleInputModel>k__BackingField",
+        "offset": 80,
+        "type": {
+          "kind": "class",
+          "name": "Models.Prediction.BattleInput.BattleInputModel"
+        }
+      },
+      {
+        "name": "<UISoundModel>k__BackingField",
+        "offset": 88,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.Models.BattleUISoundModel"
+        }
+      },
+      {
+        "name": "<DebugNetModel>k__BackingField",
+        "offset": 96,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.NetStats.DebugNetModel"
+        }
+      },
+      {
+        "name": "<CarStatsModel>k__BackingField",
+        "offset": 104,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Car.Stats.CarStatsDebugModel"
+        }
+      },
+      {
+        "name": "<HelicopterStatsModel>k__BackingField",
+        "offset": 112,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Helicopter.Stats.Model.HelicopterStatsDebugModel"
+        }
+      },
+      {
+        "name": "<VehicleStatsModel>k__BackingField",
+        "offset": 120,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Vehicles.Stats.Models.VehicleStatsModel"
+        }
+      },
+      {
+        "name": "<CheatSpawnCarModel>k__BackingField",
+        "offset": 128,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Cheats.CheatSpawnCarModel"
+        }
+      },
+      {
+        "name": "<CheatSpawnHelicopterModel>k__BackingField",
+        "offset": 136,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Cheats.CheatSpawnHelicopterModel"
+        }
+      },
+      {
+        "name": "<BattleEntitiesModel>k__BackingField",
+        "offset": 144,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.IBattleEntitiesModel"
+        }
+      },
+      {
+        "name": "<BattleSettings>k__BackingField",
+        "offset": 152,
+        "type": {
+          "kind": "class",
+          "name": "Models.References.BattleSettingsDescription"
+        }
+      },
+      {
+        "name": "<DataModels>k__BackingField",
+        "offset": 160,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.DataModels.IDataModels"
+        }
+      },
+      {
+        "name": "<ClanBattleCharacterTeamModel>k__BackingField",
+        "offset": 168,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ClanBattleCharacterTeamModel.IClanBattleCharacterTeamModel"
+        }
+      },
+      {
+        "name": "<InterpolationStatsModel>k__BackingField",
+        "offset": 176,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.NetStats.InterpolationStats.InterpolationStatsModel"
+        }
+      },
+      {
+        "name": "<InputsStatsModel>k__BackingField",
+        "offset": 184,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.NetStats.InputsStats.InputsStatsModel"
+        }
+      },
+      {
+        "name": "<PacketStatsModel>k__BackingField",
+        "offset": 192,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.NetStats.PacketStats.PacketStatsModel"
+        }
+      },
+      {
+        "name": "<ConnectionStatsModel>k__BackingField",
+        "offset": 200,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.NetStats.ConnectionStats.ConnectionStatsModel"
+        }
+      },
+      {
+        "name": "<LocationHits>k__BackingField",
+        "offset": 208,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.LocationEffects.LocationHitsModel"
+        }
+      },
+      {
+        "name": "<CharactersShotsModel>k__BackingField",
+        "offset": 216,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.CharactersShotsModel"
+        }
+      },
+      {
+        "name": "<CharactersMeleeAttackModel>k__BackingField",
+        "offset": 224,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.CharactersMeleeAttackModel"
+        }
+      },
+      {
+        "name": "<SprintInputModel>k__BackingField",
+        "offset": 232,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<AimInputModel>k__BackingField",
+        "offset": 240,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<AutoAimIntentionModel>k__BackingField",
+        "offset": 248,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.AutoAimIntentionModel"
+        }
+      },
+      {
+        "name": "<CrouchInputModel>k__BackingField",
+        "offset": 256,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<JumpInputModel>k__BackingField",
+        "offset": 264,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<ShotInputModel>k__BackingField",
+        "offset": 272,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<AimModeInputModel>k__BackingField",
+        "offset": 280,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<MeleeAttackInputModel>k__BackingField",
+        "offset": 288,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<UseInputModel>k__BackingField",
+        "offset": 296,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<UseHoldingInputModel>k__BackingField",
+        "offset": 304,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<InVehicleUseInputModel>k__BackingField",
+        "offset": 312,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<BackInputModel>k__BackingField",
+        "offset": 320,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<LeaveVehicle>k__BackingField",
+        "offset": 328,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<GetOutHideObject>k__BackingField",
+        "offset": 336,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<CarSirenInputModel>k__BackingField",
+        "offset": 344,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<ChatInputModel>k__BackingField",
+        "offset": 352,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<LeftShoulderViewInputModel>k__BackingField",
+        "offset": 360,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<QuickSlotsInputModel>k__BackingField",
+        "offset": 368,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.QuickSlotsInputModel"
+        }
+      },
+      {
+        "name": "<InventoryDialogModel>k__BackingField",
+        "offset": 376,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inventory.InventoryDialogModel"
+        }
+      },
+      {
+        "name": "<InventoryModels>k__BackingField",
+        "offset": 384,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inventory.InventoryModels"
+        }
+      },
+      {
+        "name": "<ProlongedInteractionDialogModel>k__BackingField",
+        "offset": 392,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.ProlongedInteractionDialogModel"
+        }
+      },
+      {
+        "name": "<MarkersModel>k__BackingField",
+        "offset": 400,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Markers.MarkersModel"
+        }
+      },
+      {
+        "name": "<AimTargetModel>k__BackingField",
+        "offset": 408,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.AimTargetModel"
+        }
+      },
+      {
+        "name": "<TargetModel>k__BackingField",
+        "offset": 416,
+        "type": {
+          "kind": "class",
+          "name": "Game.Targets.TargetModel"
+        }
+      },
+      {
+        "name": "<InVehicleTargetModel>k__BackingField",
+        "offset": 424,
+        "type": {
+          "kind": "class",
+          "name": "Game.Targets.TargetModel"
+        }
+      },
+      {
+        "name": "<InteractAreasNearPlayerModel>k__BackingField",
+        "offset": 432,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Target.InteractAreasNearPlayerModel"
+        }
+      },
+      {
+        "name": "<PreferredTargetModel>k__BackingField",
+        "offset": 440,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Target.PreferredTargetModel"
+        }
+      },
+      {
+        "name": "<ShotBlockedModel>k__BackingField",
+        "offset": 448,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Player.Shoot.ShotBlockedModel"
+        }
+      },
+      {
+        "name": "<PlayerContextMenu>k__BackingField",
+        "offset": 456,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.PlayerContextMenu.PlayerContextMenuModel"
+        }
+      },
+      {
+        "name": "<CarHandBrakeInputModel>k__BackingField",
+        "offset": 464,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<MapDialogModel>k__BackingField",
+        "offset": 472,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Map.MapDialogModel"
+        }
+      },
+      {
+        "name": "<MapMarkersModel>k__BackingField",
+        "offset": 480,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Map.MapMarkersModel"
+        }
+      },
+      {
+        "name": "<MapConfigModel>k__BackingField",
+        "offset": 488,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Map.MapConfigModel"
+        }
+      },
+      {
+        "name": "<ShotIntentionModel>k__BackingField",
+        "offset": 496,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.ShotIntentionModel"
+        }
+      },
+      {
+        "name": "<AutomaticShotParamsModel>k__BackingField",
+        "offset": 504,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.ShotParamsModel"
+        }
+      },
+      {
+        "name": "<SingleShotParamsModel>k__BackingField",
+        "offset": 512,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.ShotParamsModel"
+        }
+      },
+      {
+        "name": "<ShotInputLockModel>k__BackingField",
+        "offset": 520,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.ShotInputLockModel"
+        }
+      },
+      {
+        "name": "<SprintIntentionModel>k__BackingField",
+        "offset": 528,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputIntentionModel"
+        }
+      },
+      {
+        "name": "<NetworkConnectionStatusModel>k__BackingField",
+        "offset": 536,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.NetworkConnectionStatusModel"
+        }
+      },
+      {
+        "name": "<DeathScreenModel>k__BackingField",
+        "offset": 544,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.DeathDialog.DeathScreenModel"
+        }
+      },
+      {
+        "name": "<OpenInventoryInputModel>k__BackingField",
+        "offset": 552,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenMapInputModel>k__BackingField",
+        "offset": 560,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenEmotionDialogInputModel>k__BackingField",
+        "offset": 568,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<UnlockRequirementItemPositionModel>k__BackingField",
+        "offset": 576,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.UnlockRequirementItemPositionModel"
+        }
+      },
+      {
+        "name": "<CharacterSlotsModel>k__BackingField",
+        "offset": 584,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.CharacterSlotsModel.ClientCharacterSlotsModel"
+        }
+      },
+      {
+        "name": "<PredictionExtraTimeModel>k__BackingField",
+        "offset": 592,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PredictionExtraTime.PredictionExtraTimeModel"
+        }
+      },
+      {
+        "name": "<TargetHintObjectsModel>k__BackingField",
+        "offset": 600,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.TargetHint.TargetHintObjectsModel"
+        }
+      },
+      {
+        "name": "<SurrenderInputModel>k__BackingField",
+        "offset": 608,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Surrender.InputModel.SurrenderInputModel"
+        }
+      },
+      {
+        "name": "<OfferBribeInputModel>k__BackingField",
+        "offset": 616,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<SurrenderOrderInputModel>k__BackingField",
+        "offset": 624,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<HideAndSeekNotificationModel>k__BackingField",
+        "offset": 632,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.HideObject.HideAndSeekNotificationModel"
+        }
+      },
+      {
+        "name": "<SurrenderArrestingInputModel>k__BackingField",
+        "offset": 640,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<BecomeRobberNotificationModel>k__BackingField",
+        "offset": 648,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.BecomeRobber.BecomeRobberNotificationModel"
+        }
+      },
+      {
+        "name": "<BecomeRobberInputModel>k__BackingField",
+        "offset": 656,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputHoldModel"
+        }
+      },
+      {
+        "name": "<PartyBuffModel>k__BackingField",
+        "offset": 664,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Buffs.PartyBuffModel"
+        }
+      },
+      {
+        "name": "<ResourceNotificationModel>k__BackingField",
+        "offset": 672,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Ui.ResourceNotification.ResourceNotificationModel"
+        }
+      },
+      {
+        "name": "<IncomingDebugShots>k__BackingField",
+        "offset": 680,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.DebugShots.IncomingDebugShotsModel.IIncomingDebugShotsModel"
+        }
+      },
+      {
+        "name": "<IncomingPhysicsDebugData>k__BackingField",
+        "offset": 688,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.PhysicsDebug.IncomingPhysicsDebugDataModel.IIncomingPhysicsDebugDataModel"
+        }
+      },
+      {
+        "name": "<ForceKnockoutEndInputModel>k__BackingField",
+        "offset": 696,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<ObserverRequestModel>k__BackingField",
+        "offset": 704,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.ObserverRequestModel"
+        }
+      },
+      {
+        "name": "<DeferredOpenModel>k__BackingField",
+        "offset": 712,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.DeferredOpen.DeferredOpenModel"
+        }
+      },
+      {
+        "name": "<CarTrunkDistanceOpenModel>k__BackingField",
+        "offset": 720,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Car.Models.CarTrunkDistanceOpenModel"
+        }
+      },
+      {
+        "name": "<CarUpgradesHolderOpenModel>k__BackingField",
+        "offset": 728,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Car.Models.CarUpgradesHolderOpenModel"
+        }
+      },
+      {
+        "name": "<ShelvingsOpenModel>k__BackingField",
+        "offset": 736,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Shelving.ShelvingsOpenModel"
+        }
+      },
+      {
+        "name": "<Markers3DModel>k__BackingField",
+        "offset": 744,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Markers.Markers3D.Markers3DModel"
+        }
+      },
+      {
+        "name": "<MailIndicationModel>k__BackingField",
+        "offset": 752,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Mail.Models.MailIndicationModel"
+        }
+      },
+      {
+        "name": "<DropCargoInputModel>k__BackingField",
+        "offset": 760,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<EmotionDialogModel>k__BackingField",
+        "offset": 768,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Emotion.Models.EmotionDialogModel"
+        }
+      },
+      {
+        "name": "<PingMarkerCollidersModel>k__BackingField",
+        "offset": 776,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.PingMarkerCollidersModel"
+        }
+      },
+      {
+        "name": "<PingInputModel>k__BackingField",
+        "offset": 784,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<ProlongedActionProcessModel>k__BackingField",
+        "offset": 792,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Player.ProlongedActions.ProlongedActionProcessModel"
+        }
+      },
+      {
+        "name": "<BollardInputModel>k__BackingField",
+        "offset": 800,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<BollardActiveModel>k__BackingField",
+        "offset": 808,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Player.Bollard.BollardActiveModel"
+        }
+      },
+      {
+        "name": "<SelectedCargoModel>k__BackingField",
+        "offset": 816,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Trunk.Cargo.SelectedCargoModel"
+        }
+      },
+      {
+        "name": "<VehiclesModel>k__BackingField",
+        "offset": 824,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Vehicles.Models.VehiclesClientModel"
+        }
+      },
+      {
+        "name": "<DelayedResponsesModel>k__BackingField",
+        "offset": 832,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Models.DelayedResponsesModel.IDelayedResponsesModel"
+        }
+      },
+      {
+        "name": "<LaptopDialogModel>k__BackingField",
+        "offset": 840,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Laptop.LaptopDialogModel"
+        }
+      },
+      {
+        "name": "<AchievementsDialogModel>k__BackingField",
+        "offset": 848,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Achievement.AchievementsDialogModel"
+        }
+      },
+      {
+        "name": "<BattleCameraModel>k__BackingField",
+        "offset": 856,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Player.Camera.BattleCameraModel"
+        }
+      },
+      {
+        "name": "<CheatModel>k__BackingField",
+        "offset": 864,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Models.CheatModel.ICheatModel"
+        }
+      },
+      {
+        "name": "<MapBuildingsModel>k__BackingField",
+        "offset": 872,
+        "type": {
+          "kind": "class",
+          "name": "Game.Locations.BuildingDifficulty.MapBuildingsModel"
+        }
+      },
+      {
+        "name": "<SettlementHelperModel>k__BackingField",
+        "offset": 880,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.SettlementHelperModel.ISettlementHelperModel"
+        }
+      },
+      {
+        "name": "<SettlementModel>k__BackingField",
+        "offset": 888,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Settlement.SettlementModel"
+        }
+      },
+      {
+        "name": "<SettlementBonusModel>k__BackingField",
+        "offset": 896,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.SettlementBonus.SettlementBonusModel"
+        }
+      },
+      {
+        "name": "<WorldWaterZonesModel>k__BackingField",
+        "offset": 904,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Water.WorldWaterZonesClientModel"
+        }
+      },
+      {
+        "name": "<MixingCameraBlendModel>k__BackingField",
+        "offset": 912,
+        "type": {
+          "kind": "class",
+          "name": "CinemachineTPSO.MixingCameraBlendModel"
+        }
+      },
+      {
+        "name": "<CharactersInVehiclesModel>k__BackingField",
+        "offset": 920,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.CharacterInVehiclesModel"
+        }
+      },
+      {
+        "name": "<PlotsViewModel>k__BackingField",
+        "offset": 928,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Plot.LocationPlotsViewsModel"
+        }
+      },
+      {
+        "name": "<RenderersCullingRoomsViewModel>k__BackingField",
+        "offset": 936,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.RenderersCullingRoomsViewModel"
+        }
+      },
+      {
+        "name": "<LocationPlotSpotsModel>k__BackingField",
+        "offset": 944,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.LocationPlotSpots.LocationPlotSpotsModel"
+        }
+      },
+      {
+        "name": "<CarLandingCameraShakeModel>k__BackingField",
+        "offset": 952,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Player.LandingCameraShake.CarLandingCameraShakeModel"
+        }
+      },
+      {
+        "name": "<CompassMarkersModel>k__BackingField",
+        "offset": 960,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Ui.HUD.Compass.CompassMarkersModel"
+        }
+      },
+      {
+        "name": "<MapDistrictNamesModel>k__BackingField",
+        "offset": 968,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Map.MapDistrictName.MapDistrictNamesModel"
+        }
+      },
+      {
+        "name": "<ClanBattleModel>k__BackingField",
+        "offset": 976,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ClanBattle.ClanBattleModel"
+        }
+      },
+      {
+        "name": "<GrenadesExplosionsModel>k__BackingField",
+        "offset": 984,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.GrenadeExplosion.GrenadesExplosionsModel"
+        }
+      },
+      {
+        "name": "<GrenadeCameraShakingModel>k__BackingField",
+        "offset": 992,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.GrenadeExplosion.GrenadeCameraShakingModel"
+        }
+      },
+      {
+        "name": "<ClanBattleDialogModel>k__BackingField",
+        "offset": 1000,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.ClanBattleEnterDialog.ClanBattleDialogModel"
+        }
+      },
+      {
+        "name": "<OpenClanBattleDialogInputModel>k__BackingField",
+        "offset": 1008,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenClanShowdownInputModel>k__BackingField",
+        "offset": 1016,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<ClanBattleTeamsCacheModel>k__BackingField",
+        "offset": 1024,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.ClanBattleTeamsCacheModel"
+        }
+      },
+      {
+        "name": "<CargoExchangerDialogModel>k__BackingField",
+        "offset": 1032,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.CargoExchanger.CargoExchangerDialogModel"
+        }
+      },
+      {
+        "name": "<CurrencyExchangeDialogModel>k__BackingField",
+        "offset": 1040,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.CurrencyExchange.CurrencyExchangeDialogModel"
+        }
+      },
+      {
+        "name": "<TaxCollectionDialogModel>k__BackingField",
+        "offset": 1048,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Taxes.Dialog.TaxCollectionDialogModel"
+        }
+      },
+      {
+        "name": "<RenameInputModel>k__BackingField",
+        "offset": 1056,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<TaxPointMarkerModel>k__BackingField",
+        "offset": 1064,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.TaxPoint.TaxPointMarkerModel"
+        }
+      },
+      {
+        "name": "<GrenadePathModel>k__BackingField",
+        "offset": 1072,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Grenade.Models.GrenadePathModel"
+        }
+      },
+      {
+        "name": "<OverlayModel>k__BackingField",
+        "offset": 1080,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.OverlayModel"
+        }
+      },
+      {
+        "name": "<RegularGridModel>k__BackingField",
+        "offset": 1088,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.RegularGrid.RegularGridModel"
+        }
+      },
+      {
+        "name": "<PartyMemberAccessModel>k__BackingField",
+        "offset": 1096,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.IPartyMemberAccessModel.IPartyMemberAccessModel"
+        }
+      },
+      {
+        "name": "<ObserverModel>k__BackingField",
+        "offset": 1104,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Observer.ObserverInputModel"
+        }
+      },
+      {
+        "name": "<MinimapRenderersModel>k__BackingField",
+        "offset": 1112,
+        "type": {
+          "kind": "class",
+          "name": "Utils.MinimapRenderer.MinimapRenderersModel"
+        }
+      },
+      {
+        "name": "<ModelLODControllerModel>k__BackingField",
+        "offset": 1120,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "generic",
+              "definition": {
+                "kind": "valuetype",
+                "name": "System.ValueTuple`2"
+              },
+              "arguments": [
+                {
+                  "kind": "class",
+                  "name": "Game.Battle.LODRule"
+                },
+                {
+                  "kind": "class",
+                  "name": "Game.Battle.LODUpdater"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ViewLODControllerModel>k__BackingField",
+        "offset": 1128,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "generic",
+              "definition": {
+                "kind": "valuetype",
+                "name": "System.ValueTuple`2"
+              },
+              "arguments": [
+                {
+                  "kind": "class",
+                  "name": "Game.Battle.LODRule"
+                },
+                {
+                  "kind": "class",
+                  "name": "Game.Battle.LODUpdater"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "<VehiclesCollisionsModel>k__BackingField",
+        "offset": 1136,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Models.VehiclesCollisionsModel.IVehiclesCollisionsModel"
+        }
+      },
+      {
+        "name": "<VehicleCollisionsWithBreakableCollidersModel>k__BackingField",
+        "offset": 1144,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Models.VehiclesCollisionsModel.IVehicleCollisionsWithBreakableCollidersModel"
+        }
+      },
+      {
+        "name": "<TooltipModel>k__BackingField",
+        "offset": 1152,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.UI.Tooltip.TooltipModel"
+        }
+      },
+      {
+        "name": "<MeshTransformationTool>k__BackingField",
+        "offset": 1160,
+        "type": {
+          "kind": "class",
+          "name": "Utils.MeshTransformationTool.MeshTransformationTool"
+        }
+      },
+      {
+        "name": "<BurnoutSmokeVfxModel>k__BackingField",
+        "offset": 1168,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.BurnoutSmokeVfxSpawner.BurnoutSmokeVfxModel"
+        }
+      },
+      {
+        "name": "<VehicleOwnersModel>k__BackingField",
+        "offset": 1176,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.VehicleOwnersModel"
+        }
+      },
+      {
+        "name": "<PlayerBattleModel>k__BackingField",
+        "offset": 1184,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PlayerBattle.PlayerBattleModel"
+        }
+      },
+      {
+        "name": "<CoinsModel>k__BackingField",
+        "offset": 1192,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ICoinsReadonlyModel"
+        }
+      },
+      {
+        "name": "<CryptoCoinsModel>k__BackingField",
+        "offset": 1200,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ICoinsReadonlyModel"
+        }
+      },
+      {
+        "name": "<ImprisonmentYearsModel>k__BackingField",
+        "offset": 1208,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ImprisonmentYears.IImprisonmentYearsReadonlyModel"
+        }
+      },
+      {
+        "name": "<ClaimedImprisonmentYearsModel>k__BackingField",
+        "offset": 1216,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ImprisonmentYears.IImprisonmentYearsReadonlyModel"
+        }
+      },
+      {
+        "name": "<DebtPaidModel>k__BackingField",
+        "offset": 1224,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Debt.DebtPaidByClientModel"
+        }
+      },
+      {
+        "name": "<BattleCharacterSlotsModel>k__BackingField",
+        "offset": 1232,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BattleCharacterSlots.BattleCharacterSlotsModel"
+        }
+      },
+      {
+        "name": "<ReadFromSerializer>k__BackingField",
+        "offset": 1240,
+        "type": {
+          "kind": "class",
+          "name": "Framework.Replication.Serializer.Binary.Read.IReadBinarySerializer"
+        }
+      },
+      {
+        "name": "<ReadUpdateSerializer>k__BackingField",
+        "offset": 1248,
+        "type": {
+          "kind": "class",
+          "name": "Framework.Replication.Serializer.Binary.Read.IReadBinarySerializer"
+        }
+      },
+      {
+        "name": "<WriteSerializer>k__BackingField",
+        "offset": 1256,
+        "type": {
+          "kind": "class",
+          "name": "Framework.Replication.Serializer.Binary.Write.IWriteBinarySerializer"
+        }
+      },
+      {
+        "name": "<WriteStream>k__BackingField",
+        "offset": 1264,
+        "type": {
+          "kind": "class",
+          "name": "Framework.Core.BinaryStream.IPooledBinaryWriteStream"
+        }
+      },
+      {
+        "name": "<EntitiesParamsModel>k__BackingField",
+        "offset": 1272,
+        "type": {
+          "kind": "class",
+          "name": "Models.Replication.EntitiesParams.EntitiesParamsModel"
+        }
+      },
+      {
+        "name": "<LocationDescriptionEntitiesDataModel>k__BackingField",
+        "offset": 1280,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Replication.LocationDescriptionEntitiesDataModel.LocationDescriptionEntitiesDataModel"
+        }
+      },
+      {
+        "name": "<LocationDescriptionEntitiesModel>k__BackingField",
+        "offset": 1288,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.LocationDescriptionEntitiesModel"
+        }
+      },
+      {
+        "name": "<PhysicsBodiesModel>k__BackingField",
+        "offset": 1296,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PhysicsBodies.PhysicsBodiesModel"
+        }
+      },
+      {
+        "name": "<WorldEntitiesModel>k__BackingField",
+        "offset": 1304,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.WorldEntities.WorldEntitiesModel"
+        }
+      },
+      {
+        "name": "<WorldSettingsOverrideModel>k__BackingField",
+        "offset": 1312,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.WorldSettingsOverride.WorldSettingsOverrideModel"
+        }
+      },
+      {
+        "name": "<CharactersLoadedContents>k__BackingField",
+        "offset": 1320,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Content.ContentWrappers.ILoadedContent"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TaxesIconNotificationModel>k__BackingField",
+        "offset": 1328,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PopupNotificationDialog.IconNotificationModel"
+        }
+      },
+      {
+        "name": "<PopUpPresentationDialogModel>k__BackingField",
+        "offset": 1336,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.PopUpPresentationDialog.PopUpPresentationDialogModel"
+        }
+      },
+      {
+        "name": "<ConstraintSolverData>k__BackingField",
+        "offset": 1344,
+        "type": {
+          "kind": "class",
+          "name": "Utils.Constraints.Data.ConstraintSolverData"
+        }
+      },
+      {
+        "name": "<BattleNotificationsChat>k__BackingField",
+        "offset": 1352,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "<BattleRulesChat>k__BackingField",
+        "offset": 1360,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "<PrisonAccusationDialogModel>k__BackingField",
+        "offset": 1368,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Prison.PrisonAccusationDialogModel"
+        }
+      },
+      {
+        "name": "<DebugBattleReplicationModel>k__BackingField",
+        "offset": 1376,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.ReplicationDebug.DebugBattleReplicationModel"
+        }
+      },
+      {
+        "name": "<CarHornInputModel>k__BackingField",
+        "offset": 1384,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<CarBurnoutInputModel>k__BackingField",
+        "offset": 1392,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<LocationEventModel>k__BackingField",
+        "offset": 1400,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.LocationEvents.LocationEventModel"
+        }
+      },
+      {
+        "name": "<ResetBuildingsListModel>k__BackingField",
+        "offset": 1408,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.BreakableEffect.Models.ResetBuildingsListModel"
+        }
+      },
+      {
+        "name": "<ParticleEffectsModel>k__BackingField",
+        "offset": 1416,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.ParticleEffect.ParticleEffectsModel"
+        }
+      },
+      {
+        "name": "<ClanProtectingInfoDialogModel>k__BackingField",
+        "offset": 1424,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.ClanBattle.ClanProtectingInfo.ClanProtectingInfoDialogModel"
+        }
+      },
+      {
+        "name": "<RentPlotDialogModel>k__BackingField",
+        "offset": 1432,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Plot.RentDialog.RentPlotDialogModel"
+        }
+      },
+      {
+        "name": "<OpenBankAccountDialogModel>k__BackingField",
+        "offset": 1440,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.BankManager.OpenBankAccountDialogModel"
+        }
+      },
+      {
+        "name": "<KillLogsModel>k__BackingField",
+        "offset": 1448,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.KillLogs.KillLogsModel"
+        }
+      },
+      {
+        "name": "<VisibleRobbersModel>k__BackingField",
+        "offset": 1456,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.VisibleRobbersModel"
+        }
+      },
+      {
+        "name": "<HighlightedBuildingsModel>k__BackingField",
+        "offset": 1464,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.HighlightedBuildingsModel"
+        }
+      },
+      {
+        "name": "<SwitchRealmDialogModel>k__BackingField",
+        "offset": 1472,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.SwitchRealmDialogModel"
+        }
+      },
+      {
+        "name": "<SoundMarkersModel>k__BackingField",
+        "offset": 1480,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Markers.Sound.SoundMarkersModel"
+        }
+      },
+      {
+        "name": "<ContentCache>k__BackingField",
+        "offset": 1488,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Content.ContentCacheModel"
+        }
+      },
+      {
+        "name": "<BattleAssistanceModel>k__BackingField",
+        "offset": 1496,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Player.BattleAssistance.BattleAssistanceModel"
+        }
+      },
+      {
+        "name": "<BarterDialogModel>k__BackingField",
+        "offset": 1504,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Trader.Dialog.BarterDialogModel"
+        }
+      },
+      {
+        "name": "<CopEquipDialogModel>k__BackingField",
+        "offset": 1512,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Building.CopEquipDialogModel"
+        }
+      },
+      {
+        "name": "<LocationSoundsModel>k__BackingField",
+        "offset": 1520,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Sounds.LocationSoundsModel"
+        }
+      },
+      {
+        "name": "<PlotsCollidersModel>k__BackingField",
+        "offset": 1528,
+        "type": {
+          "kind": "class",
+          "name": "Client.Models.LocationBuilderPlotsCollidersModel.ILocationBuilderPlotsCollidersModel"
+        }
+      },
+      {
+        "name": "<PlotsDamageZonesModel>k__BackingField",
+        "offset": 1536,
+        "type": {
+          "kind": "class",
+          "name": "Client.Models.LocationBuilderPlotsDamageZonesModel.ILocationBuilderPlotsDamageZonesModel"
+        }
+      },
+      {
+        "name": "<BattleAlarmMarkersModel>k__BackingField",
+        "offset": 1544,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.SecurityAlarm.Models.BattleAlarmMarkersModel"
+        }
+      },
+      {
+        "name": "<DelayedUseActionModel>k__BackingField",
+        "offset": 1552,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.DelayedInputActionModel"
+        }
+      },
+      {
+        "name": "<VendorTreeDialogModel>k__BackingField",
+        "offset": 1560,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.VendorTree.Models.VendorTreeDialogModel"
+        }
+      },
+      {
+        "name": "<TalkDialogModel>k__BackingField",
+        "offset": 1568,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Entities.Player.Talks.TalkDialogModel"
+        }
+      },
+      {
+        "name": "<RouletteDialogModel>k__BackingField",
+        "offset": 1576,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.EntityModel.Roulette.RouletteDialog.RouletteDialogModel"
+        }
+      },
+      {
+        "name": "<VoiceChatBattleRoomModel>k__BackingField",
+        "offset": 1584,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.VoiceChat.VoiceChatBattleRoomModel"
+        }
+      },
+      {
+        "name": "<VoiceChatInputModel>k__BackingField",
+        "offset": 1592,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<TargetSubsystemsResultModel>k__BackingField",
+        "offset": 1600,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Target.TargetSubsystemsResultModel"
+        }
+      },
+      {
+        "name": "<ZoomLevelActions>k__BackingField",
+        "offset": 1608,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.ZoomLevel.ZoomLevelActions"
+        }
+      },
+      {
+        "name": "<CommonProlongedInteractionHandlers>k__BackingField",
+        "offset": 1616,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ProlongedInteractionHandler.CommonProlongedInteractionHandlersModel"
+        }
+      }
+    ],
+    "Game.Battle.Party.ClientPartyMemberAccessModel": [
+      {
+        "name": "_worldEntitiesModel",
+        "offset": 16,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.WorldEntities.WorldEntitiesModel"
+        }
+      },
+      {
+        "name": "_partyModel",
+        "offset": 24,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.PartyModel"
+        }
+      },
+      {
+        "name": "_battleConnectionModel",
+        "offset": 32,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BattleConnection.BattleConnectionModel"
+        }
+      },
+      {
+        "name": "_characterSlotsModel",
+        "offset": 40,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CharacterSlotsModel.ICharacterSlotsModel"
+        }
+      },
+      {
+        "name": "_settlementHelperModel",
+        "offset": 48,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.SettlementHelperModel.ISettlementHelperModel"
+        }
+      }
+    ],
+    "Game.Global.Party.PartyMemberModel": [
+      {
+        "name": "_partyMemberData",
+        "offset": 16,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.PartyMemberData"
+        }
+      },
+      {
+        "name": "PositionModel",
+        "offset": 24,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Character.LerpPositionModel"
+        }
+      },
+      {
+        "name": "RotationModel",
+        "offset": 32,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Character.CharacterRotationModel"
+        }
+      },
+      {
+        "name": "VehiclePositionModel",
+        "offset": 40,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Character.LerpPositionModel"
+        }
+      },
+      {
+        "name": "_characterInfo",
+        "offset": 48,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.IMemberBattleDataModel"
+        }
+      },
+      {
+        "name": "_battlePartyMemberData",
+        "offset": 56,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.BattlePartyMemberData"
+        }
+      },
+      {
+        "name": "<Index>k__BackingField",
+        "offset": 64,
+        "type": {
+          "kind": "int32"
+        }
+      }
+    ],
+    "Game.Global.Party.PartyModel": [
+      {
+        "name": "_partyData",
+        "offset": 16,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.PartyData"
+        }
+      },
+      {
+        "name": "_partyInviteModels",
+        "offset": 24,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyInviteSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyInviteModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_partyIncomingInviteModels",
+        "offset": 32,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyInviteSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyIncomingInviteModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_partyMemberModels",
+        "offset": 40,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyMemberSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyMemberModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_actualPartyInviteModels",
+        "offset": 48,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyInviteModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_actualPartyMemberModels",
+        "offset": 56,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyMemberModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_actualMembersAddedOrderList",
+        "offset": 64,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.List`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_removedMembers",
+        "offset": 72,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.List`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_emptyPartyMembers",
+        "offset": 80,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.IEnumerable`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.Data.Party.PartyMemberData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_regionUserPartyData",
+        "offset": 88,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.RegionUserPartyData"
+        }
+      },
+      {
+        "name": "<HasParty>k__BackingField",
+        "offset": 96,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<IsAllMembersInRealm>k__BackingField",
+        "offset": 97,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<IsAllMembersNotInRealm>k__BackingField",
+        "offset": 98,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<MembersInLocationCount>k__BackingField",
+        "offset": 100,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<PlayerPartyModel>k__BackingField",
+        "offset": 104,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.PartyMemberModel"
+        }
+      },
+      {
+        "name": "<BecomeRobberReadyCheckEndTs>k__BackingField",
+        "offset": 112,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "<BecomeRobberReadyCheckEntityId>k__BackingField",
+        "offset": 120,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "<CopRecruitingReadyCheckEndTs>k__BackingField",
+        "offset": 128,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "<Vehicles>k__BackingField",
+        "offset": 136,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.PartyVehiclesModel"
+        }
+      },
+      {
+        "name": "<PartyLogsSource>k__BackingField",
+        "offset": 144,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "IsPlayerJoinPartyChatNotificationDuringThisSession",
+        "offset": 152,
+        "type": {
+          "kind": "bool"
+        }
+      }
+    ]
+  }
+}

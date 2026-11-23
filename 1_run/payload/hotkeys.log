@@ -1,0 +1,72 @@
+9177390 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+9317125 key id=1 src=hook act (age=9317125)
+9317125 key id=1 src=poll held, ignored
+9317125 F1 menu=open
+9317140 key id=1 src=raw held, ignored
+9319250 key id=1 src=hook act (age=2125)
+9319250 F1 menu=closed
+9319250 key id=1 src=poll held, ignored
+9319250 key id=1 src=raw held, ignored
+9324828 key id=1 src=hook act (age=5578)
+9324828 key id=1 src=poll held, ignored
+9324828 F1 menu=open
+9324828 key id=1 src=raw held, ignored
+9327437 key id=1 src=hook act (age=2609)
+9327437 key id=1 src=poll held, ignored
+9327437 F1 menu=closed
+9327437 key id=1 src=raw held, ignored
+9336078 key id=1 src=hook act (age=8641)
+9336078 key id=1 src=poll held, ignored
+9336078 F1 menu=open
+9336078 key id=1 src=raw held, ignored
+9352031 key id=1 src=raw act (age=15953)
+9352031 key id=1 src=poll held, ignored
+9352031 F1 menu=closed
+9361890 key id=1 src=hook act (age=9859)
+9361890 F1 menu=open
+9361890 key id=1 src=poll held, ignored
+9361890 key id=1 src=raw held, ignored
+9515718 key id=1 src=hook act (age=153828)
+9515718 key id=1 src=poll held, ignored
+9515718 F1 menu=open
+9515718 key id=1 src=raw held, ignored
+9694875 key id=1 src=hook act (age=179157)
+9694875 F1 menu=open
+9694875 key id=1 src=poll held, ignored
+9694875 key id=1 src=raw held, ignored
+9786890 key id=1 src=hook act (age=92015)
+9786890 key id=1 src=poll held, ignored
+9786890 F1 menu=open
+9786890 key id=1 src=raw held, ignored
+9789203 key id=1 src=raw act (age=2313)
+9789203 F1 menu=closed
+9789203 key id=1 src=poll held, ignored
+9790843 key id=1 src=raw act (age=1640)
+9790843 key id=1 src=poll held, ignored
+9790843 F1 menu=open
+9805000 key id=1 src=raw act (age=14157)
+9805000 key id=1 src=poll held, ignored
+9805000 F1 menu=closed
+9806875 key id=1 src=hook act (age=1875)
+9806875 key id=1 src=poll held, ignored
+9806875 F1 menu=open
+9806875 key id=1 src=raw held, ignored
+11158375 target process lost - clearing anchors and re-attaching
+11158375 re-attached to pid 27956
+11158437 target process lost - clearing anchors and re-attaching
+11158437 re-attached to pid 27956
+11158500 target process lost - clearing anchors and re-attaching
+11158500 re-attached to pid 27956
+11158562 target process lost - clearing anchors and re-attaching
+11158562 re-attached to pid 27956
+11158625 target process lost - clearing anchors and re-attaching
+11158625 re-attached to pid 27956
+11158703 target process lost - clearing anchors and re-attaching
+11158703 re-attached to pid 27956
+11158765 target process lost - clearing anchors and re-attaching
+11158765 re-attached to pid 27956
+11158828 target process lost - clearing anchors and re-attaching
+11158828 re-attached to pid 27956
+11158890 target process lost - clearing anchors and re-attaching
+11158890 re-attached to pid 27956
+11158921 target pid 27956 exited - shutting down

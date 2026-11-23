@@ -1,0 +1,3367 @@
+{
+  "game_assembly_sha256": "e4b191f5b15f6a005454dabdb50e1310ded98f135afe6f170fc3122f0b4ed062",
+  "metadata_version": 39,
+  "image_size": 151318528,
+  "types": {
+    "Models.References.Inventory.InventoryItemDescription": [
+      {
+        "name": "<Type>k__BackingField",
+        "offset": 32,
+        "type_index": 72159,
+        "type": {
+          "kind": "valuetype",
+          "name": "Models.References.Inventory.InventoryItemType"
+        }
+      },
+      {
+        "name": "<CellsSize>k__BackingField",
+        "offset": 36,
+        "type_index": 72110,
+        "type": {
+          "kind": "valuetype",
+          "name": "Models.References.Inventory.InventoryItemCellsSize"
+        }
+      },
+      {
+        "name": "<StackSize>k__BackingField",
+        "offset": 44,
+        "type_index": 71684,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<Rarity>k__BackingField",
+        "offset": 48,
+        "type_index": 82647,
+        "type": {
+          "kind": "valuetype",
+          "name": "Models.References.Inventory.RarityItem"
+        }
+      },
+      {
+        "name": "<IsStackable>k__BackingField",
+        "offset": 52,
+        "type_index": 55484,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<UsableItemFunc>k__BackingField",
+        "offset": 56,
+        "type_index": 16596,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.UsableItemDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ThrowableItemFunc>k__BackingField",
+        "offset": 64,
+        "type_index": 16567,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.ThrowableItemDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ArmorFunc>k__BackingField",
+        "offset": 72,
+        "type_index": 16026,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.ArmorDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<WeaponFunc>k__BackingField",
+        "offset": 80,
+        "type_index": 16644,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Weapon.WeaponDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<InventoryLines>k__BackingField",
+        "offset": 88,
+        "type_index": 71684,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<IsBackpack>k__BackingField",
+        "offset": 92,
+        "type_index": 55484,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<PocketCount>k__BackingField",
+        "offset": 96,
+        "type_index": 71684,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<IsBelt>k__BackingField",
+        "offset": 100,
+        "type_index": 55484,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<AmmoFunc>k__BackingField",
+        "offset": 104,
+        "type_index": 16024,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.AmmoDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsKey>k__BackingField",
+        "offset": 112,
+        "type_index": 55484,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<BasePriceFunc>k__BackingField",
+        "offset": 120,
+        "type_index": 16373,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SellPriceModifierFunc>k__BackingField",
+        "offset": 128,
+        "type_index": 16380,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.InventoryItemSellPriceModifier"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SellPriceFunc>k__BackingField",
+        "offset": 136,
+        "type_index": 16373,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Durability>k__BackingField",
+        "offset": 144,
+        "type_index": 71684,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<HasDurability>k__BackingField",
+        "offset": 148,
+        "type_index": 55484,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<IsSellAvailable>k__BackingField",
+        "offset": 149,
+        "type_index": 55484,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<CarFunc>k__BackingField",
+        "offset": 152,
+        "type_index": 16099,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.CarSlotDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HelicopterFunc>k__BackingField",
+        "offset": 160,
+        "type_index": 16330,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Helicopter.HelicopterSlotDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<MainBuildingDescriptionFunc>k__BackingField",
+        "offset": 168,
+        "type_index": 16425,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Builder.MainBuildingDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CompoundWallDescriptionFunc>k__BackingField",
+        "offset": 176,
+        "type_index": 16221,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Builder.CompoundWallDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<OutbuildingDescriptionFunc>k__BackingField",
+        "offset": 184,
+        "type_index": 16450,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Builder.OutbuildingDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CollectionTableFunc>k__BackingField",
+        "offset": 192,
+        "type_index": 16215,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Collection.CollectionTableDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoOpenWorkbenchDescriptionFunc>k__BackingField",
+        "offset": 200,
+        "type_index": 16136,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoOpenWorkbench.CargoOpenWorkbenchDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoExchangeWorkbenchDescriptionFunc>k__BackingField",
+        "offset": 208,
+        "type_index": 16126,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoExchangeWorkbench.CargoExchangeWorkbenchDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoChargeWorkbenchDescriptionFunc>k__BackingField",
+        "offset": 216,
+        "type_index": 16113,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoChargeWorkbench.CargoChargeWorkbenchDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<StorageDescriptionFunc>k__BackingField",
+        "offset": 224,
+        "type_index": 16547,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Storage.StorageDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ShelvingDescriptionFunc>k__BackingField",
+        "offset": 232,
+        "type_index": 16517,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Shelving.ShelvingDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoOpenWorkbenchUpgradeDescriptionFunc>k__BackingField",
+        "offset": 240,
+        "type_index": 16143,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoOpenWorkbench.CargoOpenWorkbenchUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoExchangeWorkbenchUpgradeDescriptionFunc>k__BackingField",
+        "offset": 248,
+        "type_index": 16130,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoExchangeWorkbench.CargoExchangeWorkbenchUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CollectionTableUpgradeSlotDescriptionFunc>k__BackingField",
+        "offset": 256,
+        "type_index": 16217,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Collection.CollectionTableUpgradeSlotDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<MoneyWorkbenchUpgradeDescriptionFunc>k__BackingField",
+        "offset": 264,
+        "type_index": 16439,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.MoneyWorkbench.MoneyWorkbenchUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<AlarmCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 272,
+        "type_index": 16022,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.AlarmCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PoliceRadioCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 280,
+        "type_index": 16483,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.PoliceRadioCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<HornCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 288,
+        "type_index": 16340,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.HornCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<EcuCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 296,
+        "type_index": 16278,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.EcuCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TurbochargerCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 304,
+        "type_index": 16586,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.TurbochargerCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<EngineCoolingCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 312,
+        "type_index": 16286,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.EngineCoolingCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<NitroCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 320,
+        "type_index": 16443,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.NitroCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SuspensionCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 328,
+        "type_index": 16555,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.SuspensionCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<SteeringRackCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 336,
+        "type_index": 16542,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.SteeringRackCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TrunkInventoryCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 344,
+        "type_index": 16584,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.TrunkInventoryCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TrunkCargoInventoryCarUpgradeDescriptionFunc>k__BackingField",
+        "offset": 352,
+        "type_index": 16582,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Car.Upgrades.TrunkCargoInventoryCarUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CumulativeItemDescriptionFunc>k__BackingField",
+        "offset": 360,
+        "type_index": 16247,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.CumulativeItemDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<DefenseBlockDefenseModuleDescriptionFunc>k__BackingField",
+        "offset": 368,
+        "type_index": 16261,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.DefenseBlock.DefenseBlockDefenseModuleDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<DefenseBlockSpecialModuleDescriptionFunc>k__BackingField",
+        "offset": 376,
+        "type_index": 16265,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.DefenseBlock.DefenseBlockSpecialModuleDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PlotBuildingDecoderDescriptionFunc>k__BackingField",
+        "offset": 384,
+        "type_index": 16467,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Builder.PlotBuildingDecoderDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<FirstAidCabinetDescriptionFunc>k__BackingField",
+        "offset": 392,
+        "type_index": 16301,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.FirstAidCabinet.FirstAidCabinetDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<BillOfSaleDescriptionFunc>k__BackingField",
+        "offset": 400,
+        "type_index": 16052,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Inventory.BillOfSaleDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PoliceBadgeDescriptionFunc>k__BackingField",
+        "offset": 408,
+        "type_index": 16478,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Cop.PoliceBadgeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoProductionWorkbenchDescriptionFunc>k__BackingField",
+        "offset": 416,
+        "type_index": 16145,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoProductionWorkbench.CargoProductionWorkbenchDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoProductionWorkbenchResultWeightsUpgradeDescriptionFunc>k__BackingField",
+        "offset": 424,
+        "type_index": 16149,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoProductionWorkbench.CargoProductionWorkbenchResultWeightsUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CargoChargeWorkbenchSpeedupUpgradeDescriptionFunc>k__BackingField",
+        "offset": 432,
+        "type_index": 16115,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CargoChargeWorkbench.CargoChargeWorkbenchSpeedupUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CryptoWorkbenchDescriptionFunc>k__BackingField",
+        "offset": 440,
+        "type_index": 16237,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CryptoFarm.CryptoWorkbenchDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<VideoCardDescriptionFunc>k__BackingField",
+        "offset": 448,
+        "type_index": 16629,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CryptoFarm.VideoCardDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CryptoWorkbenchEfficiencyUpgradeDescriptionFunc>k__BackingField",
+        "offset": 456,
+        "type_index": 16239,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CryptoFarm.CryptoWorkbenchEfficiencyUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<CryptoWorkbenchSpeedupUpgradeDescriptionFunc>k__BackingField",
+        "offset": 464,
+        "type_index": 16241,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.CryptoFarm.CryptoWorkbenchSpeedupUpgradeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<RouletteChipDescriptionFunc>k__BackingField",
+        "offset": 472,
+        "type_index": 16502,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Roulette.RouletteChipDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<BoltCutterDescriptionFunc>k__BackingField",
+        "offset": 480,
+        "type_index": 16054,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Func`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.BoltCutterDescription"
+            }
+          ]
+        }
+      }
+    ],
+    "Models.References.Inventory.InventoryItemSellPriceModifier": [
+      {
+        "name": "<Modifier>k__BackingField",
+        "offset": 32,
+        "type_index": 86896,
+        "type": {
+          "kind": "float"
+        }
+      }
+    ],
+    "Models.Models.Party.PartyModel": [
+      {
+        "name": "_entities",
+        "offset": 16,
+        "type_index": 18631,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_memberPublicIds",
+        "offset": 24,
+        "type_index": 18638,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Id>k__BackingField",
+        "offset": 32,
+        "type_index": 88623,
+        "type": {
+          "kind": "string"
+        }
+      },
+      {
+        "name": "<Data>k__BackingField",
+        "offset": 40,
+        "type_index": 54702,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.BattlePartyData"
+        }
+      },
+      {
+        "name": "<EnterGroup>k__BackingField",
+        "offset": 48,
+        "type_index": 74678,
+        "type": {
+          "kind": "class",
+          "name": "Models.References.Location.LocationEnterGroupDescription"
+        }
+      },
+      {
+        "name": "<Entities>k__BackingField",
+        "offset": 56,
+        "type_index": 18477,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": ".HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<MemberPublicIds>k__BackingField",
+        "offset": 64,
+        "type_index": 18479,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": ".HashSet`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Vehicles>k__BackingField",
+        "offset": 72,
+        "type_index": 79736,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PartyVehicles.PartyVehiclesModel"
+        }
+      },
+      {
+        "name": "<WantedPoints>k__BackingField",
+        "offset": 80,
+        "type_index": 25920,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "int32"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<BecomeRobberReadyCheckModel>k__BackingField",
+        "offset": 88,
+        "type_index": 54841,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ReadyCheck.BattleReadyCheckModel"
+        }
+      },
+      {
+        "name": "<RobberAuthority>k__BackingField",
+        "offset": 96,
+        "type_index": 84676,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RobberAuthority.RobberAuthorityModel"
+        }
+      },
+      {
+        "name": "<CopRecruitingReadyCheckModel>k__BackingField",
+        "offset": 104,
+        "type_index": 54841,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ReadyCheck.BattleReadyCheckModel"
+        }
+      },
+      {
+        "name": "<ShooterTeammatesJoinEndTs>k__BackingField",
+        "offset": 112,
+        "type_index": 71723,
+        "type": {
+          "kind": "int64"
+        }
+      }
+    ],
+    "Models.Data.Party.PartyData": [
+      {
+        "name": "<Invites>k__BackingField",
+        "offset": 32,
+        "type_index": 38291,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.ReferenceMap.ReferenceMapData`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyInviteSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Models.Data.Party.PartyInviteData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Members>k__BackingField",
+        "offset": 40,
+        "type_index": 38296,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.ReferenceMap.ReferenceMapData`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyMemberSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Models.Data.Party.PartyMemberData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsReadyCheck>k__BackingField",
+        "offset": 48,
+        "type_index": 25508,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ReadyCheckInitiator>k__BackingField",
+        "offset": 56,
+        "type_index": 25703,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyMemberSlotDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ReadyCheckEndTs>k__BackingField",
+        "offset": 64,
+        "type_index": 25660,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PartyEnterBattleMode>k__BackingField",
+        "offset": 72,
+        "type_index": 38133,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.ReferenceData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.BattleModeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PartyEnterLocation>k__BackingField",
+        "offset": 80,
+        "type_index": 38136,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.ReferenceData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Location.LocationDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PartyEnterSector>k__BackingField",
+        "offset": 88,
+        "type_index": 38140,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.ReferenceData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Realm.SectorDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PartyEnterSettlement>k__BackingField",
+        "offset": 96,
+        "type_index": 38142,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.ReferenceData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.SettlementDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Chat>k__BackingField",
+        "offset": 104,
+        "type_index": 58646,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Chat.ChatMessagesData"
+        }
+      }
+    ],
+    "Models.Data.Party.PartyMemberData": [
+      {
+        "name": "<PublicId>k__BackingField",
+        "offset": 32,
+        "type_index": 25660,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Nickname>k__BackingField",
+        "offset": 40,
+        "type_index": 25760,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "string"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ClanTag>k__BackingField",
+        "offset": 48,
+        "type_index": 25760,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "string"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsLeader>k__BackingField",
+        "offset": 56,
+        "type_index": 25508,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<ReadyCheckStatus>k__BackingField",
+        "offset": 64,
+        "type_index": 25705,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyReadyCheckStatusDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<BattleMode>k__BackingField",
+        "offset": 72,
+        "type_index": 25493,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.BattleModeDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Location>k__BackingField",
+        "offset": 80,
+        "type_index": 25680,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Location.LocationDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Sector>k__BackingField",
+        "offset": 88,
+        "type_index": 25741,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Realm.SectorDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Settlement>k__BackingField",
+        "offset": 96,
+        "type_index": 25745,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.SettlementDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<IsParticipatingInPartyEnter>k__BackingField",
+        "offset": 104,
+        "type_index": 25508,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PlotSector>k__BackingField",
+        "offset": 112,
+        "type_index": 25741,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Realm.SectorDescription"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<PlotSettlement>k__BackingField",
+        "offset": 120,
+        "type_index": 25745,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.SettlementDescription"
+            }
+          ]
+        }
+      }
+    ],
+    "Models.Data.Party.PlayerPartyData": [
+      {
+        "name": "<InParty>k__BackingField",
+        "offset": 32,
+        "type_index": 25508,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Framework.Replication.Data.Primitive.IPrimitiveData`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<Party>k__BackingField",
+        "offset": 40,
+        "type_index": 54702,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.BattlePartyData"
+        }
+      },
+      {
+        "name": "<Members>k__BackingField",
+        "offset": 48,
+        "type_index": 54712,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.BattlePartyMembersData"
+        }
+      }
+    ],
+    "Game.Global.GlobalModel": [
+      {
+        "name": "<UserTimeModel>k__BackingField",
+        "offset": 16,
+        "type_index": 92922,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Time.UserTimeModel"
+        }
+      },
+      {
+        "name": "<RegionUserTimeModel>k__BackingField",
+        "offset": 24,
+        "type_index": 92922,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Time.UserTimeModel"
+        }
+      },
+      {
+        "name": "<UserIsRequesting>k__BackingField",
+        "offset": 32,
+        "type_index": 25859,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<EndGameModel>k__BackingField",
+        "offset": 40,
+        "type_index": 64796,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.EndGameModel"
+        }
+      },
+      {
+        "name": "<DeviceModel>k__BackingField",
+        "offset": 48,
+        "type_index": 63292,
+        "type": {
+          "kind": "class",
+          "name": "Inputs.DeviceModel"
+        }
+      },
+      {
+        "name": "<CursorLockModel>k__BackingField",
+        "offset": 56,
+        "type_index": 61667,
+        "type": {
+          "kind": "class",
+          "name": "Core.CursorLockModel"
+        }
+      },
+      {
+        "name": "<GlobalNotificationModel>k__BackingField",
+        "offset": 64,
+        "type_index": 67140,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.Models.GlobalNotificationModel"
+        }
+      },
+      {
+        "name": "<PersonalNotificationModel>k__BackingField",
+        "offset": 72,
+        "type_index": 79932,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.Models.PersonalNotificationModel"
+        }
+      },
+      {
+        "name": "<PlotAlarmNotificationModel>k__BackingField",
+        "offset": 80,
+        "type_index": 80802,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PlotAlarm.Model.PlotAlarmNotificationModel"
+        }
+      },
+      {
+        "name": "<SensitivityModel>k__BackingField",
+        "offset": 88,
+        "type_index": 85833,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.Models.SensitivityModel"
+        }
+      },
+      {
+        "name": "<InBattleSettingsModel>k__BackingField",
+        "offset": 96,
+        "type_index": 71098,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Settings.InBattleSettingsModel"
+        }
+      },
+      {
+        "name": "<KeyboardMouseControlsSettingsModel>k__BackingField",
+        "offset": 104,
+        "type_index": 73191,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.KeyboardMouseControlsSettingsModel"
+        }
+      },
+      {
+        "name": "<UISoundModel>k__BackingField",
+        "offset": 112,
+        "type_index": 67169,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.Models.GlobalUISoundModel"
+        }
+      },
+      {
+        "name": "<ModalDialogModel>k__BackingField",
+        "offset": 120,
+        "type_index": 76690,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ModalDialog.ModalDialogModel"
+        }
+      },
+      {
+        "name": "<PublicIdModel>k__BackingField",
+        "offset": 128,
+        "type_index": 82164,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PublicId.PublicIdModel"
+        }
+      },
+      {
+        "name": "<RenameModel>k__BackingField",
+        "offset": 136,
+        "type_index": 83849,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Rename.RenameModel"
+        }
+      },
+      {
+        "name": "<RenameCooldownEndTs>k__BackingField",
+        "offset": 144,
+        "type_index": 25923,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<FactoriesModel>k__BackingField",
+        "offset": 152,
+        "type_index": 65681,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Models.Screens.FactoriesModel"
+        }
+      },
+      {
+        "name": "<ScreensModel>k__BackingField",
+        "offset": 160,
+        "type_index": 85454,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Models.Screens.ScreensModel"
+        }
+      },
+      {
+        "name": "<SpaceSoundModel>k__BackingField",
+        "offset": 168,
+        "type_index": 87565,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Sounds.SpaceSoundModel"
+        }
+      },
+      {
+        "name": "<UserRegionModel>k__BackingField",
+        "offset": 176,
+        "type_index": 92899,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.UserRegion.UserRegionModel"
+        }
+      },
+      {
+        "name": "<RealmModel>k__BackingField",
+        "offset": 184,
+        "type_index": 83640,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RegionUserRealm.RegionUserRealmModel"
+        }
+      },
+      {
+        "name": "<SettlementModel>k__BackingField",
+        "offset": 192,
+        "type_index": 83646,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RegionUserSettlement.RegionUserSettlementModel"
+        }
+      },
+      {
+        "name": "<PartyModel>k__BackingField",
+        "offset": 200,
+        "type_index": 79710,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.PartyModel"
+        }
+      },
+      {
+        "name": "<ClanModel>k__BackingField",
+        "offset": 208,
+        "type_index": 59404,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.Model.ClanModel"
+        }
+      },
+      {
+        "name": "<RealmBattleStateModel>k__BackingField",
+        "offset": 216,
+        "type_index": 82897,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RealmBattleStateModel"
+        }
+      },
+      {
+        "name": "<CoinsModel>k__BackingField",
+        "offset": 224,
+        "type_index": 68931,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ICoinsReadonlyModel"
+        }
+      },
+      {
+        "name": "<CoinsAccessModel>k__BackingField",
+        "offset": 232,
+        "type_index": 59863,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Coins.CoinsAccessModel"
+        }
+      },
+      {
+        "name": "<CryptoCoinsModel>k__BackingField",
+        "offset": 240,
+        "type_index": 68931,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ICoinsReadonlyModel"
+        }
+      },
+      {
+        "name": "<RegionUserCustomizationVersionModel>k__BackingField",
+        "offset": 248,
+        "type_index": 69063,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.CustomizationVersionModel.ICustomizationVersionModel"
+        }
+      },
+      {
+        "name": "<BattleRoomModel>k__BackingField",
+        "offset": 256,
+        "type_index": 83598,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RegionUserBattleRoom.RegionUserBattleRoomModel"
+        }
+      },
+      {
+        "name": "<ImprisonmentYearsModel>k__BackingField",
+        "offset": 264,
+        "type_index": 69481,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ImprisonmentYears.IImprisonmentYearsReadonlyModel"
+        }
+      },
+      {
+        "name": "<UserDebtPaidModel>k__BackingField",
+        "offset": 272,
+        "type_index": 62452,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Debt.DebtPaidByClientModel"
+        }
+      },
+      {
+        "name": "<RegionUserDebtPaidModel>k__BackingField",
+        "offset": 280,
+        "type_index": 62452,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Debt.DebtPaidByClientModel"
+        }
+      },
+      {
+        "name": "<AchievementsModel>k__BackingField",
+        "offset": 288,
+        "type_index": 52109,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.Achievement.AchievementsModel"
+        }
+      },
+      {
+        "name": "<GameSetting>k__BackingField",
+        "offset": 296,
+        "type_index": 66801,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Settings.GameSetting"
+        }
+      },
+      {
+        "name": "<AdvancedGameSettings>k__BackingField",
+        "offset": 304,
+        "type_index": 52416,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Settings.AdvancedGameSettings"
+        }
+      },
+      {
+        "name": "<SoundLanguage>k__BackingField",
+        "offset": 312,
+        "type_index": 88615,
+        "type": {
+          "kind": "string"
+        }
+      },
+      {
+        "name": "<ServerShutdownTimeScreenModel>k__BackingField",
+        "offset": 320,
+        "type_index": 86096,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ServerShutdownNotifications.ServerShutdownScreenModel"
+        }
+      },
+      {
+        "name": "<ProcessingScreenModel>k__BackingField",
+        "offset": 328,
+        "type_index": 81884,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ProcessingDialog.ProcessingScreenModel"
+        }
+      },
+      {
+        "name": "<RegionUserDelayedResponsesModel>k__BackingField",
+        "offset": 336,
+        "type_index": 69142,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.Models.DelayedResponsesModel.IDelayedResponsesModel"
+        }
+      },
+      {
+        "name": "<SideMenuDialogScreenModel>k__BackingField",
+        "offset": 344,
+        "type_index": 86796,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Ui.SideMenu.Dialog.SideMenuDialogScreenModel"
+        }
+      },
+      {
+        "name": "<PopupNotificationDialogModel>k__BackingField",
+        "offset": 352,
+        "type_index": 81443,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PopupNotificationDialog.PopupNotificationDialogModel"
+        }
+      },
+      {
+        "name": "<PopupNotificationsModel>k__BackingField",
+        "offset": 360,
+        "type_index": 81452,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PopupNotificationDialog.PopupNotificationsModel"
+        }
+      },
+      {
+        "name": "<SettingsDialogModel>k__BackingField",
+        "offset": 368,
+        "type_index": 86302,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.SettingsDialog.SettingsDialogModel"
+        }
+      },
+      {
+        "name": "<CharacterCustomizationDialogModel>k__BackingField",
+        "offset": 376,
+        "type_index": 87056,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.UI.SkinCenter.SkinCenterDialogModel"
+        }
+      },
+      {
+        "name": "<CodexDialogModel>k__BackingField",
+        "offset": 384,
+        "type_index": 59825,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Codex.CodexDialogModel"
+        }
+      },
+      {
+        "name": "<MailDialogModel>k__BackingField",
+        "offset": 392,
+        "type_index": 75355,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Mail.Models.MailDialogModel"
+        }
+      },
+      {
+        "name": "<PartyManagerDialogModel>k__BackingField",
+        "offset": 400,
+        "type_index": 79667,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.Dialog.PartyManagerDialogModel"
+        }
+      },
+      {
+        "name": "<InviteToPartyIntentionModel>k__BackingField",
+        "offset": 408,
+        "type_index": 72324,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.InviteToPartyIntentionModel"
+        }
+      },
+      {
+        "name": "<PopupClanDialogModel>k__BackingField",
+        "offset": 416,
+        "type_index": 81431,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.PopupClan.PopupClanDialogModel"
+        }
+      },
+      {
+        "name": "<ClanDialogModel>k__BackingField",
+        "offset": 424,
+        "type_index": 59269,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.ClanDialog.ClanDialogModel"
+        }
+      },
+      {
+        "name": "<ClanSettingsDialogModel>k__BackingField",
+        "offset": 432,
+        "type_index": 59514,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.ClanSettings.ClanSettingsDialogModel"
+        }
+      },
+      {
+        "name": "<ClanSearchDialogModel>k__BackingField",
+        "offset": 440,
+        "type_index": 59496,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.ClanSearch.ClanSearchDialogModel"
+        }
+      },
+      {
+        "name": "<ClanRankDialogModel>k__BackingField",
+        "offset": 448,
+        "type_index": 59459,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.RankDialog.ClanRankDialogModel"
+        }
+      },
+      {
+        "name": "<ClanInvitePopupModel>k__BackingField",
+        "offset": 456,
+        "type_index": 59319,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.ClanInvitePopup.ClanInvitePopupModel"
+        }
+      },
+      {
+        "name": "<PoliceReinforcementInvitePopupModel>k__BackingField",
+        "offset": 464,
+        "type_index": 81320,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PoliceReinforcementInvitePopup.PoliceReinforcementInvitePopupModel"
+        }
+      },
+      {
+        "name": "<ClanBattleEnterDialogModel>k__BackingField",
+        "offset": 472,
+        "type_index": 59097,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Clan.ClanBattleEnterDialog.ClanBattleEnterDialogModel"
+        }
+      },
+      {
+        "name": "<SkinCenterDialogModel>k__BackingField",
+        "offset": 480,
+        "type_index": 87056,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.UI.SkinCenter.SkinCenterDialogModel"
+        }
+      },
+      {
+        "name": "<RegionUserSkinCenterModel>k__BackingField",
+        "offset": 488,
+        "type_index": 87098,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.SkinCenter.SkinCenterModel"
+        }
+      },
+      {
+        "name": "<ReputationDialogModel>k__BackingField",
+        "offset": 496,
+        "type_index": 84283,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Reputation.ReputationDialogModel"
+        }
+      },
+      {
+        "name": "<LandOwnershipDialogModel>k__BackingField",
+        "offset": 504,
+        "type_index": 73488,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.LandOwnership.LandOwnershipDialogModel"
+        }
+      },
+      {
+        "name": "<TattooUnlockDialogModel>k__BackingField",
+        "offset": 512,
+        "type_index": 89628,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Tattoo.Dialog.TattooUnlockDialogModel"
+        }
+      },
+      {
+        "name": "<ImprisonmentAwardClaimStateModel>k__BackingField",
+        "offset": 520,
+        "type_index": 71071,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Reputation.ImprisonmentAwardClaimStateModel"
+        }
+      },
+      {
+        "name": "<InputHoldModel>k__BackingField",
+        "offset": 528,
+        "type_index": 67110,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.UI.GlobalInputHoldModel"
+        }
+      },
+      {
+        "name": "<UserCreationTs>k__BackingField",
+        "offset": 536,
+        "type_index": 36475,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.PrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<BattlePassPoints>k__BackingField",
+        "offset": 544,
+        "type_index": 54763,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BattlePass.BattlePassPointsModel"
+        }
+      },
+      {
+        "name": "<BattlePass>k__BackingField",
+        "offset": 552,
+        "type_index": 54754,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BattlePass.BattlePassModel"
+        }
+      },
+      {
+        "name": "<BattlePassPremiumDialogModel>k__BackingField",
+        "offset": 560,
+        "type_index": 54768,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.BattlePass.BattlePassPremiumDialogModel"
+        }
+      },
+      {
+        "name": "LoadingModel",
+        "offset": 568,
+        "type_index": 74179,
+        "type": {
+          "kind": "class",
+          "name": "Game.Shared.Models.LoadingModel"
+        }
+      },
+      {
+        "name": "<RegionUserNotificationModel>k__BackingField",
+        "offset": 576,
+        "type_index": 83631,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RegionUserNotification.RegionUserNotificationModel"
+        }
+      },
+      {
+        "name": "<RegionUserModel>k__BackingField",
+        "offset": 584,
+        "type_index": 83628,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Models.RegionUserModel"
+        }
+      },
+      {
+        "name": "<ClanBattleAppointmentNotificationsModel>k__BackingField",
+        "offset": 592,
+        "type_index": 59034,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ClanBattleAppointmentNotificationsModel"
+        }
+      },
+      {
+        "name": "<SettlementOwnersModel>k__BackingField",
+        "offset": 600,
+        "type_index": 86417,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.SettlementOwnersModel"
+        }
+      },
+      {
+        "name": "<RealmInfoModel>k__BackingField",
+        "offset": 608,
+        "type_index": 82973,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RealmInfoModel"
+        }
+      },
+      {
+        "name": "<RealmInfoSourceModel>k__BackingField",
+        "offset": 616,
+        "type_index": 70184,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.IRealmInfoSourceModel"
+        }
+      },
+      {
+        "name": "<ReceivedRequestsModel>k__BackingField",
+        "offset": 624,
+        "type_index": 83233,
+        "type": {
+          "kind": "class",
+          "name": "ClientCore.ApplyDataUpdater.ReceivedRequestsModel"
+        }
+      },
+      {
+        "name": "<IntroCinematicModel>k__BackingField",
+        "offset": 632,
+        "type_index": 71984,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Cinematic.IntroCinematicModel"
+        }
+      },
+      {
+        "name": "<DisconnectInfoModel>k__BackingField",
+        "offset": 640,
+        "type_index": 63454,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.DisconnectInfoModel"
+        }
+      },
+      {
+        "name": "<SkinsCheatStateModel>k__BackingField",
+        "offset": 648,
+        "type_index": 87233,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.SkinCenter.Model.SkinsCheatStateModel"
+        }
+      },
+      {
+        "name": "<PlayerPrefsModel>k__BackingField",
+        "offset": 656,
+        "type_index": 80692,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PlayerPrefsFile.PlayerPrefsModel"
+        }
+      },
+      {
+        "name": "<GlobalPlayerRoleModel>k__BackingField",
+        "offset": 664,
+        "type_index": 67148,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.GlobalPlayerRoleModel"
+        }
+      },
+      {
+        "name": "<ConfiscationModel>k__BackingField",
+        "offset": 672,
+        "type_index": 60605,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ConfiscationModel"
+        }
+      },
+      {
+        "name": "<ChatsModel>k__BackingField",
+        "offset": 680,
+        "type_index": 58678,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.ChatsModel"
+        }
+      },
+      {
+        "name": "<ChatRestrictionModel>k__BackingField",
+        "offset": 688,
+        "type_index": 58656,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.ChatRestrictionModel"
+        }
+      },
+      {
+        "name": "<ChatDialogModel>k__BackingField",
+        "offset": 696,
+        "type_index": 58611,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.ChatDialogModel"
+        }
+      },
+      {
+        "name": "<SocialModel>k__BackingField",
+        "offset": 704,
+        "type_index": 87395,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Social.SocialModel"
+        }
+      },
+      {
+        "name": "<BlackListModel>k__BackingField",
+        "offset": 712,
+        "type_index": 55236,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.BlackList.BlackListModel"
+        }
+      },
+      {
+        "name": "<BadWordsFilterModel>k__BackingField",
+        "offset": 720,
+        "type_index": 54150,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.BadWordsFilterModel"
+        }
+      },
+      {
+        "name": "<ChatSpamRules>k__BackingField",
+        "offset": 728,
+        "type_index": 58667,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.ChatSpamRules"
+        }
+      },
+      {
+        "name": "<BlackListDialog>k__BackingField",
+        "offset": 736,
+        "type_index": 55230,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.BlackList.BlackListDialogModel"
+        }
+      },
+      {
+        "name": "<SystemChat>k__BackingField",
+        "offset": 744,
+        "type_index": 89150,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "<SystemRulesChat>k__BackingField",
+        "offset": 752,
+        "type_index": 89150,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "<ClanBattleChat>k__BackingField",
+        "offset": 760,
+        "type_index": 89150,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "<PrivateReceivedChat>k__BackingField",
+        "offset": 768,
+        "type_index": 62067,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.DataPrivateChatMessageSource"
+        }
+      },
+      {
+        "name": "<UserChatCooldown>k__BackingField",
+        "offset": 776,
+        "type_index": 65434,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ExpiringResource.ExpiringResourceModel"
+        }
+      },
+      {
+        "name": "<RegionUserChatCooldown>k__BackingField",
+        "offset": 784,
+        "type_index": 65434,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ExpiringResource.ExpiringResourceModel"
+        }
+      },
+      {
+        "name": "<RealmChatCooldown>k__BackingField",
+        "offset": 792,
+        "type_index": 65434,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.ExpiringResource.ExpiringResourceModel"
+        }
+      },
+      {
+        "name": "<RegionUserExpiringResourcesModel>k__BackingField",
+        "offset": 800,
+        "type_index": 83625,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RegionUserExpiringResourcesModel"
+        }
+      },
+      {
+        "name": "<RegionsInfo>k__BackingField",
+        "offset": 808,
+        "type_index": 83648,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RegionsInfoModel"
+        }
+      },
+      {
+        "name": "<RegionClusterViewDescriptions>k__BackingField",
+        "offset": 816,
+        "type_index": 83560,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RegionClusterViewDescriptions"
+        }
+      },
+      {
+        "name": "<RealmsInfo>k__BackingField",
+        "offset": 824,
+        "type_index": 83195,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RealmsInfoModel"
+        }
+      },
+      {
+        "name": "<TutorialModel>k__BackingField",
+        "offset": 832,
+        "type_index": 91359,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Tutorial.TutorialModel"
+        }
+      },
+      {
+        "name": "<TutorialFinishDialogModel>k__BackingField",
+        "offset": 840,
+        "type_index": 91353,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Tutorial.TutorialFinishDialogModel"
+        }
+      },
+      {
+        "name": "<ClientCodexModel>k__BackingField",
+        "offset": 848,
+        "type_index": 59652,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Codex.Models.ClientCodexModel"
+        }
+      },
+      {
+        "name": "<IsClanBattleFound>k__BackingField",
+        "offset": 856,
+        "type_index": 25859,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "Models.Models.PrimitiveModel.IPrimitiveModel`1"
+          },
+          "arguments": [
+            {
+              "kind": "bool"
+            }
+          ]
+        }
+      },
+      {
+        "name": "<TooltipMiniModel>k__BackingField",
+        "offset": 864,
+        "type_index": 90681,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.TooltipMini.TooltipMiniModel"
+        }
+      },
+      {
+        "name": "<ScopesLoadingModel>k__BackingField",
+        "offset": 872,
+        "type_index": 85389,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.ScopesLoadingModel"
+        }
+      },
+      {
+        "name": "<BattlePassContentLoadingModel>k__BackingField",
+        "offset": 880,
+        "type_index": 54733,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.BattlePass.BattlePassContentLoadingModel"
+        }
+      },
+      {
+        "name": "<DeviceScreenModel>k__BackingField",
+        "offset": 888,
+        "type_index": 63305,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.DeviceScreen.DeviceScreenModel"
+        }
+      },
+      {
+        "name": "<RegionUserBuySettlementModel>k__BackingField",
+        "offset": 896,
+        "type_index": 83600,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.RegionUserBuySettlement.RegionUserBuySettlementModel"
+        }
+      },
+      {
+        "name": "<InputsEnabledModel>k__BackingField",
+        "offset": 904,
+        "type_index": 71517,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Inputs.InputsEnabledModel"
+        }
+      },
+      {
+        "name": "<SteamAdapter>k__BackingField",
+        "offset": 912,
+        "type_index": 70544,
+        "type": {
+          "kind": "class",
+          "name": "Game.Steam.ISteamAdapter"
+        }
+      },
+      {
+        "name": "<PaymentsModel>k__BackingField",
+        "offset": 920,
+        "type_index": 79804,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Payments.PaymentsModel"
+        }
+      },
+      {
+        "name": "<PaymentsProcessor>k__BackingField",
+        "offset": 928,
+        "type_index": 69961,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Payments.IPaymentsProcessor"
+        }
+      },
+      {
+        "name": "<EosGlobalModel>k__BackingField",
+        "offset": 936,
+        "type_index": 65041,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.EpicOnlineServices.EosGlobalModel"
+        }
+      },
+      {
+        "name": "<AnalyticsGlobalModel>k__BackingField",
+        "offset": 944,
+        "type_index": 52977,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Analytics.AnalyticsGlobalModel"
+        }
+      },
+      {
+        "name": "<ClientEventsAnalyticsStatusModel>k__BackingField",
+        "offset": 952,
+        "type_index": 59674,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Analytics.ClientEvents.ClientEventsAnalyticsModel"
+        }
+      },
+      {
+        "name": "<VoiceChatGlobalModel>k__BackingField",
+        "offset": 960,
+        "type_index": 94093,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.VoiceChat.VoiceChatGlobalModel"
+        }
+      },
+      {
+        "name": "<ReliableNotificationsModel>k__BackingField",
+        "offset": 968,
+        "type_index": 83734,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.RegionUserNotification.ReliableNotificationsModel"
+        }
+      },
+      {
+        "name": "<UsedTransactionsModel>k__BackingField",
+        "offset": 976,
+        "type_index": 92819,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.UsedTransactions.UsedTransactionsModel"
+        }
+      },
+      {
+        "name": "<InventoryRevealModels>k__BackingField",
+        "offset": 984,
+        "type_index": 72238,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Inventory.Reveal.Models.InventoryRevealModels"
+        }
+      },
+      {
+        "name": "<PresentationModel>k__BackingField",
+        "offset": 992,
+        "type_index": 81652,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.PresentationModel"
+        }
+      },
+      {
+        "name": "<StreamerModeModel>k__BackingField",
+        "offset": 1000,
+        "type_index": 88599,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.StreamerMode.StreamerModeModel"
+        }
+      },
+      {
+        "name": "<SuicideInputModel>k__BackingField",
+        "offset": 1008,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<InstantSurrenderToFedsInputModel>k__BackingField",
+        "offset": 1016,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<HoldingSurrenderToFedsInputModel>k__BackingField",
+        "offset": 1024,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<LeaveGameInputModel>k__BackingField",
+        "offset": 1032,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenSettingsInputModel>k__BackingField",
+        "offset": 1040,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenPartyInputModel>k__BackingField",
+        "offset": 1048,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenClanInputModel>k__BackingField",
+        "offset": 1056,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenHintsInputModel>k__BackingField",
+        "offset": 1064,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenBuffInputModel>k__BackingField",
+        "offset": 1072,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenCodexInputModel>k__BackingField",
+        "offset": 1080,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenMailInputModel>k__BackingField",
+        "offset": 1088,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenSideMenuInputModel>k__BackingField",
+        "offset": 1096,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenSkinCenterInputModel>k__BackingField",
+        "offset": 1104,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenReputationInputModel>k__BackingField",
+        "offset": 1112,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenVendorDialogInputModel>k__BackingField",
+        "offset": 1120,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      },
+      {
+        "name": "<OpenLandOwnershipInputModel>k__BackingField",
+        "offset": 1128,
+        "type_index": 71446,
+        "type": {
+          "kind": "class",
+          "name": "Game.Battle.Inputs.InputModel"
+        }
+      }
+    ],
+    "Game.Global.Party.PartyMemberModel": [
+      {
+        "name": "_partyMemberData",
+        "offset": 16,
+        "type_index": 79691,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.PartyMemberData"
+        }
+      },
+      {
+        "name": "PositionModel",
+        "offset": 24,
+        "type_index": 73821,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Character.LerpPositionModel"
+        }
+      },
+      {
+        "name": "RotationModel",
+        "offset": 32,
+        "type_index": 58401,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Character.CharacterRotationModel"
+        }
+      },
+      {
+        "name": "VehiclePositionModel",
+        "offset": 40,
+        "type_index": 73821,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Character.LerpPositionModel"
+        }
+      },
+      {
+        "name": "_characterInfo",
+        "offset": 48,
+        "type_index": 69780,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.IMemberBattleDataModel"
+        }
+      },
+      {
+        "name": "_battlePartyMemberData",
+        "offset": 56,
+        "type_index": 54708,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.BattlePartyMemberData"
+        }
+      },
+      {
+        "name": "<Index>k__BackingField",
+        "offset": 64,
+        "type_index": 71684,
+        "type": {
+          "kind": "int32"
+        }
+      }
+    ],
+    "Game.Global.Party.PartyModel": [
+      {
+        "name": "_partyData",
+        "offset": 16,
+        "type_index": 79645,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.PartyData"
+        }
+      },
+      {
+        "name": "_partyInviteModels",
+        "offset": 24,
+        "type_index": 13418,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyInviteSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyInviteModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_partyIncomingInviteModels",
+        "offset": 32,
+        "type_index": 13417,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyInviteSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyIncomingInviteModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_partyMemberModels",
+        "offset": 40,
+        "type_index": 13420,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.References.Party.PartyMemberSlotDescription"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyMemberModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_actualPartyInviteModels",
+        "offset": 48,
+        "type_index": 13279,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyInviteModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_actualPartyMemberModels",
+        "offset": 56,
+        "type_index": 13281,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.Dictionary`2"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            },
+            {
+              "kind": "class",
+              "name": "Game.Global.Party.PartyMemberModel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_actualMembersAddedOrderList",
+        "offset": 64,
+        "type_index": 32460,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.List`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_removedMembers",
+        "offset": 72,
+        "type_index": 32460,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.List`1"
+          },
+          "arguments": [
+            {
+              "kind": "int64"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_emptyPartyMembers",
+        "offset": 80,
+        "type_index": 21677,
+        "type": {
+          "kind": "generic",
+          "definition": {
+            "kind": "class",
+            "name": "System.Collections.Generic.IEnumerable`1"
+          },
+          "arguments": [
+            {
+              "kind": "class",
+              "name": "Models.Data.Party.PartyMemberData"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_regionUserPartyData",
+        "offset": 88,
+        "type_index": 83637,
+        "type": {
+          "kind": "class",
+          "name": "Models.Data.Party.RegionUserPartyData"
+        }
+      },
+      {
+        "name": "<HasParty>k__BackingField",
+        "offset": 96,
+        "type_index": 55475,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<IsAllMembersInRealm>k__BackingField",
+        "offset": 97,
+        "type_index": 55475,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<IsAllMembersNotInRealm>k__BackingField",
+        "offset": 98,
+        "type_index": 55475,
+        "type": {
+          "kind": "bool"
+        }
+      },
+      {
+        "name": "<MembersInLocationCount>k__BackingField",
+        "offset": 100,
+        "type_index": 71674,
+        "type": {
+          "kind": "int32"
+        }
+      },
+      {
+        "name": "<PlayerPartyModel>k__BackingField",
+        "offset": 104,
+        "type_index": 79695,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.PartyMemberModel"
+        }
+      },
+      {
+        "name": "<BecomeRobberReadyCheckEndTs>k__BackingField",
+        "offset": 112,
+        "type_index": 71717,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "<BecomeRobberReadyCheckEntityId>k__BackingField",
+        "offset": 120,
+        "type_index": 71717,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "<CopRecruitingReadyCheckEndTs>k__BackingField",
+        "offset": 128,
+        "type_index": 71717,
+        "type": {
+          "kind": "int64"
+        }
+      },
+      {
+        "name": "<Vehicles>k__BackingField",
+        "offset": 136,
+        "type_index": 79733,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Party.PartyVehiclesModel"
+        }
+      },
+      {
+        "name": "<PartyLogsSource>k__BackingField",
+        "offset": 144,
+        "type_index": 89148,
+        "type": {
+          "kind": "class",
+          "name": "Game.Global.Chat.SystemChatMessageSource"
+        }
+      },
+      {
+        "name": "IsPlayerJoinPartyChatNotificationDuringThisSession",
+        "offset": 152,
+        "type_index": 55480,
+        "type": {
+          "kind": "bool"
+        }
+      }
+    ],
+    "Game.Global.Party.PlayerMemberBattleDataModel": [
+      {
+        "name": "_battleCharacterModel",
+        "offset": 16,
+        "type_index": 54501,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.BattleCharacter.BattleCharacterModel"
+        }
+      },
+      {
+        "name": "_playerBattleModel",
+        "offset": 24,
+        "type_index": 80544,
+        "type": {
+          "kind": "class",
+          "name": "Models.Models.PlayerBattle.PlayerBattleModel"
+        }
+      }
+    ],
+    "System.Delegate": [
+      {
+        "name": "method_ptr",
+        "offset": 16,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "invoke_impl",
+        "offset": 24,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "m_target",
+        "offset": 32,
+        "type_index": 77980,
+        "type": {
+          "kind": "0x1c"
+        }
+      },
+      {
+        "name": "method",
+        "offset": 40,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "delegate_trampoline",
+        "offset": 48,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "extra_arg",
+        "offset": 56,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "method_code",
+        "offset": 64,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "interp_method",
+        "offset": 72,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "interp_invoke_impl",
+        "offset": 80,
+        "type_index": 71766,
+        "type": {
+          "kind": "0x18"
+        }
+      },
+      {
+        "name": "method_info",
+        "offset": 88,
+        "type_index": 76464,
+        "type": {
+          "kind": "class",
+          "name": "System.Reflection.MethodInfo"
+        }
+      },
+      {
+        "name": "original_method_info",
+        "offset": 96,
+        "type_index": 76464,
+        "type": {
+          "kind": "class",
+          "name": "System.Reflection.MethodInfo"
+        }
+      },
+      {
+        "name": "data",
+        "offset": 104,
+        "type_index": 63066,
+        "type": {
+          "kind": "class",
+          "name": "System.DelegateData"
+        }
+      },
+      {
+        "name": "method_is_virtual",
+        "offset": 112,
+        "type_index": 55475,
+        "type": {
+          "kind": "bool"
+        }
+      }
+    ]
+  }
+}

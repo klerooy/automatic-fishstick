@@ -1,0 +1,12 @@
+# written by RobRunESP; delete to force a rescan
+class_camera=0x0
+class_char=0x248C21342B0
+class_world=0x248C1E3F700
+pid=27956
+world=0x24897F06000
+camera=0x24894E73690
+fov_x100=6000
+scan_name_lo=0x13800000000
+scan_name_hi=0x13A00000000
+scan_inst_lo=0x13A00000000
+scan_inst_hi=0x13E00000000
