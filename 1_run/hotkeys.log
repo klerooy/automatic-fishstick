@@ -591,3 +591,73 @@
 851312 F1 menu=open
 869843 key id=1 src=raw act (age=18531)
 869843 F1 menu=closed
+882078 key id=1 src=hook act (age=12235)
+882078 F1 menu=open
+882781 key id=1 src=raw act (age=703)
+882781 F1 menu=closed
+883468 key id=1 src=hook act (age=687)
+883468 F1 menu=open
+884453 key id=1 src=raw act (age=985)
+884453 F1 menu=closed
+930671 target pid 21880 lost - clearing anchors and re-attaching
+1773718 attached pid 15876
+1794718 key id=1 src=hook act (age=910265)
+1794718 F1 menu=open
+1799515 key id=1 src=raw act (age=4797)
+1799515 F1 menu=closed
+1803140 target pid 15876 lost - clearing anchors and re-attaching
+1858546 game not running yet - ReadThread will keep retrying attach
+1858562 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+1865468 attached pid 4612
+1941890 key id=1 src=hook act (age=1941890)
+1941890 F1 menu=open
+1946500 key id=1 src=raw act (age=4610)
+1946500 F1 menu=closed
+1949015 key id=1 src=hook act (age=2515)
+1949015 F1 menu=open
+1951546 key id=1 src=raw act (age=2531)
+1951546 F1 menu=closed
+1953437 key id=1 src=hook act (age=1891)
+1953437 F1 menu=open
+1953859 key id=1 src=raw act (age=422)
+1953859 F1 close ignored (just opened)
+1954187 key id=1 src=raw act (age=328)
+1954187 F1 menu=closed
+1954593 key id=1 src=hook act (age=406)
+1954593 F1 menu=open
+1955156 key id=1 src=raw act (age=563)
+1955156 F1 close ignored (just opened)
+1957281 key id=1 src=raw act (age=2125)
+1957281 F1 menu=closed
+1964343 key id=1 src=hook act (age=7062)
+1964343 F1 menu=open
+1968015 key id=1 src=hook act (age=3672)
+1968015 F1 menu=closed
+1968437 key id=1 src=hook act (age=422)
+1968437 F1 menu=open
+1968875 key id=1 src=hook act (age=438)
+1968875 F1 close ignored (just opened)
+1969203 key id=1 src=hook act (age=328)
+1969203 F1 menu=closed
+1970718 key id=1 src=hook act (age=1515)
+1970718 F1 menu=open
+1973140 key id=1 src=raw act (age=2422)
+1973140 F1 menu=closed
+1975734 key id=1 src=hook act (age=2594)
+1975734 F1 menu=open
+1976421 key id=1 src=raw act (age=687)
+1976421 F1 menu=closed
+1977281 key id=1 src=hook act (age=860)
+1977281 F1 menu=open
+1978718 key id=1 src=raw act (age=1437)
+1978718 F1 menu=closed
+2059890 key id=1 src=hook act (age=81172)
+2059890 F1 menu=open
+2063015 key id=1 src=raw act (age=3125)
+2063015 F1 menu=closed
+2067718 key id=1 src=hook act (age=4703)
+2067718 F1 menu=open
+2068203 key id=1 src=raw act (age=485)
+2068203 F1 close ignored (just opened)
+2068656 key id=1 src=raw act (age=453)
+2068656 F1 menu=closed

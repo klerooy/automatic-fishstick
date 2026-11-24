@@ -746,15 +746,17 @@ int gpu_frame_ready(void) {
 int gpu_present(void) {
     if (!g_ready || !g_swap) return 0;
     if (g_batch) {
-        g_d2dc->SetTarget(NULL);
-        g_d2dc->EndDraw();
+        HRESULT hrDraw = g_d2dc->EndDraw();   // flush FIRST while target is valid
+        g_d2dc->SetTarget(NULL);              // then detach
         g_batch = 0;
+        if (FAILED(hrDraw)) {
+            // D2D entered error state — recreate target next frame
+            release_target();
+        }
     }
     g_brush_valid = 0;
-    /* Present without waiting for vertical sync. If the compositor queue is
-     * full, skip this present so the window thread can continue processing input.
-     */
     HRESULT hr = g_swap->Present(0, DXGI_PRESENT_DO_NOT_WAIT);
+    if (hr == DXGI_ERROR_WAS_STILL_DRAWING) return 0;  // GPU busy, retry next tick
     if (FAILED(hr)) return 0;
     InterlockedExchange(&g_frame_granted, 0);
     return 1;

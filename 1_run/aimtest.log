@@ -1,0 +1,8 @@
+RobRunESP injected input test
+[aimtest] players=28  yaw before = 70.853 deg
+[aimtest] click into the game now - injecting in 5 s
+[aimtest] sending 20 x +8 px horizontal
+[aimtest] players=0  yaw after  = 70.853 deg  (delta 0.000)
+[aimtest] FAIL: the view did not move. The game is not accepting
+           injected mouse input, so no aim tuning can help.
+press enter...
