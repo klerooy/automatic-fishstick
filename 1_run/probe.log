@@ -1,0 +1,10 @@
+RobRunESP probe
+[probe] pid 16968
+[probe] GameAssembly.dll base=7FFA40CA0000 size=9050000
+[probe] image base=7FF6B4040000
+[probe] UnityEntry: validated world=1B8FD751000 battle=1B8FF406870 camera=1B8FDABE770
+[probe] chain symbols: 0
+  static WorldEntitiesModel     rva=81D0710 -> 1B6447BB2D8 (<bad name>)
+  static WorldModel             rva=81D36C8 -> C00B0D0B (<no class>)
+  static BattleCameraModel      rva=81CB420 -> C00AF059 (<no class>)
+  static BattleCharacterModel   rva=8196748 -> 1B9F03E5EF0 (<bad name>)

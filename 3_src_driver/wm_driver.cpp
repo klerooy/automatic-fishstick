@@ -32,15 +32,12 @@ extern "C" {
 
 #include "wm_shared.h"
 
-/* ETHREAD.Win32StartAddress offset for Win11 26100.x.
- * Verify: dt nt!_ETHREAD Win32StartAddress in WinDbg on your build. */
 #define ETHREAD_WIN32START_OFFSET 0x6B8
 
 #define WM_REG_PATH  L"\\Registry\\Machine\\SYSTEM\\WmPort"
 #define WM_REG_VALUE L"Session"
 #define WM_WAKE_PATH L"\\BaseNamedObjects\\WmSharedWake"
 
-/* Kernel headers do not carry the user-mode process access rights. */
 #ifndef PROCESS_VM_OPERATION
 #define PROCESS_VM_OPERATION 0x0008
 #endif
@@ -48,8 +45,6 @@ extern "C" {
 #define PROCESS_QUERY_INFORMATION 0x0400
 #endif
 
-/* SYSTEM_PROCESS_INFORMATION prefix, enough for ImageName and the PID. The
- * kernel header omits the type under some NTDDI configurations. */
 typedef struct _WM_SYSTEM_PROCESS_INFORMATION {
     ULONG NextEntryOffset;
     ULONG NumberOfThreads;
@@ -92,10 +87,6 @@ static void ksleep(ULONG ms) {
     KeDelayExecutionThread(KernelMode, FALSE, &li);
 }
 
-/* === USER BUFFER ACCESS ===
- * g_ClientProc holds a reference for the whole session. MmCopyVirtualMemory
- * performs its own short-lived attach and returns a status instead of faulting
- * when the process is gone, which is the property this transport needs. */
 static bool client_copy(PVOID local, uint64_t va, SIZE_T n, bool to_client) {
     if (!g_ClientProc || !local || !n) return false;
     if (va < 0x10000ULL || va >= 0x7FFFFFFFFFFFULL) return false;
@@ -117,8 +108,6 @@ static PEPROCESS lookup_process(ULONG pid) {
     return p;
 }
 
-/* Kernel handle to the target process for the VM operations that have no
- * process-object form. No attach: an exiting target simply fails the call. */
 static HANDLE open_target(uint32_t pid) {
     PEPROCESS p = lookup_process(pid);
     if (!p) return nullptr;
@@ -129,8 +118,6 @@ static HANDLE open_target(uint32_t pid) {
     ObfDereferenceObject(p);
     return NT_SUCCESS(st) ? h : nullptr;
 }
-
-/* === OPERATIONS === */
 
 static void op_base(WmOpData* op) {
     PEPROCESS p = lookup_process(op->TargetPid);
@@ -277,9 +264,6 @@ static void op_context(WmOpData* op) {
     ObfDereferenceObject(t);
 }
 
-/* Resolve an image name to a PID without the Win32 process snapshot. The
- * anti-cheat can filter the user-mode enumeration; this path cannot be
- * filtered from user mode. */
 static void op_pid(WmOpData* op) {
     op->Result = 0; op->NtStatus = STATUS_NOT_FOUND;
     uint32_t nameLen = op->ModuleNameLen;
@@ -294,7 +278,7 @@ static void op_pid(WmOpData* op) {
     for (int tries = 0; tries < 4; ++tries) {
         buf = ExAllocatePool2(POOL_FLAG_NON_PAGED, size, 'pW');
         if (!buf) return;
-        NTSTATUS st = ZwQuerySystemInformation(5 /* SystemProcessInformation */, buf, size, &ret);
+        NTSTATUS st = ZwQuerySystemInformation(5, buf, size, &ret);
         if (NT_SUCCESS(st)) break;
         ExFreePoolWithTag(buf, 'pW'); buf = nullptr;
         if (st != STATUS_INFO_LENGTH_MISMATCH) return;
@@ -331,16 +315,9 @@ static void respond() {
         default: op.NtStatus = STATUS_INVALID_DEVICE_REQUEST; break;
     }
     if (code != WMSC_BATCH) client_copy(&op, g_Comm.Buffer + WM_OFF_OP, sizeof(op), true);
-    /* Only the completion flag is published here. The status word belongs to
-     * the client: writing ACTIVE from the driver could overwrite a WAITING
-     * written by the client for its next request, stalling that request until
-     * its 5 s timeout. */
     set_code(WMSC_COMPLETE);
 }
 
-/* Wait until the client acknowledges a response (status leaves WAITING).
- * Bounded: a dead client is caught by the status copy failing, and the client
- * itself times out after 5 s. */
 static void wait_ack(void) {
     for (int i = 0; i < 400; ++i) {
         uint16_t st = 0;
@@ -350,8 +327,7 @@ static void wait_ack(void) {
     }
 }
 
-/* === REGISTRY HANDSHAKE === */
-static bool read_session(WM_SESSION* out) {
+static bool read_session_raw(WM_SESSION* out) {
     UNICODE_STRING kp, vn;
     RtlInitUnicodeString(&kp, WM_REG_PATH);
     RtlInitUnicodeString(&vn, WM_REG_VALUE);
@@ -367,10 +343,17 @@ static bool read_session(WM_SESSION* out) {
     auto* kvi = (KEY_VALUE_PARTIAL_INFORMATION*)buf;
     if (kvi->DataLength < sizeof(WM_SESSION)) return false;
     RtlCopyMemory(out, kvi->Data, sizeof(WM_SESSION));
+    return true;
+}
+
+static bool read_session(WM_SESSION* out) {
+    if (!read_session_raw(out)) return false;
     return out->Pid && out->BufferVa >= 0x10000ULL && out->BufferVa < 0x7FFFFFFFFFFFULL;
 }
 
-static void clear_session(void) {
+static void clear_session(uint32_t pid) {
+    WM_SESSION cur{};
+    if (!read_session_raw(&cur) || cur.Pid != pid) return;
     UNICODE_STRING kp, vn;
     RtlInitUnicodeString(&kp, WM_REG_PATH);
     RtlInitUnicodeString(&vn, WM_REG_VALUE);
@@ -392,8 +375,6 @@ static bool validate_comm(uint64_t va, uint32_t pid) {
     g_Comm = c; return true;
 }
 
-/* Wake event created by the client: an auto-reset event in the global object
- * namespace. Without it the loop falls back to 2 ms polling. */
 static void open_wake_event(void) {
     UNICODE_STRING name;
     RtlInitUnicodeString(&name, WM_WAKE_PATH);
@@ -416,11 +397,10 @@ static void close_wake_event(void) {
 static void wait_wake(void) {
     if (!g_WakeEvent) { ksleep(2); return; }
     LARGE_INTEGER timeout;
-    timeout.QuadPart = -200000LL;   /* 20 ms */
+    timeout.QuadPart = -200000LL;
     KeWaitForSingleObject(g_WakeEvent, Executive, KernelMode, FALSE, &timeout);
 }
 
-/* === SESSION THREAD === */
 static void session_thread(PVOID) {
     while (!g_Shutdown) {
         WM_SESSION sess{};
@@ -428,10 +408,6 @@ static void session_thread(PVOID) {
         PEPROCESS proc = lookup_process(sess.Pid);
         if (!proc) { ksleep(250); continue; }
 
-        /* The EPROCESS reference pins the process object; the address space is
-         * not pinned, and it does not need to be: every buffer touch goes
-         * through MmCopyVirtualMemory, which fails closed once the client is
-         * gone instead of dereferencing freed page tables. */
         g_ClientProc = proc;
         if (!validate_comm(sess.BufferVa, sess.Pid)) {
             g_ClientProc = nullptr;
@@ -456,17 +432,12 @@ static void session_thread(PVOID) {
         close_wake_event();
         g_ClientProc = nullptr;
         ObfDereferenceObject(proc);
-        clear_session();
+        clear_session(sess.Pid);
         ksleep(200);
     }
     PsTerminateSystemThread(STATUS_SUCCESS);
 }
 
-/* === THREAD START ADDRESS SPOOF ===
- * The offset is build-specific, so the current word is checked before the
- * write: a kernel image address means the field really is Win32StartAddress.
- * On an unknown build the write is skipped instead of corrupting whatever
- * field happens to live at that offset. */
 static void spoof_thread_start(HANDLE hThread) {
     PETHREAD t = nullptr;
     if (!NT_SUCCESS(ObReferenceObjectByHandle(hThread, THREAD_ALL_ACCESS, *PsThreadType, KernelMode, (PVOID*)&t, nullptr)) || !t) return;
@@ -495,9 +466,6 @@ static void spoof_thread_start(HANDLE hThread) {
     ObfDereferenceObject(t);
 }
 
-/* Liveness marker for the user-mode launcher: kernel events live in
- * \BaseNamedObjects, die with the boot, and do not depend on a client being
- * connected. This is what "driver is mapped" means on this transport. */
 static void create_live_marker(void) {
     UNICODE_STRING name;
     RtlInitUnicodeString(&name, L"\\BaseNamedObjects\\WmDriverLive");

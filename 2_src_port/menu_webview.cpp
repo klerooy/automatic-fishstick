@@ -342,6 +342,8 @@ static DWORD WINAPI menu_thread(LPVOID){
             if (IsWindowVisible(g_hwnd)) {
                 if (g_ctl) g_ctl->put_IsVisible(FALSE);
                 ShowWindow(g_hwnd, SW_HIDE);
+                SetWindowPos(g_hwnd, HWND_NOTOPMOST, 0, 0, 0, 0,
+                             SWP_NOMOVE | SWP_NOSIZE | SWP_NOACTIVATE);
                 if (g_prev_fg && IsWindow(g_prev_fg)) SetForegroundWindow(g_prev_fg);
                 g_prev_fg = NULL;
             }
@@ -351,8 +353,12 @@ static DWORD WINAPI menu_thread(LPVOID){
         if (!IsWindowVisible(g_hwnd)) {
             shown_at = GetTickCount();
             g_prev_fg = GetForegroundWindow();
-            SetWindowPos(g_hwnd, HWND_TOP, 0, 0, 0, 0,
+            /* HWND_TOP loses to any window that becomes foreground after the show
+             * (the game launching is exactly this case). TOPMOST keeps the menu
+             * above the game; focus steal makes clicks reach the page. */
+            SetWindowPos(g_hwnd, HWND_TOPMOST, 0, 0, 0, 0,
                          SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW | SWP_NOOWNERZORDER);
+            SetForegroundWindow(g_hwnd);
             if (g_ctl && SUCCEEDED(g_start_error)) g_ctl->put_IsVisible(TRUE);
         }
 

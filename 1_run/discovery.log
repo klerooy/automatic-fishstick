@@ -21,3 +21,81 @@
 1597687 init start pid=11564
 1651515 regions=3630 after 53828 ms
 1651875 entry_gom=0x18EB561CD00 class=0x18C5220CA30
+2194687 probe_class reject 0x18C52064250 name='' fields=0x0 count=0 T=0 S=0 ['' '' '' '']
+70906 init start pid=9028
+93750 regions=2069 after 22844 ms
+94156 entry_gom=0x1FF2D301680 class=0x1FCC220CA30
+106468 probe_class reject 0x1FCC2064250 name='BattleCharacterModel' fields=0x0 count=106 T=0 S=0 ['' '' '' '']
+106625 probe_class reject 0x1FD00A58590 name='BattleCharacterModel' fields=0x6C65646F count=2672 T=0 S=0 ['' '' '' '']
+106656 probe_class reject 0x1FEC95E3D40 name='BattleCharacterModel' fields=0x0 count=0 T=0 S=0 ['' '' '' '']
+136296 init start pid=9028
+172843 regions=3511 after 36547 ms
+173000 entry_roots_class world=0x1FFA98DA000 battle=0x1FFA9661F00 bm=0x1FFA98C8800 camera=0x1FFA98C4690
+173015 fast entry world=0x1FFA98DA000 battle=0x1FFA9661F00 char=0x175C2064250
+760421 init start pid=21080
+786531 regions=2289 after 26110 ms
+786937 entry_gom=0x2701EFFDD00 class=0x26DB220CA30
+806656 probe_class reject 0x26DF0A58590 name='BattleCharacterModel' fields=0x6C65646F count=2672 T=0 S=0 ['' '' '' '']
+822109 init start pid=21080
+859359 regions=3502 after 37250 ms
+859531 entry_roots_class world=0x2707C9EB000 battle=0x2712DE90F00 bm=0x2707AF66800 camera=0x2707AF603F0
+859531 fast entry world=0x2707C9EB000 battle=0x2712DE90F00 char=0x175C2064250
+214437 init start pid=1500
+255640 regions=3544 after 41203 ms
+255906 entry_gom=0x1E2ADB8E6C0 class=0x1E00220CA30
+256046 entry_roots_class world=0x1E1204D7000 battle=0x1E32C31FF00 bm=0x1E32C817800 camera=0x1E04B538310
+256062 fast entry world=0x1E1204D7000 battle=0x1E32C31FF00 char=0x175C2064250
+114000 init start pid=9588
+160718 regions=3438 after 46718 ms
+160984 entry_gom=0x2D39E3D91C0 class=0x2D15220CA30
+181109 probe_class reject 0x2D170A58590 name='BattleCharacterModel' fields=0x6C65646F count=2672 T=0 S=0 ['' '' '' '']
+198171 init start pid=9588
+235515 regions=3482 after 37344 ms
+235687 entry_roots_class world=0x2D42B0D7000 battle=0x2D42AE03F00 bm=0x2D42B02D800 camera=0x2D42B02A930
+235703 fast entry world=0x2D42B0D7000 battle=0x2D42AE03F00 char=0x175C2064250
+85375 entry_gom=0x1E12992E7C0 class=0x1DEC220CA30
+87921 init start pid=21460
+137546 regions=3503 after 49625 ms
+220281 entry_gom=0x1E12992E7C0 class=0x1DEC220CA30
+220484 entry_roots_class world=0x1E1C923A000 battle=0x1E1A73E9F00 bm=0x1E1C922A800 camera=0x1E1C9229D20
+221875 init start pid=21460
+264187 regions=3921 after 42312 ms
+264359 entry_roots_class world=0x1E1C923A000 battle=0x1E1A73E9F00 bm=0x1E1C922A800 camera=0x1E1C9229D20
+264359 fast entry world=0x1E1C923A000 battle=0x1E1A73E9F00 char=0x175C2064250
+356875 char=0x1DEC2064250 after 135000 ms
+357046 entry_roots_class world=0x1E1C923A000 battle=0x1E1A73E9F00 bm=0x1E1C922A800 camera=0x1E1C9229D20
+357046 entry_roots=1 world=0x1E1C923A000 battle=0x1E1A73E9F00 after 135171 ms
+357062 world_class=0x1DEC1D69B10 after 135187 ms
+357062 world_instance=0x1E1C923A000 after 135187 ms
+361437 instance_scan=12 after 139562 ms
+361468 init done after 139593 ms
+1285812 init start pid=15952
+1335265 regions=3597 after 49453 ms
+1335562 entry_gom=0x236A35FDD80 class=0x2342220CA30
+1365984 char=0x23422064250 after 80172 ms
+1543578 init start pid=16968
+1588031 init start pid=16968
+1639093 regions=4645 after 51062 ms
+1639500 entry_gom=0x1B8A57BDD80 class=0x1B64220CA30
+1639671 entry_roots_class world=0x1B8FD751000 battle=0x1B8FF406870 bm=0x1B8FDAC2800 camera=0x1B8FDABE770
+1639687 fast entry world=0x1B8FD751000 battle=0x1B8FF406870 char=0x1DEC2064250
+1695750 probe_class reject 0x1B680A58590 name='BattleCharacterModel' fields=0x6C65646F count=2672 T=0 S=0 ['' '' '' '']
+1766984 char=0x1B642064250 after 178953 ms
+1767171 entry_roots_class world=0x1B8FD751000 battle=0x1B8FF406870 bm=0x1B8FDAC2800 camera=0x1B8FDABE770
+1767171 entry_roots=1 world=0x1B8FD751000 battle=0x1B8FF406870 after 179140 ms
+1767187 world_class=0x1B641D69B10 after 179156 ms
+1767187 world_instance=0x1B8FD751000 after 179156 ms
+1770187 instance_scan=8 after 182156 ms
+1770218 init done after 182187 ms
+1770875 entry_roots_class world=0x1B8FD751000 battle=0x1B8FF406870 bm=0x1B8FDAC2800 camera=0x1B8FDABE770
+1812359 entry_gom=0x1B8A57BDD80 class=0x1B64220CA30
+1812515 entry_roots_class world=0x1B8FD751000 battle=0x1B8FF406870 bm=0x1B8FDAC2800 camera=0x1B8FDABE770
+1814015 init start pid=16968
+1854968 entry_gom=0x1B8A57BDD80 class=0x1B64220CA30
+1855140 entry_roots_class world=0x1B8FD751000 battle=0x1B8FF406870 bm=0x1B8FDAC2800 camera=0x1B8FDABE770
+1856625 init start pid=16968
+2408406 init start pid=12548
+2460765 regions=3654 after 52359 ms
+2461078 entry_gom=0x1B71A56DC40 class=0x1B4B220CA30
+2485406 probe_class reject 0x1B4B2064250 name='BattleCharacterModel' fields=0x0 count=0 T=0 S=0 ['' '' '' '']
+2485437 probe_class reject 0x1B6B6D44970 name='' fields=0x0 count=0 T=0 S=0 ['' '' '' '']

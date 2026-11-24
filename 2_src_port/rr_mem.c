@@ -78,26 +78,24 @@ static NTSTATUS send_request(uint32_t code, WmOpData* op) {
 int rr_drv_open(void) {
     if (g_connected) return 1;
 
-    /* The mapped driver publishes this event at DriverEntry. Without it there
-     * is no point waiting on a handshake nobody will answer. */
     HANDLE live = OpenEventW(SYNCHRONIZE, FALSE, L"Global\\WmDriverLive");
-    if (!live) return 0;
+    if (!live) {
+        fprintf(stderr, "[drv] OpenEventW(WmDriverLive) failed err=%lu\n", GetLastError());
+        return 0;
+    }
     CloseHandle(live);
 
     g_buffer = (uint8_t*)VirtualAlloc(NULL, WM_BUFFER_SIZE,
                                      MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
-    if (!g_buffer) return 0;
+    if (!g_buffer) { fprintf(stderr, "[drv] VirtualAlloc failed err=%lu\n", GetLastError()); return 0; }
     memset(g_buffer, 0, WM_BUFFER_SIZE);
 
-    /* Initialize comm data at buffer start for driver validation. */
     WmCommData* c = (WmCommData*)g_buffer;
     c->Magic = WM_MAGIC;
     c->ProcessId = GetCurrentProcessId();
     c->Buffer = (uint64_t)(uintptr_t)g_buffer;
     c->pCode = c->Buffer + WM_OFF_CODE;
     c->pStatus = c->Buffer + WM_OFF_STATUS;
-    /* The driver waits on this instead of polling. Creation needs
-     * SeCreateGlobalPrivilege; without it the driver falls back to its timer. */
     if (!g_wake) g_wake = CreateEventA(NULL, FALSE, FALSE, "Global\\WmSharedWake");
     c->WakeHandle = (uint64_t)(uintptr_t)g_wake;
 
@@ -106,7 +104,6 @@ int rr_drv_open(void) {
     *g_pCode = WMSC_COMPLETE;
     *g_pStatus = WMSS_INACTIVE;
 
-    /* Write session to registry so driver thread can find us. */
     WM_SESSION_REG sess;
     sess.Pid = GetCurrentProcessId();
     sess.BufferVa = (uint64_t)(uintptr_t)g_buffer;
@@ -115,30 +112,38 @@ int rr_drv_open(void) {
     LONG rc = RegCreateKeyExA(HKEY_LOCAL_MACHINE, "SYSTEM\\WmPort", 0, NULL,
                                REG_OPTION_NON_VOLATILE, KEY_SET_VALUE, NULL, &hk, NULL);
     if (rc != ERROR_SUCCESS) {
+        fprintf(stderr, "[drv] RegCreateKeyEx failed rc=%ld\n", rc);
         VirtualFree(g_buffer, 0, MEM_RELEASE); g_buffer = NULL;
         return 0;
     }
-    RegSetValueExA(hk, "Session", 0, REG_BINARY, (const BYTE*)&sess, sizeof(sess));
+    rc = RegSetValueExA(hk, "Session", 0, REG_BINARY, (const BYTE*)&sess, sizeof(sess));
     RegCloseKey(hk);
+    if (rc != ERROR_SUCCESS) {
+        fprintf(stderr, "[drv] RegSetValueEx failed rc=%ld\n", rc);
+        VirtualFree(g_buffer, 0, MEM_RELEASE); g_buffer = NULL;
+        return 0;
+    }
+    fprintf(stderr, "[drv] Session written pid=%lu va=%llX, waiting ACTIVE...\n",
+            sess.Pid, (unsigned long long)sess.BufferVa);
 
-    /* Wait for driver to connect and set status=ACTIVE. The driver polls the
-     * registry every 250 ms, so three seconds covers a normal handshake and
-     * keeps a wedged driver from freezing the reader for ten. */
     DWORD t0 = GetTickCount();
     while (*g_pStatus != WMSS_ACTIVE) {
         if (GetTickCount() - t0 > 3000) {
+            fprintf(stderr, "[drv] TIMEOUT waiting ACTIVE (status=%u code=%lu) after %lu ms\n",
+                    (unsigned)*g_pStatus, (unsigned long)*g_pCode, (unsigned long)(GetTickCount()-t0));
             VirtualFree(g_buffer, 0, MEM_RELEASE); g_buffer = NULL;
             g_pCode = NULL; g_pStatus = NULL;
-            HKEY hk = NULL;
-            if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SYSTEM\\WmPort", 0, KEY_SET_VALUE, &hk) == ERROR_SUCCESS) {
-                RegDeleteValueA(hk, "Session");
-                RegCloseKey(hk);
+            HKEY hk2 = NULL;
+            if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SYSTEM\\WmPort", 0, KEY_SET_VALUE, &hk2) == ERROR_SUCCESS) {
+                RegDeleteValueA(hk2, "Session");
+                RegCloseKey(hk2);
             }
             return 0;
         }
         Sleep(10);
     }
 
+    fprintf(stderr, "[drv] CONNECTED status=ACTIVE\n");
     g_connected = 1;
     return 1;
 }

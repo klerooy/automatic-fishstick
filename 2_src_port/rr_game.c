@@ -1829,7 +1829,12 @@ static uint64_t find_instance_of(uint64_t klass, unsigned want_off,
 static uint64_t gom_entry(void) {
     uint64_t up = 0; uint32_t us = 0;
     if (!rr_module("UnityPlayer.dll", &up, &us)) return 0;
-    uint64_t gom = rr_u64(up + 0x2230768ULL);
+    /* Dynamic GOM discovery: the fixed RVA moves with UnityPlayer updates.
+     * find_gom_dynamic validates candidates in writable sections. */
+    uint64_t gom = 0;
+    uint64_t fixed = (us > RR_UNITY_GOM_RVA + 8) ? rr_u64(up + RR_UNITY_GOM_RVA) : 0;
+    if (PL(fixed) && gom_lists_ok(fixed)) gom = fixed;
+    else gom = find_gom_dynamic(up);
     if (!PL(gom)) return 0;
     uint64_t node = rr_u64(gom + 0x18);
     uint64_t end  = rr_u64(gom + 0x10);
@@ -5137,20 +5142,17 @@ static int read_camera_from_local(RR_CAMERA* cam) {
 
 static int read_camera(RR_CAMERA* cam) {
     memset(cam, 0, sizeof(*cam));
-    /* The real camera is third-person and sits on the player: use it whenever it
-     * is near them. The local-eye fallback is first-person, which offsets every
-     * marker, so it is only used when no plausible camera exists. */
-    if (camera_near_local(g_cam_obj) == 1) {
+    int near_val = camera_near_local(g_cam_obj);
+    if (near_val == 1 || (near_val <= 0 && camera_validate(g_cam_obj))) {
         uint8_t buf[0x50];
         if (rr_read(g_cam_obj + RR_OFF_CAM_POS, buf, sizeof(buf))) {
-            memcpy(&cam->pos, buf + 0x00, sizeof(RR_V3));
-            memcpy(&cam->rot, buf + (RR_OFF_CAM_ROT - RR_OFF_CAM_POS), sizeof(RR_Q4));
-            memcpy(&cam->fwd, buf + (RR_OFF_CAM_FWD - RR_OFF_CAM_POS), sizeof(RR_V3));
+            memcpy(&cam->pos,   buf + 0x00, sizeof(RR_V3));
+            memcpy(&cam->rot,   buf + (RR_OFF_CAM_ROT   - RR_OFF_CAM_POS), sizeof(RR_Q4));
+            memcpy(&cam->fwd,   buf + (RR_OFF_CAM_FWD   - RR_OFF_CAM_POS), sizeof(RR_V3));
             memcpy(&cam->right, buf + (RR_OFF_CAM_RIGHT - RR_OFF_CAM_POS), sizeof(RR_V3));
-            memcpy(&cam->up, buf + (RR_OFF_CAM_UP - RR_OFF_CAM_POS), sizeof(RR_V3));
+            memcpy(&cam->up,    buf + (RR_OFF_CAM_UP    - RR_OFF_CAM_POS), sizeof(RR_V3));
             cam->fov = g_fov;
-            /* CinemachineBrain.CurrentCameraState.Lens.FieldOfView is the
-             * blended vertical FOV, including aiming and camera transitions. */
+            /* ... */
             uint64_t aim = g_aim_updater;
             if (PL(aim) && PL(g_battle) && rr_u64(g_battle+RR_OFF_BATTLE_WORLD)==g_world &&
                 rr_u64(aim+RR_OFF_AIM_BATTLE)==g_battle && class_named(rr_u64(aim),"BattleAimTargetUpdater")) {
