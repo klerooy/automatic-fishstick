@@ -84,6 +84,9 @@ void     rr_force_pid(uint32_t pid);        /* attach to an exact pid      */
  * -1 if enumeration fails. A failed snapshot is not evidence of absence.
  */
 int      rr_process_visible(uint32_t pid);
+/* Driver-side liveness: 1 if the process object still exists. Works when the
+ * Win32 snapshot is filtered by an anti-cheat. */
+int      rr_drv_alive(uint32_t pid);
 uint64_t rr_image_base(void);               /* PEB->ImageBaseAddress        */
 uint64_t rr_peb(void);                      /* Cached target PEB address. */
 

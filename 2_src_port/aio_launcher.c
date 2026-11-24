@@ -7,8 +7,8 @@
  *      launcher reports why instead of letting kd2.exe fail obscurely.
  *   2. Extract the mapper, driver image, overlay and WebView2 loader from
  *      embedded resources into a payload folder beside the launcher.
- *   3. Map the WmPort driver with `kd2.exe --auto` and verify that
- *      \Device\WmPort and the Key registry value exist.
+ *   3. Map the WmPort driver with `kd2.exe --auto` and verify that its
+ *      liveness event (`Global\WmDriverLive`) exists.
  *   4. Wait until ROB RUN.exe is running, then hold the overlay back until the
  *      game owns a visible window and menu_delay seconds have passed, so the
  *      overlay starts on the main menu instead of during engine start-up.
@@ -802,115 +802,37 @@ static void check_virtualization(int ignore, int report_only) {
 
 /* --------------------------------------------------------------- driver ---- */
 
-typedef NTSTATUS (WINAPI* PFN_NTCREATEFILE)(PHANDLE, ACCESS_MASK, POBJECT_ATTRIBUTES,
-                                            PIO_STATUS_BLOCK, PLARGE_INTEGER, ULONG,
-                                            ULONG, ULONG, ULONG, PVOID, ULONG);
+/* The mapped driver publishes a notification event at DriverEntry and keeps it
+ * until the next boot. This transport has no device object, and a registry
+ * value would outlive a reboot, so the event is the only honest liveness
+ * signal available to the launcher. */
+static int driver_live(void) {
+    HANDLE ev = OpenEventW(SYNCHRONIZE, FALSE, L"Global\\WmDriverLive");
+    if (!ev) return 0;
+    CloseHandle(ev);
+    return 1;
+}
 
-/* Open the mapped device the same way rr_mem.c does: suffixed NT names first,
- * then the Win32 symlink. Reaching the device proves the image is initialized;
- * the Key value proves the transport key is published. */
-static HANDLE open_driver_device(void) {
-    HMODULE nd = GetModuleHandleW(L"ntdll.dll");
-    PFN_NTCREATEFILE pCF = nd ? (PFN_NTCREATEFILE)GetProcAddress(nd, "NtCreateFile") : NULL;
-    if (pCF) {
-        for (int n = 7; n >= 0; --n) {
-            wchar_t nt[64];
-            _snwprintf_s(nt, _countof(nt), _TRUNCATE, L"\\Device\\WmPort%d", n);
-            UNICODE_STRING un;
-            OBJECT_ATTRIBUTES oa;
-            IO_STATUS_BLOCK ios;
-            un.Buffer = nt;
-            un.Length = (USHORT)(wcslen(nt) * sizeof(wchar_t));
-            un.MaximumLength = (USHORT)(un.Length + sizeof(wchar_t));
-            InitializeObjectAttributes(&oa, &un, 0, NULL, NULL);
-            HANDLE h = NULL;
-            NTSTATUS st = pCF(&h, GENERIC_READ | GENERIC_WRITE, &oa, &ios, NULL, 0,
-                              FILE_SHARE_READ | FILE_SHARE_WRITE, FILE_OPEN, 0, NULL, 0);
-            if (st >= 0 && h) return h;
+static void wait_for_driver(void) {
+    ui_status(L"Verifying the mapped driver...");
+    DWORD deadline = GetTickCount() + DRIVER_WAIT_MS;
+    for (;;) {
+        if (driver_live()) {
+            log_add(L"driver live (Global\\WmDriverLive)");
+            return;
         }
+        if (GetTickCount() > deadline) break;
+        pump();
+        Sleep(400);
     }
-    HANDLE h = CreateFileA("\\\\.\\WmPort", GENERIC_READ | GENERIC_WRITE,
-                           FILE_SHARE_READ | FILE_SHARE_WRITE, NULL,
-                           OPEN_EXISTING, 0, NULL);
-    return (h == INVALID_HANDLE_VALUE) ? NULL : h;
+    fail(L"The driver did not come up.\n\n"
+         L"kd2.exe reported success, but this process cannot see\n"
+         L"Global\\WmDriverLive.\n\n"
+         L"Reboot, then run this launcher once more. If it still fails, run\n"
+         L"MAP-DRIVER.bat to see the mapper's own output, and confirm that\n"
+         L"Memory Integrity and VBS are off.");
 }
 
-static DWORD driver_token(void) {
-    DWORD v = 0;
-    reg_dword(L"SYSTEM\\WmPort", L"Key", &v);
-    return v;
-}
-
-static DWORD driver_init_status(void) {
-    DWORD v = 0;
-    reg_dword(L"SYSTEM\\WmPort", L"BootState", &v);
-    return v;
-}
-
-static int driver_ready(void) {
-    if (!driver_token()) return 0;
-    HANDLE h = open_driver_device();
-    if (!h) return 0;
-    CloseHandle(h);
-    return 1;
-}
-
-/* The device existing means an image is already mapped: mapping again cannot
- * work and only produces a misleading "no backend" failure. The Key value is
- * published asynchronously by the driver, so on a fast relaunch it can be
- * missing for a moment even though the transport is live. */
-static int driver_device_present(void) {
-    HANDLE h = open_driver_device();
-    if (!h) return 0;
-    CloseHandle(h);
-    return 1;
-}
-
-/* WM_IO_VEIL: action != 0 unlinks the process from the active-process list,
- * action == 0 restores it. Same packed request rr_mem.c sends, so the driver's
- * dispatch reads one layout. */
-#define AIO_MKCTL(f) ((ULONG)((0x29u << 16) | (0 << 14) | ((f) << 2) | 0))
-#define AIO_IOCTL_VEIL AIO_MKCTL(0x8A8u)
-
-typedef NTSTATUS (WINAPI* PFN_NTDEVICEIOCONTROL)(HANDLE, HANDLE, PVOID, PVOID,
-                                                 PIO_STATUS_BLOCK, ULONG, PVOID,
-                                                 ULONG, PVOID, ULONG);
-
-#pragma pack(push, 1)
-typedef struct { ULONG key; ULONG pid; ULONG action; ULONG pad; } VEIL_CMD;
-#pragma pack(pop)
-
-static int driver_hide_process(DWORD pid, int hide) {
-    DWORD token = driver_token();
-    if (!token) return 0;
-    HANDLE dev = open_driver_device();
-    if (!dev) return 0;
-    HMODULE nd = GetModuleHandleW(L"ntdll.dll");
-    PFN_NTDEVICEIOCONTROL p = nd
-        ? (PFN_NTDEVICEIOCONTROL)GetProcAddress(nd, "NtDeviceIoControlFile") : NULL;
-    if (!p) { CloseHandle(dev); return 0; }
-
-    VEIL_CMD cmd;
-    ZeroMemory(&cmd, sizeof(cmd));
-    cmd.key = token;
-    cmd.pid = pid;
-    cmd.action = hide ? 1 : 0;
-    IO_STATUS_BLOCK ios;
-    ZeroMemory(&ios, sizeof(ios));
-    NTSTATUS st = p(dev, NULL, NULL, NULL, &ios, AIO_IOCTL_VEIL,
-                    &cmd, (ULONG)sizeof(cmd), NULL, 0);
-    CloseHandle(dev);
-    return st >= 0;
-}
-
-static int g_launcher_hidden = 0;
-
-/* Deliberately no restore. The driver's hide unlinks the process entry and its
- * restore writes the remembered neighbours back; those neighbours can have
- * exited in the meantime, and the resulting LIST_ENTRY corruption bugchecks
- * (0x139 subcode 3). The overlay hides itself the same way and never restores,
- * so enabling this option must follow that pattern. Off by default after a
- * crash: `hide_launcher=1` in RobRunAIO.ini or --hide-launcher turns it on. */
 static int run_mapper(void) {
     wchar_t exe[MAX_PATH * 2], cmd[MAX_PATH * 4];
     path_join(g_workdir, MAPPER_EXE, exe, _countof(exe));
@@ -943,28 +865,6 @@ static int run_mapper(void) {
     }
     log_add(L"kd2.exe exit code: %lu", (unsigned long)code);
     return code == 0;
-}
-
-static void wait_for_driver(void) {
-    ui_status(L"Verifying the mapped driver...");
-    DWORD deadline = GetTickCount() + DRIVER_WAIT_MS;
-    for (;;) {
-        if (driver_ready()) {
-            log_add(L"driver ready (Key 0x%08lX)", (unsigned long)driver_token());
-            return;
-        }
-        if (GetTickCount() > deadline) break;
-        pump();
-        Sleep(400);
-    }
-    fail(L"The driver did not come up.\n\n"
-         L"kd2.exe reported success, but \\\\.\\WmPort could not be opened or\n"
-         L"the Key value is missing.\n\n"
-         L"BootState: 0x%08lX\n\n"
-         L"Reboot, then run this launcher once more. If it still fails, run\n"
-         L"MAP-DRIVER.bat to see the mapper's own output, and confirm that\n"
-         L"Memory Integrity and VBS are off.",
-         (unsigned long)driver_init_status());
 }
 
 /* ---------------------------------------------------------------- game ----- */
@@ -1608,20 +1508,14 @@ int WINAPI wWinMain(HINSTANCE inst, HINSTANCE prev, LPWSTR cmdline, int show) {
     if (dry_run || no_map) {
         log_add(L"%s: skipping driver mapping",
                 dry_run ? L"dry run" : L"--no-map");
-    } else if (driver_ready()) {
+    } else if (driver_live()) {
         log_add(L"driver is already mapped in this session; skipping kd2.exe");
-        ui_status(L"Driver already mapped.");
-    } else if (driver_device_present()) {
-        /* The transport is up but the Key has not been read yet; do not map a
-         * second image over it. wait_for_driver() below retries the Key. */
-        log_add(L"driver device is live but the Key is not readable yet; "
-                L"skipping kd2.exe");
         ui_status(L"Driver already mapped.");
     } else {
         if (!run_mapper()) {
-            /* A failed mapper run is not fatal when the device is already live
+            /* A failed mapper run is not fatal when the image is already live
              * from an earlier launch: the transport is what matters. */
-            if (!driver_ready())
+            if (!driver_live())
                 fail(L"Driver mapping failed.\n\n"
                      L"kd2.exe returned a non-zero exit code.\n\n"
                      L"Check that:\n"
@@ -1635,12 +1529,10 @@ int WINAPI wWinMain(HINSTANCE inst, HINSTANCE prev, LPWSTR cmdline, int show) {
     if (!dry_run && !no_map) {
         wait_for_driver();
         if (g_hide_launcher) {
-            if (driver_hide_process(GetCurrentProcessId(), 1)) {
-                g_launcher_hidden = 1;
-                log_add(L"launcher hidden from the process list (hide-only, no restore)");
-            } else {
-                log_add(L"warning: could not hide the launcher");
-            }
+            /* The shared-buffer transport exposes no IOCTL, so there is no
+             * kernel unlink path here. masquerade=1 already covers the process
+             * names in Task Manager, which is what this switch used to do. */
+            log_add(L"hide_launcher ignored: no IOCTL transport; use masquerade=1");
         }
     }
     wait_for_game();

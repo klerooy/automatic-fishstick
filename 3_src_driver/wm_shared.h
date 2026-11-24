@@ -38,7 +38,8 @@ enum {
     WMSC_BATCH    = 7,
     WMSC_CONTEXT  = 8,
     WMSC_PROTECT  = 9,
-    WMSC_FREE     = 10
+    WMSC_FREE     = 10,
+    WMSC_PID      = 11
 };
 
 enum {
@@ -55,6 +56,8 @@ typedef struct {
     uint64_t pCode;
     uint64_t pStatus;
     uint32_t Magic;
+    uint32_t Pad0;
+    uint64_t WakeHandle;   /* client-side handle, informational */
 } WmCommData;
 #pragma pack(pop)
 

@@ -306,7 +306,7 @@ static DWORD WINAPI menu_thread(LPVOID){
 
     int sw=GetSystemMetrics(SM_CXSCREEN), sh=GetSystemMetrics(SM_CYSCREEN);
     g_hwnd=CreateWindowExW(
-        WS_EX_TOPMOST|WS_EX_TOOLWINDOW,
+        WS_EX_TOOLWINDOW,
         wc.lpszClassName, L"mrzvCore",
         WS_POPUP,
         sw/2-WIN_W/2, 80, WIN_W, WIN_H,
@@ -351,7 +351,7 @@ static DWORD WINAPI menu_thread(LPVOID){
         if (!IsWindowVisible(g_hwnd)) {
             shown_at = GetTickCount();
             g_prev_fg = GetForegroundWindow();
-            SetWindowPos(g_hwnd, HWND_TOPMOST, 0, 0, 0, 0,
+            SetWindowPos(g_hwnd, HWND_TOP, 0, 0, 0, 0,
                          SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW | SWP_NOOWNERZORDER);
             if (g_ctl && SUCCEEDED(g_start_error)) g_ctl->put_IsVisible(TRUE);
         }

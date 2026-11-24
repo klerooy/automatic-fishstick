@@ -275,13 +275,23 @@ static void sync_game_window(void) {
     GAME_WINDOW_SEARCH s = { g_rr_pid, NULL, 0 };
     EnumWindows(find_game_window, (LPARAM)&s);
     if (!s.window) return;
+    /* An in-game overlay belongs over the game, not over the desktop. When the
+     * game is not the foreground window the layer is hidden; the menu is its
+     * own window and keeps working. */
+    if (!game_focused()) {
+        if (IsWindowVisible(g_hwnd)) ShowWindow(g_hwnd, SW_HIDE);
+        return;
+    }
+    if (!IsWindowVisible(g_hwnd)) ShowWindow(g_hwnd, SW_SHOWNOACTIVATE);
     RECT client, overlay; POINT origin = {0, 0};
     if (!GetClientRect(s.window, &client) || !ClientToScreen(s.window, &origin) ||
         !GetWindowRect(g_hwnd, &overlay)) return;
     int width = client.right - client.left, height = client.bottom - client.top;
     if (overlay.left != origin.x || overlay.top != origin.y ||
         overlay.right - overlay.left != width || overlay.bottom - overlay.top != height) {
-        SetWindowPos(g_hwnd, HWND_TOPMOST, origin.x, origin.y, width, height,
+        /* Insert directly above the game window instead of the topmost band:
+         * the overlay then follows the game's z-order instead of every window. */
+        SetWindowPos(g_hwnd, s.window, origin.x, origin.y, width, height,
                      SWP_NOACTIVATE | SWP_NOOWNERZORDER);
         InvalidateRect(g_hwnd, NULL, FALSE);
     }
@@ -675,7 +685,25 @@ static void overlay_exit(int code) {
     /* Demo overrides are display-only; saving them would rewrite the user's
      * config with marker switches they never enabled. */
     if (!g_demo) br_config_save();
+    /* Tell the driver the session is over before the address space goes away.
+     * A killed client is handled by the driver itself; this is the polite
+     * path for a game exit or an END press. */
+    rr_drv_close();
     ExitProcess((UINT)code);
+}
+
+static uint32_t g_dead_pid = 0;      /* process that just disappeared   */
+static DWORD    g_dead_since = 0;
+
+/* Discovery builds walk the whole heap; on a slow transport one pass used to
+ * take longer than the retry cadence, so the reader never left init and never
+ * published a snapshot. Throttle it and let the pass finish. */
+static void read_init_throttled(void) {
+    static DWORD last = 0;
+    DWORD now = GetTickCount();
+    if (last && now - last < 5000) return;
+    last = now;
+    game_init();
 }
 
 static DWORD WINAPI ReadThread(LPVOID p) {
@@ -683,7 +711,6 @@ static DWORD WINAPI ReadThread(LPVOID p) {
     timeBeginPeriod(1);
     int tick = 0;
     int dead_ticks = 0;
-    int game_gone = 0;
     /* Measure snapshot construction separately from time since publication.
      * g_snapshot_at is stamped after sampling, so a fresh publication can still
      * contain data that took a long time to collect. */
@@ -696,11 +723,34 @@ static DWORD WINAPI ReadThread(LPVOID p) {
         /* The game can start after the overlay, or restart mid-session: keep
          * trying to attach so the tool recovers instead of reporting a
          * permanent "game not found". g_exe honors --exe here too. */
-        if (!g_demo && g_rr_pid == 0) {
-            if (rr_drv_open()) rr_attach(g_exe);
-            if (g_rr_pid) { game_init(); }
+        if (!g_demo) {
+            /* Retry the handshake whenever it is missing, not only while no
+             * PID is held: a dropped session used to leave every read failing
+             * in silence. rr_drv_open is cheap while the driver marker is gone
+             * and re-runs discovery once it is back, because the buffer moved. */
+            if (!rr_drv_ready() && rr_drv_open()) {
+                hklogf("driver connected");
+                if (g_rr_pid) read_init_throttled();
+            }
+            if (g_rr_pid == 0 && rr_drv_ready() && rr_attach(g_exe)) {
+                hklogf("attached pid %u", (unsigned)g_rr_pid);
+                g_dead_pid = 0;
+                game_init();
+            }
         }
         if (InterlockedCompareExchange(&g_quit, 0, 0)) break;
+
+        /* The previous target is gone: let the driver confirm it, then close.
+         * This runs whether or not a new attach succeeded, so a game exit no
+         * longer leaves an overlay and a kernel session behind. */
+        if (g_dead_pid && GetTickCount() - g_dead_since >= 1500) {
+            uint32_t gone = g_dead_pid;
+            g_dead_pid = 0;
+            if (!rr_drv_alive(gone)) {
+                hklogf("target pid %u exited - shutting down", (unsigned)gone);
+                overlay_exit(0);
+            }
+        }
 
         /* --demo: the same snapshot the game produces, generated locally.
          * It exercises projection, culling, box/name/distance drawing and the
@@ -747,55 +797,50 @@ static DWORD WINAPI ReadThread(LPVOID p) {
             }
         }
 
-        /* Retry discovery when snapshots are empty or the world anchor is missing.
-         * A nonzero entry count alone does not establish that discovery succeeded. */
+        /* Retry discovery when the world anchor is missing, at the throttled
+         * cadence. An empty player list in a lobby is normal and must not
+         * restart discovery. */
         if (InterlockedExchange(&g_rescan_now, 0) && !game_discovery_active()) {
-            game_init();
+            read_init_throttled();
             __try { n = game_snapshot(tmp, RR_MAX_PLAYERS, &cam); }
             __except (EXCEPTION_EXECUTE_HANDLER) { hklogf("exception in rescan snapshot"); n = 0; }
         }
 
         /* Check the image signature for attachment liveness. Three failed checks
-         * trigger reattachment while tolerating a brief read failure. */
-        if ((tick % 20) == 0) {
+         * trigger reattachment while tolerating a brief read failure. Only the
+         * driver's own answer counts here: the process snapshot is filtered on
+         * some anti-cheat builds. */
+        if ((tick % 20) == 0 && g_rr_pid && rr_drv_ready()) {
             uint8_t mz[2];
             uint64_t img = rr_image_base();
             if (img && rr_read(img, mz, sizeof(mz))) {
                 dead_ticks = 0;
             } else if (++dead_ticks >= 3) {
                 dead_ticks = 0;
+                uint32_t lost = g_rr_pid;
                 /* Clear first: if the relaunch has not happened yet, the attach
                  * below fails and the loop at the top of this function takes
                  * over, so the stale anchors must already be gone by then. */
-                hklogf("target process lost - clearing anchors and re-attaching");
+                hklogf("target pid %u lost - clearing anchors and re-attaching", (unsigned)lost);
                 game_reattach_reset();
                 if (rr_attach(g_exe)) {
                     hklogf("re-attached to pid %u", g_rr_pid);
+                    g_dead_pid = 0;
                     game_init();
                     __try { n = game_snapshot(tmp, RR_MAX_PLAYERS, &cam); }
                     __except (EXCEPTION_EXECUTE_HANDLER) { hklogf("exception in reattach snapshot"); n = 0; }
                 } else {
                     g_rr_pid = 0;   /* the attach loop at the loop head retries */
+                    if (!g_dead_pid) { g_dead_pid = lost; g_dead_since = GetTickCount(); }
                 }
             }
         }
 
-        /* Close after two successful process snapshots omit the game. Enumeration
-         * errors are handled separately so they do not count as confirmed exits. */
-        if ((tick % 240) == 0 && g_rr_pid) {
-            if (rr_process_visible(g_rr_pid) == 0) {
-                if (++game_gone >= 2) {
-                    hklogf("target pid %u exited - shutting down", (unsigned)g_rr_pid);
-                    overlay_exit(0);
-                }
-            } else {
-                game_gone = 0;
-            }
-        }
-
-        if (!game_discovery_active() && (tick % 40) == 0 &&
-            (n == 0 || game_world_addr() == 0)) {
-            game_init();
+        /* Retry discovery only when the world anchor is still missing, and at
+         * the throttled cadence. An empty player list in a lobby is normal and
+         * must not restart discovery. */
+        if (!game_discovery_active() && (tick % 40) == 0 && game_world_addr() == 0) {
+            read_init_throttled();
             __try { n = game_snapshot(tmp, RR_MAX_PLAYERS, &cam); }
             __except (EXCEPTION_EXECUTE_HANDLER) { hklogf("exception in retry snapshot"); n = 0; }
         }
@@ -3276,7 +3321,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR lpCmd, int nShow) {
     RegisterClassA(&wc);
     g_hwnd = CreateWindowExA(
         WS_EX_NOREDIRECTIONBITMAP | WS_EX_LAYERED | WS_EX_TRANSPARENT | WS_EX_NOACTIVATE |
-        WS_EX_TOPMOST | WS_EX_TOOLWINDOW,
+        WS_EX_TOOLWINDOW,
         "RR_Overlay", "RobRunESP", WS_POPUP | WS_VISIBLE, 0, 0, g_sw, g_sh,
         NULL, NULL, hInst, NULL);
     if (!g_hwnd) return 4;

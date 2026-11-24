@@ -1,10 +1,207 @@
-65609 game not running yet - ReadThread will keep retrying attach
-65609 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
-66484 target process lost - clearing anchors and re-attaching
-67687 target process lost - clearing anchors and re-attaching
-68921 target process lost - clearing anchors and re-attaching
-70218 target process lost - clearing anchors and re-attaching
-87468 key id=1 src=hook act (age=87468)
-87468 F1 menu=open
-88312 key id=1 src=hook act (age=844)
-88312 F1 menu=closed
+154250 game not running yet - ReadThread will keep retrying attach
+154250 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+155078 target process lost - clearing anchors and re-attaching
+156250 target process lost - clearing anchors and re-attaching
+157437 target process lost - clearing anchors and re-attaching
+158703 target process lost - clearing anchors and re-attaching
+184187 key id=1 src=hook act (age=184187)
+184187 F1 menu=open
+188062 key id=1 src=raw act (age=3875)
+188062 F1 menu=closed
+189843 key id=1 src=hook act (age=1781)
+189843 F1 menu=open
+193953 key id=1 src=raw act (age=4110)
+193953 F1 menu=closed
+221937 target process lost - clearing anchors and re-attaching
+221953 re-attached to pid 5856
+222312 key id=1 src=hook act (age=28359)
+222312 F1 menu=open
+222687 key id=1 src=raw act (age=375)
+222687 F1 close ignored (just opened)
+223140 key id=1 src=raw act (age=453)
+223140 F1 menu=closed
+223656 key id=1 src=hook act (age=516)
+223656 F1 menu=open
+224687 key id=1 src=raw act (age=1031)
+224687 F1 menu=closed
+265656 target process lost - clearing anchors and re-attaching
+266875 target process lost - clearing anchors and re-attaching
+268093 target process lost - clearing anchors and re-attaching
+269359 target process lost - clearing anchors and re-attaching
+270578 target process lost - clearing anchors and re-attaching
+271765 target process lost - clearing anchors and re-attaching
+272968 target process lost - clearing anchors and re-attaching
+274171 target process lost - clearing anchors and re-attaching
+275375 target process lost - clearing anchors and re-attaching
+276546 target process lost - clearing anchors and re-attaching
+277718 target process lost - clearing anchors and re-attaching
+278890 target process lost - clearing anchors and re-attaching
+280062 target process lost - clearing anchors and re-attaching
+281234 target process lost - clearing anchors and re-attaching
+282421 target process lost - clearing anchors and re-attaching
+283593 target process lost - clearing anchors and re-attaching
+284750 target process lost - clearing anchors and re-attaching
+285906 target process lost - clearing anchors and re-attaching
+287093 target process lost - clearing anchors and re-attaching
+288265 target process lost - clearing anchors and re-attaching
+289437 target process lost - clearing anchors and re-attaching
+290625 target process lost - clearing anchors and re-attaching
+291796 target process lost - clearing anchors and re-attaching
+292984 target process lost - clearing anchors and re-attaching
+294156 target process lost - clearing anchors and re-attaching
+295328 target process lost - clearing anchors and re-attaching
+296484 target process lost - clearing anchors and re-attaching
+297656 target process lost - clearing anchors and re-attaching
+298843 target process lost - clearing anchors and re-attaching
+300031 target process lost - clearing anchors and re-attaching
+301187 target process lost - clearing anchors and re-attaching
+302375 target process lost - clearing anchors and re-attaching
+303531 target process lost - clearing anchors and re-attaching
+304703 target process lost - clearing anchors and re-attaching
+305890 target process lost - clearing anchors and re-attaching
+307062 target process lost - clearing anchors and re-attaching
+308234 target process lost - clearing anchors and re-attaching
+309453 target process lost - clearing anchors and re-attaching
+310640 target process lost - clearing anchors and re-attaching
+311812 target process lost - clearing anchors and re-attaching
+313000 target process lost - clearing anchors and re-attaching
+314156 target process lost - clearing anchors and re-attaching
+315343 target process lost - clearing anchors and re-attaching
+316500 target process lost - clearing anchors and re-attaching
+317671 target process lost - clearing anchors and re-attaching
+318843 target process lost - clearing anchors and re-attaching
+320015 target process lost - clearing anchors and re-attaching
+321203 target process lost - clearing anchors and re-attaching
+322421 target process lost - clearing anchors and re-attaching
+323609 target process lost - clearing anchors and re-attaching
+324796 target process lost - clearing anchors and re-attaching
+325984 target process lost - clearing anchors and re-attaching
+327156 target process lost - clearing anchors and re-attaching
+328312 target process lost - clearing anchors and re-attaching
+329484 target process lost - clearing anchors and re-attaching
+330656 target process lost - clearing anchors and re-attaching
+331859 target process lost - clearing anchors and re-attaching
+333031 target process lost - clearing anchors and re-attaching
+334218 target process lost - clearing anchors and re-attaching
+335390 target process lost - clearing anchors and re-attaching
+336656 target process lost - clearing anchors and re-attaching
+337843 target process lost - clearing anchors and re-attaching
+339015 target process lost - clearing anchors and re-attaching
+340203 target process lost - clearing anchors and re-attaching
+341375 target process lost - clearing anchors and re-attaching
+342546 target process lost - clearing anchors and re-attaching
+343718 target process lost - clearing anchors and re-attaching
+344875 target process lost - clearing anchors and re-attaching
+346046 target process lost - clearing anchors and re-attaching
+347234 target process lost - clearing anchors and re-attaching
+348453 target process lost - clearing anchors and re-attaching
+349625 target process lost - clearing anchors and re-attaching
+350796 target process lost - clearing anchors and re-attaching
+351968 target process lost - clearing anchors and re-attaching
+353156 target process lost - clearing anchors and re-attaching
+354328 target process lost - clearing anchors and re-attaching
+355500 target process lost - clearing anchors and re-attaching
+356671 target process lost - clearing anchors and re-attaching
+357843 target process lost - clearing anchors and re-attaching
+359015 target process lost - clearing anchors and re-attaching
+360203 target process lost - clearing anchors and re-attaching
+361375 target process lost - clearing anchors and re-attaching
+362546 target process lost - clearing anchors and re-attaching
+363703 target process lost - clearing anchors and re-attaching
+364875 target process lost - clearing anchors and re-attaching
+366031 target process lost - clearing anchors and re-attaching
+367218 target process lost - clearing anchors and re-attaching
+368406 target process lost - clearing anchors and re-attaching
+369578 target process lost - clearing anchors and re-attaching
+370765 target process lost - clearing anchors and re-attaching
+371937 target process lost - clearing anchors and re-attaching
+373125 target process lost - clearing anchors and re-attaching
+374359 target process lost - clearing anchors and re-attaching
+375546 target process lost - clearing anchors and re-attaching
+376734 target process lost - clearing anchors and re-attaching
+377906 target process lost - clearing anchors and re-attaching
+379078 target process lost - clearing anchors and re-attaching
+380250 target process lost - clearing anchors and re-attaching
+381437 target process lost - clearing anchors and re-attaching
+382609 target process lost - clearing anchors and re-attaching
+73250 game not running yet - ReadThread will keep retrying attach
+73265 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+74078 target process lost - clearing anchors and re-attaching
+75281 target process lost - clearing anchors and re-attaching
+76515 target process lost - clearing anchors and re-attaching
+77812 target process lost - clearing anchors and re-attaching
+144687 target process lost - clearing anchors and re-attaching
+145890 target process lost - clearing anchors and re-attaching
+147093 target process lost - clearing anchors and re-attaching
+148296 target process lost - clearing anchors and re-attaching
+149500 target process lost - clearing anchors and re-attaching
+150687 target process lost - clearing anchors and re-attaching
+151875 target process lost - clearing anchors and re-attaching
+153062 target process lost - clearing anchors and re-attaching
+154250 target process lost - clearing anchors and re-attaching
+155468 target process lost - clearing anchors and re-attaching
+156671 target process lost - clearing anchors and re-attaching
+157875 target process lost - clearing anchors and re-attaching
+159078 target process lost - clearing anchors and re-attaching
+160281 target process lost - clearing anchors and re-attaching
+161484 target process lost - clearing anchors and re-attaching
+162671 target process lost - clearing anchors and re-attaching
+163875 target process lost - clearing anchors and re-attaching
+165062 target process lost - clearing anchors and re-attaching
+166250 target process lost - clearing anchors and re-attaching
+167437 target process lost - clearing anchors and re-attaching
+168640 target process lost - clearing anchors and re-attaching
+169843 target process lost - clearing anchors and re-attaching
+171031 target process lost - clearing anchors and re-attaching
+172218 target process lost - clearing anchors and re-attaching
+173406 target process lost - clearing anchors and re-attaching
+174609 target process lost - clearing anchors and re-attaching
+175796 target process lost - clearing anchors and re-attaching
+176984 target process lost - clearing anchors and re-attaching
+178171 target process lost - clearing anchors and re-attaching
+179343 target process lost - clearing anchors and re-attaching
+180515 target process lost - clearing anchors and re-attaching
+181703 target process lost - clearing anchors and re-attaching
+182875 target process lost - clearing anchors and re-attaching
+184062 target process lost - clearing anchors and re-attaching
+185250 target process lost - clearing anchors and re-attaching
+186593 target process lost - clearing anchors and re-attaching
+187796 target process lost - clearing anchors and re-attaching
+189015 target process lost - clearing anchors and re-attaching
+190187 target process lost - clearing anchors and re-attaching
+191390 target process lost - clearing anchors and re-attaching
+192593 target process lost - clearing anchors and re-attaching
+193765 target process lost - clearing anchors and re-attaching
+194968 target process lost - clearing anchors and re-attaching
+196125 target process lost - clearing anchors and re-attaching
+197296 target process lost - clearing anchors and re-attaching
+198468 target process lost - clearing anchors and re-attaching
+199625 target process lost - clearing anchors and re-attaching
+200796 target process lost - clearing anchors and re-attaching
+201984 target process lost - clearing anchors and re-attaching
+203203 target process lost - clearing anchors and re-attaching
+204390 target process lost - clearing anchors and re-attaching
+205562 target process lost - clearing anchors and re-attaching
+206765 target process lost - clearing anchors and re-attaching
+207937 target process lost - clearing anchors and re-attaching
+209156 target process lost - clearing anchors and re-attaching
+210421 target process lost - clearing anchors and re-attaching
+211640 target process lost - clearing anchors and re-attaching
+307140 game not running yet - ReadThread will keep retrying attach
+307140 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+308015 target process lost - clearing anchors and re-attaching
+309250 target process lost - clearing anchors and re-attaching
+310468 target process lost - clearing anchors and re-attaching
+311656 target process lost - clearing anchors and re-attaching
+312843 target process lost - clearing anchors and re-attaching
+314046 target process lost - clearing anchors and re-attaching
+315250 target process lost - clearing anchors and re-attaching
+316515 target process lost - clearing anchors and re-attaching
+393906 key id=1 src=hook act (age=393906)
+393906 F1 menu=open
+397171 key id=1 src=raw act (age=3265)
+397171 F1 menu=closed
+404343 key id=1 src=hook act (age=7172)
+404343 F1 menu=open
+407546 key id=1 src=raw act (age=3203)
+407546 F1 menu=closed
