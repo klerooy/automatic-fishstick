@@ -1,0 +1,19 @@
+RobRunESP probe
+[probe] pid 5444
+[probe] GameAssembly.dll base=7FFA46A80000 size=9050000
+[probe] image base=7FF625F60000
+[probe] UnityEntry: validated world=260FD8DA000 battle=260F514D870 camera=25E4588C770
+[probe] chain symbols: 0
+  static WorldEntitiesModel     rva=81D0710 -> 25E04776AB8 (<bad name>)
+  static WorldModel             rva=81D36C8 -> C00B0D0B (<no class>)
+  static BattleCameraModel      rva=81CB420 -> C00AF059 (<no class>)
+  static BattleCharacterModel   rva=8196748 -> 261F0372078 (<bad name>)
+[probe] game_init: world found
+[probe] status: instance scan: 2 characters, camera=model timing=unavailable
+[probe] prim offset=0x0 dict offset=0x10
+[probe] players=2 camera=valid
+  #0   id=353   pos=(-12.27, 31.46, 38.47) dist=2.7 dead=0
+  #1   id=119   pos=(-11.43, 31.46, 35.69) dist=5.2 dead=0
+[probe] player[0] class=BattleCharacterModel
+[probe] player[0] -> BattleCameraModel hits: 0
+press enter...

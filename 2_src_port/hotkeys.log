@@ -13,3 +13,447 @@
 68484671 demo timer finished
 68501515 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
 68511515 demo timer finished
+9948953 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+9950968 key id=1 src=hook act (age=9950968)
+9950968 F1 menu=open
+9951703 key id=1 src=hook act (age=735)
+9951703 F1 menu=closed
+9960359 key id=1 src=hook act (age=8656)
+9960359 F1 menu=open
+9960796 key id=1 src=hook act (age=437)
+9960796 F1 close ignored (just opened)
+9961265 key id=1 src=hook act (age=469)
+9961265 F1 menu=closed
+9972687 key id=1 src=hook act (age=11422)
+9972687 F1 menu=open
+9976890 key id=1 src=raw act (age=4203)
+9976890 F1 menu=closed
+9980343 key id=1 src=hook act (age=3453)
+9980343 F1 menu=open
+9982015 key id=1 src=raw act (age=1672)
+9982015 F1 menu=closed
+10023093 key id=1 src=hook act (age=41078)
+10023093 F1 menu=open
+10024484 key id=1 src=raw act (age=1391)
+10024484 F1 menu=closed
+10031343 key id=1 src=hook act (age=6859)
+10031343 F1 menu=open
+10041890 key id=1 src=raw act (age=10547)
+10041890 F1 menu=closed
+10044062 key id=1 src=hook act (age=2172)
+10044062 F1 menu=open
+10052375 key id=1 src=raw act (age=8313)
+10052375 F1 menu=closed
+10056078 key id=1 src=hook act (age=3703)
+10056078 F1 menu=open
+10056343 key id=1 src=raw debounced (age=265)
+10056343 key id=1 src=poll debounced (age=265)
+10056875 key id=1 src=raw act (age=797)
+10056875 F1 menu=closed
+10057937 key id=1 src=hook act (age=1062)
+10057937 F1 menu=open
+10058468 key id=1 src=raw act (age=531)
+10058468 F1 close ignored (just opened)
+10058937 key id=1 src=raw act (age=469)
+10058937 F1 menu=closed
+10062015 key id=1 src=hook act (age=3078)
+10062015 F1 menu=open
+10062734 key id=1 src=raw act (age=719)
+10062734 F1 menu=closed
+10068281 key id=1 src=hook act (age=5547)
+10068281 F1 menu=open
+10068812 key id=1 src=raw act (age=531)
+10068812 F1 close ignored (just opened)
+10070125 key id=1 src=hook act (age=1313)
+10070125 F1 menu=closed
+10071687 key id=1 src=hook act (age=1562)
+10071687 F1 menu=open
+10072437 key id=1 src=hook act (age=750)
+10072437 F1 menu=closed
+10072750 key id=1 src=hook act (age=313)
+10072750 F1 menu=open
+10075359 key id=1 src=raw act (age=2609)
+10075359 F1 menu=closed
+10093343 key id=1 src=hook act (age=17984)
+10093343 F1 menu=open
+10095078 key id=1 src=raw act (age=1735)
+10095078 F1 menu=closed
+10172734 key id=1 src=hook act (age=77656)
+10172734 F1 menu=open
+10173203 key id=1 src=raw act (age=469)
+10173218 F1 close ignored (just opened)
+10180359 key id=1 src=raw act (age=7156)
+10180359 F1 menu=closed
+10183578 key id=1 src=hook act (age=3219)
+10183578 F1 menu=open
+10185000 key id=1 src=raw act (age=1422)
+10185000 F1 menu=closed
+10191406 key id=1 src=hook act (age=6406)
+10191406 F1 menu=open
+10193515 key id=1 src=raw act (age=2109)
+10193515 F1 menu=closed
+10194593 key id=1 src=hook act (age=1078)
+10194593 F1 menu=open
+10196625 key id=1 src=raw act (age=2032)
+10196625 F1 menu=closed
+10207156 key id=1 src=hook act (age=10531)
+10207156 F1 menu=open
+10207765 key id=1 src=raw act (age=609)
+10207765 F1 menu=closed
+10211078 key id=1 src=hook act (age=3313)
+10211078 F1 menu=open
+10225921 key id=1 src=raw act (age=14843)
+10225921 F1 menu=closed
+10226265 key id=1 src=hook act (age=344)
+10226265 F1 menu=open
+10230750 key id=1 src=raw act (age=4485)
+10230750 F1 menu=closed
+10232359 key id=1 src=hook act (age=1609)
+10232359 F1 menu=open
+10233203 key id=1 src=raw act (age=844)
+10233203 F1 menu=closed
+10233468 key id=1 src=hook debounced (age=265)
+10233468 key id=1 src=raw debounced (age=265)
+10233484 key id=1 src=poll debounced (age=281)
+10233875 key id=1 src=hook act (age=672)
+10233875 F1 menu=open
+10234218 key id=1 src=raw act (age=343)
+10234218 F1 close ignored (just opened)
+10234609 key id=1 src=raw act (age=391)
+10234609 F1 menu=closed
+10236187 key id=1 src=hook act (age=1578)
+10236187 F1 menu=open
+10237171 key id=1 src=raw act (age=984)
+10237171 F1 menu=closed
+10238546 key id=1 src=hook act (age=1375)
+10238546 F1 menu=open
+10239843 key id=1 src=raw act (age=1297)
+10239843 F1 menu=closed
+10240500 key id=1 src=hook act (age=657)
+10240500 F1 menu=open
+10241343 key id=1 src=raw act (age=843)
+10241343 F1 menu=closed
+10241921 key id=1 src=hook act (age=578)
+10241921 F1 menu=open
+10242750 key id=1 src=raw act (age=829)
+10242750 F1 menu=closed
+10243250 key id=1 src=hook act (age=500)
+10243250 F1 menu=open
+10243984 key id=1 src=raw act (age=734)
+10243984 F1 menu=closed
+10244890 key id=1 src=hook act (age=906)
+10244890 F1 menu=open
+10245531 key id=1 src=raw act (age=641)
+10245531 F1 menu=closed
+10246015 key id=1 src=hook act (age=484)
+10246015 F1 menu=open
+10247968 key id=1 src=raw act (age=1953)
+10247968 F1 menu=closed
+10249265 key id=1 src=hook act (age=1297)
+10249265 F1 menu=open
+10255531 key id=1 src=raw act (age=6266)
+10255531 F1 menu=closed
+10256375 key id=1 src=hook act (age=844)
+10256375 F1 menu=open
+10257875 key id=1 src=raw act (age=1500)
+10257875 F1 menu=closed
+10258953 key id=1 src=hook act (age=1078)
+10258953 F1 menu=open
+10260015 key id=1 src=raw act (age=1062)
+10260015 F1 menu=closed
+10261156 key id=1 src=hook act (age=1141)
+10261156 F1 menu=open
+10261890 key id=1 src=raw act (age=734)
+10261890 F1 menu=closed
+10262515 key id=1 src=hook act (age=625)
+10262515 F1 menu=open
+10263078 key id=1 src=raw act (age=563)
+10263078 F1 close ignored (just opened)
+10263671 key id=1 src=raw act (age=593)
+10263671 F1 menu=closed
+10265390 key id=1 src=hook act (age=1719)
+10265390 F1 menu=open
+10266000 key id=1 src=raw act (age=610)
+10266000 F1 menu=closed
+10268640 key id=1 src=hook act (age=2640)
+10268640 F1 menu=open
+10269109 key id=1 src=raw act (age=469)
+10269109 F1 close ignored (just opened)
+10269515 key id=1 src=raw act (age=406)
+10269515 F1 menu=closed
+10271281 key id=1 src=hook act (age=1766)
+10271281 F1 menu=open
+10271812 key id=1 src=raw act (age=531)
+10271812 F1 close ignored (just opened)
+10272171 key id=1 src=raw act (age=359)
+10272171 F1 menu=closed
+10279156 key id=1 src=hook act (age=6985)
+10279156 F1 menu=open
+10279687 key id=1 src=raw act (age=531)
+10279687 F1 close ignored (just opened)
+10280031 key id=1 src=raw act (age=344)
+10280031 F1 menu=closed
+10282937 key id=1 src=hook act (age=2906)
+10282937 F1 menu=open
+10283437 key id=1 src=raw act (age=500)
+10283437 F1 close ignored (just opened)
+10283859 key id=1 src=raw act (age=422)
+10283859 F1 menu=closed
+10285562 key id=1 src=hook act (age=1703)
+10285562 F1 menu=open
+10286390 key id=1 src=raw act (age=828)
+10286390 F1 menu=closed
+10287375 key id=1 src=hook act (age=985)
+10287375 F1 menu=open
+10287843 key id=1 src=raw act (age=468)
+10287843 F1 close ignored (just opened)
+10288218 key id=1 src=raw act (age=375)
+10288218 F1 menu=closed
+10288578 key id=1 src=hook act (age=360)
+10288578 F1 menu=open
+10289031 key id=1 src=raw act (age=453)
+10289031 F1 close ignored (just opened)
+10289359 key id=1 src=raw act (age=328)
+10289359 F1 menu=closed
+10290093 key id=1 src=hook act (age=734)
+10290093 F1 menu=open
+10290687 key id=1 src=raw act (age=594)
+10290687 F1 close ignored (just opened)
+10291093 key id=1 src=raw act (age=406)
+10291093 F1 menu=closed
+10292328 key id=1 src=hook act (age=1235)
+10292328 F1 menu=open
+10292828 key id=1 src=raw act (age=500)
+10292828 F1 close ignored (just opened)
+10293375 key id=1 src=raw act (age=547)
+10293375 F1 menu=closed
+10342500 key id=1 src=hook act (age=49125)
+10342500 F1 menu=open
+10344640 key id=1 src=raw act (age=2140)
+10344640 F1 menu=closed
+10353515 init F1=0 INSERT=0 END=0 llhook=1 rawinput=1
+10354859 target pid 21564 lost - clearing anchors and re-attaching
+10354859 re-attached to pid 21564
+10355906 target pid 21564 lost - clearing anchors and re-attaching
+10355906 re-attached to pid 21564
+10356906 target pid 21564 lost - clearing anchors and re-attaching
+10356906 re-attached to pid 21564
+10357906 target pid 21564 lost - clearing anchors and re-attaching
+10357906 re-attached to pid 21564
+10358906 target pid 21564 lost - clearing anchors and re-attaching
+10358906 re-attached to pid 21564
+10359906 target pid 21564 lost - clearing anchors and re-attaching
+10359906 re-attached to pid 21564
+10360906 target pid 21564 lost - clearing anchors and re-attaching
+10360906 re-attached to pid 21564
+10361906 target pid 21564 lost - clearing anchors and re-attaching
+10361906 re-attached to pid 21564
+10362921 target pid 21564 lost - clearing anchors and re-attaching
+10362921 re-attached to pid 21564
+10363921 target pid 21564 lost - clearing anchors and re-attaching
+10363921 re-attached to pid 21564
+10364921 target pid 21564 lost - clearing anchors and re-attaching
+10364921 re-attached to pid 21564
+10365921 target pid 21564 lost - clearing anchors and re-attaching
+10365921 re-attached to pid 21564
+10366921 target pid 21564 lost - clearing anchors and re-attaching
+10366921 re-attached to pid 21564
+10367937 target pid 21564 lost - clearing anchors and re-attaching
+10367937 re-attached to pid 21564
+10368937 target pid 21564 lost - clearing anchors and re-attaching
+10368937 re-attached to pid 21564
+10369937 target pid 21564 lost - clearing anchors and re-attaching
+10369937 re-attached to pid 21564
+10370937 target pid 21564 lost - clearing anchors and re-attaching
+10370937 re-attached to pid 21564
+10371937 target pid 21564 lost - clearing anchors and re-attaching
+10371937 re-attached to pid 21564
+10489234 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+10491796 key id=1 src=hook act (age=10491796)
+10491796 F1 menu=open
+10494390 key id=1 src=raw act (age=2594)
+10494390 F1 menu=closed
+10495031 key id=1 src=hook act (age=641)
+10495031 F1 menu=open
+10496734 key id=1 src=raw act (age=1703)
+10496734 F1 menu=closed
+10497078 key id=1 src=hook act (age=344)
+10497078 F1 menu=open
+10499343 key id=1 src=hook act (age=2265)
+10499343 F1 menu=open
+10499921 key id=1 src=raw act (age=578)
+10499921 F1 close ignored (just opened)
+10500359 key id=1 src=raw act (age=438)
+10500359 F1 menu=closed
+10501093 key id=1 src=hook act (age=734)
+10501093 F1 menu=open
+10501640 key id=1 src=raw act (age=547)
+10501640 F1 close ignored (just opened)
+10502015 key id=1 src=raw act (age=375)
+10502015 F1 menu=closed
+10519593 game not running yet - ReadThread will keep retrying attach
+10519609 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+10523859 attached pid 3612
+10546046 key id=1 src=hook act (age=10546046)
+10546046 F1 menu=open
+10548812 key id=1 src=raw act (age=2766)
+10548812 F1 menu=closed
+10550765 key id=1 src=hook act (age=1953)
+10550765 F1 menu=open
+10551359 key id=1 src=raw act (age=594)
+10551359 F1 close ignored (just opened)
+10552000 key id=1 src=raw act (age=641)
+10552000 F1 menu=closed
+10555046 key id=1 src=hook act (age=3046)
+10555046 F1 menu=open
+10555703 key id=1 src=raw act (age=657)
+10555703 F1 menu=closed
+10556312 key id=1 src=hook act (age=609)
+10556312 F1 menu=open
+10556750 key id=1 src=raw act (age=438)
+10556750 F1 close ignored (just opened)
+10556953 key id=1 src=raw debounced (age=203)
+10556953 key id=1 src=poll debounced (age=203)
+10557656 key id=1 src=raw act (age=906)
+10557656 F1 menu=closed
+10559406 key id=1 src=hook act (age=1750)
+10559406 F1 menu=open
+10561187 key id=1 src=raw act (age=1781)
+10561187 F1 menu=closed
+10562500 key id=1 src=hook act (age=1313)
+10562500 F1 menu=open
+10568390 key id=1 src=raw act (age=5890)
+10568390 F1 menu=closed
+10569437 key id=1 src=hook act (age=1047)
+10569437 F1 menu=open
+10573984 key id=1 src=raw act (age=4547)
+10573984 F1 menu=closed
+10574437 key id=1 src=hook act (age=453)
+10574437 F1 menu=open
+10574843 key id=1 src=raw act (age=406)
+10574843 F1 close ignored (just opened)
+10575218 key id=1 src=raw act (age=375)
+10575218 F1 menu=closed
+10579046 key id=1 src=hook act (age=3828)
+10579046 F1 menu=open
+10579843 key id=1 src=raw act (age=797)
+10579843 F1 menu=closed
+10580843 key id=1 src=hook act (age=1000)
+10580843 F1 menu=open
+10581234 key id=1 src=raw act (age=391)
+10581234 F1 close ignored (just opened)
+10581625 key id=1 src=raw act (age=391)
+10581625 F1 menu=closed
+10583828 key id=1 src=hook act (age=2203)
+10583828 F1 menu=open
+10588968 key id=1 src=hook act (age=5140)
+10588968 F1 menu=closed
+10591468 key id=1 src=hook act (age=2500)
+10591468 F1 menu=open
+10592203 key id=1 src=hook act (age=735)
+10592203 F1 menu=closed
+10592515 key id=1 src=hook act (age=312)
+10592515 F1 menu=open
+10594859 key id=1 src=raw act (age=2344)
+10594859 F1 menu=closed
+10595265 key id=1 src=hook act (age=406)
+10595265 F1 menu=open
+10595625 key id=1 src=raw act (age=360)
+10595625 F1 close ignored (just opened)
+10596000 key id=1 src=raw act (age=375)
+10596000 F1 menu=closed
+10608531 key id=1 src=hook act (age=12531)
+10608531 F1 menu=open
+10609078 key id=1 src=raw act (age=547)
+10609078 F1 close ignored (just opened)
+10609656 key id=1 src=raw act (age=578)
+10609656 F1 menu=closed
+10625500 game not running yet - ReadThread will keep retrying attach
+10625515 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+10626046 attached pid 23324
+10646515 key id=1 src=hook act (age=10646515)
+10646515 F1 menu=open
+10648468 key id=1 src=raw act (age=1953)
+10648468 F1 menu=closed
+10650031 key id=1 src=hook act (age=1563)
+10650031 F1 menu=open
+10652843 key id=1 src=raw act (age=2812)
+10652843 F1 menu=closed
+10654156 key id=1 src=hook act (age=1313)
+10654156 F1 menu=open
+10654562 key id=1 src=raw act (age=406)
+10654562 F1 close ignored (just opened)
+10671078 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+10673218 key id=1 src=hook act (age=10673218)
+10673218 F1 menu=open
+10674109 key id=1 src=hook act (age=891)
+10674109 F1 menu=closed
+10675453 key id=1 src=hook act (age=1344)
+10675453 F1 menu=open
+10675968 key id=1 src=raw act (age=515)
+10675968 F1 close ignored (just opened)
+10676296 key id=1 src=hook act (age=328)
+10676296 F1 menu=closed
+10679000 key id=1 src=hook act (age=2704)
+10679000 F1 menu=open
+10679468 key id=1 src=hook act (age=468)
+10679468 F1 close ignored (just opened)
+10679828 key id=1 src=hook act (age=360)
+10679828 F1 menu=closed
+10681578 key id=1 src=hook act (age=1750)
+10681578 F1 menu=open
+10682093 key id=1 src=hook act (age=515)
+10682093 F1 close ignored (just opened)
+10682500 key id=1 src=hook act (age=407)
+10682500 F1 menu=closed
+10686109 exception in game_snapshot
+10688015 target pid 23324 lost - clearing anchors and re-attaching
+10787156 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+10789000 key id=1 src=hook act (age=10789000)
+10789000 F1 menu=open
+10791203 key id=1 src=raw act (age=2203)
+10791203 F1 menu=closed
+10791953 key id=1 src=hook act (age=750)
+10791953 F1 menu=open
+10792453 key id=1 src=raw act (age=500)
+10792453 F1 close ignored (just opened)
+10792796 key id=1 src=raw act (age=343)
+10792796 F1 menu=closed
+10794578 key id=1 src=hook act (age=1782)
+10794578 F1 menu=open
+10795140 key id=1 src=raw act (age=562)
+10795140 F1 close ignored (just opened)
+10795531 key id=1 src=raw act (age=391)
+10795531 F1 menu=closed
+10797015 key id=1 src=hook act (age=1484)
+10797015 F1 menu=open
+10800937 key id=1 src=raw act (age=3922)
+10800953 F1 menu=closed
+10802031 key id=1 src=hook act (age=1094)
+10802031 F1 menu=open
+10805718 key id=1 src=raw act (age=3687)
+10805718 F1 menu=closed
+10806203 key id=1 src=hook act (age=485)
+10806203 F1 menu=open
+12915281 init F1=1 INSERT=1 END=1 llhook=1 rawinput=1
+12917640 key id=1 src=hook act (age=12917640)
+12917640 F1 menu=open
+12920937 key id=1 src=raw act (age=3297)
+12920953 F1 menu=closed
+12921296 key id=1 src=hook act (age=359)
+12921296 F1 menu=open
+12921484 exception in game_snapshot
+12924250 key id=1 src=raw act (age=2954)
+12924250 F1 menu=closed
+12926718 key id=1 src=hook act (age=2468)
+12926718 F1 menu=open
+12927171 key id=1 src=raw act (age=453)
+12927171 F1 close ignored (just opened)
+12927734 key id=1 src=raw act (age=563)
+12927734 F1 menu=closed
+12932203 exception in game_snapshot
+12936812 exception in game_snapshot
+12938000 key id=1 src=hook act (age=10266)
+12938000 F1 menu=open
+12939031 key id=1 src=raw act (age=1031)
+12939031 F1 menu=closed

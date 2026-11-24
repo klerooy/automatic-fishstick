@@ -46,6 +46,32 @@ long g_batch_status = 0, g_batch_info = 0, g_batch_expected = 0;
 static volatile long g_calls = 0;
 static volatile long g_bytes = 0;
 
+/* One op slot serves the whole process: every request must be serialized.
+ * Without this, concurrent scan workers overwrite WM_OFF_OP mid-flight and
+ * the driver answers into a dead thread's stack buffer (heap/stack smash). */
+/* Transport serialization + self-diagnosis. One op slot serves every thread;
+ * tx_diag.log next to the exe proves this build is the locked one. */
+static CRITICAL_SECTION g_tx_cs;
+static volatile LONG g_tx_ready = 0;
+static volatile LONG g_tx_wait_max_ms = 0;
+static volatile LONG g_tx_timeouts = 0;
+static volatile LONG g_tx_ops = 0;
+static void tx_init(void) {
+    if (InterlockedCompareExchange(&g_tx_ready, 1, 0) == 0)
+        InitializeCriticalSection(&g_tx_cs);
+}
+static void tx_lock(void)   { tx_init(); EnterCriticalSection(&g_tx_cs); }
+static void tx_unlock(void) { LeaveCriticalSection(&g_tx_cs); }
+
+static void tx_diag_dump(void) {
+    FILE* f = fopen("tx_diag.log", "a");
+    if (!f) return;
+    fprintf(f, "%lu tid=%lu ops=%ld wait_max=%ldms timeouts=%ld\n",
+            (unsigned long)GetTickCount(), (unsigned long)GetCurrentThreadId(),
+            (long)g_tx_ops, (long)g_tx_wait_max_ms, (long)g_tx_timeouts);
+    fclose(f);
+}
+
 long rr_stat_calls(void) { return g_calls; }
 long rr_stat_bytes(void) { return g_bytes; }
 void rr_stat_reset(void) { g_calls = 0; g_bytes = 0; }
@@ -58,18 +84,35 @@ typedef struct { uint32_t Pid; uint64_t BufferVa; } WM_SESSION_REG;
 /* Send a request via shared buffer and wait for driver completion. */
 static NTSTATUS send_request(uint32_t code, WmOpData* op) {
     if (!g_connected || !g_buffer) return STATUS_DEVICE_NOT_CONNECTED;
+    DWORD t_enter = GetTickCount();
+    tx_lock();
+    LONG waited = (LONG)(GetTickCount() - t_enter);
+    for (;;) { LONG cur = g_tx_wait_max_ms;
+               if (waited <= cur || InterlockedCompareExchange(&g_tx_wait_max_ms, waited, cur) == cur) break; }
+    if (!g_connected || !g_buffer) { tx_unlock(); return STATUS_DEVICE_NOT_CONNECTED; }
     memcpy(g_buffer + WM_OFF_OP, op, sizeof(WmOpData));
     *g_pCode = code;
     *g_pStatus = WMSS_WAITING;
-    if (g_wake) SetEvent(g_wake);   /* wakes the driver poll instead of a 2 ms sleep */
+    if (g_wake) SetEvent(g_wake);
     DWORD start = GetTickCount();
     while (*g_pCode != WMSC_COMPLETE) {
-        if (GetTickCount() - start > 5000) return STATUS_TIMEOUT;
+        if (GetTickCount() - start > 5000) {
+            /* Driver may still write into op->BufferPtr (caller stack).
+             * Hold the slot until it finishes; caller stays blocked here. */
+            while (*g_pCode != WMSC_COMPLETE && g_connected) Sleep(1);
+            if (g_pStatus) *g_pStatus = WMSS_ACTIVE;
+            InterlockedIncrement(&g_tx_timeouts);
+            tx_diag_dump();
+            tx_unlock();
+            return STATUS_TIMEOUT;
+        }
         Sleep(0);
     }
     memcpy(op, g_buffer + WM_OFF_OP, sizeof(WmOpData));
     *g_pStatus = WMSS_ACTIVE;
     g_calls++;
+    if ((InterlockedIncrement(&g_tx_ops) % 2000) == 0) tx_diag_dump();
+    tx_unlock();
     return (NTSTATUS)op->NtStatus;
 }
 
@@ -149,6 +192,7 @@ int rr_drv_open(void) {
 }
 
 void rr_drv_close(void) {
+    tx_lock();
     if (g_buffer && g_pStatus) {
         *g_pStatus = WMSS_EXIT;
         if (g_wake) SetEvent(g_wake);
@@ -158,6 +202,7 @@ void rr_drv_close(void) {
     g_pCode = NULL; g_pStatus = NULL;
     if (g_wake) { CloseHandle(g_wake); g_wake = NULL; }
     g_connected = 0; g_peb_cache = 0; g_ok = 0;
+    tx_unlock();
 
     HKEY hk = NULL;
     if (RegOpenKeyExA(HKEY_LOCAL_MACHINE, "SYSTEM\\WmPort", 0, KEY_SET_VALUE, &hk) == ERROR_SUCCESS) {
@@ -227,6 +272,8 @@ int rr_read_batch(RR_RD_REQ* items, int n) {
         return (a > 0 ? a : 0) + (b > 0 ? b : 0);
     }
 
+    tx_lock();
+    if (!g_connected || !g_buffer) { tx_unlock(); return 0; }
     WmBatchHeader* hdr = (WmBatchHeader*)(g_buffer + WM_OFF_BHDR);
     memset(hdr, 0, sizeof(WmBatchHeader));
     hdr->Count = (uint32_t)n;
@@ -242,13 +289,21 @@ int rr_read_batch(RR_RD_REQ* items, int n) {
         off += items[i].size;
     }
     hdr->TotalBytes = off;
-    if (hdr->Count == 0 || off == 0) return 0;
+    if (hdr->Count == 0 || off == 0) { tx_unlock(); return 0; }
 
     *g_pCode = WMSC_BATCH;
     *g_pStatus = WMSS_WAITING;
+    if (g_wake) SetEvent(g_wake);
     DWORD start = GetTickCount();
     while (*g_pCode != WMSC_COMPLETE) {
-        if (GetTickCount() - start > 5000) return -1;
+        if (GetTickCount() - start > 5000) {
+            while (*g_pCode != WMSC_COMPLETE && g_connected) Sleep(1);
+            if (g_pStatus) *g_pStatus = WMSS_ACTIVE;
+            InterlockedIncrement(&g_tx_timeouts);
+            tx_diag_dump();
+            tx_unlock();
+            return -1;
+        }
         Sleep(0);
     }
     g_calls++;
@@ -266,6 +321,8 @@ int rr_read_batch(RR_RD_REQ* items, int n) {
     }
     g_bytes += (long)off;
     *g_pStatus = WMSS_ACTIVE;
+    if ((InterlockedIncrement(&g_tx_ops) % 2000) == 0) tx_diag_dump();
+    tx_unlock();
     return ok > 0 ? ok : -1;
 }
 

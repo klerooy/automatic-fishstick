@@ -1,0 +1,11 @@
+8412000 exception=C0000005 address=00007FFB1FE8BB8F module=C:\Windows\SYSTEM32\ntdll.dll rva=0x1BB8F
+  frame[0] C:\Windows\SYSTEM32\ntdll.dll+0x1BB8F
+  frame[1] C:\Windows\SYSTEM32\ntdll.dll+0x1CF92
+  frame[2] C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\RobRunPort.exe+0x2EE5A
+  frame[3] C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\RobRunPort.exe+0x2ED1E
+  frame[4] C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\RobRunPort.exe+0x1A449
+  frame[5] C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\RobRunPort.exe+0x141C3
+  frame[6] C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\RobRunPort.exe+0x23077
+  frame[7] C:\Users\adm\Downloads\RRTool_Public_NoKey\1_run\RobRunPort.exe+0x2834A
+  frame[8] C:\Windows\System32\KERNEL32.DLL+0x2DDA7
+  frame[9] C:\Windows\SYSTEM32\ntdll.dll+0xC9C5C

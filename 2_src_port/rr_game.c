@@ -560,6 +560,14 @@ static void runtime_load(void) {
         else if (!strcmp(k, "scan_inst_hi")) g_inst_hi = strtoull(v, NULL, 0);
     }
     fclose(f);
+    /* Class pointers are per-process ASLR addresses. A cache from another pid
+    * is poison: it validated false and forced a full rescan every launch. */
+    if (g_saved_pid != g_rr_pid) {
+        g_k_char = g_k_world = g_k_cam = 0;
+        g_cam_obj = g_saved_world = 0;
+        g_name_lo = g_name_hi = 0;
+        g_inst_lo = g_inst_hi = 0;
+    }
     if (g_fov < 20.0f || g_fov > 140.0f) g_fov = 60.0f;
 
     /* If the cached scan found no world, keep candidate classes but discard
@@ -4180,8 +4188,10 @@ static uint64_t resolve_camera_class(const char* name) {
 
 static uint64_t resolve_class(const char* name) {
     /* Retry across slices: a hit that no class references (for example a
-     * method-name string) must not wedge the scan on the same window. */
-    for (int attempt = 0; attempt < 6; ++attempt) {
+     * method-name string) must not wedge the scan on the same window. Three
+     * attempts (6 s of budget) bound the stall on the read thread; the slice
+     * cursor advances across calls, so a later init resumes the sweep. */
+    for (int attempt = 0; attempt < 3; ++attempt) {
         collect_hits(name);
         snprintf(g_dbg, sizeof(g_dbg), "hits=%ld", (long)(g_nhits < MAX_HITS ? g_nhits : MAX_HITS));
         if (!g_nhits) continue;
@@ -5218,9 +5228,21 @@ int game_init(void) {
     DWORD t0 = GetTickCount();
     dlog("init start pid=%u", g_rr_pid);
 
-    /* Dynamic discovery: nothing from the previous process is trusted. */
-    find_heap_regions();
-    dlog("regions=%d after %lu ms", g_nregions, (unsigned long)(GetTickCount() - t0));
+    /* Dynamic discovery: nothing from the previous process is trusted. A
+     * retry after a lobby start reuses the list for 15 s: walking the VAD of a
+     * 3000-region process costs seconds and used to dwarf the retry cadence. */
+    {
+        static DWORD regions_at;
+        static uint32_t regions_pid;
+        DWORD regions_now = GetTickCount();
+        if (g_nregions <= 0 || regions_pid != g_rr_pid ||
+            regions_now - regions_at >= 15000) {
+            find_heap_regions();
+            regions_at = regions_now;
+            regions_pid = g_rr_pid;
+            dlog("regions=%d after %lu ms", g_nregions, (unsigned long)(GetTickCount() - t0));
+        }
+    }
 
     /* Fast path: the managed UnityEntry chain reaches the world without the
      * native manager and without scanning every model class; the world's roster
@@ -5266,8 +5288,61 @@ int game_init(void) {
     }
     if (!g_k_char || !class_named(g_k_char, "BattleCharacterModel"))
         g_k_char = 0;
-    if (!g_k_char) g_k_char = resolve_class("BattleCharacterModel");
-    if (!g_k_char) { set_status("BattleCharacterModel class not found [%s]", g_dbg); return 0; }
+    if (!g_k_char) {
+        /* Roster misses since the last successful init: drives the ladder. */
+        static int   roster_misses;
+        static DWORD last_typeinfo;
+        static DWORD last_name_scan;
+        DWORD now = GetTickCount();
+        /* 1. Live instances by class name: the Unity type-info table maps an
+         * object to its class, so any character model in the scene hands over
+         * the pointer even when the roster offset is stale. Bounded walk,
+         * throttled to one pass per 30 s after the second roster miss. */
+        if (!g_k_char && roster_misses >= 2 &&
+            (!last_typeinfo || now - last_typeinfo >= 30000)) {
+            last_typeinfo = now;
+            uint64_t any = typeinfo_find("BattleCharacterModel", NULL);
+            if (PL(any)) {
+                uint64_t k = rr_u64(any);
+                if (PL(k) && class_named(k, "BattleCharacterModel")) g_k_char = k;
+            }
+        }
+        /* 2. The metadata name scan is a cold-start fallback that costs ~2 s per
+         * slice and cannot fit a several-GB process in one init. While the game
+         * sits in a lobby the roster is empty, so wait for the match instead of
+         * holding the reader in a scan that will fail again. Allow the scan when
+         * the entry chain failed outright, after three roster misses, or once
+         * every 30 s in case the roster offset itself is stale. */
+        if (!g_k_char && (!PL(g_world) || roster_misses >= 3 ||
+            (last_name_scan && now - last_name_scan >= 30000))) {
+            last_name_scan = now;
+            g_k_char = resolve_class("BattleCharacterModel");
+        }
+        if (!g_k_char) {
+            if (PL(g_world)) {
+                ++roster_misses;
+                set_status("waiting for match roster (BattleCharacterModel)");
+            } else {
+                set_status("BattleCharacterModel class not found [%s]", g_dbg);
+            }
+            /* No anchor may survive a failed init: the reader retries init only
+             * while game_world_addr() is zero, and the fast path above sets the
+             * world before the class is known. Leaving it set suppressed every
+             * later attempt, so a launch at the lobby menu kept the ESP dead for
+             * the whole session. A populated roster means a previous init in
+             * this same process already published players; keep it. */
+            if (g_ncache == 0) {
+                g_world = 0;
+                g_battle = 0;
+                g_battle_model = 0;
+                g_k_world = 0;
+                g_k_cam = 0;
+                g_cam_obj = 0;
+            }
+            return 0;
+        }
+        roster_misses = 0;
+    }
     dlog("char=0x%llX after %lu ms", (unsigned long long)g_k_char, (unsigned long)(GetTickCount() - t0));
     if (!g_k_cam || !class_named(g_k_cam, "BattleCameraModel")) g_k_cam = 0;
     if (!g_k_cam) g_k_cam = resolve_camera_class("BattleCameraModel");

@@ -363,9 +363,13 @@ static DWORD WINAPI menu_thread(LPVOID){
         }
 
         DWORD now=GetTickCount();
-        if (!g_page_ready && SUCCEEDED(g_start_error) && now - shown_at > 15000) {
-            if (g_ctl) g_ctl->put_IsVisible(FALSE);
-            menu_failed("wait for embedded menu", HRESULT_FROM_WIN32(ERROR_TIMEOUT));
+        if (!g_page_ready && SUCCEEDED(g_start_error) && now - shown_at > 30000) {
+            /* A slow profile disk or a busy system can delay the renderer well
+             * past 15 s. Log once, keep the controller visible and let hello
+             * arrive later instead of hiding the menu forever. */
+            static int logged = 0;
+            if (!logged) { logged = 1; menu_log("embedded menu still loading", S_OK); }
+            shown_at = now;   /* re-arm; never terminate the page */
         }
         if(g_wv && now-last_telem>500){
             last_telem=now;

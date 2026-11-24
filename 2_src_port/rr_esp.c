@@ -287,14 +287,14 @@ static void sync_game_window(void) {
     if (!GetClientRect(s.window, &client) || !ClientToScreen(s.window, &origin) ||
         !GetWindowRect(g_hwnd, &overlay)) return;
     int width = client.right - client.left, height = client.bottom - client.top;
-    if (overlay.left != origin.x || overlay.top != origin.y ||
-        overlay.right - overlay.left != width || overlay.bottom - overlay.top != height) {
-        /* Insert directly above the game window instead of the topmost band:
-         * the overlay then follows the game's z-order instead of every window. */
-        SetWindowPos(g_hwnd, s.window, origin.x, origin.y, width, height,
-                     SWP_NOACTIVATE | SWP_NOOWNERZORDER);
-        InvalidateRect(g_hwnd, NULL, FALSE);
-    }
+    /* Raise the layer above the game on every sync. The game is an ordinary
+     * top-level window and takes the top of the z-order back each time it is
+     * focused, so a one-shot placement is not enough. HWND_TOP, not the game
+     * handle: hWndInsertAfter names the window that PRECEDES the positioned
+     * one, so passing the game put the overlay directly underneath it. */
+    SetWindowPos(g_hwnd, HWND_TOP, origin.x, origin.y, width, height,
+                 SWP_NOACTIVATE | SWP_NOOWNERZORDER);
+    InvalidateRect(g_hwnd, NULL, FALSE);
 }
 
 /* Raw Input: device-level delivery, independent of focus and of the async key
@@ -857,21 +857,30 @@ static DWORD WINAPI ReadThread(LPVOID p) {
         if (g_snap_event) SetEvent(g_snap_event);
         InterlockedExchange(&g_game_ok, n > 0);
 
-        if ((tick % 3000) == 0) {
-            char dpath[MAX_PATH];
-            GetModuleFileNameA(NULL, dpath, MAX_PATH);
-            char* dslash = strrchr(dpath, '\\');
-            if (dslash) *(dslash + 1) = 0;
-            strncat(dpath, "status.log", MAX_PATH - strlen(dpath) - 1);
-            log_rotate(dpath, RR_LOG_CAP_BYTES);
-            FILE* df = fopen(dpath, "a");
-            if (df) {
-                char stx[192];
-                game_status(stx, sizeof(stx));
-                fprintf(df, "%lu pid=%lu n=%d inst=%d world=%llX snap=%lums hz=%d status=[%s]\n",
-                        (unsigned long)GetTickCount(), (unsigned long)g_rr_pid, n, game_instance_mode(),
-                        (unsigned long long)game_world_addr(), (unsigned long)last_snap_ms, last_hz, stx);
-                fclose(df);
+        /* Status ages in wall-clock time, not in ticks: one snapshot with a
+         * full skinned mesh costs ~180 ms, so the old 3000-tick cadence left
+         * status.log silent for nine minutes and made a live reader look dead.
+         * Five seconds is the diagnostic heartbeat. */
+        {
+            static DWORD status_at;
+            DWORD status_now = GetTickCount();
+            if (!status_at || status_now - status_at >= 5000) {
+                status_at = status_now;
+                char dpath[MAX_PATH];
+                GetModuleFileNameA(NULL, dpath, MAX_PATH);
+                char* dslash = strrchr(dpath, '\\');
+                if (dslash) *(dslash + 1) = 0;
+                strncat(dpath, "status.log", MAX_PATH - strlen(dpath) - 1);
+                log_rotate(dpath, RR_LOG_CAP_BYTES);
+                FILE* df = fopen(dpath, "a");
+                if (df) {
+                    char stx[192];
+                    game_status(stx, sizeof(stx));
+                    fprintf(df, "%lu pid=%lu n=%d inst=%d world=%llX snap=%lums hz=%d status=[%s]\n",
+                            (unsigned long)GetTickCount(), (unsigned long)g_rr_pid, n, game_instance_mode(),
+                            (unsigned long long)game_world_addr(), (unsigned long)last_snap_ms, last_hz, stx);
+                    fclose(df);
+                }
             }
         }
         if (n > 0 && !br_get()->menu_open) g_show_footer = 0;   /* it was only a probe aid */

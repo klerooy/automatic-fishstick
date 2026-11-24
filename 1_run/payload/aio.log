@@ -9,12 +9,11 @@ settings: menu_delay=40 menu_wait_window=1 attach_timeout=180 reattach_attempts=
 kernel-mode.sys SHA256 a65a8aeff65162e13bdb8109d68cdb59596a9446f7b93f79c3073d702c002b70
 driver is already mapped in this session; skipping kd2.exe
 driver live (Global\WmDriverLive)
-ROB RUN.exe is running (pid 18476)
-game window "ROB RUN" 1920x1080 (pid 18476) after 0 s
+ROB RUN.exe is running (pid 21688)
+game window "ROB RUN" 1920x1080 (pid 21688) after 3 s
 waiting 40 s for the main menu
 menu wait finished
-overlay runs as SearchProtocolHost.exe in C:\Users\adm\AppData\Local\Temp
-overlay started (pid 14000)
-overlay attached (game pid 12368)
-warning: overlay attached to pid 12368, window owner is 18476
+overlay runs as smartscreen.exe in C:\Users\adm\AppData\Local\Temp
+overlay started (pid 16024)
+overlay attached (game pid 21688)
 done
